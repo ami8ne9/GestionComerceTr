@@ -1,0 +1,212 @@
+﻿<Window x:Class="GestionComerce.Main.Inventory.WArticleDetails"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Détails de l'Article"
+        Width="700" Height="600"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        WindowStyle="None"
+        AllowsTransparency="True">
+
+    <Window.Resources>
+        <Style x:Key="HeaderStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="#2C3E50"/>
+            <Setter Property="Margin" Value="0,0,0,20"/>
+        </Style>
+
+        <Style x:Key="LabelStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="#34495E"/>
+            <Setter Property="Margin" Value="0,0,0,5"/>
+        </Style>
+
+        <Style x:Key="ValueStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Foreground" Value="#1F2937"/>
+            <Setter Property="Margin" Value="0,0,0,15"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+
+        <Style x:Key="CloseButton" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#718096"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Width" Value="30"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                CornerRadius="15">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#F7FAFC"/>
+                                <Setter Property="Foreground" Value="#E53E3E"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Border Padding="30" Margin="20"
+            Background="White" CornerRadius="12">
+        <Border.Effect>
+            <DropShadowEffect Color="Black" Direction="320"
+                              ShadowDepth="6" BlurRadius="20" Opacity="0.4"/>
+        </Border.Effect>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Close Button -->
+            <Button Name="CloseButton"
+                    Style="{StaticResource CloseButton}"
+                    Content="×"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top"
+                    Margin="0,-10,-10,0"
+                    Panel.ZIndex="1000"
+                    Click="CloseButton_Click"/>
+
+            <!-- Header -->
+            <TextBlock Grid.Row="0"
+                       Text="Détails de l'Article"
+                       Style="{StaticResource HeaderStyle}"/>
+
+            <!-- Content -->
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Left Column -->
+                    <StackPanel Grid.Column="0">
+                        <!-- Article ID -->
+                        <TextBlock Text="ID Article:" Style="{StaticResource LabelStyle}"/>
+                        <TextBlock x:Name="ArticleID" Style="{StaticResource ValueStyle}"/>
+
+                        <!-- Code -->
+                        <TextBlock Text="Code:" Style="{StaticResource LabelStyle}"/>
+                        <TextBlock x:Name="Code" Style="{StaticResource ValueStyle}" FontFamily="Consolas"/>
+
+                        <!-- Article Name -->
+                        <TextBlock Text="Nom de l'Article:" Style="{StaticResource LabelStyle}"/>
+                        <TextBlock x:Name="ArticleName" Style="{StaticResource ValueStyle}" FontWeight="SemiBold"/>
+
+                        <!-- Famille -->
+                        <TextBlock Text="Famille:" Style="{StaticResource LabelStyle}"/>
+                        <TextBlock x:Name="Famille" Style="{StaticResource ValueStyle}"/>
+
+                        <!-- Fournisseur -->
+                        <TextBlock Text="Fournisseur:" Style="{StaticResource LabelStyle}"/>
+                        <TextBlock x:Name="Fournisseur" Style="{StaticResource ValueStyle}"/>
+
+                        <!-- Marque -->
+                        <TextBlock Text="Marque:" Style="{StaticResource LabelStyle}"/>
+                        <TextBlock x:Name="Marque" Style="{StaticResource ValueStyle}"/>
+
+                        <!-- Prix Achat -->
+                        <TextBlock Text="Prix d'Achat:" Style="{StaticResource LabelStyle}"/>
+                        <TextBlock x:Name="PrixAchat" Style="{StaticResource ValueStyle}" 
+                                   Foreground="#059669" FontWeight="SemiBold"/>
+
+                        <!-- Prix Vente -->
+                        <TextBlock Text="Prix de Vente:" Style="{StaticResource LabelStyle}"/>
+                        <TextBlock x:Name="PrixVente" Style="{StaticResource ValueStyle}" 
+                                   Foreground="#DC2626" FontWeight="SemiBold"/>
+                    </StackPanel>
+
+                    <!-- Right Column -->
+                    <StackPanel Grid.Column="2">
+                        <!-- Prix MP -->
+                        <TextBlock Text="Prix MP:" Style="{StaticResource LabelStyle}"/>
+                        <TextBlock x:Name="PrixMP" Style="{StaticResource ValueStyle}" 
+                                   Foreground="#7C3AED" FontWeight="SemiBold"/>
+
+                        <!-- Quantité -->
+                        <TextBlock Text="Quantité en Stock:" Style="{StaticResource LabelStyle}"/>
+                        <TextBlock x:Name="Quantite" Style="{StaticResource ValueStyle}" FontWeight="SemiBold"/>
+
+                        <!-- TVA -->
+                        <TextBlock Text="TVA (%):" Style="{StaticResource LabelStyle}"/>
+                        <TextBlock x:Name="TVA" Style="{StaticResource ValueStyle}"/>
+
+                        <!-- Numéro de Lot -->
+                        <TextBlock Text="Numéro de Lot:" Style="{StaticResource LabelStyle}"/>
+                        <TextBlock x:Name="NumeroLot" Style="{StaticResource ValueStyle}"/>
+
+                        <!-- Bon de Livraison -->
+                        <TextBlock Text="Bon de Livraison:" Style="{StaticResource LabelStyle}"/>
+                        <TextBlock x:Name="BonLivraison" Style="{StaticResource ValueStyle}"/>
+
+                        <!-- Date -->
+                        <TextBlock Text="Date:" Style="{StaticResource LabelStyle}"/>
+                        <TextBlock x:Name="DateArticle" Style="{StaticResource ValueStyle}"/>
+
+                        <!-- Date Livraison -->
+                        <TextBlock Text="Date de Livraison:" Style="{StaticResource LabelStyle}"/>
+                        <TextBlock x:Name="DateLivraison" Style="{StaticResource ValueStyle}"/>
+
+                        <!-- Date Expiration -->
+                        <TextBlock Text="Date d'Expiration:" Style="{StaticResource LabelStyle}"/>
+                        <TextBlock x:Name="DateExpiration" Style="{StaticResource ValueStyle}"/>
+                    </StackPanel>
+                </Grid>
+            </ScrollViewer>
+
+            <!-- Close Button at Bottom -->
+            <Button Grid.Row="2" Content="Fermer" Click="CloseButton_Click"
+                    Width="120" Height="40" Margin="0,20,0,0"
+                    HorizontalAlignment="Center">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#6B7280"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="FontSize" Value="14"/>
+                        <Setter Property="FontWeight" Value="SemiBold"/>
+                        <Setter Property="BorderThickness" Value="0"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}" 
+                                            CornerRadius="8">
+                                        <ContentPresenter HorizontalAlignment="Center" 
+                                                          VerticalAlignment="Center"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#4B5563"/>
+                                        </Trigger>
+                                        <Trigger Property="IsPressed" Value="True">
+                                            <Setter Property="Background" Value="#374151"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+        </Grid>
+    </Border>
+</Window>

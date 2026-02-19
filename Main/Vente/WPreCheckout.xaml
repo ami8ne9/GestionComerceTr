@@ -1,0 +1,306 @@
+<Window x:Class="GestionComerce.Main.Vente.WPreCheckout"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:res="clr-namespace:GestionComerce.Resources"
+        mc:Ignorable="d"
+        Title="{x:Static res:Resources.SaleValidation}"
+        Height="800"
+        Width="1400"
+        MinHeight="700"
+        MinWidth="1200"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized"
+        Background="{StaticResource BackgroundGray}"
+        ResizeMode="CanResize">
+
+    <Window.Resources>
+        <SolidColorBrush x:Key="PrimaryBlue" Color="#2563EB"/>
+        <SolidColorBrush x:Key="PrimaryBlueHover" Color="#1D4ED8"/>
+        <SolidColorBrush x:Key="SuccessGreen" Color="#10B981"/>
+        <SolidColorBrush x:Key="DangerRed" Color="#EF4444"/>
+        <SolidColorBrush x:Key="WarningOrange" Color="#F59E0B"/>
+        <SolidColorBrush x:Key="BackgroundGray" Color="#F3F4F6"/>
+        <SolidColorBrush x:Key="BorderLight" Color="#E5E7EB"/>
+        <SolidColorBrush x:Key="TextPrimary" Color="#111827"/>
+        <SolidColorBrush x:Key="TextSecondary" Color="#6B7280"/>
+        <SolidColorBrush x:Key="White" Color="#FFFFFF"/>
+
+        <Style x:Key="PrimaryButton" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource PrimaryBlue}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="24,12"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                CornerRadius="8" Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="{StaticResource PrimaryBlueHover}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="SecondaryButton" TargetType="Button">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="{StaticResource TextPrimary}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource BorderLight}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="24,12"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="8" Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="{StaticResource BackgroundGray}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Border Grid.Row="0" Background="White" BorderBrush="{StaticResource BorderLight}"
+                BorderThickness="0,0,0,1" Padding="32,24">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0">
+                    <TextBlock Text="{x:Static res:Resources.SaleValidation}"
+                               FontSize="28" FontWeight="Bold" Foreground="{StaticResource TextPrimary}"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+                        <Border Background="{StaticResource PrimaryBlue}" CornerRadius="6" Padding="12,6" Margin="0,0,12,0">
+                            <TextBlock x:Name="PaymentMethodText" Text="{x:Static res:Resources.CashPayment}"
+                                       FontSize="13" FontWeight="SemiBold" Foreground="White"/>
+                        </Border>
+                        <Border Background="{StaticResource SuccessGreen}" CornerRadius="6" Padding="12,6">
+                            <TextBlock x:Name="PaymentTypeText" Text="{x:Static res:Resources.CashSale}"
+                                       FontSize="13" FontWeight="SemiBold" Foreground="White"/>
+                        </Border>
+                    </StackPanel>
+                </StackPanel>
+
+                <Button Grid.Column="1" Content="{x:Static res:Resources.AddArticle}"
+                        Style="{StaticResource SecondaryButton}"
+                        Click="AddArticleButton_Click" VerticalAlignment="Center"/>
+            </Grid>
+        </Border>
+
+        <!-- Main Content -->
+        <Grid Grid.Row="1" Margin="32,24">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" MinWidth="650"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="1*" MinWidth="380" MaxWidth="450"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Left Panel - Articles List -->
+            <Border Grid.Column="0" Background="White" BorderBrush="{StaticResource BorderLight}"
+                    BorderThickness="1" CornerRadius="12">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="0" Background="{StaticResource BackgroundGray}"
+                            BorderBrush="{StaticResource BorderLight}" BorderThickness="0,0,0,1" Padding="24,16">
+                        <TextBlock Text="{x:Static res:Resources.CartItems}"
+                                   FontSize="18" FontWeight="Bold" Foreground="{StaticResource TextPrimary}"/>
+                    </Border>
+                    <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Padding="24,16">
+                        <StackPanel x:Name="ArticlesContainer"/>
+                    </ScrollViewer>
+                </Grid>
+            </Border>
+
+            <!-- Right Panel - Summary and Client -->
+            <ScrollViewer Grid.Column="2" VerticalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <!-- Client Selection -->
+                    <Border Background="White" BorderBrush="{StaticResource BorderLight}"
+                            BorderThickness="1" CornerRadius="12" Padding="24" Margin="0,0,0,16">
+                        <StackPanel>
+                            <TextBlock Text="{x:Static res:Resources.Client}"
+                                       FontSize="18" FontWeight="Bold" Foreground="{StaticResource TextPrimary}" Margin="0,0,0,16"/>
+                            <TextBlock x:Name="ClientSelectionRequired"
+                                       Text="{x:Static res:Resources.ClientSelectionRequired}"
+                                       FontSize="12" Foreground="{StaticResource WarningOrange}"
+                                       Margin="0,0,0,12" Visibility="Collapsed"/>
+                            <TextBlock Text="{x:Static res:Resources.SearchSelect}"
+                                       FontSize="12" Foreground="{StaticResource TextSecondary}" Margin="0,0,0,6"/>
+                            <TextBox x:Name="ClientSearchBox" Height="44" FontSize="14" Padding="12,10"
+                                     BorderBrush="{StaticResource BorderLight}" BorderThickness="1"
+                                     Margin="0,0,0,8" TextChanged="ClientSearchBox_TextChanged"/>
+                            <ComboBox x:Name="ClientComboBox" Height="44" FontSize="14" Padding="12,10"
+                                      BorderBrush="{StaticResource BorderLight}" BorderThickness="1"
+                                      Margin="0,0,0,12" SelectionChanged="ClientComboBox_SelectionChanged"/>
+                            <Button Content="{x:Static res:Resources.NewClient}"
+                                    Style="{StaticResource SecondaryButton}"
+                                    Click="NewClientButton_Click" HorizontalAlignment="Stretch"/>
+
+                            <!-- Client Info Panel -->
+                            <Border x:Name="ClientInfoPanel" Background="{StaticResource BackgroundGray}"
+                                    CornerRadius="8" Padding="16" Margin="0,16,0,0" Visibility="Collapsed">
+                                <StackPanel>
+                                    <TextBlock Text="{x:Static res:Resources.ClientInfo}"
+                                               FontSize="12" FontWeight="SemiBold"
+                                               Foreground="{StaticResource TextSecondary}" Margin="0,0,0,8"/>
+                                    <TextBlock x:Name="ClientNameText" FontSize="14" FontWeight="Bold"
+                                               Foreground="{StaticResource TextPrimary}" Margin="0,0,0,4"/>
+                                    <TextBlock x:Name="ClientPhoneText" FontSize="13"
+                                               Foreground="{StaticResource TextSecondary}" Margin="0,0,0,8"/>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{x:Static res:Resources.ClientDiscount}"
+                                                   FontSize="13" Foreground="{StaticResource TextSecondary}"/>
+                                        <TextBlock x:Name="ClientDiscountValue" Text="0%"
+                                                   FontSize="13" FontWeight="SemiBold"
+                                                   Foreground="{StaticResource SuccessGreen}"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Credit Section -->
+                    <Border x:Name="CreditSection" Background="White" BorderBrush="{StaticResource BorderLight}"
+                            BorderThickness="1" CornerRadius="12" Padding="24" Margin="0,0,0,16" Visibility="Collapsed">
+                        <StackPanel>
+                            <TextBlock Text="{x:Static res:Resources.CreditAmount}"
+                                       FontSize="18" FontWeight="Bold" Foreground="{StaticResource TextPrimary}" Margin="0,0,0,12"/>
+                            <TextBox x:Name="CreditTextBox" Height="44" FontSize="16" Padding="12,10"
+                                     BorderBrush="{StaticResource BorderLight}" BorderThickness="1"
+                                     TextChanged="CreditTextBox_TextChanged"/>
+                            <TextBlock Text="{x:Static res:Resources.CreditAmountNote}"
+                                       FontSize="11" Foreground="{StaticResource TextSecondary}" Margin="0,6,0,0"/>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Discount Section -->
+                    <Border Background="White" BorderBrush="{StaticResource BorderLight}"
+                            BorderThickness="1" CornerRadius="12" Padding="24" Margin="0,0,0,16">
+                        <StackPanel>
+                            <TextBlock Text="{x:Static res:Resources.AdditionalDiscount}"
+                                       FontSize="18" FontWeight="Bold" Foreground="{StaticResource TextPrimary}" Margin="0,0,0,16"/>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="12"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBox x:Name="AdditionalDiscountTextBox" Grid.Column="0" Height="44"
+                                         FontSize="16" Padding="12,10" BorderBrush="{StaticResource BorderLight}"
+                                         BorderThickness="1" Text="0"
+                                         TextChanged="AdditionalDiscountTextBox_TextChanged"/>
+                                <ComboBox x:Name="DiscountTypeComboBox" Grid.Column="2" Width="100" Height="44"
+                                          FontSize="14" Padding="8,10" BorderBrush="{StaticResource BorderLight}"
+                                          BorderThickness="1" SelectedIndex="0"
+                                          SelectionChanged="DiscountTypeComboBox_SelectionChanged">
+                                    <ComboBoxItem Content="%"/>
+                                    <ComboBoxItem Content="DH"/>
+                                </ComboBox>
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Summary -->
+                    <Border Background="White" BorderBrush="{StaticResource BorderLight}"
+                            BorderThickness="1" CornerRadius="12" Padding="24">
+                        <StackPanel>
+                            <TextBlock Text="{x:Static res:Resources.Summary}"
+                                       FontSize="18" FontWeight="Bold" Foreground="{StaticResource TextPrimary}" Margin="0,0,0,16"/>
+                            <Grid Margin="0,0,0,12">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{x:Static res:Resources.SubtotalLabel}"
+                                           FontSize="14" Foreground="{StaticResource TextSecondary}"/>
+                                <TextBlock x:Name="SubtotalText" Grid.Column="1" Text="0.00 DH"
+                                           FontSize="14" FontWeight="SemiBold" Foreground="{StaticResource TextPrimary}"/>
+                            </Grid>
+                            <Grid Margin="0,0,0,12">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{x:Static res:Resources.TotalDiscount}"
+                                           FontSize="14" Foreground="{StaticResource TextSecondary}"/>
+                                <TextBlock x:Name="TotalDiscountText" Grid.Column="1" Text="0.00 DH"
+                                           FontSize="14" FontWeight="SemiBold" Foreground="{StaticResource DangerRed}"/>
+                            </Grid>
+                            <Border Background="{StaticResource BackgroundGray}" Height="1" Margin="0,8,0,16"/>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{x:Static res:Resources.TotalTTC}"
+                                           FontSize="18" FontWeight="Bold" Foreground="{StaticResource TextPrimary}"/>
+                                <TextBlock x:Name="TotalTTCText" Grid.Column="1" Text="0.00 DH"
+                                           FontSize="24" FontWeight="Bold" Foreground="{StaticResource PrimaryBlue}"/>
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+
+        <!-- Footer Actions -->
+        <Border Grid.Row="2" Background="White" BorderBrush="{StaticResource BorderLight}"
+                BorderThickness="0,1,0,0" Padding="32,20">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
+                    <TextBlock Text="💡" FontSize="16" Margin="0,0,8,0"/>
+                    <TextBlock Text="{x:Static res:Resources.CheckInfo}"
+                               FontSize="13" Foreground="{StaticResource TextSecondary}" VerticalAlignment="Center"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Orientation="Horizontal">
+                    <Button Content="{x:Static res:Resources.Cancel}"
+                            Style="{StaticResource SecondaryButton}" Width="140"
+                            Click="CancelButton_Click" Margin="0,0,12,0"/>
+                    <Button x:Name="ContinueButton" Content="{x:Static res:Resources.ConfirmSale}"
+                            Style="{StaticResource PrimaryButton}" Width="180"
+                            Click="ContinueButton_Click"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

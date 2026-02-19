@@ -1,0 +1,825 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+
+  <!-- ===== SHARED / COMMON ===== -->
+  <data name="Cancel" xml:space="preserve"><value>Annuler</value></data>
+  <data name="Save" xml:space="preserve"><value>Enregistrer</value></data>
+  <data name="Add" xml:space="preserve"><value>Ajouter</value></data>
+  <data name="Confirm" xml:space="preserve"><value>Confirmer</value></data>
+  <data name="Search" xml:space="preserve"><value>Rechercher</value></data>
+  <data name="Code" xml:space="preserve"><value>Code</value></data>
+  <data name="Name" xml:space="preserve"><value>Nom</value></data>
+  <data name="Address" xml:space="preserve"><value>Adresse</value></data>
+  <data name="PhoneNumber" xml:space="preserve"><value>Numéro de téléphone</value></data>
+  <data name="Balance" xml:space="preserve"><value>Solde initial</value></data>
+  <data name="Discount" xml:space="preserve"><value>Remise</value></data>
+  <data name="Stock" xml:space="preserve"><value>Stock</value></data>
+  <data name="Family" xml:space="preserve"><value>Famille</value></data>
+  <data name="Supplier" xml:space="preserve"><value>Fournisseur</value></data>
+  <data name="Price" xml:space="preserve"><value>Prix</value></data>
+  <data name="Quantity" xml:space="preserve"><value>Quantité</value></data>
+  <data name="Total" xml:space="preserve"><value>Total</value></data>
+  <data name="Image" xml:space="preserve"><value>Image</value></data>
+  <data name="Categories" xml:space="preserve"><value>Catégories</value></data>
+  <data name="Products" xml:space="preserve"><value>Produits</value></data>
+  <data name="Client" xml:space="preserve"><value>Client</value></data>
+  <data name="NoClient" xml:space="preserve"><value>Sans Client</value></data>
+  <data name="Back" xml:space="preserve"><value>Retour</value></data>
+  <data name="Print" xml:space="preserve"><value>Imprimer</value></data>
+  <data name="Manual" xml:space="preserve"><value>Manuel</value></data>
+  <data name="Confirmed" xml:space="preserve"><value>Confirmé</value></data>
+  <data name="Reverse" xml:space="preserve"><value>Annuler</value></data>
+  <data name="Reversed" xml:space="preserve"><value>Annulé</value></data>
+  <data name="Company" xml:space="preserve"><value>Entreprise</value></data>
+  <data name="CompanyName" xml:space="preserve"><value>Nom de l'entreprise</value></data>
+  <data name="Phone" xml:space="preserve"><value>Téléphone</value></data>
+  <data name="Email" xml:space="preserve"><value>Email</value></data>
+  <data name="Description" xml:space="preserve"><value>Description</value></data>
+  <data name="Notes" xml:space="preserve"><value>Notes</value></data>
+  <data name="Preview" xml:space="preserve"><value>Aperçu</value></data>
+  <data name="Browse" xml:space="preserve"><value>Parcourir</value></data>
+  <data name="TVA" xml:space="preserve"><value>TVA (%)</value></data>
+  <data name="CompanyLogo" xml:space="preserve"><value>Logo de l'entreprise</value></data>
+
+  <!-- ===== CLIENT ===== -->
+  <data name="ClientManagement" xml:space="preserve"><value>Gestion des Clients</value></data>
+  <data name="ClientManagementDescription" xml:space="preserve"><value>Gérer les clients et leurs informations</value></data>
+  <data name="IsCompany" xml:space="preserve"><value>Est-ce une entreprise ?</value></data>
+  <data name="ClientName" xml:space="preserve"><value>Nom du client</value></data>
+  <data name="LegalStatus" xml:space="preserve"><value>État juridique</value></data>
+  <data name="ICE" xml:space="preserve"><value>ICE (Identifiant Commun de l'Entreprise)</value></data>
+  <data name="Headquarters" xml:space="preserve"><value>Siège d'entreprise</value></data>
+  <data name="ClientOperations" xml:space="preserve"><value>Opérations Client</value></data>
+  <data name="DeleteConfirmation" xml:space="preserve"><value>Confirmation de Suppression</value></data>
+  <data name="PaymentManagement" xml:space="preserve"><value>Gestion des Paiements</value></data>
+
+  <!-- ===== SUPPLIER ===== -->
+  <data name="SupplierManagement" xml:space="preserve"><value>Gestion des Fournisseurs</value></data>
+  <data name="SupplierOperations" xml:space="preserve"><value>Opérations Fournisseur</value></data>
+  <data name="EditSupplier" xml:space="preserve"><value>Modifier le Fournisseur</value></data>
+
+  <!-- ===== POINT OF SALE ===== -->
+  <data name="POS_Title" xml:space="preserve"><value>Point de Vente</value></data>
+  <data name="POS_Subtitle" xml:space="preserve"><value>Gérer les ventes et les transactions</value></data>
+  <data name="CartItems" xml:space="preserve"><value>Articles du Panier</value></data>
+  <data name="Articles" xml:space="preserve"><value>articles</value></data>
+  <data name="EmptyCart" xml:space="preserve"><value>Aucun article dans le panier</value></data>
+  <data name="PaymentMethod" xml:space="preserve"><value>Méthode de Paiement</value></data>
+  <data name="PrintTicket" xml:space="preserve"><value>Imprimer le Ticket</value></data>
+  <data name="PrintInvoice" xml:space="preserve"><value>Imprimer la Facture</value></data>
+  <data name="Cash" xml:space="preserve"><value>Espèces</value></data>
+  <data name="Credit" xml:space="preserve"><value>Crédit</value></data>
+  <data name="HalfPayment" xml:space="preserve"><value>Paiement 50/50</value></data>
+  <data name="ClearCart" xml:space="preserve"><value>Vider le Panier</value></data>
+  <data name="ProductSearch" xml:space="preserve"><value>Recherche de Produit</value></data>
+  <data name="SelectedProduct" xml:space="preserve"><value>Produit Sélectionné</value></data>
+  <data name="NoProductSelected" xml:space="preserve"><value>Aucun produit sélectionné</value></data>
+  <data name="AddButton" xml:space="preserve"><value>Ajouter</value></data>
+  <data name="ListView" xml:space="preserve"><value>Vue Liste</value></data>
+  <data name="CardView" xml:space="preserve"><value>Vue Cartes</value></data>
+  <data name="LargeIcons" xml:space="preserve"><value>Grandes icônes</value></data>
+  <data name="MediumIcons" xml:space="preserve"><value>Moyennes icônes</value></data>
+  <data name="SmallIcons" xml:space="preserve"><value>Petites icônes</value></data>
+  <data name="SortNameAZ" xml:space="preserve"><value>Nom (A-Z)</value></data>
+  <data name="SortNameZA" xml:space="preserve"><value>Nom (Z-A)</value></data>
+  <data name="SortPriceAsc" xml:space="preserve"><value>Prix croissant</value></data>
+  <data name="SortPriceDesc" xml:space="preserve"><value>Prix décroissant</value></data>
+  <data name="SortQtyAsc" xml:space="preserve"><value>Quantité croissante</value></data>
+  <data name="SortQtyDesc" xml:space="preserve"><value>Quantité décroissante</value></data>
+  <data name="SortNewest" xml:space="preserve"><value>Plus récent au plus ancien</value></data>
+  <data name="SortOldest" xml:space="preserve"><value>Plus ancien au plus récent</value></data>
+  <data name="SeeAll" xml:space="preserve"><value>Voir Tout</value></data>
+  <data name="ColID" xml:space="preserve"><value>ID</value></data>
+  <data name="ColProductName" xml:space="preserve"><value>Nom du Produit</value></data>
+  <data name="ColPurchase" xml:space="preserve"><value>Achat</value></data>
+  <data name="ColSale" xml:space="preserve"><value>Vente</value></data>
+  <data name="ColMarket" xml:space="preserve"><value>Marché</value></data>
+
+  <!-- ===== TICKET / INVOICE ===== -->
+  <data name="TicketPreviewTitle" xml:space="preserve"><value>APERÇU DU TICKET</value></data>
+  <data name="InvoiceNumber" xml:space="preserve"><value>FACTURE N° </value></data>
+  <data name="ArticleHeader" xml:space="preserve"><value>ARTICLE</value></data>
+  <data name="QtyHeader" xml:space="preserve"><value>QTE</value></data>
+  <data name="UnitPriceHeader" xml:space="preserve"><value>P.U</value></data>
+  <data name="TotalHeader" xml:space="preserve"><value>TOTAL</value></data>
+  <data name="Subtotal" xml:space="preserve"><value>SOUS-TOTAL:</value></data>
+  <data name="Remise" xml:space="preserve"><value>REMISE:</value></data>
+  <data name="ConfirmAndPrint" xml:space="preserve"><value>CONFIRMER ET IMPRIMER</value></data>
+
+  <!-- ===== PRE-CHECKOUT ===== -->
+  <data name="SaleValidation" xml:space="preserve"><value>Validation de la Vente</value></data>
+  <data name="AddArticle" xml:space="preserve"><value>+ Ajouter Article</value></data>
+  <data name="CashPayment" xml:space="preserve"><value>Espèces</value></data>
+  <data name="CashSale" xml:space="preserve"><value>VENTE COMPTANT</value></data>
+  <data name="ClientSelectionRequired" xml:space="preserve"><value>⚠️ Sélection client requise</value></data>
+  <data name="SearchSelect" xml:space="preserve"><value>Rechercher / Sélectionner</value></data>
+  <data name="NewClient" xml:space="preserve"><value>+ Nouveau Client</value></data>
+  <data name="ClientInfo" xml:space="preserve"><value>Informations Client</value></data>
+  <data name="ClientDiscount" xml:space="preserve"><value>Remise Client: </value></data>
+  <data name="CreditAmount" xml:space="preserve"><value>Montant à Crédit</value></data>
+  <data name="CreditAmountNote" xml:space="preserve"><value>Montant qui sera mis à crédit</value></data>
+  <data name="AdditionalDiscount" xml:space="preserve"><value>Remise Supplémentaire</value></data>
+  <data name="Summary" xml:space="preserve"><value>Résumé</value></data>
+  <data name="SubtotalLabel" xml:space="preserve"><value>Sous-total</value></data>
+  <data name="TotalDiscount" xml:space="preserve"><value>Remise Totale</value></data>
+  <data name="TotalTTC" xml:space="preserve"><value>Total TTC</value></data>
+  <data name="CheckInfo" xml:space="preserve"><value>Vérifiez les informations avant de continuer</value></data>
+  <data name="ConfirmSale" xml:space="preserve"><value>Confirmer la Vente</value></data>
+
+  <!-- ===== CLIENT SELECTION ===== -->
+  <data name="ClientSelection" xml:space="preserve"><value>Sélection du Client</value></data>
+  <data name="ClientSelectionSubtitle" xml:space="preserve"><value>Recherchez un client existant, ajoutez-en un nouveau, ou continuez sans client</value></data>
+  <data name="SearchResults" xml:space="preserve"><value>Résultats de Recherche</value></data>
+  <data name="SelectedClientLabel" xml:space="preserve"><value>Client Sélectionné</value></data>
+  <data name="NoClientSelected" xml:space="preserve"><value>Aucun client sélectionné</value></data>
+  <data name="DiscountLabel" xml:space="preserve"><value>Remise</value></data>
+  <data name="CreditLabel" xml:space="preserve"><value>Crédit</value></data>
+  <data name="NewClientButton" xml:space="preserve"><value>Nouveau Client</value></data>
+  <data name="NoClientButton" xml:space="preserve"><value>Sans Client</value></data>
+
+  <!-- ===== SELECT ARTICLE ===== -->
+  <data name="SelectArticleTitle" xml:space="preserve"><value>Sélectionner un Article</value></data>
+  <data name="SearchArticle" xml:space="preserve"><value>Rechercher un article...</value></data>
+  <data name="QuantityLabel" xml:space="preserve"><value>Quantité:</value></data>
+
+  <!-- ===== QUICK ADD CLIENT ===== -->
+  <data name="QuickAddClient" xml:space="preserve"><value>Ajout rapide de client</value></data>
+  <data name="AddClient" xml:space="preserve"><value>Ajouter le client</value></data>
+
+  <!-- ===== SETTINGS ===== -->
+  <data name="General_Title" xml:space="preserve"><value>Paramètres Généraux</value></data>
+  <data name="General_Description" xml:space="preserve"><value>Configuration générale de l'application</value></data>
+  <data name="General_VirtualKeyboard" xml:space="preserve"><value>Clavier Virtuel</value></data>
+  <data name="About_Title" xml:space="preserve"><value>À Propos de Nous</value></data>
+  <data name="Payment_Title" xml:space="preserve"><value>Méthodes de Paiement</value></data>
+  <data name="Preview_Title" xml:space="preserve"><value>Aperçu Facture</value></data>
+  <data name="Settings_BackButton" xml:space="preserve"><value>Retour aux Paramètres</value></data>
+  <data name="Settings_TicketSettings" xml:space="preserve"><value>Paramètres Ticket/Facture</value></data>
+  <data name="Settings_UserManagement" xml:space="preserve"><value>Gestion des Utilisateurs</value></data>
+
+  <!-- ===== USER MANAGEMENT ===== -->
+  <data name="AddUser_Title" xml:space="preserve"><value>Ajouter un Utilisateur</value></data>
+  <data name="UpdateUser_Title" xml:space="preserve"><value>Modifier l'Utilisateur</value></data>
+  <data name="DeleteUser_Title" xml:space="preserve"><value>Supprimer l'Utilisateur</value></data>
+  <data name="User_Edit" xml:space="preserve"><value>Modifier</value></data>
+  <data name="RoleWindow_Title" xml:space="preserve"><value>Rôles</value></data>
+  <data name="Role_Modify" xml:space="preserve"><value>Modifier le Rôle</value></data>
+  <data name="Perm_ConfigTitle" xml:space="preserve"><value>Configuration des Permissions</value></data>
+  <data name="Perm_Exit" xml:space="preserve"><value>Quitter</value></data>
+
+  <!-- ===== INVOICING ===== -->
+  <data name="Invoice" xml:space="preserve"><value>Facture</value></data>
+  <data name="InvoiceHistory" xml:space="preserve"><value>Historique des Factures</value></data>
+  <data name="EditInvoice" xml:space="preserve"><value>Modifier la Facture</value></data>
+  <data name="SavedInvoicesSuppliers" xml:space="preserve"><value>Factures Fournisseurs Enregistrées</value></data>
+  <data name="CheckHistory" xml:space="preserve"><value>Vérifier l'Historique</value></data>
+  <data name="SearchClientByName" xml:space="preserve"><value>Rechercher un client par nom</value></data>
+  <data name="SearchOperationByID" xml:space="preserve"><value>Rechercher une opération par ID</value></data>
+  <data name="OperationArticles" xml:space="preserve"><value>Articles de l'Opération</value></data>
+  <data name="OperationDetails" xml:space="preserve"><value>Détails de l'Opération</value></data>
+  <data name="ModifyArticle" xml:space="preserve"><value>Modifier l'Article</value></data>
+
+  <!-- ===== PROJECT MANAGEMENT / REVERSAL ===== -->
+  <data name="ArticleCancellation" xml:space="preserve"><value>Annulation d'Articles</value></data>
+  <data name="CancellationConfirmation" xml:space="preserve"><value>Confirmation d'Annulation</value></data>
+
+  <!-- ===== DELIVERY ===== -->
+  <data name="NewDelivery" xml:space="preserve"><value>Nouvelle Livraison</value></data>
+  <data name="DelivererManagement" xml:space="preserve"><value>Gestion des Livreurs</value></data>
+  <data name="DeliveryDetailsNumber" xml:space="preserve"><value>Numéro de Livraison</value></data>
+  <data name="DeliveryTicketUpper" xml:space="preserve"><value>BON DE LIVRAISON</value></data>
+  <data name="DeliverersList" xml:space="preserve"><value>Liste des Livreurs</value></data>
+  <data name="DeliveryInstructions" xml:space="preserve"><value>Instructions de Livraison</value></data>
+  <data name="DeliveryManagement" xml:space="preserve"><value>Gestion des Livraisons</value></data>
+  <data name="CompanyAddress" xml:space="preserve"><value>Adresse de l'entreprise</value></data>
+  <data name="CreatedOn" xml:space="preserve"><value>Créé le</value></data>
+
+  <!-- ===== ABOUT / BRANDING ===== -->
+  <data name="About_Tagline" xml:space="preserve"><value>Votre solution de gestion commerciale</value></data>
+  <data name="CompanyHeadquarters" xml:space="preserve"><value>Siège Social</value></data>
+
+  <!-- ===== SHARED ACTIONS ===== -->
+  <data name="Edit" xml:space="preserve"><value>Modifier</value></data>
+  <data name="Modify" xml:space="preserve"><value>Modifier</value></data>
+  <data name="Date" xml:space="preserve"><value>Date</value></data>
+  <data name="Article" xml:space="preserve"><value>Article</value></data>
+  <data name="Operation" xml:space="preserve"><value>Opération</value></data>
+  <data name="Operations" xml:space="preserve"><value>Opérations</value></data>
+  <data name="UnitPrice" xml:space="preserve"><value>Prix Unitaire</value></data>
+  <data name="SaveAndPrint" xml:space="preserve"><value>Enregistrer et Imprimer</value></data>
+  <data name="TotalCredit" xml:space="preserve"><value>Total Crédit</value></data>
+  <data name="TotalClients" xml:space="preserve"><value>Total Clients</value></data>
+
+  <!-- ===== CONFIRMATIONS / WARNINGS ===== -->
+  <data name="ActionIrreversible" xml:space="preserve"><value>Cette action est irréversible</value></data>
+  <data name="IrreversibleAction" xml:space="preserve"><value>Action irréversible</value></data>
+  <data name="ThisActionIsIrreversible" xml:space="preserve"><value>Cette action est irréversible et ne peut pas être annulée.</value></data>
+  <data name="TransactionCompletedSuccessfully" xml:space="preserve"><value>Transaction effectuée avec succès</value></data>
+  <data name="SelectArticlesToCancel" xml:space="preserve"><value>Sélectionnez les articles à annuler</value></data>
+
+  <!-- ===== SETTINGS - EXTRA ===== -->
+  <data name="Settings_Title" xml:space="preserve"><value>Paramètres</value></data>
+  <data name="General_KeyboardDesc" xml:space="preserve"><value>Activer ou désactiver le clavier virtuel</value></data>
+  <data name="Payment_Description" xml:space="preserve"><value>Gérer les méthodes de paiement acceptées</value></data>
+  <data name="Preview_Header" xml:space="preserve"><value>Aperçu de la Facture</value></data>
+
+  <!-- ===== USER MANAGEMENT - EXTRA ===== -->
+  <data name="AddUser_Description" xml:space="preserve"><value>Créer un nouveau compte utilisateur</value></data>
+  <data name="UpdateUser_Description" xml:space="preserve"><value>Modifier les informations de l'utilisateur</value></data>
+  <data name="DeleteUser_ConfirmTitle" xml:space="preserve"><value>Confirmer la suppression</value></data>
+  <data name="User_Delete" xml:space="preserve"><value>Supprimer</value></data>
+  <data name="RoleWindow_Description" xml:space="preserve"><value>Gérer les rôles et permissions</value></data>
+  <data name="Role_Delete" xml:space="preserve"><value>Supprimer le Rôle</value></data>
+  <data name="Perm_Logout" xml:space="preserve"><value>Déconnexion</value></data>
+  <data name="Perm_ManageDesc" xml:space="preserve"><value>Configurer les permissions du rôle</value></data>
+
+  <!-- ===== SUPPLIER - EXTRA ===== -->
+  <data name="DeleteSupplier" xml:space="preserve"><value>Supprimer le Fournisseur</value></data>
+  <data name="SupplierCode" xml:space="preserve"><value>Code Fournisseur</value></data>
+  <data name="ManageTrackSuppliers" xml:space="preserve"><value>Gérer et suivre vos fournisseurs</value></data>
+
+  <!-- ===== INVOICING - EXTRA ===== -->
+  <data name="CreateInvoice" xml:space="preserve"><value>Créer une Facture</value></data>
+  <data name="InvoiceInformation" xml:space="preserve"><value>Informations de la Facture</value></data>
+  <data name="ConsultManageInvoices" xml:space="preserve"><value>Consulter et gérer les factures</value></data>
+  <data name="SavedInvoicesDescription" xml:space="preserve"><value>Factures enregistrées et en attente</value></data>
+  <data name="ManageViewChecks" xml:space="preserve"><value>Gérer et consulter les chèques</value></data>
+
+  <!-- ===== BATCH 4 - NEW KEYS ===== -->
+  <data name="About_SolutionTitle" xml:space="preserve"><value>Solution de Gestion Commerciale</value></data>
+  <data name="ActiveClients" xml:space="preserve"><value>Clients Actifs</value></data>
+  <data name="AddModifyCheck" xml:space="preserve"><value>Ajouter / Modifier un Chèque</value></data>
+  <data name="AddModifySupplierInvoice" xml:space="preserve"><value>Ajouter / Modifier Facture Fournisseur</value></data>
+  <data name="AddSupplier" xml:space="preserve"><value>Ajouter un Fournisseur</value></data>
+  <data name="AddUser_FullName" xml:space="preserve"><value>Nom complet</value></data>
+  <data name="AddUser_Password" xml:space="preserve"><value>Mot de passe</value></data>
+  <data name="AreYouSureReverseMovement" xml:space="preserve"><value>Êtes-vous sûr de vouloir annuler ce mouvement ?</value></data>
+  <data name="AreYouSureReverseOperation" xml:space="preserve"><value>Êtes-vous sûr de vouloir annuler cette opération ?</value></data>
+  <data name="AssociatedOperation" xml:space="preserve"><value>Opération Associée</value></data>
+  <data name="Close" xml:space="preserve"><value>Fermer</value></data>
+  <data name="Continue" xml:space="preserve"><value>Continuer</value></data>
+  <data name="DeleteClientConfirm" xml:space="preserve"><value>Êtes-vous sûr de vouloir supprimer ce client ?</value></data>
+  <data name="DeleteUser_Irreversible" xml:space="preserve"><value>Cette action est irréversible.</value></data>
+  <data name="DelivererManagementDescription" xml:space="preserve"><value>Gérer la liste des livreurs</value></data>
+  <data name="DeliveryManagementDescription" xml:space="preserve"><value>Suivre et gérer les livraisons</value></data>
+  <data name="EditClient" xml:space="preserve"><value>Modifier le Client</value></data>
+  <data name="General_AlwaysShow" xml:space="preserve"><value>Toujours afficher</value></data>
+  <data name="ID" xml:space="preserve"><value>ID</value></data>
+  <data name="InvoiceHistoryTab" xml:space="preserve"><value>Historique des Factures</value></data>
+  <data name="Keyboard_Language" xml:space="preserve"><value>Langue du Clavier</value></data>
+  <data name="OperationInformation" xml:space="preserve"><value>Informations de l'Opération</value></data>
+  <data name="OperationSelection" xml:space="preserve"><value>Sélection de l'Opération</value></data>
+  <data name="Pay" xml:space="preserve"><value>Payer</value></data>
+  <data name="Payment_NewMethod" xml:space="preserve"><value>Nouvelle Méthode de Paiement</value></data>
+  <data name="Perm_ActivateAll" xml:space="preserve"><value>Tout Activer</value></data>
+  <data name="Perm_Shutdown" xml:space="preserve"><value>Éteindre</value></data>
+  <data name="Refresh" xml:space="preserve"><value>Actualiser</value></data>
+  <data name="RoleWindow_Close" xml:space="preserve"><value>Fermer</value></data>
+  <data name="Sale" xml:space="preserve"><value>Vente</value></data>
+  <data name="SaveAsPDF" xml:space="preserve"><value>Enregistrer en PDF</value></data>
+  <data name="Settings_PaymentMethod" xml:space="preserve"><value>Méthode de Paiement</value></data>
+  <data name="ShippedQuantity" xml:space="preserve"><value>Quantité Expédiée</value></data>
+  <data name="StockMovement" xml:space="preserve"><value>Mouvement de Stock</value></data>
+  <data name="SupplierNameRequired" xml:space="preserve"><value>Le nom du fournisseur est requis</value></data>
+  <data name="SureDeleteSupplier" xml:space="preserve"><value>Êtes-vous sûr de vouloir supprimer ce fournisseur ?</value></data>
+  <data name="TicketNumber" xml:space="preserve"><value>Numéro de Ticket</value></data>
+  <data name="TotalAmountExclVAT" xml:space="preserve"><value>Montant Total HT</value></data>
+  <data name="TotalPaid" xml:space="preserve"><value>Total Payé</value></data>
+  <data name="TotalQuantityHeader" xml:space="preserve"><value>QTÉ TOTALE</value></data>
+  <data name="Type" xml:space="preserve"><value>Type</value></data>
+
+  <!-- ===== BATCH 5 - COMPLETE KEYS ===== -->
+  <data name="About_AdvancedSecurity" xml:space="preserve"><value>Sécurité Avancée</value></data>
+  <data name="About_AdvancedSecurityDesc" xml:space="preserve"><value>Gestion des utilisateurs et rôles avec permissions</value></data>
+  <data name="About_AutoInvoicing" xml:space="preserve"><value>Facturation Automatique</value></data>
+  <data name="About_AutoInvoicingDesc" xml:space="preserve"><value>Génération de factures professionnelles</value></data>
+  <data name="About_Availability" xml:space="preserve"><value>Disponibilité</value></data>
+  <data name="About_ClientManagement" xml:space="preserve"><value>Gestion des Clients</value></data>
+  <data name="About_ClientManagementDesc" xml:space="preserve"><value>Suivi des clients et de leurs opérations</value></data>
+  <data name="About_ContactDesc" xml:space="preserve"><value>Notre équipe est disponible pour vous aider</value></data>
+  <data name="About_ContactUs" xml:space="preserve"><value>Contactez-nous</value></data>
+  <data name="About_Copyright" xml:space="preserve"><value>© 2024 GestionComerce</value></data>
+  <data name="About_Description1" xml:space="preserve"><value>Solution complète pour la gestion de votre commerce</value></data>
+  <data name="About_Description2" xml:space="preserve"><value>Développée avec les meilleures technologies modernes</value></data>
+  <data name="About_DetailedReports" xml:space="preserve"><value>Rapports Détaillés</value></data>
+  <data name="About_DetailedReportsDesc" xml:space="preserve"><value>Analyses et statistiques de votre activité</value></data>
+  <data name="About_MainFeatures" xml:space="preserve"><value>Fonctionnalités Principales</value></data>
+  <data name="About_Phone1" xml:space="preserve"><value>+212 6XX XXX XXX</value></data>
+  <data name="About_Phone2" xml:space="preserve"><value>+212 5XX XXX XXX</value></data>
+  <data name="About_PrimaryContact" xml:space="preserve"><value>Contact Principal</value></data>
+  <data name="About_Rights" xml:space="preserve"><value>Tous droits réservés</value></data>
+  <data name="About_SalesManagement" xml:space="preserve"><value>Gestion des Ventes</value></data>
+  <data name="About_SalesManagementDesc" xml:space="preserve"><value>Gestion des ventes et transactions</value></data>
+  <data name="About_SecondaryContact" xml:space="preserve"><value>Contact Secondaire</value></data>
+  <data name="About_StockManagement" xml:space="preserve"><value>Gestion de Stock</value></data>
+  <data name="About_StockManagementDesc" xml:space="preserve"><value>Suivi en temps réel des stocks</value></data>
+  <data name="About_WorkingHours" xml:space="preserve"><value>Lun-Sam: 8h-18h</value></data>
+  <data name="Actions" xml:space="preserve"><value>Actions</value></data>
+  <data name="ActiveSuppliers" xml:space="preserve"><value>Fournisseurs Actifs</value></data>
+  <data name="AddButton" xml:space="preserve"><value>Ajouter</value></data>
+  <data name="AddUser_Cancel" xml:space="preserve"><value>Annuler</value></data>
+  <data name="AddUser_Create" xml:space="preserve"><value>Créer</value></data>
+  <data name="AddUser_Role" xml:space="preserve"><value>Rôle</value></data>
+  <data name="AdditionalDiscount" xml:space="preserve"><value>Remise Supplémentaire</value></data>
+  <data name="AddressRequired" xml:space="preserve"><value>Adresse (requis)</value></data>
+  <data name="AddressUpper" xml:space="preserve"><value>ADRESSE</value></data>
+  <data name="AllDataLost" xml:space="preserve"><value>Toutes les données seront perdues définitivement.</value></data>
+  <data name="AllStatuses" xml:space="preserve"><value>Tous les Statuts</value></data>
+  <data name="Amount" xml:space="preserve"><value>Montant</value></data>
+  <data name="AmountInLetters" xml:space="preserve"><value>Montant en Lettres</value></data>
+  <data name="AmountMAD" xml:space="preserve"><value>Montant (MAD)</value></data>
+  <data name="ArticleHeader" xml:space="preserve"><value>Article</value></data>
+  <data name="ArticleID" xml:space="preserve"><value>ID Article</value></data>
+  <data name="ArticleName" xml:space="preserve"><value>Nom de l'Article</value></data>
+  <data name="ArticlesToDeliver" xml:space="preserve"><value>Articles à Livrer</value></data>
+  <data name="AssignedDeliverer" xml:space="preserve"><value>Livreur Assigné</value></data>
+  <data name="AssociatedInvoice" xml:space="preserve"><value>Facture Associée</value></data>
+  <data name="Available" xml:space="preserve"><value>Disponible</value></data>
+  <data name="BalanceDue" xml:space="preserve"><value>Solde Dû</value></data>
+  <data name="BankName" xml:space="preserve"><value>Nom de la Banque</value></data>
+  <data name="Bike" xml:space="preserve"><value>Vélo</value></data>
+  <data name="Busy" xml:space="preserve"><value>Occupé</value></data>
+  <data name="CallClient" xml:space="preserve"><value>Appeler le Client</value></data>
+  <data name="Cancelled" xml:space="preserve"><value>Annulé</value></data>
+  <data name="Car" xml:space="preserve"><value>Voiture</value></data>
+  <data name="CardView" xml:space="preserve"><value>Vue Cartes</value></data>
+  <data name="CartItems" xml:space="preserve"><value>Articles du Panier</value></data>
+  <data name="CashPayment" xml:space="preserve"><value>Paiement en Espèces</value></data>
+  <data name="CashSale" xml:space="preserve"><value>Vente Comptant</value></data>
+  <data name="Cashed" xml:space="preserve"><value>Encaissé</value></data>
+  <data name="Categories" xml:space="preserve"><value>Catégories</value></data>
+  <data name="CheckDate" xml:space="preserve"><value>Date du Chèque</value></data>
+  <data name="CheckImage" xml:space="preserve"><value>Image du Chèque</value></data>
+  <data name="CheckInfo" xml:space="preserve"><value>Informations du Chèque</value></data>
+  <data name="CheckReference" xml:space="preserve"><value>Référence du Chèque</value></data>
+  <data name="City" xml:space="preserve"><value>Ville</value></data>
+  <data name="CityCenter" xml:space="preserve"><value>Centre-Ville (30 DH)</value></data>
+  <data name="CityPostalCode" xml:space="preserve"><value>Ville / Code Postal</value></data>
+  <data name="ClearCart" xml:space="preserve"><value>Vider le Panier</value></data>
+  <data name="ClearFilters" xml:space="preserve"><value>Effacer les Filtres</value></data>
+  <data name="ClientDiscount" xml:space="preserve"><value>Remise Client</value></data>
+  <data name="ClientICE" xml:space="preserve"><value>ICE Client</value></data>
+  <data name="ClientID" xml:space="preserve"><value>ID Client</value></data>
+  <data name="ClientInfo" xml:space="preserve"><value>Infos Client</value></data>
+  <data name="ClientInformation" xml:space="preserve"><value>Informations Client</value></data>
+  <data name="ClientInformations" xml:space="preserve"><value>Informations Client</value></data>
+  <data name="ClientNameRequired" xml:space="preserve"><value>Nom du client (requis)</value></data>
+  <data name="ClientNameUpper" xml:space="preserve"><value>NOM CLIENT</value></data>
+  <data name="ClientReference" xml:space="preserve"><value>Référence Client</value></data>
+  <data name="ClientSelection" xml:space="preserve"><value>Sélection du Client</value></data>
+  <data name="ClientSelectionRequired" xml:space="preserve"><value>Sélection du client requise</value></data>
+  <data name="ClientSelectionSubtitle" xml:space="preserve"><value>Choisissez un client pour cette vente</value></data>
+  <data name="ClientSignature" xml:space="preserve"><value>Signature du Client</value></data>
+  <data name="ColID" xml:space="preserve"><value>ID</value></data>
+  <data name="ColMarket" xml:space="preserve"><value>Prix Marché</value></data>
+  <data name="ColProductName" xml:space="preserve"><value>Nom du Produit</value></data>
+  <data name="ColPurchase" xml:space="preserve"><value>Prix Achat</value></data>
+  <data name="ColSale" xml:space="preserve"><value>Prix Vente</value></data>
+  <data name="CommentOptional" xml:space="preserve"><value>Commentaire (optionnel)</value></data>
+  <data name="ConfirmAndPrint" xml:space="preserve"><value>Confirmer et Imprimer</value></data>
+  <data name="ConfirmSale" xml:space="preserve"><value>Confirmer la Vente</value></data>
+  <data name="CoverageZone" xml:space="preserve"><value>Zone de Couverture</value></data>
+  <data name="CreateDelivery" xml:space="preserve"><value>Créer la Livraison</value></data>
+  <data name="CreditAmount" xml:space="preserve"><value>Montant du Crédit</value></data>
+  <data name="CreditAmountNote" xml:space="preserve"><value>Montant à mettre en crédit</value></data>
+  <data name="CreditLabel" xml:space="preserve"><value>Crédit</value></data>
+  <data name="DataLostPermanently" xml:space="preserve"><value>Ces données seront perdues définitivement.</value></data>
+  <data name="DateUpper" xml:space="preserve"><value>DATE</value></data>
+  <data name="Delete" xml:space="preserve"><value>Supprimer</value></data>
+  <data name="DeleteClient" xml:space="preserve"><value>Supprimer le Client</value></data>
+  <data name="DeleteUser_Cancel" xml:space="preserve"><value>Annuler</value></data>
+  <data name="DeleteUser_Confirm" xml:space="preserve"><value>Supprimer</value></data>
+  <data name="DeleteUser_ConfirmTitle" xml:space="preserve"><value>Supprimer cet élément</value></data>
+  <data name="DeleteUser_Question" xml:space="preserve"><value>Êtes-vous sûr de vouloir supprimer cet élément ?</value></data>
+  <data name="DeleteUser_Title" xml:space="preserve"><value>Supprimer</value></data>
+  <data name="DeleteUser_Warning" xml:space="preserve"><value>Cette action est irréversible.</value></data>
+  <data name="Delivered" xml:space="preserve"><value>Livré</value></data>
+  <data name="Deliverer" xml:space="preserve"><value>Livreur</value></data>
+  <data name="DelivererName" xml:space="preserve"><value>Nom du Livreur</value></data>
+  <data name="DelivererSignature" xml:space="preserve"><value>Signature du Livreur</value></data>
+  <data name="DelivererUpper" xml:space="preserve"><value>LIVREUR</value></data>
+  <data name="DeliveryAddress" xml:space="preserve"><value>Adresse de Livraison</value></data>
+  <data name="DeliveryDetails" xml:space="preserve"><value>Détails de la Livraison</value></data>
+  <data name="DeliveryFees" xml:space="preserve"><value>Frais de Livraison</value></data>
+  <data name="DeliveryFeesColon" xml:space="preserve"><value>Frais de Livraison:</value></data>
+  <data name="DeliveryFeesDH" xml:space="preserve"><value>Frais de Livraison (DH)</value></data>
+  <data name="DeliveryTime" xml:space="preserve"><value>Heure de Livraison</value></data>
+  <data name="DeliveryZone" xml:space="preserve"><value>Zone de Livraison</value></data>
+  <data name="DiscountLabel" xml:space="preserve"><value>Remise</value></data>
+  <data name="EffectiveDate" xml:space="preserve"><value>Date Effective</value></data>
+  <data name="EmptyCart" xml:space="preserve"><value>Panier vide</value></data>
+  <data name="EnRoute" xml:space="preserve"><value>En Route</value></data>
+  <data name="EndDate" xml:space="preserve"><value>Date de Fin</value></data>
+  <data name="ExpectedDate" xml:space="preserve"><value>Date Prévue</value></data>
+  <data name="ExpectedDeliveryDate" xml:space="preserve"><value>Date de Livraison Prévue</value></data>
+  <data name="Fees" xml:space="preserve"><value>Frais</value></data>
+  <data name="FilterByStatus" xml:space="preserve"><value>Filtrer par Statut</value></data>
+  <data name="FinancialDetails" xml:space="preserve"><value>Détails Financiers</value></data>
+  <data name="FinancialSummary" xml:space="preserve"><value>Résumé Financier</value></data>
+  <data name="FirstName" xml:space="preserve"><value>Prénom</value></data>
+  <data name="FirstNameRequired" xml:space="preserve"><value>Prénom (requis)</value></data>
+  <data name="FullAddress" xml:space="preserve"><value>Adresse Complète</value></data>
+  <data name="General_Arabic" xml:space="preserve"><value>Arabe</value></data>
+  <data name="General_Automatic" xml:space="preserve"><value>Automatique</value></data>
+  <data name="General_Cancel" xml:space="preserve"><value>Annuler</value></data>
+  <data name="General_CardView" xml:space="preserve"><value>Vue Cartes</value></data>
+  <data name="General_DefaultPayment" xml:space="preserve"><value>Paiement par Défaut</value></data>
+  <data name="General_DefaultSort" xml:space="preserve"><value>Tri par Défaut</value></data>
+  <data name="General_DefaultView" xml:space="preserve"><value>Vue par Défaut</value></data>
+  <data name="General_DeleteZero" xml:space="preserve"><value>Supprimer articles à quantité zéro</value></data>
+  <data name="General_English" xml:space="preserve"><value>Anglais</value></data>
+  <data name="General_French" xml:space="preserve"><value>Français</value></data>
+  <data name="General_HideEmpty" xml:space="preserve"><value>Masquer les étiquettes vides</value></data>
+  <data name="General_IconDesc" xml:space="preserve"><value>Taille d'affichage des icônes</value></data>
+  <data name="General_IconSize" xml:space="preserve"><value>Taille des Icônes</value></data>
+  <data name="General_InvoiceDesc" xml:space="preserve"><value>Options d'affichage de la facture</value></data>
+  <data name="General_InvoiceDisplay" xml:space="preserve"><value>Affichage Facture</value></data>
+  <data name="General_Language" xml:space="preserve"><value>Langue</value></data>
+  <data name="General_LanguageDesc" xml:space="preserve"><value>Choisissez la langue de l'application</value></data>
+  <data name="General_LargeIcons" xml:space="preserve"><value>Grandes icônes</value></data>
+  <data name="General_ListView" xml:space="preserve"><value>Vue Liste</value></data>
+  <data name="General_MediumIcons" xml:space="preserve"><value>Icônes moyennes</value></data>
+  <data name="General_NameAZ" xml:space="preserve"><value>Nom (A-Z)</value></data>
+  <data name="General_NameZA" xml:space="preserve"><value>Nom (Z-A)</value></data>
+  <data name="General_NeverShow" xml:space="preserve"><value>Ne jamais afficher</value></data>
+  <data name="General_NewestFirst" xml:space="preserve"><value>Plus récent d'abord</value></data>
+  <data name="General_OldestFirst" xml:space="preserve"><value>Plus ancien d'abord</value></data>
+  <data name="General_PaymentDesc" xml:space="preserve"><value>Méthode de paiement par défaut</value></data>
+  <data name="General_PriceAsc" xml:space="preserve"><value>Prix croissant</value></data>
+  <data name="General_PriceDesc_Sort" xml:space="preserve"><value>Prix décroissant</value></data>
+  <data name="General_PrintDesc" xml:space="preserve"><value>Options d'impression par défaut</value></data>
+  <data name="General_PrintInvoice" xml:space="preserve"><value>Imprimer la Facture</value></data>
+  <data name="General_PrintOptions" xml:space="preserve"><value>Options d'Impression</value></data>
+  <data name="General_PrintTicket" xml:space="preserve"><value>Imprimer le Ticket</value></data>
+  <data name="General_QtyAsc" xml:space="preserve"><value>Quantité croissante</value></data>
+  <data name="General_QtyDesc" xml:space="preserve"><value>Quantité décroissante</value></data>
+  <data name="General_Save" xml:space="preserve"><value>Enregistrer</value></data>
+  <data name="General_SmallIcons" xml:space="preserve"><value>Petites icônes</value></data>
+  <data name="General_SortDesc" xml:space="preserve"><value>Ordre de tri par défaut des produits</value></data>
+  <data name="General_StockDesc" xml:space="preserve"><value>Gestion des articles à stock nul</value></data>
+  <data name="General_StockManagement" xml:space="preserve"><value>Gestion du Stock</value></data>
+  <data name="General_ViewDesc" xml:space="preserve"><value>Mode d'affichage par défaut</value></data>
+  <data name="HalfPayment" xml:space="preserve"><value>Paiement Partiel</value></data>
+  <data name="ICENumber" xml:space="preserve"><value>Numéro ICE</value></data>
+  <data name="InPreparation" xml:space="preserve"><value>En Préparation</value></data>
+  <data name="InProgress" xml:space="preserve"><value>En Cours</value></data>
+  <data name="InitialBalance" xml:space="preserve"><value>Solde Initial</value></data>
+  <data name="InitialStatus" xml:space="preserve"><value>Statut Initial</value></data>
+  <data name="InvoiceCount" xml:space="preserve"><value>Nombre de Factures</value></data>
+  <data name="InvoiceDate" xml:space="preserve"><value>Date de Facture</value></data>
+  <data name="InvoiceGiver" xml:space="preserve"><value>Emetteur de la Facture</value></data>
+  <data name="InvoiceImage" xml:space="preserve"><value>Image de la Facture</value></data>
+  <data name="InvoiceReceiver" xml:space="preserve"><value>Destinataire de la Facture</value></data>
+  <data name="InvoiceReference" xml:space="preserve"><value>Référence Facture</value></data>
+  <data name="LargeIcons" xml:space="preserve"><value>Grandes icônes</value></data>
+  <data name="LegalStatusField" xml:space="preserve"><value>Forme Juridique</value></data>
+  <data name="ListView" xml:space="preserve"><value>Vue Liste</value></data>
+  <data name="Loading" xml:space="preserve"><value>Chargement...</value></data>
+  <data name="MakePayment" xml:space="preserve"><value>Effectuer un Paiement</value></data>
+  <data name="ManageDeliverers" xml:space="preserve"><value>Gérer les Livreurs</value></data>
+  <data name="MediumIcons" xml:space="preserve"><value>Icônes moyennes</value></data>
+  <data name="Motorcycle" xml:space="preserve"><value>Moto</value></data>
+  <data name="NameRequired" xml:space="preserve"><value>Nom (requis)</value></data>
+  <data name="New" xml:space="preserve"><value>Nouveau</value></data>
+  <data name="NewClient" xml:space="preserve"><value>Nouveau Client</value></data>
+  <data name="NewClientButton" xml:space="preserve"><value>Nouveau Client</value></data>
+  <data name="NoClientButton" xml:space="preserve"><value>Sans Client</value></data>
+  <data name="NoClientSelected" xml:space="preserve"><value>Aucun client sélectionné</value></data>
+  <data name="NoProductSelected" xml:space="preserve"><value>Aucun produit sélectionné</value></data>
+  <data name="NotesInstructions" xml:space="preserve"><value>Notes / Instructions</value></data>
+  <data name="NotesUpper" xml:space="preserve"><value>NOTES</value></data>
+  <data name="Object" xml:space="preserve"><value>Objet</value></data>
+  <data name="OperationDate" xml:space="preserve"><value>Date de l'Opération</value></data>
+  <data name="OperationID" xml:space="preserve"><value>ID Opération</value></data>
+  <data name="OperationSelectionDescription" xml:space="preserve"><value>Sélectionnez l'opération à associer</value></data>
+  <data name="OrderedArticles" xml:space="preserve"><value>Articles Commandés</value></data>
+  <data name="OutOfZone" xml:space="preserve"><value>Hors Zone (100 DH)</value></data>
+  <data name="POS_Subtitle" xml:space="preserve"><value>Gestion des ventes</value></data>
+  <data name="POS_Title" xml:space="preserve"><value>Point de Vente</value></data>
+  <data name="PaidThisMonth" xml:space="preserve"><value>Payé ce Mois</value></data>
+  <data name="PayMaximum" xml:space="preserve"><value>Payer le Maximum</value></data>
+  <data name="PaymentAmount" xml:space="preserve"><value>Montant du Paiement</value></data>
+  <data name="PaymentMode" xml:space="preserve"><value>Mode de Paiement</value></data>
+  <data name="PaymentModeUpper" xml:space="preserve"><value>MODE DE PAIEMENT</value></data>
+  <data name="Payment_Actions" xml:space="preserve"><value>Actions</value></data>
+  <data name="Payment_AddFirst" xml:space="preserve"><value>Ajoutez votre première méthode de paiement</value></data>
+  <data name="Payment_AddMethod" xml:space="preserve"><value>Ajouter la Méthode</value></data>
+  <data name="Payment_Browse" xml:space="preserve"><value>Parcourir</value></data>
+  <data name="Payment_Delete" xml:space="preserve"><value>Supprimer</value></data>
+  <data name="Payment_Edit" xml:space="preserve"><value>Modifier</value></data>
+  <data name="Payment_ExistingMethods" xml:space="preserve"><value>Méthodes Existantes</value></data>
+  <data name="Payment_ID" xml:space="preserve"><value>ID</value></data>
+  <data name="Payment_Image" xml:space="preserve"><value>Image</value></data>
+  <data name="Payment_ImageIcon" xml:space="preserve"><value>Image / Icône</value></data>
+  <data name="Payment_MethodName" xml:space="preserve"><value>Nom de la Méthode</value></data>
+  <data name="Payment_Name" xml:space="preserve"><value>Nom</value></data>
+  <data name="Payment_NoMethods" xml:space="preserve"><value>Aucune méthode de paiement définie</value></data>
+  <data name="Pending" xml:space="preserve"><value>En Attente</value></data>
+  <data name="PendingPayment" xml:space="preserve"><value>Paiement en Attente</value></data>
+  <data name="Periphery" xml:space="preserve"><value>Périphérie (50 DH)</value></data>
+  <data name="Perm_AccessDelivery" xml:space="preserve"><value>Accès à la Livraison</value></data>
+  <data name="Perm_AccessInvoicing" xml:space="preserve"><value>Accès à la Facturation</value></data>
+  <data name="Perm_Activate" xml:space="preserve"><value>Activer</value></data>
+  <data name="Perm_AddArticles" xml:space="preserve"><value>Ajouter des Articles</value></data>
+  <data name="Perm_AddFamilies" xml:space="preserve"><value>Ajouter des Familles</value></data>
+  <data name="Perm_AddPayMethods" xml:space="preserve"><value>Ajouter des Méthodes</value></data>
+  <data name="Perm_AddRoles" xml:space="preserve"><value>Ajouter des Rôles</value></data>
+  <data name="Perm_AddUsers" xml:space="preserve"><value>Ajouter des Utilisateurs</value></data>
+  <data name="Perm_Apply" xml:space="preserve"><value>Appliquer</value></data>
+  <data name="Perm_Articles" xml:space="preserve"><value>Articles</value></data>
+  <data name="Perm_Cancel" xml:space="preserve"><value>Annuler</value></data>
+  <data name="Perm_CashClient" xml:space="preserve"><value>Encaisser (Client)</value></data>
+  <data name="Perm_CashSupplier" xml:space="preserve"><value>Encaisser (Fournisseur)</value></data>
+  <data name="Perm_CheckHistory" xml:space="preserve"><value>Historique des Chèques</value></data>
+  <data name="Perm_ClientPerms" xml:space="preserve"><value>Permissions Clients</value></data>
+  <data name="Perm_ClientsPage" xml:space="preserve"><value>Page Clients</value></data>
+  <data name="Perm_CreateClient" xml:space="preserve"><value>Créer un Client</value></data>
+  <data name="Perm_CreateDelivery" xml:space="preserve"><value>Créer une Livraison</value></data>
+  <data name="Perm_CreateInvoice" xml:space="preserve"><value>Créer une Facture</value></data>
+  <data name="Perm_CreateSupplier" xml:space="preserve"><value>Créer un Fournisseur</value></data>
+  <data name="Perm_Deactivate" xml:space="preserve"><value>Désactiver</value></data>
+  <data name="Perm_DeactivateAll" xml:space="preserve"><value>Tout Désactiver</value></data>
+  <data name="Perm_DeleteArticles" xml:space="preserve"><value>Supprimer des Articles</value></data>
+  <data name="Perm_DeleteClient" xml:space="preserve"><value>Supprimer un Client</value></data>
+  <data name="Perm_DeleteFamilies" xml:space="preserve"><value>Supprimer des Familles</value></data>
+  <data name="Perm_DeletePayMethods" xml:space="preserve"><value>Supprimer des Méthodes</value></data>
+  <data name="Perm_DeleteRoles" xml:space="preserve"><value>Supprimer des Rôles</value></data>
+  <data name="Perm_DeleteSupplier" xml:space="preserve"><value>Supprimer un Fournisseur</value></data>
+  <data name="Perm_DeleteUsers" xml:space="preserve"><value>Supprimer des Utilisateurs</value></data>
+  <data name="Perm_Delivery" xml:space="preserve"><value>Livraison</value></data>
+  <data name="Perm_DeliveryMgmt" xml:space="preserve"><value>Gestion des Livraisons</value></data>
+  <data name="Perm_EditArticles" xml:space="preserve"><value>Modifier des Articles</value></data>
+  <data name="Perm_EditFamilies" xml:space="preserve"><value>Modifier des Familles</value></data>
+  <data name="Perm_EditUsers" xml:space="preserve"><value>Modifier des Utilisateurs</value></data>
+  <data name="Perm_Families" xml:space="preserve"><value>Familles</value></data>
+  <data name="Perm_InventoryPage" xml:space="preserve"><value>Page Stock</value></data>
+  <data name="Perm_InvoiceHistory" xml:space="preserve"><value>Historique des Factures</value></data>
+  <data name="Perm_InvoiceSettings" xml:space="preserve"><value>Paramètres de Facture</value></data>
+  <data name="Perm_Invoicing" xml:space="preserve"><value>Facturation</value></data>
+  <data name="Perm_Management" xml:space="preserve"><value>Gestion</value></data>
+  <data name="Perm_ModifyClient" xml:space="preserve"><value>Modifier un Client</value></data>
+  <data name="Perm_ModifyInvSettings" xml:space="preserve"><value>Modifier Paramètres Facture</value></data>
+  <data name="Perm_ModifyPayMethods" xml:space="preserve"><value>Modifier des Méthodes</value></data>
+  <data name="Perm_ModifySupplier" xml:space="preserve"><value>Modifier un Fournisseur</value></data>
+  <data name="Perm_Operations" xml:space="preserve"><value>Opérations</value></data>
+  <data name="Perm_PageAccess" xml:space="preserve"><value>Accès aux Pages</value></data>
+  <data name="Perm_PayClient" xml:space="preserve"><value>Régler un Client</value></data>
+  <data name="Perm_PaySupplier" xml:space="preserve"><value>Régler un Fournisseur</value></data>
+  <data name="Perm_PaymentMethods" xml:space="preserve"><value>Méthodes de Paiement</value></data>
+  <data name="Perm_Reports" xml:space="preserve"><value>Rapports</value></data>
+  <data name="Perm_ReverseMove" xml:space="preserve"><value>Annuler un Mouvement</value></data>
+  <data name="Perm_ReverseOp" xml:space="preserve"><value>Annuler une Opération</value></data>
+  <data name="Perm_RoleName" xml:space="preserve"><value>Nom du Rôle</value></data>
+  <data name="Perm_SalesPage" xml:space="preserve"><value>Page Ventes</value></data>
+  <data name="Perm_SavedInvoices" xml:space="preserve"><value>Factures Enregistrées</value></data>
+  <data name="Perm_SettleClient" xml:space="preserve"><value>Régler Crédit Client</value></data>
+  <data name="Perm_SettleSupplier" xml:space="preserve"><value>Régler Crédit Fournisseur</value></data>
+  <data name="Perm_Settlements" xml:space="preserve"><value>Règlements</value></data>
+  <data name="Perm_SupplierPerms" xml:space="preserve"><value>Permissions Fournisseurs</value></data>
+  <data name="Perm_SuppliersPage" xml:space="preserve"><value>Page Fournisseurs</value></data>
+  <data name="Perm_SystemActions" xml:space="preserve"><value>Actions Système</value></data>
+  <data name="Perm_UsersRoles" xml:space="preserve"><value>Utilisateurs et Rôles</value></data>
+  <data name="Perm_ViewAbout" xml:space="preserve"><value>Voir A Propos</value></data>
+  <data name="Perm_ViewArticles" xml:space="preserve"><value>Voir les Articles</value></data>
+  <data name="Perm_ViewClient" xml:space="preserve"><value>Voir les Clients</value></data>
+  <data name="Perm_ViewClientCredit" xml:space="preserve"><value>Voir le Crédit Client</value></data>
+  <data name="Perm_ViewClientOps" xml:space="preserve"><value>Voir les Opérations Client</value></data>
+  <data name="Perm_ViewFamilies" xml:space="preserve"><value>Voir les Familles</value></data>
+  <data name="Perm_ViewInvSettings" xml:space="preserve"><value>Voir Paramètres Facture</value></data>
+  <data name="Perm_ViewMoves" xml:space="preserve"><value>Voir les Mouvements</value></data>
+  <data name="Perm_ViewOps" xml:space="preserve"><value>Voir les Opérations</value></data>
+  <data name="Perm_ViewPayMethods" xml:space="preserve"><value>Voir les Méthodes</value></data>
+  <data name="Perm_ViewProjMgmt" xml:space="preserve"><value>Voir Gestion de Projet</value></data>
+  <data name="Perm_ViewReports" xml:space="preserve"><value>Voir les Rapports</value></data>
+  <data name="Perm_ViewRoles" xml:space="preserve"><value>Voir les Rôles</value></data>
+  <data name="Perm_ViewSettings" xml:space="preserve"><value>Voir les Paramètres</value></data>
+  <data name="Perm_ViewSupplier" xml:space="preserve"><value>Voir les Fournisseurs</value></data>
+  <data name="Perm_ViewSupplierCredit" xml:space="preserve"><value>Voir le Crédit Fournisseur</value></data>
+  <data name="Perm_ViewSupplierOps" xml:space="preserve"><value>Voir les Opérations Fournisseur</value></data>
+  <data name="Perm_ViewUsers" xml:space="preserve"><value>Voir les Utilisateurs</value></data>
+  <data name="PhoneICE" xml:space="preserve"><value>TÉLÉPHONE / ICE</value></data>
+  <data name="PhoneRequired" xml:space="preserve"><value>Téléphone (requis)</value></data>
+  <data name="PostalCode" xml:space="preserve"><value>Code Postal</value></data>
+  <data name="PreviewDoc" xml:space="preserve"><value>Aperçu du Document</value></data>
+  <data name="Preview_Close" xml:space="preserve"><value>Fermer l'Aperçu</value></data>
+  <data name="Preview_Header" xml:space="preserve"><value>Aperçu</value></data>
+  <data name="Preview_Title" xml:space="preserve"><value>Aperçu de la Facture</value></data>
+  <data name="PrintInvoice" xml:space="preserve"><value>Imprimer la Facture</value></data>
+  <data name="PrintTicket" xml:space="preserve"><value>Imprimer le Ticket</value></data>
+  <data name="ProcessPayment" xml:space="preserve"><value>Traiter le Paiement</value></data>
+  <data name="ProductSearch" xml:space="preserve"><value>Rechercher un Produit</value></data>
+  <data name="Products" xml:space="preserve"><value>Produits</value></data>
+  <data name="QtyHeader" xml:space="preserve"><value>Qté</value></data>
+  <data name="QuantityLabel" xml:space="preserve"><value>Quantité</value></data>
+  <data name="QuickActions" xml:space="preserve"><value>Actions Rapides</value></data>
+  <data name="QuickAddClient" xml:space="preserve"><value>Ajout Rapide Client</value></data>
+  <data name="Recipient" xml:space="preserve"><value>Destinataire</value></data>
+  <data name="Reference" xml:space="preserve"><value>Référence</value></data>
+  <data name="Register" xml:space="preserve"><value>Enregistrer</value></data>
+  <data name="Registration" xml:space="preserve"><value>Immatriculation</value></data>
+  <data name="Rejected" xml:space="preserve"><value>Rejeté</value></data>
+  <data name="RemainingBalance" xml:space="preserve"><value>Solde Restant</value></data>
+  <data name="RemainingCredit" xml:space="preserve"><value>Crédit Restant</value></data>
+  <data name="Remise" xml:space="preserve"><value>Remise</value></data>
+  <data name="Reset" xml:space="preserve"><value>Réinitialiser</value></data>
+  <data name="RoleWindow_AddRole" xml:space="preserve"><value>Ajouter un Rôle</value></data>
+  <data name="SaleValidation" xml:space="preserve"><value>Validation de Vente</value></data>
+  <data name="SaveAsInvoice" xml:space="preserve"><value>Enregistrer comme Facture</value></data>
+  <data name="SaveChanges" xml:space="preserve"><value>Enregistrer les Modifications</value></data>
+  <data name="SavedInvoices" xml:space="preserve"><value>Factures Enregistrées</value></data>
+  <data name="SearchArticle" xml:space="preserve"><value>Rechercher un article</value></data>
+  <data name="SearchByNumberClientICE" xml:space="preserve"><value>Rechercher par numéro, client ou ICE</value></data>
+  <data name="SearchByReference" xml:space="preserve"><value>Rechercher par référence</value></data>
+  <data name="SearchByReferenceOrDescription" xml:space="preserve"><value>Rechercher par référence ou description</value></data>
+  <data name="SearchResults" xml:space="preserve"><value>Résultats de Recherche</value></data>
+  <data name="SearchSelect" xml:space="preserve"><value>Rechercher et Sélectionner</value></data>
+  <data name="SeeAll" xml:space="preserve"><value>Voir Tout</value></data>
+  <data name="SelectArticleTitle" xml:space="preserve"><value>Sélectionner un Article</value></data>
+  <data name="SelectAtLeastOneOperation" xml:space="preserve"><value>Sélectionnez au moins une opération</value></data>
+  <data name="SelectOperation" xml:space="preserve"><value>Sélectionner une Opération</value></data>
+  <data name="SelectedClientLabel" xml:space="preserve"><value>Client Sélectionné</value></data>
+  <data name="SelectedProduct" xml:space="preserve"><value>Produit Sélectionné</value></data>
+  <data name="Settings_AboutUs" xml:space="preserve"><value>A Propos de Nous</value></data>
+  <data name="Settings_Preferences" xml:space="preserve"><value>Préférences</value></data>
+  <data name="SmallIcons" xml:space="preserve"><value>Petites icônes</value></data>
+  <data name="SortNameAZ" xml:space="preserve"><value>Nom (A-Z)</value></data>
+  <data name="SortNameZA" xml:space="preserve"><value>Nom (Z-A)</value></data>
+  <data name="SortNewest" xml:space="preserve"><value>Plus récent</value></data>
+  <data name="SortOldest" xml:space="preserve"><value>Plus ancien</value></data>
+  <data name="SortPriceAsc" xml:space="preserve"><value>Prix croissant</value></data>
+  <data name="SortPriceDesc" xml:space="preserve"><value>Prix décroissant</value></data>
+  <data name="SortQtyAsc" xml:space="preserve"><value>Quantité croissante</value></data>
+  <data name="SortQtyDesc" xml:space="preserve"><value>Quantité décroissante</value></data>
+  <data name="StartDate" xml:space="preserve"><value>Date de Début</value></data>
+  <data name="State" xml:space="preserve"><value>Etat</value></data>
+  <data name="Status" xml:space="preserve"><value>Statut</value></data>
+  <data name="Subtotal" xml:space="preserve"><value>Sous-total</value></data>
+  <data name="SubtotalLabel" xml:space="preserve"><value>Sous-total</value></data>
+  <data name="Suburb" xml:space="preserve"><value>Banlieue (70 DH)</value></data>
+  <data name="Summary" xml:space="preserve"><value>Récapitulatif</value></data>
+  <data name="Supplier" xml:space="preserve"><value>Fournisseur</value></data>
+  <data name="SupplierID" xml:space="preserve"><value>ID Fournisseur</value></data>
+  <data name="SupplierRequired" xml:space="preserve"><value>Fournisseur (requis)</value></data>
+  <data name="TVAAmount" xml:space="preserve"><value>Montant TVA</value></data>
+  <data name="TVAPercent" xml:space="preserve"><value>TVA (%)</value></data>
+  <data name="TVARate" xml:space="preserve"><value>Taux de TVA</value></data>
+  <data name="ThankYou" xml:space="preserve"><value>Merci pour votre confiance !</value></data>
+  <data name="TicketPreviewTitle" xml:space="preserve"><value>Aperçu du Ticket</value></data>
+  <data name="TimeUpper" xml:space="preserve"><value>HEURE</value></data>
+  <data name="TotalAmount" xml:space="preserve"><value>Montant Total</value></data>
+  <data name="TotalAmountMAD" xml:space="preserve"><value>Montant Total (MAD)</value></data>
+  <data name="TotalDiscount" xml:space="preserve"><value>Remise Totale</value></data>
+  <data name="TotalFees" xml:space="preserve"><value>Total des Frais</value></data>
+  <data name="TotalHT" xml:space="preserve"><value>Total HT</value></data>
+  <data name="TotalHeader" xml:space="preserve"><value>Total</value></data>
+  <data name="TotalOperation" xml:space="preserve"><value>Total de l'Opération</value></data>
+  <data name="TotalOrder" xml:space="preserve"><value>Total de la Commande</value></data>
+  <data name="TotalOrderColon" xml:space="preserve"><value>Total Commande:</value></data>
+  <data name="TotalOrderDH" xml:space="preserve"><value>Total Commande (DH)</value></data>
+  <data name="TotalPayments" xml:space="preserve"><value>Total des Paiements</value></data>
+  <data name="TotalQuantity" xml:space="preserve"><value>Quantité Totale</value></data>
+  <data name="TotalSuppliers" xml:space="preserve"><value>Total Fournisseurs</value></data>
+  <data name="Unavailable" xml:space="preserve"><value>Indisponible</value></data>
+  <data name="UnitPriceHeader" xml:space="preserve"><value>P.U</value></data>
+  <data name="UnitPriceShort" xml:space="preserve"><value>P.U</value></data>
+  <data name="UnpaidBalance" xml:space="preserve"><value>Solde Impayé</value></data>
+  <data name="Update" xml:space="preserve"><value>Mettre à Jour</value></data>
+  <data name="UpdateUser_Apply" xml:space="preserve"><value>Appliquer</value></data>
+  <data name="UpdateUser_Description" xml:space="preserve"><value>Modifier les informations de l'utilisateur</value></data>
+  <data name="UpdateUser_Title" xml:space="preserve"><value>Modifier l'Utilisateur</value></data>
+  <data name="Van" xml:space="preserve"><value>Fourgonnette</value></data>
+  <data name="VehicleType" xml:space="preserve"><value>Type de Véhicule</value></data>
+  <data name="View" xml:space="preserve"><value>Voir</value></data>
+  <data name="ViewDeliveryTicket" xml:space="preserve"><value>Voir le Bon de Livraison</value></data>
+  <data name="ViewImage" xml:space="preserve"><value>Voir l'Image</value></data>
+  <data name="ViewOperations" xml:space="preserve"><value>Voir les Opérations</value></data>
+  <data name="ViewRoute" xml:space="preserve"><value>Voir l'Itinéraire</value></data>
+  <data name="Zone" xml:space="preserve"><value>Zone</value></data>
+  <data name="ZoneUpper" xml:space="preserve"><value>ZONE</value></data>
+
+  <!-- ===== MISSING KEYS (added to fix build errors) ===== -->
+  <data name="AllDataWillBeLost" xml:space="preserve"><value>Toutes les données seront perdues</value></data>
+  <data name="AllOperationTypes" xml:space="preserve"><value>Tous les types d'opération</value></data>
+  <data name="AppliedDiscount" xml:space="preserve"><value>Remise Appliquée</value></data>
+  <data name="Bank" xml:space="preserve"><value>Banque</value></data>
+  <data name="CheckHistoryTab" xml:space="preserve"><value>Vérifier l'onglet Historique</value></data>
+  <data name="ClientCreditPayment" xml:space="preserve"><value>Paiement par Crédit Client</value></data>
+  <data name="CreditValue" xml:space="preserve"><value>Valeur du Crédit</value></data>
+  <data name="DateTime" xml:space="preserve"><value>Date et Heure</value></data>
+  <data name="DeliveryNote" xml:space="preserve"><value>Bon de Livraison</value></data>
+  <data name="Deletion" xml:space="preserve"><value>Suppression</value></data>
+  <data name="Expedition" xml:space="preserve"><value>Expédition</value></data>
+  <data name="Finance" xml:space="preserve"><value>Finance</value></data>
+  <data name="InitialQuantity" xml:space="preserve"><value>Quantité Initiale</value></data>
+  <data name="InvoiceID" xml:space="preserve"><value>N° Facture</value></data>
+  <data name="Keyboard_AR" xml:space="preserve"><value>AR</value></data>
+  <data name="Keyboard_EN" xml:space="preserve"><value>EN</value></data>
+  <data name="Keyboard_FR" xml:space="preserve"><value>FR</value></data>
+  <data name="ManageInventoryInOut" xml:space="preserve"><value>Gérer les Entrées/Sorties de Stock</value></data>
+  <data name="Modification" xml:space="preserve"><value>Modification</value></data>
+  <data name="MovementWillAlsoBeReversedInOperation" xml:space="preserve"><value>Le mouvement sera également annulé dans l'opération</value></data>
+  <data name="NumberOfArticles" xml:space="preserve"><value>Nombre d'Articles</value></data>
+  <data name="OperationType" xml:space="preserve"><value>Type d'Opération</value></data>
+  <data name="ProForma" xml:space="preserve"><value>Proforma</value></data>
+  <data name="Purchase" xml:space="preserve"><value>Achat</value></data>
+  <data name="PurchaseOrder" xml:space="preserve"><value>Bon de Commande</value></data>
+  <data name="Quote" xml:space="preserve"><value>Devis</value></data>
+  <data name="SelectClient" xml:space="preserve"><value>Sélectionner un Client</value></data>
+  <data name="Shipment" xml:space="preserve"><value>Expédition</value></data>
+  <data name="SupplierCreditPayment" xml:space="preserve"><value>Paiement par Crédit Fournisseur</value></data>
+  <data name="SupplierName" xml:space="preserve"><value>Nom du Fournisseur</value></data>
+  <data name="TotalPrice" xml:space="preserve"><value>Prix Total</value></data>
+  <data name="TransactionType" xml:space="preserve"><value>Type de Transaction</value></data>
+  <data name="User" xml:space="preserve"><value>Utilisateur</value></data>
+  <data name="User_Actions" xml:space="preserve"><value>Actions Utilisateur</value></data>
+  <data name="User_Code" xml:space="preserve"><value>Code Utilisateur</value></data>
+  <data name="User_ID" xml:space="preserve"><value>ID Utilisateur</value></data>
+  <data name="User_Name" xml:space="preserve"><value>Nom d'Utilisateur</value></data>
+  <data name="User_Role" xml:space="preserve"><value>Rôle Utilisateur</value></data>
+  <data name="VATNumber" xml:space="preserve"><value>Numéro TVA</value></data>
+  <data name="VAT" xml:space="preserve"><value>TVA</value></data>
+  <data name="ArticlesInThisOperation" xml:space="preserve"><value>Articles dans cette Opération</value></data>
+  <data name="CompanyID" xml:space="preserve"><value>ID de l'Entreprise</value></data>
+  <data name="Today" xml:space="preserve"><value>Aujourd'hui</value></data>
+  <data name="Telephone" xml:space="preserve"><value>Téléphone</value></data>
+  <data name="Normal" xml:space="preserve"><value>Normal</value></data>
+  <data name="PaymentType" xml:space="preserve"><value>Type de Paiement</value></data>
+  <data name="AddOperation" xml:space="preserve"><value>Ajouter Opération</value></data>
+  <data name="AmountInWords" xml:space="preserve"><value>Montant en Lettres</value></data>
+  <data name="ArticleInformation" xml:space="preserve"><value>Informations Article</value></data>
+  <data name="BillingInformation" xml:space="preserve"><value>Informations de Facturation</value></data>
+  <data name="ChequeReference" xml:space="preserve"><value>Référence Chèque</value></data>
+  <data name="Currency" xml:space="preserve"><value>Devise</value></data>
+  <data name="DescriptionNotes" xml:space="preserve"><value>Description / Notes</value></data>
+  <data name="General_SalesManagementDesc" xml:space="preserve"><value>Gestion des ventes simplifiée</value></data>
+  <data name="GivenBy" xml:space="preserve"><value>Remis par</value></data>
+  <data name="International" xml:space="preserve"><value>International</value></data>
+  <data name="InvoiceIndex" xml:space="preserve"><value>Index Facture</value></data>
+  <data name="InvoiceStatus" xml:space="preserve"><value>État Facture</value></data>
+  <data name="Month" xml:space="preserve"><value>Mois</value></data>
+  <data name="National" xml:space="preserve"><value>National</value></data>
+  <data name="NetProfit" xml:space="preserve"><value>Bénéfice Net</value></data>
+  <data name="NewMovement" xml:space="preserve"><value>Nouveau Mouvement</value></data>
+  <data name="ReceivedBy" xml:space="preserve"><value>Reçu par</value></data>
+  <data name="Saving" xml:space="preserve"><value>Enregistrement...</value></data>
+  <data name="SelectArticlesToReverse" xml:space="preserve"><value>Sélectionner articles à annuler</value></data>
+  <data name="ShowAll" xml:space="preserve"><value>Afficher Tout</value></data>
+  <data name="SixMonths" xml:space="preserve"><value>Six Mois</value></data>
+  <data name="TodayPlus" xml:space="preserve"><value>Aujourd'hui +</value></data>
+  <data name="TotalAfterDiscount" xml:space="preserve"><value>Total Après Remise</value></data>
+  <data name="TotalAmountInclVAT" xml:space="preserve"><value>Montant Total TTC</value></data>
+  <data name="VATAmount" xml:space="preserve"><value>Montant TVA</value></data>
+  <data name="VATRate" xml:space="preserve"><value>Taux TVA</value></data>
+  <data name="Week" xml:space="preserve"><value>Semaine</value></data>
+  <data name="Year" xml:space="preserve"><value>Année</value></data>
+</root>

@@ -1,0 +1,128 @@
+﻿<UserControl x:Class="Superete.Main.Comptabilite.Views.BilanView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="#FAFBFC">
+
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Border Grid.Row="0" Background="White" Padding="24,20" CornerRadius="12" Margin="0,0,0,20">
+            <Grid>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="📊" FontSize="28" Margin="0,0,12,0"/>
+                    <StackPanel>
+                        <TextBlock Text="Bilan Comptable" FontSize="24" FontWeight="SemiBold" Foreground="#1A202C"/>
+                        <TextBlock x:Name="TxtPeriode" Text="Au 31/12/2026" FontSize="13" Foreground="#718096" Margin="0,4,0,0"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <DatePicker x:Name="DateBilan" Width="150" Height="40" Margin="0,0,12,0" SelectedDateChanged="DateBilan_Changed"/>
+                    <Button Content="📄 Imprimer" Width="120" Height="40" Margin="0,0,12,0" Click="BtnPrint_Click"/>
+                    <Button Content="📊 Excel" Width="120" Height="40" Click="BtnExcel_Click"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Main Content: Side by Side -->
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- ACTIF -->
+            <Border Grid.Column="0" Background="White" CornerRadius="12" Padding="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Border Background="#667EEA" Padding="20,16" CornerRadius="12,12,0,0">
+                        <TextBlock Text="ACTIF" FontSize="18" FontWeight="Bold" Foreground="White"/>
+                    </Border>
+
+                    <DataGrid x:Name="ActifGrid" Grid.Row="1" AutoGenerateColumns="False" 
+                             CanUserAddRows="False" GridLinesVisibility="None" HeadersVisibility="Column"
+                             MouseDoubleClick="Grid_MouseDoubleClick">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Compte" Binding="{Binding CodeCompte}" Width="100"/>
+                            <DataGridTextColumn Header="Libellé" Binding="{Binding Libelle}" Width="*"/>
+                            <DataGridTextColumn Header="Montant" Binding="{Binding Montant, StringFormat='{}{0:N2} DH'}" Width="150">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Right"/>
+                                        <Setter Property="FontWeight" Value="SemiBold"/>
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <Border Grid.Row="2" Background="#F7FAFC" Padding="20,16" BorderBrush="#E2E8F0" BorderThickness="0,1,0,0">
+                        <Grid>
+                            <TextBlock Text="TOTAL ACTIF" FontSize="16" FontWeight="Bold" Foreground="#2D3748" HorizontalAlignment="Left"/>
+                            <TextBlock x:Name="TxtTotalActif" Text="0.00 DH" FontSize="20" FontWeight="Bold" Foreground="#667EEA" HorizontalAlignment="Right"/>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Border>
+
+            <!-- PASSIF -->
+            <Border Grid.Column="2" Background="White" CornerRadius="12" Padding="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Border Background="#48BB78" Padding="20,16" CornerRadius="12,12,0,0">
+                        <TextBlock Text="PASSIF" FontSize="18" FontWeight="Bold" Foreground="White"/>
+                    </Border>
+
+                    <DataGrid x:Name="PassifGrid" Grid.Row="1" AutoGenerateColumns="False"
+                             CanUserAddRows="False" GridLinesVisibility="None" HeadersVisibility="Column"
+                             MouseDoubleClick="Grid_MouseDoubleClick">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Compte" Binding="{Binding CodeCompte}" Width="100"/>
+                            <DataGridTextColumn Header="Libellé" Binding="{Binding Libelle}" Width="*"/>
+                            <DataGridTextColumn Header="Montant" Binding="{Binding Montant, StringFormat='{}{0:N2} DH'}" Width="150">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Right"/>
+                                        <Setter Property="FontWeight" Value="SemiBold"/>
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <Border Grid.Row="2" Background="#F7FAFC" Padding="20,16" BorderBrush="#E2E8F0" BorderThickness="0,1,0,0">
+                        <Grid>
+                            <TextBlock Text="TOTAL PASSIF" FontSize="16" FontWeight="Bold" Foreground="#2D3748" HorizontalAlignment="Left"/>
+                            <TextBlock x:Name="TxtTotalPassif" Text="0.00 DH" FontSize="20" FontWeight="Bold" Foreground="#48BB78" HorizontalAlignment="Right"/>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Border>
+        </Grid>
+
+        <!-- Balance Check -->
+        <Border Grid.Row="3" Background="White" Padding="20" CornerRadius="12" Margin="0,20,0,0">
+            <Grid>
+                <TextBlock Text="ÉQUILIBRE DU BILAN" FontSize="14" FontWeight="SemiBold" Foreground="#4A5568" VerticalAlignment="Center"/>
+                <TextBlock x:Name="TxtEquilibre" Text="✅ Bilan équilibré" FontSize="16" FontWeight="Bold" Foreground="#48BB78" HorizontalAlignment="Right"/>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

@@ -1,0 +1,825 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+
+  <!-- ===== SHARED / COMMON ===== -->
+  <data name="Cancel" xml:space="preserve"><value>إلغاء</value></data>
+  <data name="Save" xml:space="preserve"><value>حفظ</value></data>
+  <data name="Add" xml:space="preserve"><value>إضافة</value></data>
+  <data name="Confirm" xml:space="preserve"><value>تأكيد</value></data>
+  <data name="Search" xml:space="preserve"><value>بحث</value></data>
+  <data name="Code" xml:space="preserve"><value>الرمز</value></data>
+  <data name="Name" xml:space="preserve"><value>الاسم</value></data>
+  <data name="Address" xml:space="preserve"><value>العنوان</value></data>
+  <data name="PhoneNumber" xml:space="preserve"><value>رقم الهاتف</value></data>
+  <data name="Balance" xml:space="preserve"><value>الرصيد الابتدائي</value></data>
+  <data name="Discount" xml:space="preserve"><value>الخصم</value></data>
+  <data name="Stock" xml:space="preserve"><value>المخزون</value></data>
+  <data name="Family" xml:space="preserve"><value>الفئة</value></data>
+  <data name="Supplier" xml:space="preserve"><value>المورد</value></data>
+  <data name="Price" xml:space="preserve"><value>السعر</value></data>
+  <data name="Quantity" xml:space="preserve"><value>الكمية</value></data>
+  <data name="Total" xml:space="preserve"><value>المجموع</value></data>
+  <data name="Image" xml:space="preserve"><value>الصورة</value></data>
+  <data name="Categories" xml:space="preserve"><value>الفئات</value></data>
+  <data name="Products" xml:space="preserve"><value>المنتجات</value></data>
+  <data name="Client" xml:space="preserve"><value>العميل</value></data>
+  <data name="NoClient" xml:space="preserve"><value>بدون عميل</value></data>
+  <data name="Back" xml:space="preserve"><value>رجوع</value></data>
+  <data name="Print" xml:space="preserve"><value>طباعة</value></data>
+  <data name="Manual" xml:space="preserve"><value>يدوي</value></data>
+  <data name="Confirmed" xml:space="preserve"><value>تم التأكيد</value></data>
+  <data name="Reverse" xml:space="preserve"><value>إلغاء</value></data>
+  <data name="Reversed" xml:space="preserve"><value>ملغى</value></data>
+  <data name="Company" xml:space="preserve"><value>شركة</value></data>
+  <data name="CompanyName" xml:space="preserve"><value>اسم الشركة</value></data>
+  <data name="Phone" xml:space="preserve"><value>الهاتف</value></data>
+  <data name="Email" xml:space="preserve"><value>البريد الإلكتروني</value></data>
+  <data name="Description" xml:space="preserve"><value>الوصف</value></data>
+  <data name="Notes" xml:space="preserve"><value>ملاحظات</value></data>
+  <data name="Preview" xml:space="preserve"><value>معاينة</value></data>
+  <data name="Browse" xml:space="preserve"><value>استعراض</value></data>
+  <data name="TVA" xml:space="preserve"><value>الضريبة (%)</value></data>
+  <data name="CompanyLogo" xml:space="preserve"><value>شعار الشركة</value></data>
+
+  <!-- ===== CLIENT ===== -->
+  <data name="ClientManagement" xml:space="preserve"><value>إدارة العملاء</value></data>
+  <data name="ClientManagementDescription" xml:space="preserve"><value>إدارة العملاء ومعلوماتهم</value></data>
+  <data name="IsCompany" xml:space="preserve"><value>هل هي شركة؟</value></data>
+  <data name="ClientName" xml:space="preserve"><value>اسم العميل</value></data>
+  <data name="LegalStatus" xml:space="preserve"><value>الوضع القانوني</value></data>
+  <data name="ICE" xml:space="preserve"><value>ICE (المعرف المشترك للمؤسسة)</value></data>
+  <data name="Headquarters" xml:space="preserve"><value>المقر الرئيسي للشركة</value></data>
+  <data name="ClientOperations" xml:space="preserve"><value>عمليات العميل</value></data>
+  <data name="DeleteConfirmation" xml:space="preserve"><value>تأكيد الحذف</value></data>
+  <data name="PaymentManagement" xml:space="preserve"><value>إدارة المدفوعات</value></data>
+
+  <!-- ===== SUPPLIER ===== -->
+  <data name="SupplierManagement" xml:space="preserve"><value>إدارة الموردين</value></data>
+  <data name="SupplierOperations" xml:space="preserve"><value>عمليات المورد</value></data>
+  <data name="EditSupplier" xml:space="preserve"><value>تعديل المورد</value></data>
+
+  <!-- ===== POINT OF SALE ===== -->
+  <data name="POS_Title" xml:space="preserve"><value>نقطة البيع</value></data>
+  <data name="POS_Subtitle" xml:space="preserve"><value>إدارة المبيعات والمعاملات</value></data>
+  <data name="CartItems" xml:space="preserve"><value>عناصر السلة</value></data>
+  <data name="Articles" xml:space="preserve"><value>عناصر</value></data>
+  <data name="EmptyCart" xml:space="preserve"><value>لا توجد عناصر في السلة</value></data>
+  <data name="PaymentMethod" xml:space="preserve"><value>طريقة الدفع</value></data>
+  <data name="PrintTicket" xml:space="preserve"><value>طباعة التذكرة</value></data>
+  <data name="PrintInvoice" xml:space="preserve"><value>طباعة الفاتورة</value></data>
+  <data name="Cash" xml:space="preserve"><value>نقداً</value></data>
+  <data name="Credit" xml:space="preserve"><value>دين</value></data>
+  <data name="HalfPayment" xml:space="preserve"><value>دفع 50/50</value></data>
+  <data name="ClearCart" xml:space="preserve"><value>إفراغ السلة</value></data>
+  <data name="ProductSearch" xml:space="preserve"><value>البحث عن منتج</value></data>
+  <data name="SelectedProduct" xml:space="preserve"><value>المنتج المحدد</value></data>
+  <data name="NoProductSelected" xml:space="preserve"><value>لم يتم تحديد منتج</value></data>
+  <data name="AddButton" xml:space="preserve"><value>إضافة</value></data>
+  <data name="ListView" xml:space="preserve"><value>عرض القائمة</value></data>
+  <data name="CardView" xml:space="preserve"><value>عرض البطاقات</value></data>
+  <data name="LargeIcons" xml:space="preserve"><value>أيقونات كبيرة</value></data>
+  <data name="MediumIcons" xml:space="preserve"><value>أيقونات متوسطة</value></data>
+  <data name="SmallIcons" xml:space="preserve"><value>أيقونات صغيرة</value></data>
+  <data name="SortNameAZ" xml:space="preserve"><value>الاسم (أ-ي)</value></data>
+  <data name="SortNameZA" xml:space="preserve"><value>الاسم (ي-أ)</value></data>
+  <data name="SortPriceAsc" xml:space="preserve"><value>السعر تصاعدي</value></data>
+  <data name="SortPriceDesc" xml:space="preserve"><value>السعر تنازلي</value></data>
+  <data name="SortQtyAsc" xml:space="preserve"><value>الكمية تصاعدي</value></data>
+  <data name="SortQtyDesc" xml:space="preserve"><value>الكمية تنازلي</value></data>
+  <data name="SortNewest" xml:space="preserve"><value>الأحدث إلى الأقدم</value></data>
+  <data name="SortOldest" xml:space="preserve"><value>الأقدم إلى الأحدث</value></data>
+  <data name="SeeAll" xml:space="preserve"><value>عرض الكل</value></data>
+  <data name="ColID" xml:space="preserve"><value>المعرف</value></data>
+  <data name="ColProductName" xml:space="preserve"><value>اسم المنتج</value></data>
+  <data name="ColPurchase" xml:space="preserve"><value>شراء</value></data>
+  <data name="ColSale" xml:space="preserve"><value>بيع</value></data>
+  <data name="ColMarket" xml:space="preserve"><value>سوق</value></data>
+
+  <!-- ===== TICKET / INVOICE ===== -->
+  <data name="TicketPreviewTitle" xml:space="preserve"><value>معاينة التذكرة</value></data>
+  <data name="InvoiceNumber" xml:space="preserve"><value>فاتورة رقم </value></data>
+  <data name="ArticleHeader" xml:space="preserve"><value>المقال</value></data>
+  <data name="QtyHeader" xml:space="preserve"><value>الكمية</value></data>
+  <data name="UnitPriceHeader" xml:space="preserve"><value>س.و</value></data>
+  <data name="TotalHeader" xml:space="preserve"><value>المجموع</value></data>
+  <data name="Subtotal" xml:space="preserve"><value>المجموع الجزئي:</value></data>
+  <data name="Remise" xml:space="preserve"><value>الخصم:</value></data>
+  <data name="ConfirmAndPrint" xml:space="preserve"><value>تأكيد والطباعة</value></data>
+
+  <!-- ===== PRE-CHECKOUT ===== -->
+  <data name="SaleValidation" xml:space="preserve"><value>التحقق من صحة البيع</value></data>
+  <data name="AddArticle" xml:space="preserve"><value>+ إضافة مقال</value></data>
+  <data name="CashPayment" xml:space="preserve"><value>نقداً</value></data>
+  <data name="CashSale" xml:space="preserve"><value>بيع نقدي</value></data>
+  <data name="ClientSelectionRequired" xml:space="preserve"><value>⚠️ مطلوب اختيار العميل</value></data>
+  <data name="SearchSelect" xml:space="preserve"><value>بحث / اختيار</value></data>
+  <data name="NewClient" xml:space="preserve"><value>+ عميل جديد</value></data>
+  <data name="ClientInfo" xml:space="preserve"><value>معلومات العميل</value></data>
+  <data name="ClientDiscount" xml:space="preserve"><value>خصم العميل: </value></data>
+  <data name="CreditAmount" xml:space="preserve"><value>المبلغ بالدين</value></data>
+  <data name="CreditAmountNote" xml:space="preserve"><value>المبلغ الذي سيوضع كدين</value></data>
+  <data name="AdditionalDiscount" xml:space="preserve"><value>خصم إضافي</value></data>
+  <data name="Summary" xml:space="preserve"><value>ملخص</value></data>
+  <data name="SubtotalLabel" xml:space="preserve"><value>المجموع الجزئي</value></data>
+  <data name="TotalDiscount" xml:space="preserve"><value>إجمالي الخصم</value></data>
+  <data name="TotalTTC" xml:space="preserve"><value>المجموع شاملاً للضريبة</value></data>
+  <data name="CheckInfo" xml:space="preserve"><value>تحقق من المعلومات قبل المتابعة</value></data>
+  <data name="ConfirmSale" xml:space="preserve"><value>تأكيد البيع</value></data>
+
+  <!-- ===== CLIENT SELECTION ===== -->
+  <data name="ClientSelection" xml:space="preserve"><value>اختيار العميل</value></data>
+  <data name="ClientSelectionSubtitle" xml:space="preserve"><value>ابحث عن عميل موجود أو أضف عميلاً جديداً أو تابع بدون عميل</value></data>
+  <data name="SearchResults" xml:space="preserve"><value>نتائج البحث</value></data>
+  <data name="SelectedClientLabel" xml:space="preserve"><value>العميل المحدد</value></data>
+  <data name="NoClientSelected" xml:space="preserve"><value>لم يتم اختيار عميل</value></data>
+  <data name="DiscountLabel" xml:space="preserve"><value>الخصم</value></data>
+  <data name="CreditLabel" xml:space="preserve"><value>الدين</value></data>
+  <data name="NewClientButton" xml:space="preserve"><value>عميل جديد</value></data>
+  <data name="NoClientButton" xml:space="preserve"><value>بدون عميل</value></data>
+
+  <!-- ===== SELECT ARTICLE ===== -->
+  <data name="SelectArticleTitle" xml:space="preserve"><value>اختيار مقال</value></data>
+  <data name="SearchArticle" xml:space="preserve"><value>ابحث عن مقال...</value></data>
+  <data name="QuantityLabel" xml:space="preserve"><value>الكمية:</value></data>
+
+  <!-- ===== QUICK ADD CLIENT ===== -->
+  <data name="QuickAddClient" xml:space="preserve"><value>إضافة سريعة لعميل</value></data>
+  <data name="AddClient" xml:space="preserve"><value>إضافة العميل</value></data>
+
+  <!-- ===== SETTINGS ===== -->
+  <data name="General_Title" xml:space="preserve"><value>الإعدادات العامة</value></data>
+  <data name="General_Description" xml:space="preserve"><value>الإعداد العام للتطبيق</value></data>
+  <data name="General_VirtualKeyboard" xml:space="preserve"><value>لوحة المفاتيح الافتراضية</value></data>
+  <data name="About_Title" xml:space="preserve"><value>معلومات عنا</value></data>
+  <data name="Payment_Title" xml:space="preserve"><value>طرق الدفع</value></data>
+  <data name="Preview_Title" xml:space="preserve"><value>معاينة الفاتورة</value></data>
+  <data name="Settings_BackButton" xml:space="preserve"><value>العودة إلى الإعدادات</value></data>
+  <data name="Settings_TicketSettings" xml:space="preserve"><value>إعدادات التذكرة / الفاتورة</value></data>
+  <data name="Settings_UserManagement" xml:space="preserve"><value>إدارة المستخدمين</value></data>
+
+  <!-- ===== USER MANAGEMENT ===== -->
+  <data name="AddUser_Title" xml:space="preserve"><value>إضافة مستخدم</value></data>
+  <data name="UpdateUser_Title" xml:space="preserve"><value>تعديل المستخدم</value></data>
+  <data name="DeleteUser_Title" xml:space="preserve"><value>حذف المستخدم</value></data>
+  <data name="User_Edit" xml:space="preserve"><value>تعديل</value></data>
+  <data name="RoleWindow_Title" xml:space="preserve"><value>الأدوار</value></data>
+  <data name="Role_Modify" xml:space="preserve"><value>تعديل الدور</value></data>
+  <data name="Perm_ConfigTitle" xml:space="preserve"><value>إعداد الصلاحيات</value></data>
+  <data name="Perm_Exit" xml:space="preserve"><value>خروج</value></data>
+
+  <!-- ===== INVOICING ===== -->
+  <data name="Invoice" xml:space="preserve"><value>فاتورة</value></data>
+  <data name="InvoiceHistory" xml:space="preserve"><value>سجل الفواتير</value></data>
+  <data name="EditInvoice" xml:space="preserve"><value>تعديل الفاتورة</value></data>
+  <data name="SavedInvoicesSuppliers" xml:space="preserve"><value>فواتير الموردين المحفوظة</value></data>
+  <data name="CheckHistory" xml:space="preserve"><value>مراجعة السجل</value></data>
+  <data name="SearchClientByName" xml:space="preserve"><value>البحث عن عميل بالاسم</value></data>
+  <data name="SearchOperationByID" xml:space="preserve"><value>البحث عن عملية بالرقم</value></data>
+  <data name="OperationArticles" xml:space="preserve"><value>مقالات العملية</value></data>
+  <data name="OperationDetails" xml:space="preserve"><value>تفاصيل العملية</value></data>
+  <data name="ModifyArticle" xml:space="preserve"><value>تعديل المقال</value></data>
+
+  <!-- ===== PROJECT MANAGEMENT / REVERSAL ===== -->
+  <data name="ArticleCancellation" xml:space="preserve"><value>إلغاء المقالات</value></data>
+  <data name="CancellationConfirmation" xml:space="preserve"><value>تأكيد الإلغاء</value></data>
+
+  <!-- ===== DELIVERY ===== -->
+  <data name="NewDelivery" xml:space="preserve"><value>توصيل جديد</value></data>
+  <data name="DelivererManagement" xml:space="preserve"><value>إدارة الموصِّلين</value></data>
+  <data name="DeliveryDetailsNumber" xml:space="preserve"><value>رقم التوصيل</value></data>
+  <data name="DeliveryTicketUpper" xml:space="preserve"><value>وصل التوصيل</value></data>
+  <data name="DeliverersList" xml:space="preserve"><value>قائمة الموصِّلين</value></data>
+  <data name="DeliveryInstructions" xml:space="preserve"><value>تعليمات التوصيل</value></data>
+  <data name="DeliveryManagement" xml:space="preserve"><value>إدارة التوصيلات</value></data>
+  <data name="CompanyAddress" xml:space="preserve"><value>عنوان الشركة</value></data>
+  <data name="CreatedOn" xml:space="preserve"><value>تاريخ الإنشاء</value></data>
+
+  <!-- ===== ABOUT / BRANDING ===== -->
+  <data name="About_Tagline" xml:space="preserve"><value>حلك لإدارة التجارة</value></data>
+  <data name="CompanyHeadquarters" xml:space="preserve"><value>المقر الرئيسي</value></data>
+
+  <!-- ===== SHARED ACTIONS ===== -->
+  <data name="Edit" xml:space="preserve"><value>تعديل</value></data>
+  <data name="Modify" xml:space="preserve"><value>تعديل</value></data>
+  <data name="Date" xml:space="preserve"><value>التاريخ</value></data>
+  <data name="Article" xml:space="preserve"><value>مقال</value></data>
+  <data name="Operation" xml:space="preserve"><value>عملية</value></data>
+  <data name="Operations" xml:space="preserve"><value>العمليات</value></data>
+  <data name="UnitPrice" xml:space="preserve"><value>سعر الوحدة</value></data>
+  <data name="SaveAndPrint" xml:space="preserve"><value>حفظ وطباعة</value></data>
+  <data name="TotalCredit" xml:space="preserve"><value>إجمالي الدين</value></data>
+  <data name="TotalClients" xml:space="preserve"><value>إجمالي العملاء</value></data>
+
+  <!-- ===== CONFIRMATIONS / WARNINGS ===== -->
+  <data name="ActionIrreversible" xml:space="preserve"><value>هذا الإجراء لا يمكن التراجع عنه</value></data>
+  <data name="IrreversibleAction" xml:space="preserve"><value>إجراء لا رجعة فيه</value></data>
+  <data name="ThisActionIsIrreversible" xml:space="preserve"><value>هذا الإجراء لا رجعة فيه ولا يمكن التراجع عنه.</value></data>
+  <data name="TransactionCompletedSuccessfully" xml:space="preserve"><value>تمت المعاملة بنجاح</value></data>
+  <data name="SelectArticlesToCancel" xml:space="preserve"><value>اختر المقالات المراد إلغاؤها</value></data>
+
+  <!-- ===== SETTINGS - EXTRA ===== -->
+  <data name="Settings_Title" xml:space="preserve"><value>الإعدادات</value></data>
+  <data name="General_KeyboardDesc" xml:space="preserve"><value>تفعيل أو تعطيل لوحة المفاتيح الافتراضية</value></data>
+  <data name="Payment_Description" xml:space="preserve"><value>إدارة طرق الدفع المقبولة</value></data>
+  <data name="Preview_Header" xml:space="preserve"><value>معاينة الفاتورة</value></data>
+
+  <!-- ===== USER MANAGEMENT - EXTRA ===== -->
+  <data name="AddUser_Description" xml:space="preserve"><value>إنشاء حساب مستخدم جديد</value></data>
+  <data name="UpdateUser_Description" xml:space="preserve"><value>تعديل معلومات المستخدم</value></data>
+  <data name="DeleteUser_ConfirmTitle" xml:space="preserve"><value>تأكيد الحذف</value></data>
+  <data name="User_Delete" xml:space="preserve"><value>حذف</value></data>
+  <data name="RoleWindow_Description" xml:space="preserve"><value>إدارة الأدوار والصلاحيات</value></data>
+  <data name="Role_Delete" xml:space="preserve"><value>حذف الدور</value></data>
+  <data name="Perm_Logout" xml:space="preserve"><value>تسجيل الخروج</value></data>
+  <data name="Perm_ManageDesc" xml:space="preserve"><value>ضبط صلاحيات الدور</value></data>
+
+  <!-- ===== SUPPLIER - EXTRA ===== -->
+  <data name="DeleteSupplier" xml:space="preserve"><value>حذف المورد</value></data>
+  <data name="SupplierCode" xml:space="preserve"><value>رمز المورد</value></data>
+  <data name="ManageTrackSuppliers" xml:space="preserve"><value>إدارة ومتابعة الموردين</value></data>
+
+  <!-- ===== INVOICING - EXTRA ===== -->
+  <data name="CreateInvoice" xml:space="preserve"><value>إنشاء فاتورة</value></data>
+  <data name="InvoiceInformation" xml:space="preserve"><value>معلومات الفاتورة</value></data>
+  <data name="ConsultManageInvoices" xml:space="preserve"><value>الاطلاع على الفواتير وإدارتها</value></data>
+  <data name="SavedInvoicesDescription" xml:space="preserve"><value>الفواتير المحفوظة والمعلقة</value></data>
+  <data name="ManageViewChecks" xml:space="preserve"><value>إدارة الشيكات والاطلاع عليها</value></data>
+
+  <!-- ===== BATCH 4 - NEW KEYS ===== -->
+  <data name="About_SolutionTitle" xml:space="preserve"><value>حل لإدارة التجارة</value></data>
+  <data name="ActiveClients" xml:space="preserve"><value>العملاء النشطون</value></data>
+  <data name="AddModifyCheck" xml:space="preserve"><value>إضافة / تعديل شيك</value></data>
+  <data name="AddModifySupplierInvoice" xml:space="preserve"><value>إضافة / تعديل فاتورة المورد</value></data>
+  <data name="AddSupplier" xml:space="preserve"><value>إضافة مورد</value></data>
+  <data name="AddUser_FullName" xml:space="preserve"><value>الاسم الكامل</value></data>
+  <data name="AddUser_Password" xml:space="preserve"><value>كلمة المرور</value></data>
+  <data name="AreYouSureReverseMovement" xml:space="preserve"><value>هل أنت متأكد من إلغاء هذه الحركة؟</value></data>
+  <data name="AreYouSureReverseOperation" xml:space="preserve"><value>هل أنت متأكد من إلغاء هذه العملية؟</value></data>
+  <data name="AssociatedOperation" xml:space="preserve"><value>العملية المرتبطة</value></data>
+  <data name="Close" xml:space="preserve"><value>إغلاق</value></data>
+  <data name="Continue" xml:space="preserve"><value>متابعة</value></data>
+  <data name="DeleteClientConfirm" xml:space="preserve"><value>هل أنت متأكد من حذف هذا العميل؟</value></data>
+  <data name="DeleteUser_Irreversible" xml:space="preserve"><value>هذا الإجراء لا رجعة فيه.</value></data>
+  <data name="DelivererManagementDescription" xml:space="preserve"><value>إدارة قائمة الموصِّلين</value></data>
+  <data name="DeliveryManagementDescription" xml:space="preserve"><value>متابعة وإدارة التوصيلات</value></data>
+  <data name="EditClient" xml:space="preserve"><value>تعديل العميل</value></data>
+  <data name="General_AlwaysShow" xml:space="preserve"><value>إظهار دائماً</value></data>
+  <data name="ID" xml:space="preserve"><value>المعرف</value></data>
+  <data name="InvoiceHistoryTab" xml:space="preserve"><value>سجل الفواتير</value></data>
+  <data name="Keyboard_Language" xml:space="preserve"><value>لغة لوحة المفاتيح</value></data>
+  <data name="OperationInformation" xml:space="preserve"><value>معلومات العملية</value></data>
+  <data name="OperationSelection" xml:space="preserve"><value>اختيار العملية</value></data>
+  <data name="Pay" xml:space="preserve"><value>دفع</value></data>
+  <data name="Payment_NewMethod" xml:space="preserve"><value>طريقة دفع جديدة</value></data>
+  <data name="Perm_ActivateAll" xml:space="preserve"><value>تفعيل الكل</value></data>
+  <data name="Perm_Shutdown" xml:space="preserve"><value>إيقاف التشغيل</value></data>
+  <data name="Refresh" xml:space="preserve"><value>تحديث</value></data>
+  <data name="RoleWindow_Close" xml:space="preserve"><value>إغلاق</value></data>
+  <data name="Sale" xml:space="preserve"><value>بيع</value></data>
+  <data name="SaveAsPDF" xml:space="preserve"><value>حفظ كـ PDF</value></data>
+  <data name="Settings_PaymentMethod" xml:space="preserve"><value>طريقة الدفع</value></data>
+  <data name="ShippedQuantity" xml:space="preserve"><value>الكمية المشحونة</value></data>
+  <data name="StockMovement" xml:space="preserve"><value>حركة المخزون</value></data>
+  <data name="SupplierNameRequired" xml:space="preserve"><value>اسم المورد مطلوب</value></data>
+  <data name="SureDeleteSupplier" xml:space="preserve"><value>هل أنت متأكد من حذف هذا المورد؟</value></data>
+  <data name="TicketNumber" xml:space="preserve"><value>رقم التذكرة</value></data>
+  <data name="TotalAmountExclVAT" xml:space="preserve"><value>المبلغ الإجمالي بدون ضريبة</value></data>
+  <data name="TotalPaid" xml:space="preserve"><value>إجمالي المدفوع</value></data>
+  <data name="TotalQuantityHeader" xml:space="preserve"><value>إجمالي الكمية</value></data>
+  <data name="Type" xml:space="preserve"><value>النوع</value></data>
+
+  <!-- ===== BATCH 5 - COMPLETE KEYS ===== -->
+  <data name="About_AdvancedSecurity" xml:space="preserve"><value>الأمان المتقدم</value></data>
+  <data name="About_AdvancedSecurityDesc" xml:space="preserve"><value>إدارة المستخدمين والأدوار بالصلاحيات</value></data>
+  <data name="About_AutoInvoicing" xml:space="preserve"><value>الفوترة التلقائية</value></data>
+  <data name="About_AutoInvoicingDesc" xml:space="preserve"><value>إنشاء فواتير احترافية</value></data>
+  <data name="About_Availability" xml:space="preserve"><value>التوفر</value></data>
+  <data name="About_ClientManagement" xml:space="preserve"><value>إدارة العملاء</value></data>
+  <data name="About_ClientManagementDesc" xml:space="preserve"><value>متابعة العملاء وعملياتهم</value></data>
+  <data name="About_ContactDesc" xml:space="preserve"><value>فريقنا متاح لمساعدتك</value></data>
+  <data name="About_ContactUs" xml:space="preserve"><value>اتصل بنا</value></data>
+  <data name="About_Copyright" xml:space="preserve"><value>© 2024 GestionComerce</value></data>
+  <data name="About_Description1" xml:space="preserve"><value>حل متكامل لإدارة تجارتك</value></data>
+  <data name="About_Description2" xml:space="preserve"><value>مطورة بأحدث التقنيات الحديثة</value></data>
+  <data name="About_DetailedReports" xml:space="preserve"><value>تقارير مفصلة</value></data>
+  <data name="About_DetailedReportsDesc" xml:space="preserve"><value>تحليلات وإحصائيات نشاطك التجاري</value></data>
+  <data name="About_MainFeatures" xml:space="preserve"><value>الميزات الرئيسية</value></data>
+  <data name="About_Phone1" xml:space="preserve"><value>+212 6XX XXX XXX</value></data>
+  <data name="About_Phone2" xml:space="preserve"><value>+212 5XX XXX XXX</value></data>
+  <data name="About_PrimaryContact" xml:space="preserve"><value>جهة الاتصال الرئيسية</value></data>
+  <data name="About_Rights" xml:space="preserve"><value>جميع الحقوق محفوظة</value></data>
+  <data name="About_SalesManagement" xml:space="preserve"><value>إدارة المبيعات</value></data>
+  <data name="About_SalesManagementDesc" xml:space="preserve"><value>إدارة المبيعات والمعاملات</value></data>
+  <data name="About_SecondaryContact" xml:space="preserve"><value>جهة الاتصال الثانوية</value></data>
+  <data name="About_StockManagement" xml:space="preserve"><value>إدارة المخزون</value></data>
+  <data name="About_StockManagementDesc" xml:space="preserve"><value>متابعة المخزون في الوقت الفعلي</value></data>
+  <data name="About_WorkingHours" xml:space="preserve"><value>الاثنين-السبت: 8ص-6م</value></data>
+  <data name="Actions" xml:space="preserve"><value>الإجراءات</value></data>
+  <data name="ActiveSuppliers" xml:space="preserve"><value>الموردون النشطون</value></data>
+  <data name="AddButton" xml:space="preserve"><value>إضافة</value></data>
+  <data name="AddUser_Cancel" xml:space="preserve"><value>إلغاء</value></data>
+  <data name="AddUser_Create" xml:space="preserve"><value>إنشاء</value></data>
+  <data name="AddUser_Role" xml:space="preserve"><value>الدور</value></data>
+  <data name="AdditionalDiscount" xml:space="preserve"><value>خصم إضافي</value></data>
+  <data name="AddressRequired" xml:space="preserve"><value>العنوان (مطلوب)</value></data>
+  <data name="AddressUpper" xml:space="preserve"><value>العنوان</value></data>
+  <data name="AllDataLost" xml:space="preserve"><value>ستُفقد جميع البيانات نهائياً.</value></data>
+  <data name="AllStatuses" xml:space="preserve"><value>جميع الحالات</value></data>
+  <data name="Amount" xml:space="preserve"><value>المبلغ</value></data>
+  <data name="AmountInLetters" xml:space="preserve"><value>المبلغ بالحروف</value></data>
+  <data name="AmountMAD" xml:space="preserve"><value>المبلغ (درهم)</value></data>
+  <data name="ArticleHeader" xml:space="preserve"><value>المقال</value></data>
+  <data name="ArticleID" xml:space="preserve"><value>معرف المقال</value></data>
+  <data name="ArticleName" xml:space="preserve"><value>اسم المقال</value></data>
+  <data name="ArticlesToDeliver" xml:space="preserve"><value>المقالات المراد توصيلها</value></data>
+  <data name="AssignedDeliverer" xml:space="preserve"><value>الموصّل المعيّن</value></data>
+  <data name="AssociatedInvoice" xml:space="preserve"><value>الفاتورة المرتبطة</value></data>
+  <data name="Available" xml:space="preserve"><value>متاح</value></data>
+  <data name="BalanceDue" xml:space="preserve"><value>الرصيد المستحق</value></data>
+  <data name="BankName" xml:space="preserve"><value>اسم البنك</value></data>
+  <data name="Bike" xml:space="preserve"><value>دراجة</value></data>
+  <data name="Busy" xml:space="preserve"><value>مشغول</value></data>
+  <data name="CallClient" xml:space="preserve"><value>الاتصال بالعميل</value></data>
+  <data name="Cancelled" xml:space="preserve"><value>ملغى</value></data>
+  <data name="Car" xml:space="preserve"><value>سيارة</value></data>
+  <data name="CardView" xml:space="preserve"><value>عرض البطاقات</value></data>
+  <data name="CartItems" xml:space="preserve"><value>عناصر السلة</value></data>
+  <data name="CashPayment" xml:space="preserve"><value>دفع نقدي</value></data>
+  <data name="CashSale" xml:space="preserve"><value>بيع نقدي</value></data>
+  <data name="Cashed" xml:space="preserve"><value>تم الصرف</value></data>
+  <data name="Categories" xml:space="preserve"><value>الفئات</value></data>
+  <data name="CheckDate" xml:space="preserve"><value>تاريخ الشيك</value></data>
+  <data name="CheckImage" xml:space="preserve"><value>صورة الشيك</value></data>
+  <data name="CheckInfo" xml:space="preserve"><value>معلومات الشيك</value></data>
+  <data name="CheckReference" xml:space="preserve"><value>مرجع الشيك</value></data>
+  <data name="City" xml:space="preserve"><value>المدينة</value></data>
+  <data name="CityCenter" xml:space="preserve"><value>مركز المدينة (30 درهم)</value></data>
+  <data name="CityPostalCode" xml:space="preserve"><value>المدينة / الرمز البريدي</value></data>
+  <data name="ClearCart" xml:space="preserve"><value>إفراغ السلة</value></data>
+  <data name="ClearFilters" xml:space="preserve"><value>مسح الفلاتر</value></data>
+  <data name="ClientDiscount" xml:space="preserve"><value>خصم العميل</value></data>
+  <data name="ClientICE" xml:space="preserve"><value>ICE العميل</value></data>
+  <data name="ClientID" xml:space="preserve"><value>معرف العميل</value></data>
+  <data name="ClientInfo" xml:space="preserve"><value>معلومات العميل</value></data>
+  <data name="ClientInformation" xml:space="preserve"><value>معلومات العميل</value></data>
+  <data name="ClientInformations" xml:space="preserve"><value>معلومات العميل</value></data>
+  <data name="ClientNameRequired" xml:space="preserve"><value>اسم العميل (مطلوب)</value></data>
+  <data name="ClientNameUpper" xml:space="preserve"><value>اسم العميل</value></data>
+  <data name="ClientReference" xml:space="preserve"><value>مرجع العميل</value></data>
+  <data name="ClientSelection" xml:space="preserve"><value>اختيار العميل</value></data>
+  <data name="ClientSelectionRequired" xml:space="preserve"><value>اختيار العميل مطلوب</value></data>
+  <data name="ClientSelectionSubtitle" xml:space="preserve"><value>اختر عميلاً لهذا البيع</value></data>
+  <data name="ClientSignature" xml:space="preserve"><value>توقيع العميل</value></data>
+  <data name="ColID" xml:space="preserve"><value>المعرف</value></data>
+  <data name="ColMarket" xml:space="preserve"><value>سعر السوق</value></data>
+  <data name="ColProductName" xml:space="preserve"><value>اسم المنتج</value></data>
+  <data name="ColPurchase" xml:space="preserve"><value>سعر الشراء</value></data>
+  <data name="ColSale" xml:space="preserve"><value>سعر البيع</value></data>
+  <data name="CommentOptional" xml:space="preserve"><value>تعليق (اختياري)</value></data>
+  <data name="ConfirmAndPrint" xml:space="preserve"><value>تأكيد وطباعة</value></data>
+  <data name="ConfirmSale" xml:space="preserve"><value>تأكيد البيع</value></data>
+  <data name="CoverageZone" xml:space="preserve"><value>منطقة التغطية</value></data>
+  <data name="CreateDelivery" xml:space="preserve"><value>إنشاء التوصيل</value></data>
+  <data name="CreditAmount" xml:space="preserve"><value>مبلغ الدين</value></data>
+  <data name="CreditAmountNote" xml:space="preserve"><value>المبلغ المراد وضعه كدين</value></data>
+  <data name="CreditLabel" xml:space="preserve"><value>الدين</value></data>
+  <data name="DataLostPermanently" xml:space="preserve"><value>ستُفقد هذه البيانات نهائياً.</value></data>
+  <data name="DateUpper" xml:space="preserve"><value>التاريخ</value></data>
+  <data name="Delete" xml:space="preserve"><value>حذف</value></data>
+  <data name="DeleteClient" xml:space="preserve"><value>حذف العميل</value></data>
+  <data name="DeleteUser_Cancel" xml:space="preserve"><value>إلغاء</value></data>
+  <data name="DeleteUser_Confirm" xml:space="preserve"><value>حذف</value></data>
+  <data name="DeleteUser_ConfirmTitle" xml:space="preserve"><value>حذف هذا العنصر</value></data>
+  <data name="DeleteUser_Question" xml:space="preserve"><value>هل أنت متأكد من حذف هذا العنصر؟</value></data>
+  <data name="DeleteUser_Title" xml:space="preserve"><value>حذف</value></data>
+  <data name="DeleteUser_Warning" xml:space="preserve"><value>هذا الإجراء لا رجعة فيه.</value></data>
+  <data name="Delivered" xml:space="preserve"><value>تم التوصيل</value></data>
+  <data name="Deliverer" xml:space="preserve"><value>الموصّل</value></data>
+  <data name="DelivererName" xml:space="preserve"><value>اسم الموصّل</value></data>
+  <data name="DelivererSignature" xml:space="preserve"><value>توقيع الموصّل</value></data>
+  <data name="DelivererUpper" xml:space="preserve"><value>الموصّل</value></data>
+  <data name="DeliveryAddress" xml:space="preserve"><value>عنوان التوصيل</value></data>
+  <data name="DeliveryDetails" xml:space="preserve"><value>تفاصيل التوصيل</value></data>
+  <data name="DeliveryFees" xml:space="preserve"><value>رسوم التوصيل</value></data>
+  <data name="DeliveryFeesColon" xml:space="preserve"><value>رسوم التوصيل:</value></data>
+  <data name="DeliveryFeesDH" xml:space="preserve"><value>رسوم التوصيل (درهم)</value></data>
+  <data name="DeliveryTime" xml:space="preserve"><value>وقت التوصيل</value></data>
+  <data name="DeliveryZone" xml:space="preserve"><value>منطقة التوصيل</value></data>
+  <data name="DiscountLabel" xml:space="preserve"><value>الخصم</value></data>
+  <data name="EffectiveDate" xml:space="preserve"><value>التاريخ الفعلي</value></data>
+  <data name="EmptyCart" xml:space="preserve"><value>السلة فارغة</value></data>
+  <data name="EnRoute" xml:space="preserve"><value>في الطريق</value></data>
+  <data name="EndDate" xml:space="preserve"><value>تاريخ الانتهاء</value></data>
+  <data name="ExpectedDate" xml:space="preserve"><value>التاريخ المتوقع</value></data>
+  <data name="ExpectedDeliveryDate" xml:space="preserve"><value>تاريخ التوصيل المتوقع</value></data>
+  <data name="Fees" xml:space="preserve"><value>الرسوم</value></data>
+  <data name="FilterByStatus" xml:space="preserve"><value>تصفية حسب الحالة</value></data>
+  <data name="FinancialDetails" xml:space="preserve"><value>التفاصيل المالية</value></data>
+  <data name="FinancialSummary" xml:space="preserve"><value>الملخص المالي</value></data>
+  <data name="FirstName" xml:space="preserve"><value>الاسم الأول</value></data>
+  <data name="FirstNameRequired" xml:space="preserve"><value>الاسم الأول (مطلوب)</value></data>
+  <data name="FullAddress" xml:space="preserve"><value>العنوان الكامل</value></data>
+  <data name="General_Arabic" xml:space="preserve"><value>العربية</value></data>
+  <data name="General_Automatic" xml:space="preserve"><value>تلقائي</value></data>
+  <data name="General_Cancel" xml:space="preserve"><value>إلغاء</value></data>
+  <data name="General_CardView" xml:space="preserve"><value>عرض البطاقات</value></data>
+  <data name="General_DefaultPayment" xml:space="preserve"><value>الدفع الافتراضي</value></data>
+  <data name="General_DefaultSort" xml:space="preserve"><value>الترتيب الافتراضي</value></data>
+  <data name="General_DefaultView" xml:space="preserve"><value>العرض الافتراضي</value></data>
+  <data name="General_DeleteZero" xml:space="preserve"><value>حذف المقالات ذات الكمية الصفرية</value></data>
+  <data name="General_English" xml:space="preserve"><value>الإنجليزية</value></data>
+  <data name="General_French" xml:space="preserve"><value>الفرنسية</value></data>
+  <data name="General_HideEmpty" xml:space="preserve"><value>إخفاء التسميات الفارغة</value></data>
+  <data name="General_IconDesc" xml:space="preserve"><value>حجم عرض الأيقونات</value></data>
+  <data name="General_IconSize" xml:space="preserve"><value>حجم الأيقونات</value></data>
+  <data name="General_InvoiceDesc" xml:space="preserve"><value>خيارات عرض الفاتورة</value></data>
+  <data name="General_InvoiceDisplay" xml:space="preserve"><value>عرض الفاتورة</value></data>
+  <data name="General_Language" xml:space="preserve"><value>اللغة</value></data>
+  <data name="General_LanguageDesc" xml:space="preserve"><value>اختر لغة التطبيق</value></data>
+  <data name="General_LargeIcons" xml:space="preserve"><value>أيقونات كبيرة</value></data>
+  <data name="General_ListView" xml:space="preserve"><value>عرض القائمة</value></data>
+  <data name="General_MediumIcons" xml:space="preserve"><value>أيقونات متوسطة</value></data>
+  <data name="General_NameAZ" xml:space="preserve"><value>الاسم (أ-ي)</value></data>
+  <data name="General_NameZA" xml:space="preserve"><value>الاسم (ي-أ)</value></data>
+  <data name="General_NeverShow" xml:space="preserve"><value>عدم الإظهار أبداً</value></data>
+  <data name="General_NewestFirst" xml:space="preserve"><value>الأحدث أولاً</value></data>
+  <data name="General_OldestFirst" xml:space="preserve"><value>الأقدم أولاً</value></data>
+  <data name="General_PaymentDesc" xml:space="preserve"><value>طريقة الدفع الافتراضية</value></data>
+  <data name="General_PriceAsc" xml:space="preserve"><value>السعر تصاعدياً</value></data>
+  <data name="General_PriceDesc_Sort" xml:space="preserve"><value>السعر تنازلياً</value></data>
+  <data name="General_PrintDesc" xml:space="preserve"><value>خيارات الطباعة الافتراضية</value></data>
+  <data name="General_PrintInvoice" xml:space="preserve"><value>طباعة الفاتورة</value></data>
+  <data name="General_PrintOptions" xml:space="preserve"><value>خيارات الطباعة</value></data>
+  <data name="General_PrintTicket" xml:space="preserve"><value>طباعة التذكرة</value></data>
+  <data name="General_QtyAsc" xml:space="preserve"><value>الكمية تصاعدياً</value></data>
+  <data name="General_QtyDesc" xml:space="preserve"><value>الكمية تنازلياً</value></data>
+  <data name="General_Save" xml:space="preserve"><value>حفظ</value></data>
+  <data name="General_SmallIcons" xml:space="preserve"><value>أيقونات صغيرة</value></data>
+  <data name="General_SortDesc" xml:space="preserve"><value>ترتيب المنتجات الافتراضي</value></data>
+  <data name="General_StockDesc" xml:space="preserve"><value>إدارة المقالات ذات المخزون الصفري</value></data>
+  <data name="General_StockManagement" xml:space="preserve"><value>إدارة المخزون</value></data>
+  <data name="General_ViewDesc" xml:space="preserve"><value>وضع العرض الافتراضي</value></data>
+  <data name="HalfPayment" xml:space="preserve"><value>دفع جزئي</value></data>
+  <data name="ICENumber" xml:space="preserve"><value>رقم ICE</value></data>
+  <data name="InPreparation" xml:space="preserve"><value>قيد التحضير</value></data>
+  <data name="InProgress" xml:space="preserve"><value>قيد التنفيذ</value></data>
+  <data name="InitialBalance" xml:space="preserve"><value>الرصيد الابتدائي</value></data>
+  <data name="InitialStatus" xml:space="preserve"><value>الحالة الابتدائية</value></data>
+  <data name="InvoiceCount" xml:space="preserve"><value>عدد الفواتير</value></data>
+  <data name="InvoiceDate" xml:space="preserve"><value>تاريخ الفاتورة</value></data>
+  <data name="InvoiceGiver" xml:space="preserve"><value>مصدر الفاتورة</value></data>
+  <data name="InvoiceImage" xml:space="preserve"><value>صورة الفاتورة</value></data>
+  <data name="InvoiceReceiver" xml:space="preserve"><value>مستلم الفاتورة</value></data>
+  <data name="InvoiceReference" xml:space="preserve"><value>مرجع الفاتورة</value></data>
+  <data name="LargeIcons" xml:space="preserve"><value>أيقونات كبيرة</value></data>
+  <data name="LegalStatusField" xml:space="preserve"><value>الشكل القانوني</value></data>
+  <data name="ListView" xml:space="preserve"><value>عرض القائمة</value></data>
+  <data name="Loading" xml:space="preserve"><value>جارٍ التحميل...</value></data>
+  <data name="MakePayment" xml:space="preserve"><value>إجراء دفع</value></data>
+  <data name="ManageDeliverers" xml:space="preserve"><value>إدارة الموصّلين</value></data>
+  <data name="MediumIcons" xml:space="preserve"><value>أيقونات متوسطة</value></data>
+  <data name="Motorcycle" xml:space="preserve"><value>دراجة نارية</value></data>
+  <data name="NameRequired" xml:space="preserve"><value>الاسم (مطلوب)</value></data>
+  <data name="New" xml:space="preserve"><value>جديد</value></data>
+  <data name="NewClient" xml:space="preserve"><value>عميل جديد</value></data>
+  <data name="NewClientButton" xml:space="preserve"><value>عميل جديد</value></data>
+  <data name="NoClientButton" xml:space="preserve"><value>بدون عميل</value></data>
+  <data name="NoClientSelected" xml:space="preserve"><value>لم يتم تحديد عميل</value></data>
+  <data name="NoProductSelected" xml:space="preserve"><value>لم يتم تحديد منتج</value></data>
+  <data name="NotesInstructions" xml:space="preserve"><value>ملاحظات / تعليمات</value></data>
+  <data name="NotesUpper" xml:space="preserve"><value>ملاحظات</value></data>
+  <data name="Object" xml:space="preserve"><value>الموضوع</value></data>
+  <data name="OperationDate" xml:space="preserve"><value>تاريخ العملية</value></data>
+  <data name="OperationID" xml:space="preserve"><value>معرف العملية</value></data>
+  <data name="OperationSelectionDescription" xml:space="preserve"><value>اختر العملية المراد ربطها</value></data>
+  <data name="OrderedArticles" xml:space="preserve"><value>المقالات المطلوبة</value></data>
+  <data name="OutOfZone" xml:space="preserve"><value>خارج النطاق (100 درهم)</value></data>
+  <data name="POS_Subtitle" xml:space="preserve"><value>إدارة المبيعات</value></data>
+  <data name="POS_Title" xml:space="preserve"><value>نقطة البيع</value></data>
+  <data name="PaidThisMonth" xml:space="preserve"><value>المدفوع هذا الشهر</value></data>
+  <data name="PayMaximum" xml:space="preserve"><value>دفع الحد الأقصى</value></data>
+  <data name="PaymentAmount" xml:space="preserve"><value>مبلغ الدفع</value></data>
+  <data name="PaymentMode" xml:space="preserve"><value>طريقة الدفع</value></data>
+  <data name="PaymentModeUpper" xml:space="preserve"><value>طريقة الدفع</value></data>
+  <data name="Payment_Actions" xml:space="preserve"><value>الإجراءات</value></data>
+  <data name="Payment_AddFirst" xml:space="preserve"><value>أضف طريقة الدفع الأولى</value></data>
+  <data name="Payment_AddMethod" xml:space="preserve"><value>إضافة الطريقة</value></data>
+  <data name="Payment_Browse" xml:space="preserve"><value>استعراض</value></data>
+  <data name="Payment_Delete" xml:space="preserve"><value>حذف</value></data>
+  <data name="Payment_Edit" xml:space="preserve"><value>تعديل</value></data>
+  <data name="Payment_ExistingMethods" xml:space="preserve"><value>الطرق الموجودة</value></data>
+  <data name="Payment_ID" xml:space="preserve"><value>المعرف</value></data>
+  <data name="Payment_Image" xml:space="preserve"><value>الصورة</value></data>
+  <data name="Payment_ImageIcon" xml:space="preserve"><value>الصورة / الأيقونة</value></data>
+  <data name="Payment_MethodName" xml:space="preserve"><value>اسم الطريقة</value></data>
+  <data name="Payment_Name" xml:space="preserve"><value>الاسم</value></data>
+  <data name="Payment_NoMethods" xml:space="preserve"><value>لا توجد طرق دفع محددة</value></data>
+  <data name="Pending" xml:space="preserve"><value>معلق</value></data>
+  <data name="PendingPayment" xml:space="preserve"><value>دفع معلق</value></data>
+  <data name="Periphery" xml:space="preserve"><value>الضواحي (50 درهم)</value></data>
+  <data name="Perm_AccessDelivery" xml:space="preserve"><value>الوصول إلى التوصيل</value></data>
+  <data name="Perm_AccessInvoicing" xml:space="preserve"><value>الوصول إلى الفوترة</value></data>
+  <data name="Perm_Activate" xml:space="preserve"><value>تفعيل</value></data>
+  <data name="Perm_AddArticles" xml:space="preserve"><value>إضافة مقالات</value></data>
+  <data name="Perm_AddFamilies" xml:space="preserve"><value>إضافة فئات</value></data>
+  <data name="Perm_AddPayMethods" xml:space="preserve"><value>إضافة طرق دفع</value></data>
+  <data name="Perm_AddRoles" xml:space="preserve"><value>إضافة أدوار</value></data>
+  <data name="Perm_AddUsers" xml:space="preserve"><value>إضافة مستخدمين</value></data>
+  <data name="Perm_Apply" xml:space="preserve"><value>تطبيق</value></data>
+  <data name="Perm_Articles" xml:space="preserve"><value>المقالات</value></data>
+  <data name="Perm_Cancel" xml:space="preserve"><value>إلغاء</value></data>
+  <data name="Perm_CashClient" xml:space="preserve"><value>تحصيل (عميل)</value></data>
+  <data name="Perm_CashSupplier" xml:space="preserve"><value>تحصيل (مورد)</value></data>
+  <data name="Perm_CheckHistory" xml:space="preserve"><value>سجل الشيكات</value></data>
+  <data name="Perm_ClientPerms" xml:space="preserve"><value>صلاحيات العملاء</value></data>
+  <data name="Perm_ClientsPage" xml:space="preserve"><value>صفحة العملاء</value></data>
+  <data name="Perm_CreateClient" xml:space="preserve"><value>إنشاء عميل</value></data>
+  <data name="Perm_CreateDelivery" xml:space="preserve"><value>إنشاء توصيل</value></data>
+  <data name="Perm_CreateInvoice" xml:space="preserve"><value>إنشاء فاتورة</value></data>
+  <data name="Perm_CreateSupplier" xml:space="preserve"><value>إنشاء مورد</value></data>
+  <data name="Perm_Deactivate" xml:space="preserve"><value>تعطيل</value></data>
+  <data name="Perm_DeactivateAll" xml:space="preserve"><value>تعطيل الكل</value></data>
+  <data name="Perm_DeleteArticles" xml:space="preserve"><value>حذف مقالات</value></data>
+  <data name="Perm_DeleteClient" xml:space="preserve"><value>حذف عميل</value></data>
+  <data name="Perm_DeleteFamilies" xml:space="preserve"><value>حذف فئات</value></data>
+  <data name="Perm_DeletePayMethods" xml:space="preserve"><value>حذف طرق دفع</value></data>
+  <data name="Perm_DeleteRoles" xml:space="preserve"><value>حذف أدوار</value></data>
+  <data name="Perm_DeleteSupplier" xml:space="preserve"><value>حذف مورد</value></data>
+  <data name="Perm_DeleteUsers" xml:space="preserve"><value>حذف مستخدمين</value></data>
+  <data name="Perm_Delivery" xml:space="preserve"><value>التوصيل</value></data>
+  <data name="Perm_DeliveryMgmt" xml:space="preserve"><value>إدارة التوصيلات</value></data>
+  <data name="Perm_EditArticles" xml:space="preserve"><value>تعديل مقالات</value></data>
+  <data name="Perm_EditFamilies" xml:space="preserve"><value>تعديل فئات</value></data>
+  <data name="Perm_EditUsers" xml:space="preserve"><value>تعديل مستخدمين</value></data>
+  <data name="Perm_Families" xml:space="preserve"><value>الفئات</value></data>
+  <data name="Perm_InventoryPage" xml:space="preserve"><value>صفحة المخزون</value></data>
+  <data name="Perm_InvoiceHistory" xml:space="preserve"><value>سجل الفواتير</value></data>
+  <data name="Perm_InvoiceSettings" xml:space="preserve"><value>إعدادات الفاتورة</value></data>
+  <data name="Perm_Invoicing" xml:space="preserve"><value>الفوترة</value></data>
+  <data name="Perm_Management" xml:space="preserve"><value>الإدارة</value></data>
+  <data name="Perm_ModifyClient" xml:space="preserve"><value>تعديل عميل</value></data>
+  <data name="Perm_ModifyInvSettings" xml:space="preserve"><value>تعديل إعدادات الفاتورة</value></data>
+  <data name="Perm_ModifyPayMethods" xml:space="preserve"><value>تعديل طرق دفع</value></data>
+  <data name="Perm_ModifySupplier" xml:space="preserve"><value>تعديل مورد</value></data>
+  <data name="Perm_Operations" xml:space="preserve"><value>العمليات</value></data>
+  <data name="Perm_PageAccess" xml:space="preserve"><value>الوصول إلى الصفحات</value></data>
+  <data name="Perm_PayClient" xml:space="preserve"><value>تسوية عميل</value></data>
+  <data name="Perm_PaySupplier" xml:space="preserve"><value>تسوية مورد</value></data>
+  <data name="Perm_PaymentMethods" xml:space="preserve"><value>طرق الدفع</value></data>
+  <data name="Perm_Reports" xml:space="preserve"><value>التقارير</value></data>
+  <data name="Perm_ReverseMove" xml:space="preserve"><value>إلغاء حركة</value></data>
+  <data name="Perm_ReverseOp" xml:space="preserve"><value>إلغاء عملية</value></data>
+  <data name="Perm_RoleName" xml:space="preserve"><value>اسم الدور</value></data>
+  <data name="Perm_SalesPage" xml:space="preserve"><value>صفحة المبيعات</value></data>
+  <data name="Perm_SavedInvoices" xml:space="preserve"><value>الفواتير المحفوظة</value></data>
+  <data name="Perm_SettleClient" xml:space="preserve"><value>تسوية دين عميل</value></data>
+  <data name="Perm_SettleSupplier" xml:space="preserve"><value>تسوية دين مورد</value></data>
+  <data name="Perm_Settlements" xml:space="preserve"><value>التسويات</value></data>
+  <data name="Perm_SupplierPerms" xml:space="preserve"><value>صلاحيات الموردين</value></data>
+  <data name="Perm_SuppliersPage" xml:space="preserve"><value>صفحة الموردين</value></data>
+  <data name="Perm_SystemActions" xml:space="preserve"><value>إجراءات النظام</value></data>
+  <data name="Perm_UsersRoles" xml:space="preserve"><value>المستخدمون والأدوار</value></data>
+  <data name="Perm_ViewAbout" xml:space="preserve"><value>عرض حول</value></data>
+  <data name="Perm_ViewArticles" xml:space="preserve"><value>عرض المقالات</value></data>
+  <data name="Perm_ViewClient" xml:space="preserve"><value>عرض العملاء</value></data>
+  <data name="Perm_ViewClientCredit" xml:space="preserve"><value>عرض دين العميل</value></data>
+  <data name="Perm_ViewClientOps" xml:space="preserve"><value>عرض عمليات العميل</value></data>
+  <data name="Perm_ViewFamilies" xml:space="preserve"><value>عرض الفئات</value></data>
+  <data name="Perm_ViewInvSettings" xml:space="preserve"><value>عرض إعدادات الفاتورة</value></data>
+  <data name="Perm_ViewMoves" xml:space="preserve"><value>عرض الحركات</value></data>
+  <data name="Perm_ViewOps" xml:space="preserve"><value>عرض العمليات</value></data>
+  <data name="Perm_ViewPayMethods" xml:space="preserve"><value>عرض طرق الدفع</value></data>
+  <data name="Perm_ViewProjMgmt" xml:space="preserve"><value>عرض إدارة المشاريع</value></data>
+  <data name="Perm_ViewReports" xml:space="preserve"><value>عرض التقارير</value></data>
+  <data name="Perm_ViewRoles" xml:space="preserve"><value>عرض الأدوار</value></data>
+  <data name="Perm_ViewSettings" xml:space="preserve"><value>عرض الإعدادات</value></data>
+  <data name="Perm_ViewSupplier" xml:space="preserve"><value>عرض الموردين</value></data>
+  <data name="Perm_ViewSupplierCredit" xml:space="preserve"><value>عرض دين المورد</value></data>
+  <data name="Perm_ViewSupplierOps" xml:space="preserve"><value>عرض عمليات المورد</value></data>
+  <data name="Perm_ViewUsers" xml:space="preserve"><value>عرض المستخدمين</value></data>
+  <data name="PhoneICE" xml:space="preserve"><value>الهاتف / ICE</value></data>
+  <data name="PhoneRequired" xml:space="preserve"><value>الهاتف (مطلوب)</value></data>
+  <data name="PostalCode" xml:space="preserve"><value>الرمز البريدي</value></data>
+  <data name="PreviewDoc" xml:space="preserve"><value>معاينة المستند</value></data>
+  <data name="Preview_Close" xml:space="preserve"><value>إغلاق المعاينة</value></data>
+  <data name="Preview_Header" xml:space="preserve"><value>معاينة</value></data>
+  <data name="Preview_Title" xml:space="preserve"><value>معاينة الفاتورة</value></data>
+  <data name="PrintInvoice" xml:space="preserve"><value>طباعة الفاتورة</value></data>
+  <data name="PrintTicket" xml:space="preserve"><value>طباعة التذكرة</value></data>
+  <data name="ProcessPayment" xml:space="preserve"><value>معالجة الدفع</value></data>
+  <data name="ProductSearch" xml:space="preserve"><value>البحث عن منتج</value></data>
+  <data name="Products" xml:space="preserve"><value>المنتجات</value></data>
+  <data name="QtyHeader" xml:space="preserve"><value>الكمية</value></data>
+  <data name="QuantityLabel" xml:space="preserve"><value>الكمية</value></data>
+  <data name="QuickActions" xml:space="preserve"><value>إجراءات سريعة</value></data>
+  <data name="QuickAddClient" xml:space="preserve"><value>إضافة سريعة للعميل</value></data>
+  <data name="Recipient" xml:space="preserve"><value>المستلم</value></data>
+  <data name="Reference" xml:space="preserve"><value>المرجع</value></data>
+  <data name="Register" xml:space="preserve"><value>تسجيل</value></data>
+  <data name="Registration" xml:space="preserve"><value>التسجيل</value></data>
+  <data name="Rejected" xml:space="preserve"><value>مرفوض</value></data>
+  <data name="RemainingBalance" xml:space="preserve"><value>الرصيد المتبقي</value></data>
+  <data name="RemainingCredit" xml:space="preserve"><value>الدين المتبقي</value></data>
+  <data name="Remise" xml:space="preserve"><value>الخصم</value></data>
+  <data name="Reset" xml:space="preserve"><value>إعادة تعيين</value></data>
+  <data name="RoleWindow_AddRole" xml:space="preserve"><value>إضافة دور</value></data>
+  <data name="SaleValidation" xml:space="preserve"><value>تأكيد البيع</value></data>
+  <data name="SaveAsInvoice" xml:space="preserve"><value>حفظ كفاتورة</value></data>
+  <data name="SaveChanges" xml:space="preserve"><value>حفظ التغييرات</value></data>
+  <data name="SavedInvoices" xml:space="preserve"><value>الفواتير المحفوظة</value></data>
+  <data name="SearchArticle" xml:space="preserve"><value>البحث عن مقال</value></data>
+  <data name="SearchByNumberClientICE" xml:space="preserve"><value>البحث بالرقم أو العميل أو ICE</value></data>
+  <data name="SearchByReference" xml:space="preserve"><value>البحث بالمرجع</value></data>
+  <data name="SearchByReferenceOrDescription" xml:space="preserve"><value>البحث بالمرجع أو الوصف</value></data>
+  <data name="SearchResults" xml:space="preserve"><value>نتائج البحث</value></data>
+  <data name="SearchSelect" xml:space="preserve"><value>البحث والاختيار</value></data>
+  <data name="SeeAll" xml:space="preserve"><value>عرض الكل</value></data>
+  <data name="SelectArticleTitle" xml:space="preserve"><value>اختيار مقال</value></data>
+  <data name="SelectAtLeastOneOperation" xml:space="preserve"><value>اختر عملية واحدة على الأقل</value></data>
+  <data name="SelectOperation" xml:space="preserve"><value>اختيار عملية</value></data>
+  <data name="SelectedClientLabel" xml:space="preserve"><value>العميل المحدد</value></data>
+  <data name="SelectedProduct" xml:space="preserve"><value>المنتج المحدد</value></data>
+  <data name="Settings_AboutUs" xml:space="preserve"><value>معلومات عنا</value></data>
+  <data name="Settings_Preferences" xml:space="preserve"><value>التفضيلات</value></data>
+  <data name="SmallIcons" xml:space="preserve"><value>أيقونات صغيرة</value></data>
+  <data name="SortNameAZ" xml:space="preserve"><value>الاسم (أ-ي)</value></data>
+  <data name="SortNameZA" xml:space="preserve"><value>الاسم (ي-أ)</value></data>
+  <data name="SortNewest" xml:space="preserve"><value>الأحدث</value></data>
+  <data name="SortOldest" xml:space="preserve"><value>الأقدم</value></data>
+  <data name="SortPriceAsc" xml:space="preserve"><value>السعر تصاعدياً</value></data>
+  <data name="SortPriceDesc" xml:space="preserve"><value>السعر تنازلياً</value></data>
+  <data name="SortQtyAsc" xml:space="preserve"><value>الكمية تصاعدياً</value></data>
+  <data name="SortQtyDesc" xml:space="preserve"><value>الكمية تنازلياً</value></data>
+  <data name="StartDate" xml:space="preserve"><value>تاريخ البداية</value></data>
+  <data name="State" xml:space="preserve"><value>الحالة</value></data>
+  <data name="Status" xml:space="preserve"><value>الحالة</value></data>
+  <data name="Subtotal" xml:space="preserve"><value>المجموع الفرعي</value></data>
+  <data name="SubtotalLabel" xml:space="preserve"><value>المجموع الفرعي</value></data>
+  <data name="Suburb" xml:space="preserve"><value>الضاحية (70 درهم)</value></data>
+  <data name="Summary" xml:space="preserve"><value>الملخص</value></data>
+  <data name="Supplier" xml:space="preserve"><value>المورد</value></data>
+  <data name="SupplierID" xml:space="preserve"><value>معرف المورد</value></data>
+  <data name="SupplierRequired" xml:space="preserve"><value>المورد (مطلوب)</value></data>
+  <data name="TVAAmount" xml:space="preserve"><value>مبلغ الضريبة</value></data>
+  <data name="TVAPercent" xml:space="preserve"><value>الضريبة (%)</value></data>
+  <data name="TVARate" xml:space="preserve"><value>نسبة الضريبة</value></data>
+  <data name="ThankYou" xml:space="preserve"><value>شكراً لثقتكم!</value></data>
+  <data name="TicketPreviewTitle" xml:space="preserve"><value>معاينة التذكرة</value></data>
+  <data name="TimeUpper" xml:space="preserve"><value>الوقت</value></data>
+  <data name="TotalAmount" xml:space="preserve"><value>المبلغ الإجمالي</value></data>
+  <data name="TotalAmountMAD" xml:space="preserve"><value>المبلغ الإجمالي (درهم)</value></data>
+  <data name="TotalDiscount" xml:space="preserve"><value>إجمالي الخصم</value></data>
+  <data name="TotalFees" xml:space="preserve"><value>إجمالي الرسوم</value></data>
+  <data name="TotalHT" xml:space="preserve"><value>الإجمالي بدون ضريبة</value></data>
+  <data name="TotalHeader" xml:space="preserve"><value>المجموع</value></data>
+  <data name="TotalOperation" xml:space="preserve"><value>إجمالي العملية</value></data>
+  <data name="TotalOrder" xml:space="preserve"><value>إجمالي الطلب</value></data>
+  <data name="TotalOrderColon" xml:space="preserve"><value>إجمالي الطلب:</value></data>
+  <data name="TotalOrderDH" xml:space="preserve"><value>إجمالي الطلب (درهم)</value></data>
+  <data name="TotalPayments" xml:space="preserve"><value>إجمالي المدفوعات</value></data>
+  <data name="TotalQuantity" xml:space="preserve"><value>الكمية الإجمالية</value></data>
+  <data name="TotalSuppliers" xml:space="preserve"><value>إجمالي الموردين</value></data>
+  <data name="Unavailable" xml:space="preserve"><value>غير متاح</value></data>
+  <data name="UnitPriceHeader" xml:space="preserve"><value>س.و</value></data>
+  <data name="UnitPriceShort" xml:space="preserve"><value>س.و</value></data>
+  <data name="UnpaidBalance" xml:space="preserve"><value>الرصيد غير المدفوع</value></data>
+  <data name="Update" xml:space="preserve"><value>تحديث</value></data>
+  <data name="UpdateUser_Apply" xml:space="preserve"><value>تطبيق</value></data>
+  <data name="UpdateUser_Description" xml:space="preserve"><value>تعديل معلومات المستخدم</value></data>
+  <data name="UpdateUser_Title" xml:space="preserve"><value>تعديل المستخدم</value></data>
+  <data name="Van" xml:space="preserve"><value>شاحنة صغيرة</value></data>
+  <data name="VehicleType" xml:space="preserve"><value>نوع المركبة</value></data>
+  <data name="View" xml:space="preserve"><value>عرض</value></data>
+  <data name="ViewDeliveryTicket" xml:space="preserve"><value>عرض وصل التوصيل</value></data>
+  <data name="ViewImage" xml:space="preserve"><value>عرض الصورة</value></data>
+  <data name="ViewOperations" xml:space="preserve"><value>عرض العمليات</value></data>
+  <data name="ViewRoute" xml:space="preserve"><value>عرض المسار</value></data>
+  <data name="Zone" xml:space="preserve"><value>المنطقة</value></data>
+  <data name="ZoneUpper" xml:space="preserve"><value>المنطقة</value></data>
+
+  <!-- ===== MISSING KEYS (added to fix build errors) ===== -->
+  <data name="AllDataWillBeLost" xml:space="preserve"><value>ستُفقد جميع البيانات</value></data>
+  <data name="AllOperationTypes" xml:space="preserve"><value>جميع أنواع العمليات</value></data>
+  <data name="AppliedDiscount" xml:space="preserve"><value>الخصم المطبق</value></data>
+  <data name="Bank" xml:space="preserve"><value>بنك</value></data>
+  <data name="CheckHistoryTab" xml:space="preserve"><value>تحقق من علامة تبويب السجل</value></data>
+  <data name="ClientCreditPayment" xml:space="preserve"><value>دفع برصيد العميل</value></data>
+  <data name="CreditValue" xml:space="preserve"><value>قيمة الائتمان</value></data>
+  <data name="DateTime" xml:space="preserve"><value>التاريخ والوقت</value></data>
+  <data name="DeliveryNote" xml:space="preserve"><value>إشعار التسليم</value></data>
+  <data name="Deletion" xml:space="preserve"><value>حذف</value></data>
+  <data name="Expedition" xml:space="preserve"><value>شحن</value></data>
+  <data name="Finance" xml:space="preserve"><value>المالية</value></data>
+  <data name="InitialQuantity" xml:space="preserve"><value>الكمية الأولية</value></data>
+  <data name="InvoiceID" xml:space="preserve"><value>رقم الفاتورة</value></data>
+  <data name="Keyboard_AR" xml:space="preserve"><value>AR</value></data>
+  <data name="Keyboard_EN" xml:space="preserve"><value>EN</value></data>
+  <data name="Keyboard_FR" xml:space="preserve"><value>FR</value></data>
+  <data name="ManageInventoryInOut" xml:space="preserve"><value>إدارة الوارد والصادر من المخزون</value></data>
+  <data name="Modification" xml:space="preserve"><value>تعديل</value></data>
+  <data name="MovementWillAlsoBeReversedInOperation" xml:space="preserve"><value>سيتم أيضاً عكس الحركة في العملية</value></data>
+  <data name="NumberOfArticles" xml:space="preserve"><value>عدد المقالات</value></data>
+  <data name="OperationType" xml:space="preserve"><value>نوع العملية</value></data>
+  <data name="ProForma" xml:space="preserve"><value>فاتورة أولية</value></data>
+  <data name="Purchase" xml:space="preserve"><value>شراء</value></data>
+  <data name="PurchaseOrder" xml:space="preserve"><value>أمر الشراء</value></data>
+  <data name="Quote" xml:space="preserve"><value>عرض السعر</value></data>
+  <data name="SelectClient" xml:space="preserve"><value>اختر عميل</value></data>
+  <data name="Shipment" xml:space="preserve"><value>شحنة</value></data>
+  <data name="SupplierCreditPayment" xml:space="preserve"><value>دفع برصيد المورد</value></data>
+  <data name="SupplierName" xml:space="preserve"><value>اسم المورد</value></data>
+  <data name="TotalPrice" xml:space="preserve"><value>السعر الإجمالي</value></data>
+  <data name="TransactionType" xml:space="preserve"><value>نوع المعاملة</value></data>
+  <data name="User" xml:space="preserve"><value>مستخدم</value></data>
+  <data name="User_Actions" xml:space="preserve"><value>إجراءات المستخدم</value></data>
+  <data name="User_Code" xml:space="preserve"><value>رمز المستخدم</value></data>
+  <data name="User_ID" xml:space="preserve"><value>معرف المستخدم</value></data>
+  <data name="User_Name" xml:space="preserve"><value>اسم المستخدم</value></data>
+  <data name="User_Role" xml:space="preserve"><value>دور المستخدم</value></data>
+  <data name="VATNumber" xml:space="preserve"><value>رقم ضريبة القيمة المضافة</value></data>
+  <data name="VAT" xml:space="preserve"><value>ضريبة القيمة المضافة</value></data>
+  <data name="ArticlesInThisOperation" xml:space="preserve"><value>المقالات في هذه العملية</value></data>
+  <data name="CompanyID" xml:space="preserve"><value>معرف الشركة</value></data>
+  <data name="Today" xml:space="preserve"><value>اليوم</value></data>
+  <data name="Telephone" xml:space="preserve"><value>هاتف</value></data>
+  <data name="Normal" xml:space="preserve"><value>عادي</value></data>
+  <data name="PaymentType" xml:space="preserve"><value>نوع الدفع</value></data>
+  <data name="AddOperation" xml:space="preserve"><value>إضافة عملية</value></data>
+  <data name="AmountInWords" xml:space="preserve"><value>المبلغ بالأحرف</value></data>
+  <data name="ArticleInformation" xml:space="preserve"><value>معلومات المقال</value></data>
+  <data name="BillingInformation" xml:space="preserve"><value>معلومات الفوترة</value></data>
+  <data name="ChequeReference" xml:space="preserve"><value>مرجع الشيك</value></data>
+  <data name="Currency" xml:space="preserve"><value>العملة</value></data>
+  <data name="DescriptionNotes" xml:space="preserve"><value>الوصف / ملاحظات</value></data>
+  <data name="General_SalesManagementDesc" xml:space="preserve"><value>إدارة المبيعات مبسطة</value></data>
+  <data name="GivenBy" xml:space="preserve"><value>مقدم من</value></data>
+  <data name="International" xml:space="preserve"><value>دولي</value></data>
+  <data name="InvoiceIndex" xml:space="preserve"><value>فهرس الفاتورة</value></data>
+  <data name="InvoiceStatus" xml:space="preserve"><value>حالة الفاتورة</value></data>
+  <data name="Month" xml:space="preserve"><value>شهر</value></data>
+  <data name="National" xml:space="preserve"><value>وطني</value></data>
+  <data name="NetProfit" xml:space="preserve"><value>صافي الربح</value></data>
+  <data name="NewMovement" xml:space="preserve"><value>حركة جديدة</value></data>
+  <data name="ReceivedBy" xml:space="preserve"><value>مستلم من</value></data>
+  <data name="Saving" xml:space="preserve"><value>جارٍ الحفظ...</value></data>
+  <data name="SelectArticlesToReverse" xml:space="preserve"><value>حدد المقالات للعكس</value></data>
+  <data name="ShowAll" xml:space="preserve"><value>عرض الكل</value></data>
+  <data name="SixMonths" xml:space="preserve"><value>ستة أشهر</value></data>
+  <data name="TodayPlus" xml:space="preserve"><value>اليوم +</value></data>
+  <data name="TotalAfterDiscount" xml:space="preserve"><value>الإجمالي بعد الخصم</value></data>
+  <data name="TotalAmountInclVAT" xml:space="preserve"><value>المبلغ الإجمالي شامل الضريبة</value></data>
+  <data name="VATAmount" xml:space="preserve"><value>مبلغ الضريبة</value></data>
+  <data name="VATRate" xml:space="preserve"><value>نسبة الضريبة</value></data>
+  <data name="Week" xml:space="preserve"><value>أسبوع</value></data>
+  <data name="Year" xml:space="preserve"><value>سنة</value></data>
+</root>
