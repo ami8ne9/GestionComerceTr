@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:p="clr-namespace:GestionComerce.Resources"
              mc:Ignorable="d" 
              d:DesignHeight="900" d:DesignWidth="1400"
              Loaded="UserControl_Loaded">
@@ -118,7 +119,7 @@
                 x:Name="LoadingOverlay">
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                 <TextBlock Text="⏳" FontSize="64" HorizontalAlignment="Center" Margin="0,0,0,16"/>
-                <TextBlock Text="Analyse des données en cours..." 
+                <TextBlock Text="{x:Static p:Resources.CMainEx_Loading}" 
                           FontSize="20" 
                           Foreground="White" 
                           FontWeight="SemiBold"
@@ -137,69 +138,67 @@
                     </Grid.ColumnDefinitions>
                     
                     <StackPanel Grid.Column="0">
-                        <TextBlock Text="📊 Tableau de Bord Stratégique" 
+                        <TextBlock Text="{x:Static p:Resources.CMainEx_Title}" 
                                   Style="{StaticResource HeaderTextStyle}"/>
-                        <TextBlock Text="Projections financières et recommandations intelligentes basées sur vos données réelles"
+                        <TextBlock Text="{x:Static p:Resources.CMainEx_Subtitle}"
                                   FontSize="14"
                                   Foreground="#757575"
                                   Margin="0,-12,0,0"/>
                     </StackPanel>
 
                     <Button Grid.Column="1" 
-                           Content="🔄 Actualiser"
+                           Content="{x:Static p:Resources.CMainEx_Refresh}"
                            Style="{StaticResource RefreshButtonStyle}"
                            Click="RefreshButton_Click"
                            VerticalAlignment="Top"/>
                 </Grid>
 
                 <Border Background="White" 
-        CornerRadius="8" 
-        Padding="20"
-        Margin="0,0,0,20"
-        BorderBrush="#E0E0E0" 
-        BorderThickness="1">
+                        CornerRadius="8" 
+                        Padding="20"
+                        Margin="0,0,0,20"
+                        BorderBrush="#E0E0E0" 
+                        BorderThickness="1">
 
                     <StackPanel Orientation="Horizontal" 
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center">
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center">
 
                         <!-- Period Selection Label -->
-                        <TextBlock Text="Période de projection:" 
-                   FontSize="16"
-                   FontWeight="SemiBold"
-                   VerticalAlignment="Center"
-                   Foreground="#424242"
-                   Margin="0,0,15,0"/>
+                        <TextBlock Text="{x:Static p:Resources.CMainEx_PeriodLabel}" 
+                                   FontSize="16"
+                                   FontWeight="SemiBold"
+                                   VerticalAlignment="Center"
+                                   Foreground="#424242"
+                                   Margin="0,0,15,0"/>
 
                         <!-- Period Selector ComboBox -->
                         <ComboBox x:Name="PeriodSelector"
-                  Width="200"
-                  Height="40"
-                  FontSize="14"
-                  VerticalContentAlignment="Center"
-                  SelectedIndex="0"
-                  SelectionChanged="PeriodSelector_SelectionChanged">
-
-                            <!-- Period Options -->
-                            <ComboBoxItem Content="1 mois" Tag="1"/>
-                            <ComboBoxItem Content="3 mois" Tag="3"/>
-                            <ComboBoxItem Content="6 mois" Tag="6"/>
-                            <ComboBoxItem Content="1 an" Tag="12"/>
-                            <ComboBoxItem Content="2 ans" Tag="24"/>
-                            <ComboBoxItem Content="5 ans" Tag="60"/>
+                                  Width="200"
+                                  Height="40"
+                                  FontSize="14"
+                                  VerticalContentAlignment="Center"
+                                  SelectedIndex="0"
+                                  SelectionChanged="PeriodSelector_SelectionChanged">
+                            <ComboBoxItem Content="{x:Static p:Resources.CMainEx_1Month}" Tag="1"/>
+                            <ComboBoxItem Content="{x:Static p:Resources.CMainEx_3Months}" Tag="3"/>
+                            <ComboBoxItem Content="{x:Static p:Resources.CMainEx_6Months}" Tag="6"/>
+                            <ComboBoxItem Content="{x:Static p:Resources.CMainEx_1Year}" Tag="12"/>
+                            <ComboBoxItem Content="{x:Static p:Resources.CMainEx_2Years}" Tag="24"/>
+                            <ComboBoxItem Content="{x:Static p:Resources.CMainEx_5Years}" Tag="60"/>
                         </ComboBox>
 
-                        <!-- Info Icon/Tooltip (Optional) -->
+                        <!-- Info Icon/Tooltip -->
                         <Border Background="#E3F2FD" 
-                CornerRadius="15"
-                Width="30"
-                Height="30"
-                Margin="15,0,0,0"
-                ToolTip="Sélectionnez la période pour laquelle vous souhaitez voir les projections de revenus, profits et recommandations.">
+                                CornerRadius="15"
+                                Width="30"
+                                Height="30"
+                                Margin="15,0,0,0"
+                                ToolTip="{x:Static p:Resources.CMainEx_PeriodTooltip}">
                             <TextBlock Text="ℹ️" 
-                       FontSize="16"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"/>
+                                       FontSize="16"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
                         </Border>
                     </StackPanel>
                 </Border>
@@ -221,9 +220,9 @@
                                       Text="0.00 DH" 
                                       Style="{StaticResource KpiValueStyle}"
                                       Foreground="#2E7D32"/>
-                            <TextBlock Text="Chiffre d'Affaires Potentiel" 
+                            <TextBlock Text="{x:Static p:Resources.CMainEx_PotentialRevenue}" 
                                       Style="{StaticResource KpiLabelStyle}"/>
-                            <TextBlock Text="Valeur totale du stock" 
+                            <TextBlock Text="{x:Static p:Resources.CMainEx_StockTotalValue}" 
                                       FontSize="11" 
                                       Foreground="#9E9E9E" 
                                       HorizontalAlignment="Center"
@@ -239,7 +238,7 @@
                                       Text="0.00 DH" 
                                       Style="{StaticResource KpiValueStyle}"
                                       Foreground="#1565C0"/>
-                            <TextBlock Text="Profit Net Potentiel" 
+                            <TextBlock Text="{x:Static p:Resources.CMainEx_PotentialProfit}" 
                                       Style="{StaticResource KpiLabelStyle}"/>
                             <TextBlock x:Name="ProfitMarginText" 
                                       Text="Marge: 0%" 
@@ -258,7 +257,7 @@
                                       Text="0%" 
                                       Style="{StaticResource KpiValueStyle}"
                                       Foreground="#F57C00"/>
-                            <TextBlock Text="Santé du Stock" 
+                            <TextBlock Text="{x:Static p:Resources.CMainEx_StockHealth}" 
                                       Style="{StaticResource KpiLabelStyle}"/>
                             <ProgressBar x:Name="InventoryHealthBar" 
                                         Height="8" 
@@ -279,7 +278,7 @@
                                       Text="0.00 DH" 
                                       Style="{StaticResource KpiValueStyle}"
                                       Foreground="#D32F2F"/>
-                            <TextBlock Text="Chèques En Attente" 
+                            <TextBlock Text="{x:Static p:Resources.CMainEx_PendingChecks}" 
                                       Style="{StaticResource KpiLabelStyle}"/>
                             <TextBlock x:Name="PendingChecksCountText" 
                                       Text="0 chèques" 
@@ -294,7 +293,7 @@
                 <!-- Middle Section: Article Search & Projections -->
                 <Border Style="{StaticResource CardStyle}" Margin="12,0,12,20">
                     <StackPanel>
-                        <TextBlock Text="🔍 Analyse par Article" 
+                        <TextBlock Text="{x:Static p:Resources.CMainEx_ArticleAnalysis}" 
                                   Style="{StaticResource SectionHeaderStyle}"/>
                         
                         <!-- Search Box -->
@@ -352,7 +351,7 @@
                                 <TextBlock x:Name="SelectedArticleNameText" 
                                           Grid.Row="0" 
                                           Grid.ColumnSpan="3"
-                                          Text="Article Sélectionné" 
+                                          Text="{x:Static p:Resources.CMainEx_SelectedArticle}" 
                                           FontSize="18" 
                                           FontWeight="Bold"
                                           Foreground="#1A237E"
@@ -360,7 +359,7 @@
 
                                 <!-- Days Until Stockout -->
                                 <StackPanel Grid.Row="1" Grid.Column="0" Margin="0,0,20,0">
-                                    <TextBlock Text="⏰ Jours Avant Rupture" 
+                                    <TextBlock Text="{x:Static p:Resources.CMainEx_DaysBeforeStockout}" 
                                               FontSize="13" 
                                               Foreground="#616161"
                                               Margin="0,0,0,8"/>
@@ -378,7 +377,7 @@
 
                                 <!-- Restock Date -->
                                 <StackPanel Grid.Row="1" Grid.Column="1" Margin="0,0,20,0">
-                                    <TextBlock Text="📅 Date de Réapprovisionnement" 
+                                    <TextBlock Text="{x:Static p:Resources.CMainEx_RestockDate}" 
                                               FontSize="13" 
                                               Foreground="#616161"
                                               Margin="0,0,0,8"/>
@@ -387,7 +386,7 @@
                                               FontSize="24" 
                                               FontWeight="Bold"
                                               Foreground="#1565C0"/>
-                                    <TextBlock Text="Commandez avant cette date" 
+                                    <TextBlock Text="{x:Static p:Resources.CMainEx_OrderBefore}" 
                                               FontSize="11" 
                                               Foreground="#9E9E9E"
                                               Margin="0,4,0,0"/>
@@ -395,7 +394,7 @@
 
                                 <!-- Profit Margin Gauge -->
                                 <StackPanel Grid.Row="1" Grid.Column="2">
-                                    <TextBlock Text="💹 Marge Bénéficiaire" 
+                                    <TextBlock Text="{x:Static p:Resources.CMainEx_ProfitMarginLabel}" 
                                               FontSize="13" 
                                               Foreground="#616161"
                                               Margin="0,0,0,8"/>
@@ -422,7 +421,7 @@
                                        Padding="16"
                                        Margin="0,20,0,0">
                                     <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="📦 Stock Actuel: " 
+                                        <TextBlock Text="{x:Static p:Resources.CMainEx_CurrentStock}" 
                                                   FontSize="14" 
                                                   Foreground="#616161"/>
                                         <TextBlock x:Name="CurrentStockText" 
@@ -431,7 +430,7 @@
                                                   FontWeight="SemiBold"
                                                   Foreground="#1A237E"
                                                   Margin="4,0,20,0"/>
-                                        <TextBlock Text="💵 Prix de Vente: " 
+                                        <TextBlock Text="{x:Static p:Resources.CMainEx_SalePriceLabel}" 
                                                   FontSize="14" 
                                                   Foreground="#616161"/>
                                         <TextBlock x:Name="SalePriceText" 
@@ -440,7 +439,7 @@
                                                   FontWeight="SemiBold"
                                                   Foreground="#2E7D32"
                                                   Margin="4,0,20,0"/>
-                                        <TextBlock Text="📊 Valeur Stock: " 
+                                        <TextBlock Text="{x:Static p:Resources.CMainEx_StockValue}" 
                                                   FontSize="14" 
                                                   Foreground="#616161"/>
                                         <TextBlock x:Name="StockValueText" 
@@ -453,17 +452,17 @@
                                 </Border>
 
                                 <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                                    <TextBlock Text="Ventes projetées:" 
-               FontSize="14"
-               Foreground="#757575"
-               Width="150"
-               VerticalAlignment="Center"/>
+                                    <TextBlock Text="{x:Static p:Resources.CMainEx_ProjectedSales}" 
+                                               FontSize="14"
+                                               Foreground="#757575"
+                                               Width="150"
+                                               VerticalAlignment="Center"/>
                                     <TextBlock x:Name="ProjectedSalesText" 
-               Text="N/A"
-               FontSize="14"
-               FontWeight="SemiBold"
-               Foreground="#1976D2"
-               VerticalAlignment="Center"/>
+                                               Text="N/A"
+                                               FontSize="14"
+                                               FontWeight="SemiBold"
+                                               Foreground="#1976D2"
+                                               VerticalAlignment="Center"/>
                                 </StackPanel>
                             </Grid>
                         </Border>
@@ -474,7 +473,7 @@
                 <Border Style="{StaticResource CardStyle}">
                     <StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="0,0,0,16">
-                            <TextBlock Text="💡 Conseiller Intelligent" 
+                            <TextBlock Text="{x:Static p:Resources.CMainEx_SmartAdvisor}" 
                                       Style="{StaticResource SectionHeaderStyle}"
                                       Margin="0"/>
                             <Border Background="#4CAF50" 
@@ -545,13 +544,13 @@
                                BorderThickness="1">
                             <StackPanel HorizontalAlignment="Center">
                                 <TextBlock Text="✅" FontSize="48" HorizontalAlignment="Center" Margin="0,0,0,12"/>
-                                <TextBlock Text="Excellent! Aucune action urgente requise." 
+                                <TextBlock Text="{x:Static p:Resources.CMainEx_NoUrgentAction}" 
                                           FontSize="16" 
                                           FontWeight="SemiBold"
                                           Foreground="#2E7D32"
                                           HorizontalAlignment="Center"
                                           Margin="0,0,0,4"/>
-                                <TextBlock Text="Votre inventaire et votre trésorerie sont en bonne santé." 
+                                <TextBlock Text="{x:Static p:Resources.CMainEx_HealthyStatus}" 
                                           FontSize="14" 
                                           Foreground="#558B2F"
                                           HorizontalAlignment="Center"/>

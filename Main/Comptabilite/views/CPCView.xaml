@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:res="clr-namespace:GestionComerce.Resources"
              mc:Ignorable="d"
              d:DesignHeight="900" d:DesignWidth="1100">
 
@@ -22,21 +23,17 @@
         <SolidColorBrush x:Key="AccentOrange"  Color="#F59E0B"/>
         <SolidColorBrush x:Key="AccentPurple"  Color="#8B5CF6"/>
 
-        <!-- ── SECTION HEADER ── -->
         <Style x:Key="SectionHeaderStyle" TargetType="Border">
             <Setter Property="CornerRadius" Value="6,6,0,0"/>
             <Setter Property="Padding"      Value="16,10"/>
-            <Setter Property="Margin"       Value="0,0,0,0"/>
         </Style>
 
-        <!-- ── ROW LABEL ── -->
         <Style x:Key="RowLabel" TargetType="TextBlock">
             <Setter Property="Foreground"  Value="{StaticResource TextPrimary}"/>
             <Setter Property="FontSize"    Value="13"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
 
-        <!-- ── ROW AMOUNT ── -->
         <Style x:Key="RowAmount" TargetType="TextBlock">
             <Setter Property="Foreground"  Value="{StaticResource TextPrimary}"/>
             <Setter Property="FontSize"    Value="13"/>
@@ -45,7 +42,6 @@
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
 
-        <!-- ── TOTAL ROW LABEL ── -->
         <Style x:Key="TotalLabel" TargetType="TextBlock">
             <Setter Property="Foreground"  Value="{StaticResource TextPrimary}"/>
             <Setter Property="FontSize"    Value="13"/>
@@ -53,7 +49,6 @@
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
 
-        <!-- ── TOTAL ROW AMOUNT ── -->
         <Style x:Key="TotalAmount" TargetType="TextBlock">
             <Setter Property="FontSize"    Value="13"/>
             <Setter Property="FontWeight"  Value="Bold"/>
@@ -62,7 +57,6 @@
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
 
-        <!-- ── PRIMARY ACTION BUTTON ── -->
         <Style x:Key="PrimaryBtn" TargetType="Button">
             <Setter Property="Foreground"      Value="White"/>
             <Setter Property="FontSize"        Value="13"/>
@@ -73,9 +67,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}"
-                                CornerRadius="6"
-                                Padding="{TemplateBinding Padding}">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="6" Padding="{TemplateBinding Padding}">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                         <ControlTemplate.Triggers>
@@ -91,7 +83,6 @@
             </Setter>
         </Style>
 
-        <!-- ── SECONDARY FILTER BUTTON ── -->
         <Style x:Key="FilterBtn" TargetType="Button">
             <Setter Property="Background"      Value="White"/>
             <Setter Property="Foreground"      Value="{StaticResource TextPrimary}"/>
@@ -120,7 +111,6 @@
             </Setter>
         </Style>
 
-        <!-- ── DatePicker Style ── -->
         <Style TargetType="DatePicker">
             <Setter Property="Background"      Value="White"/>
             <Setter Property="BorderBrush"     Value="{StaticResource BorderLight}"/>
@@ -135,18 +125,12 @@
     <Grid Background="{StaticResource BgPage}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <!-- Top bar -->
             <RowDefinition Height="Auto"/>
-            <!-- Filter bar -->
             <RowDefinition Height="*"/>
-            <!-- Main content -->
             <RowDefinition Height="Auto"/>
-            <!-- Result footer -->
         </Grid.RowDefinitions>
 
-        <!-- ══════════════════════════════════════════
-             TOP BAR
-        ════════════════════════════════════════════ -->
+        <!-- ══════════ TOP BAR ══════════ -->
         <Border Grid.Row="0" Background="White"
                 BorderBrush="{StaticResource BorderLight}" BorderThickness="0,0,0,1"
                 Padding="28,16">
@@ -161,54 +145,45 @@
                         <TextBlock Text="📈" FontSize="22"/>
                     </Border>
                     <StackPanel VerticalAlignment="Center">
-                        <TextBlock Text="Compte de Produits et Charges"
+                        <TextBlock Text="{x:Static res:Resources.CPC_Title}"
                                    FontSize="20" FontWeight="Bold"
                                    Foreground="{StaticResource TextPrimary}"/>
                         <TextBlock x:Name="TxtPeriodLabel"
-                                   Text="Exercice en cours"
+                                   Text="{x:Static res:Resources.CPC_ExerciceEnCours}"
                                    FontSize="12" Foreground="{StaticResource TextSecondary}"
                                    Margin="0,2,0,0"/>
                     </StackPanel>
                 </StackPanel>
 
                 <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
-                    <!-- Print placeholder -->
-                    <Button x:Name="BtnPrint"
-                            Style="{StaticResource FilterBtn}"
-                            Click="BtnPrint_Click"
-                            Margin="0,0,10,0">
+                    <Button x:Name="BtnPrint" Style="{StaticResource FilterBtn}" Click="BtnPrint_Click" Margin="0,0,10,0">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="🖨" FontSize="14" Margin="0,0,6,0"/>
-                            <TextBlock Text="Imprimer PDF" FontSize="12"/>
+                            <TextBlock Text="{x:Static res:Resources.CPC_PrintPDF}" FontSize="12"/>
                         </StackPanel>
                     </Button>
 
-                    <!-- Export placeholder -->
-                    <Button x:Name="BtnExport"
-                            Style="{StaticResource FilterBtn}"
-                            Click="BtnExport_Click">
+                    <Button x:Name="BtnExport" Style="{StaticResource FilterBtn}" Click="BtnExport_Click">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="⬇" FontSize="14" Margin="0,0,6,0"/>
-                            <TextBlock Text="Exporter" FontSize="12"/>
+                            <TextBlock Text="{x:Static res:Resources.CPC_Export}" FontSize="12"/>
                         </StackPanel>
                     </Button>
                 </StackPanel>
             </Grid>
         </Border>
 
-        <!-- ══════════════════════════════════════════
-             FILTER BAR
-        ════════════════════════════════════════════ -->
+        <!-- ══════════ FILTER BAR ══════════ -->
         <Border Grid.Row="1" Background="White"
                 BorderBrush="{StaticResource BorderLight}" BorderThickness="0,0,0,1"
                 Padding="28,12">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
 
-                <TextBlock Text="Du :" FontSize="13" Foreground="{StaticResource TextSecondary}"
+                <TextBlock Text="{x:Static res:Resources.CPC_Du}" FontSize="13" Foreground="{StaticResource TextSecondary}"
                            VerticalAlignment="Center" Margin="0,0,8,0"/>
                 <DatePicker x:Name="DateDebutPicker" Width="140" VerticalAlignment="Center"/>
 
-                <TextBlock Text="Au :" FontSize="13" Foreground="{StaticResource TextSecondary}"
+                <TextBlock Text="{x:Static res:Resources.CPC_Au}" FontSize="13" Foreground="{StaticResource TextSecondary}"
                            VerticalAlignment="Center" Margin="20,0,8,0"/>
                 <DatePicker x:Name="DateFinPicker" Width="140" VerticalAlignment="Center"/>
 
@@ -219,15 +194,14 @@
                         Margin="16,0,0,0">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="⟳ " FontSize="14"/>
-                        <TextBlock Text="Générer"/>
+                        <TextBlock Text="{x:Static res:Resources.CPC_Generate}"/>
                     </StackPanel>
                 </Button>
 
-                <!-- Quick period shortcuts -->
                 <Button x:Name="BtnCurrentYear"  Style="{StaticResource FilterBtn}" Margin="16,0,6,0"
-                        Click="BtnCurrentYear_Click" Content="Année en cours"/>
+                        Click="BtnCurrentYear_Click" Content="{x:Static res:Resources.CPC_AnneeEnCours}"/>
                 <Button x:Name="BtnCurrentMonth" Style="{StaticResource FilterBtn}" Margin="0,0,6,0"
-                        Click="BtnCurrentMonth_Click" Content="Mois en cours"/>
+                        Click="BtnCurrentMonth_Click" Content="{x:Static res:Resources.CPC_MoisEnCours}"/>
                 <Button x:Name="BtnQ1"           Style="{StaticResource FilterBtn}" Margin="0,0,6,0"
                         Click="BtnQ1_Click" Content="T1"/>
                 <Button x:Name="BtnQ2"           Style="{StaticResource FilterBtn}" Margin="0,0,6,0"
@@ -237,18 +211,15 @@
                 <Button x:Name="BtnQ4"           Style="{StaticResource FilterBtn}"
                         Click="BtnQ4_Click" Content="T4"/>
 
-                <!-- Loading indicator -->
                 <Border x:Name="LoadingIndicator" Visibility="Collapsed"
                         Background="#EFF6FF" CornerRadius="4" Padding="10,6" Margin="16,0,0,0">
-                    <TextBlock Text="⏳ Chargement..." FontSize="12"
+                    <TextBlock Text="{x:Static res:Resources.CPC_Loading}" FontSize="12"
                                Foreground="{StaticResource AccentBlue}"/>
                 </Border>
             </StackPanel>
         </Border>
 
-        <!-- ══════════════════════════════════════════
-             MAIN SCROLLABLE CONTENT
-        ════════════════════════════════════════════ -->
+        <!-- ══════════ MAIN SCROLLABLE CONTENT ══════════ -->
         <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" Padding="24,20">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -257,7 +228,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <!-- ─────────── LEFT COLUMN: PRODUITS ─────────── -->
+                <!-- ─── LEFT COLUMN: PRODUITS ─── -->
                 <StackPanel Grid.Column="0">
 
                     <!-- PRODUITS D'EXPLOITATION -->
@@ -265,7 +236,6 @@
                             BorderBrush="{StaticResource BorderLight}" BorderThickness="1"
                             Margin="0,0,0,16" Effect="{x:Null}">
                         <StackPanel>
-                            <!-- Section header -->
                             <Border CornerRadius="10,10,0,0" Padding="16,12">
                                 <Border.Background>
                                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
@@ -275,26 +245,23 @@
                                 </Border.Background>
                                 <StackPanel Orientation="Horizontal">
                                     <Border Background="#10B981" CornerRadius="4" Padding="6,3" Margin="0,0,10,0">
-                                        <TextBlock Text="PRODUITS" FontSize="10" FontWeight="Bold"
-                                                   Foreground="White"/>
+                                        <TextBlock Text="{x:Static res:Resources.CPC_Produits}" FontSize="10" FontWeight="Bold" Foreground="White"/>
                                     </Border>
-                                    <TextBlock Text="D'EXPLOITATION" FontSize="14" FontWeight="Bold"
+                                    <TextBlock Text="{x:Static res:Resources.CPC_Exploitation}" FontSize="14" FontWeight="Bold"
                                                Foreground="#065F46" VerticalAlignment="Center"/>
                                 </StackPanel>
                             </Border>
 
-                            <!-- Column headers -->
-                            <Grid Background="#F8FAFC" Margin="0">
+                            <Grid Background="#F8FAFC">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="160"/>
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Grid.Column="1" Text="Montant (MAD)" 
+                                <TextBlock Grid.Column="1" Text="{x:Static res:Resources.CPC_MontantMAD}"
                                            FontSize="11" FontWeight="SemiBold" TextAlignment="Right" Margin="0,8,16,8"/>
                             </Grid>
                             <Rectangle Fill="{StaticResource BorderLight}" Height="1"/>
 
-                            <!-- Rows -->
                             <ItemsControl x:Name="ProduitsExploitationList">
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate>
@@ -307,34 +274,22 @@
                                                 <RowDefinition Height="36"/>
                                                 <RowDefinition Height="Auto"/>
                                             </Grid.RowDefinitions>
-                                            <TextBlock Grid.Column="0" Grid.Row="0"
-                                                       Text="{Binding Libelle}"
-                                                       Style="{StaticResource RowLabel}"
-                                                       Margin="16,0,0,0"/>
-                                            <TextBlock Grid.Column="1" Grid.Row="0"
-                                                       Text="{Binding MontantFormatted}"
-                                                       Style="{StaticResource RowAmount}"
-                                                       Foreground="#059669"
-                                                       Margin="0,0,16,0"/>
-                                            <Rectangle Grid.Row="1" Grid.ColumnSpan="2"
-                                                       Fill="{StaticResource BorderLight}" Height="1" Opacity="0.5"/>
+                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="{Binding Libelle}" Style="{StaticResource RowLabel}" Margin="16,0,0,0"/>
+                                            <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding MontantFormatted}" Style="{StaticResource RowAmount}" Foreground="#059669" Margin="0,0,16,0"/>
+                                            <Rectangle Grid.Row="1" Grid.ColumnSpan="2" Fill="{StaticResource BorderLight}" Height="1" Opacity="0.5"/>
                                         </Grid>
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>
                             </ItemsControl>
 
-                            <!-- Total row -->
                             <Border Background="#F0FDF4" Padding="16,10">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="160"/>
                                     </Grid.ColumnDefinitions>
-                                    <TextBlock Grid.Column="0" Text="TOTAL PRODUITS D'EXPLOITATION"
-                                               Style="{StaticResource TotalLabel}" Foreground="#065F46"/>
-                                    <TextBlock Grid.Column="1" x:Name="TxtTotalProduitsExpl"
-                                               Style="{StaticResource TotalAmount}"
-                                               Foreground="#059669" Margin="0,0,16,0"/>
+                                    <TextBlock Grid.Column="0" Text="{x:Static res:Resources.CPC_TotalProduitsExpl}" Style="{StaticResource TotalLabel}" Foreground="#065F46"/>
+                                    <TextBlock Grid.Column="1" x:Name="TxtTotalProduitsExpl" Style="{StaticResource TotalAmount}" Foreground="#059669" Margin="0,0,16,0"/>
                                 </Grid>
                             </Border>
                         </StackPanel>
@@ -342,8 +297,7 @@
 
                     <!-- PRODUITS FINANCIERS -->
                     <Border CornerRadius="10" Background="{StaticResource BgCard}"
-                            BorderBrush="{StaticResource BorderLight}" BorderThickness="1"
-                            Margin="0,0,0,16">
+                            BorderBrush="{StaticResource BorderLight}" BorderThickness="1" Margin="0,0,0,16">
                         <StackPanel>
                             <Border CornerRadius="10,10,0,0" Padding="16,12">
                                 <Border.Background>
@@ -354,10 +308,9 @@
                                 </Border.Background>
                                 <StackPanel Orientation="Horizontal">
                                     <Border Background="#3B82F6" CornerRadius="4" Padding="6,3" Margin="0,0,10,0">
-                                        <TextBlock Text="PRODUITS" FontSize="10" FontWeight="Bold" Foreground="White"/>
+                                        <TextBlock Text="{x:Static res:Resources.CPC_Produits}" FontSize="10" FontWeight="Bold" Foreground="White"/>
                                     </Border>
-                                    <TextBlock Text="FINANCIERS" FontSize="14" FontWeight="Bold"
-                                               Foreground="#1E40AF" VerticalAlignment="Center"/>
+                                    <TextBlock Text="{x:Static res:Resources.CPC_Financiers}" FontSize="14" FontWeight="Bold" Foreground="#1E40AF" VerticalAlignment="Center"/>
                                 </StackPanel>
                             </Border>
                             <Grid Background="#F8FAFC">
@@ -365,10 +318,8 @@
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="160"/>
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Grid.Column="0" Text="Libellé" Foreground="{StaticResource TextMuted}"
-                                           FontSize="11" FontWeight="SemiBold" Margin="16,8"/>
-                                <TextBlock Grid.Column="1" Text="Montant (MAD)" Foreground="{StaticResource TextMuted}"
-                                           FontSize="11" FontWeight="SemiBold" TextAlignment="Right" Margin="0,8,16,8"/>
+                                <TextBlock Grid.Column="0" Text="{x:Static res:Resources.CPC_Libelle}" Foreground="{StaticResource TextMuted}" FontSize="11" FontWeight="SemiBold" Margin="16,8"/>
+                                <TextBlock Grid.Column="1" Text="{x:Static res:Resources.CPC_MontantMAD}" Foreground="{StaticResource TextMuted}" FontSize="11" FontWeight="SemiBold" TextAlignment="Right" Margin="0,8,16,8"/>
                             </Grid>
                             <Rectangle Fill="{StaticResource BorderLight}" Height="1"/>
                             <ItemsControl x:Name="ProduitsFinanciersList">
@@ -383,13 +334,9 @@
                                                 <RowDefinition Height="36"/>
                                                 <RowDefinition Height="Auto"/>
                                             </Grid.RowDefinitions>
-                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="{Binding Libelle}"
-                                                       Style="{StaticResource RowLabel}" Margin="16,0,0,0"/>
-                                            <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding MontantFormatted}"
-                                                       Style="{StaticResource RowAmount}" Foreground="#2563EB"
-                                                       Margin="0,0,16,0"/>
-                                            <Rectangle Grid.Row="1" Grid.ColumnSpan="2"
-                                                       Fill="{StaticResource BorderLight}" Height="1" Opacity="0.5"/>
+                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="{Binding Libelle}" Style="{StaticResource RowLabel}" Margin="16,0,0,0"/>
+                                            <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding MontantFormatted}" Style="{StaticResource RowAmount}" Foreground="#2563EB" Margin="0,0,16,0"/>
+                                            <Rectangle Grid.Row="1" Grid.ColumnSpan="2" Fill="{StaticResource BorderLight}" Height="1" Opacity="0.5"/>
                                         </Grid>
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>
@@ -400,11 +347,8 @@
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="160"/>
                                     </Grid.ColumnDefinitions>
-                                    <TextBlock Grid.Column="0" Text="TOTAL PRODUITS FINANCIERS"
-                                               Style="{StaticResource TotalLabel}" Foreground="#1E40AF"/>
-                                    <TextBlock Grid.Column="1" x:Name="TxtTotalProduitsFinancier"
-                                               Style="{StaticResource TotalAmount}" Foreground="#2563EB"
-                                               Margin="0,0,16,0"/>
+                                    <TextBlock Grid.Column="0" Text="{x:Static res:Resources.CPC_TotalProduitsFinancier}" Style="{StaticResource TotalLabel}" Foreground="#1E40AF"/>
+                                    <TextBlock Grid.Column="1" x:Name="TxtTotalProduitsFinancier" Style="{StaticResource TotalAmount}" Foreground="#2563EB" Margin="0,0,16,0"/>
                                 </Grid>
                             </Border>
                         </StackPanel>
@@ -423,10 +367,9 @@
                                 </Border.Background>
                                 <StackPanel Orientation="Horizontal">
                                     <Border Background="#8B5CF6" CornerRadius="4" Padding="6,3" Margin="0,0,10,0">
-                                        <TextBlock Text="PRODUITS" FontSize="10" FontWeight="Bold" Foreground="White"/>
+                                        <TextBlock Text="{x:Static res:Resources.CPC_Produits}" FontSize="10" FontWeight="Bold" Foreground="White"/>
                                     </Border>
-                                    <TextBlock Text="NON-COURANTS" FontSize="14" FontWeight="Bold"
-                                               Foreground="#6D28D9" VerticalAlignment="Center"/>
+                                    <TextBlock Text="{x:Static res:Resources.CPC_NonCourants}" FontSize="14" FontWeight="Bold" Foreground="#6D28D9" VerticalAlignment="Center"/>
                                 </StackPanel>
                             </Border>
                             <Grid Background="#F8FAFC">
@@ -434,10 +377,8 @@
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="160"/>
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Grid.Column="0" Text="Libellé" Foreground="{StaticResource TextMuted}"
-                                           FontSize="11" FontWeight="SemiBold" Margin="16,8"/>
-                                <TextBlock Grid.Column="1" Text="Montant (MAD)" Foreground="{StaticResource TextMuted}"
-                                           FontSize="11" FontWeight="SemiBold" TextAlignment="Right" Margin="0,8,16,8"/>
+                                <TextBlock Grid.Column="0" Text="{x:Static res:Resources.CPC_Libelle}" Foreground="{StaticResource TextMuted}" FontSize="11" FontWeight="SemiBold" Margin="16,8"/>
+                                <TextBlock Grid.Column="1" Text="{x:Static res:Resources.CPC_MontantMAD}" Foreground="{StaticResource TextMuted}" FontSize="11" FontWeight="SemiBold" TextAlignment="Right" Margin="0,8,16,8"/>
                             </Grid>
                             <Rectangle Fill="{StaticResource BorderLight}" Height="1"/>
                             <ItemsControl x:Name="ProduitsNonCourantsList">
@@ -452,13 +393,9 @@
                                                 <RowDefinition Height="36"/>
                                                 <RowDefinition Height="Auto"/>
                                             </Grid.RowDefinitions>
-                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="{Binding Libelle}"
-                                                       Style="{StaticResource RowLabel}" Margin="16,0,0,0"/>
-                                            <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding MontantFormatted}"
-                                                       Style="{StaticResource RowAmount}" Foreground="#7C3AED"
-                                                       Margin="0,0,16,0"/>
-                                            <Rectangle Grid.Row="1" Grid.ColumnSpan="2"
-                                                       Fill="{StaticResource BorderLight}" Height="1" Opacity="0.5"/>
+                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="{Binding Libelle}" Style="{StaticResource RowLabel}" Margin="16,0,0,0"/>
+                                            <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding MontantFormatted}" Style="{StaticResource RowAmount}" Foreground="#7C3AED" Margin="0,0,16,0"/>
+                                            <Rectangle Grid.Row="1" Grid.ColumnSpan="2" Fill="{StaticResource BorderLight}" Height="1" Opacity="0.5"/>
                                         </Grid>
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>
@@ -469,24 +406,20 @@
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="160"/>
                                     </Grid.ColumnDefinitions>
-                                    <TextBlock Grid.Column="0" Text="TOTAL PRODUITS NON-COURANTS"
-                                               Style="{StaticResource TotalLabel}" Foreground="#6D28D9"/>
-                                    <TextBlock Grid.Column="1" x:Name="TxtTotalProduitsNonCourant"
-                                               Style="{StaticResource TotalAmount}" Foreground="#7C3AED"
-                                               Margin="0,0,16,0"/>
+                                    <TextBlock Grid.Column="0" Text="{x:Static res:Resources.CPC_TotalProduitsNonCourant}" Style="{StaticResource TotalLabel}" Foreground="#6D28D9"/>
+                                    <TextBlock Grid.Column="1" x:Name="TxtTotalProduitsNonCourant" Style="{StaticResource TotalAmount}" Foreground="#7C3AED" Margin="0,0,16,0"/>
                                 </Grid>
                             </Border>
                         </StackPanel>
                     </Border>
                 </StackPanel>
 
-                <!-- ─────────── RIGHT COLUMN: CHARGES ─────────── -->
+                <!-- ─── RIGHT COLUMN: CHARGES ─── -->
                 <StackPanel Grid.Column="2">
 
                     <!-- CHARGES D'EXPLOITATION -->
                     <Border CornerRadius="10" Background="{StaticResource BgCard}"
-                            BorderBrush="{StaticResource BorderLight}" BorderThickness="1"
-                            Margin="0,0,0,16">
+                            BorderBrush="{StaticResource BorderLight}" BorderThickness="1" Margin="0,0,0,16">
                         <StackPanel>
                             <Border CornerRadius="10,10,0,0" Padding="16,12">
                                 <Border.Background>
@@ -497,10 +430,9 @@
                                 </Border.Background>
                                 <StackPanel Orientation="Horizontal">
                                     <Border Background="#EF4444" CornerRadius="4" Padding="6,3" Margin="0,0,10,0">
-                                        <TextBlock Text="CHARGES" FontSize="10" FontWeight="Bold" Foreground="White"/>
+                                        <TextBlock Text="{x:Static res:Resources.CPC_Charges}" FontSize="10" FontWeight="Bold" Foreground="White"/>
                                     </Border>
-                                    <TextBlock Text="D'EXPLOITATION" FontSize="14" FontWeight="Bold"
-                                               Foreground="#991B1B" VerticalAlignment="Center"/>
+                                    <TextBlock Text="{x:Static res:Resources.CPC_Exploitation}" FontSize="14" FontWeight="Bold" Foreground="#991B1B" VerticalAlignment="Center"/>
                                 </StackPanel>
                             </Border>
                             <Grid Background="#F8FAFC">
@@ -508,10 +440,8 @@
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="160"/>
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Grid.Column="0" Text="Libellé" Foreground="{StaticResource TextMuted}"
-                                           FontSize="11" FontWeight="SemiBold" Margin="16,8"/>
-                                <TextBlock Grid.Column="1" Text="Montant (MAD)" Foreground="{StaticResource TextMuted}"
-                                           FontSize="11" FontWeight="SemiBold" TextAlignment="Right" Margin="0,8,16,8"/>
+                                <TextBlock Grid.Column="0" Text="{x:Static res:Resources.CPC_Libelle}" Foreground="{StaticResource TextMuted}" FontSize="11" FontWeight="SemiBold" Margin="16,8"/>
+                                <TextBlock Grid.Column="1" Text="{x:Static res:Resources.CPC_MontantMAD}" Foreground="{StaticResource TextMuted}" FontSize="11" FontWeight="SemiBold" TextAlignment="Right" Margin="0,8,16,8"/>
                             </Grid>
                             <Rectangle Fill="{StaticResource BorderLight}" Height="1"/>
                             <ItemsControl x:Name="ChargesExploitationList">
@@ -526,13 +456,9 @@
                                                 <RowDefinition Height="36"/>
                                                 <RowDefinition Height="Auto"/>
                                             </Grid.RowDefinitions>
-                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="{Binding Libelle}"
-                                                       Style="{StaticResource RowLabel}" Margin="16,0,0,0"/>
-                                            <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding MontantFormatted}"
-                                                       Style="{StaticResource RowAmount}" Foreground="#DC2626"
-                                                       Margin="0,0,16,0"/>
-                                            <Rectangle Grid.Row="1" Grid.ColumnSpan="2"
-                                                       Fill="{StaticResource BorderLight}" Height="1" Opacity="0.5"/>
+                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="{Binding Libelle}" Style="{StaticResource RowLabel}" Margin="16,0,0,0"/>
+                                            <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding MontantFormatted}" Style="{StaticResource RowAmount}" Foreground="#DC2626" Margin="0,0,16,0"/>
+                                            <Rectangle Grid.Row="1" Grid.ColumnSpan="2" Fill="{StaticResource BorderLight}" Height="1" Opacity="0.5"/>
                                         </Grid>
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>
@@ -543,11 +469,8 @@
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="160"/>
                                     </Grid.ColumnDefinitions>
-                                    <TextBlock Grid.Column="0" Text="TOTAL CHARGES D'EXPLOITATION"
-                                               Style="{StaticResource TotalLabel}" Foreground="#991B1B"/>
-                                    <TextBlock Grid.Column="1" x:Name="TxtTotalChargesExpl"
-                                               Style="{StaticResource TotalAmount}" Foreground="#DC2626"
-                                               Margin="0,0,16,0"/>
+                                    <TextBlock Grid.Column="0" Text="{x:Static res:Resources.CPC_TotalChargesExpl}" Style="{StaticResource TotalLabel}" Foreground="#991B1B"/>
+                                    <TextBlock Grid.Column="1" x:Name="TxtTotalChargesExpl" Style="{StaticResource TotalAmount}" Foreground="#DC2626" Margin="0,0,16,0"/>
                                 </Grid>
                             </Border>
                         </StackPanel>
@@ -555,8 +478,7 @@
 
                     <!-- CHARGES FINANCIÈRES -->
                     <Border CornerRadius="10" Background="{StaticResource BgCard}"
-                            BorderBrush="{StaticResource BorderLight}" BorderThickness="1"
-                            Margin="0,0,0,16">
+                            BorderBrush="{StaticResource BorderLight}" BorderThickness="1" Margin="0,0,0,16">
                         <StackPanel>
                             <Border CornerRadius="10,10,0,0" Padding="16,12">
                                 <Border.Background>
@@ -567,10 +489,9 @@
                                 </Border.Background>
                                 <StackPanel Orientation="Horizontal">
                                     <Border Background="#F59E0B" CornerRadius="4" Padding="6,3" Margin="0,0,10,0">
-                                        <TextBlock Text="CHARGES" FontSize="10" FontWeight="Bold" Foreground="White"/>
+                                        <TextBlock Text="{x:Static res:Resources.CPC_Charges}" FontSize="10" FontWeight="Bold" Foreground="White"/>
                                     </Border>
-                                    <TextBlock Text="FINANCIÈRES" FontSize="14" FontWeight="Bold"
-                                               Foreground="#92400E" VerticalAlignment="Center"/>
+                                    <TextBlock Text="{x:Static res:Resources.CPC_Financieres}" FontSize="14" FontWeight="Bold" Foreground="#92400E" VerticalAlignment="Center"/>
                                 </StackPanel>
                             </Border>
                             <Grid Background="#F8FAFC">
@@ -578,10 +499,8 @@
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="160"/>
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Grid.Column="0" Text="Libellé" Foreground="{StaticResource TextMuted}"
-                                           FontSize="11" FontWeight="SemiBold" Margin="16,8"/>
-                                <TextBlock Grid.Column="1" Text="Montant (MAD)" Foreground="{StaticResource TextMuted}"
-                                           FontSize="11" FontWeight="SemiBold" TextAlignment="Right" Margin="0,8,16,8"/>
+                                <TextBlock Grid.Column="0" Text="{x:Static res:Resources.CPC_Libelle}" Foreground="{StaticResource TextMuted}" FontSize="11" FontWeight="SemiBold" Margin="16,8"/>
+                                <TextBlock Grid.Column="1" Text="{x:Static res:Resources.CPC_MontantMAD}" Foreground="{StaticResource TextMuted}" FontSize="11" FontWeight="SemiBold" TextAlignment="Right" Margin="0,8,16,8"/>
                             </Grid>
                             <Rectangle Fill="{StaticResource BorderLight}" Height="1"/>
                             <ItemsControl x:Name="ChargesFinancieresList">
@@ -596,13 +515,9 @@
                                                 <RowDefinition Height="36"/>
                                                 <RowDefinition Height="Auto"/>
                                             </Grid.RowDefinitions>
-                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="{Binding Libelle}"
-                                                       Style="{StaticResource RowLabel}" Margin="16,0,0,0"/>
-                                            <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding MontantFormatted}"
-                                                       Style="{StaticResource RowAmount}" Foreground="#D97706"
-                                                       Margin="0,0,16,0"/>
-                                            <Rectangle Grid.Row="1" Grid.ColumnSpan="2"
-                                                       Fill="{StaticResource BorderLight}" Height="1" Opacity="0.5"/>
+                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="{Binding Libelle}" Style="{StaticResource RowLabel}" Margin="16,0,0,0"/>
+                                            <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding MontantFormatted}" Style="{StaticResource RowAmount}" Foreground="#D97706" Margin="0,0,16,0"/>
+                                            <Rectangle Grid.Row="1" Grid.ColumnSpan="2" Fill="{StaticResource BorderLight}" Height="1" Opacity="0.5"/>
                                         </Grid>
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>
@@ -613,11 +528,8 @@
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="160"/>
                                     </Grid.ColumnDefinitions>
-                                    <TextBlock Grid.Column="0" Text="TOTAL CHARGES FINANCIÈRES"
-                                               Style="{StaticResource TotalLabel}" Foreground="#92400E"/>
-                                    <TextBlock Grid.Column="1" x:Name="TxtTotalChargesFinancier"
-                                               Style="{StaticResource TotalAmount}" Foreground="#D97706"
-                                               Margin="0,0,16,0"/>
+                                    <TextBlock Grid.Column="0" Text="{x:Static res:Resources.CPC_TotalChargesFinancier}" Style="{StaticResource TotalLabel}" Foreground="#92400E"/>
+                                    <TextBlock Grid.Column="1" x:Name="TxtTotalChargesFinancier" Style="{StaticResource TotalAmount}" Foreground="#D97706" Margin="0,0,16,0"/>
                                 </Grid>
                             </Border>
                         </StackPanel>
@@ -636,10 +548,9 @@
                                 </Border.Background>
                                 <StackPanel Orientation="Horizontal">
                                     <Border Background="#64748B" CornerRadius="4" Padding="6,3" Margin="0,0,10,0">
-                                        <TextBlock Text="CHARGES" FontSize="10" FontWeight="Bold" Foreground="White"/>
+                                        <TextBlock Text="{x:Static res:Resources.CPC_Charges}" FontSize="10" FontWeight="Bold" Foreground="White"/>
                                     </Border>
-                                    <TextBlock Text="NON-COURANTES" FontSize="14" FontWeight="Bold"
-                                               Foreground="#334155" VerticalAlignment="Center"/>
+                                    <TextBlock Text="{x:Static res:Resources.CPC_NonCourantes}" FontSize="14" FontWeight="Bold" Foreground="#334155" VerticalAlignment="Center"/>
                                 </StackPanel>
                             </Border>
                             <Grid Background="#F8FAFC">
@@ -647,10 +558,8 @@
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="160"/>
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Grid.Column="0" Text="Libellé" Foreground="{StaticResource TextMuted}"
-                                           FontSize="11" FontWeight="SemiBold" Margin="16,8"/>
-                                <TextBlock Grid.Column="1" Text="Montant (MAD)" Foreground="{StaticResource TextMuted}"
-                                           FontSize="11" FontWeight="SemiBold" TextAlignment="Right" Margin="0,8,16,8"/>
+                                <TextBlock Grid.Column="0" Text="{x:Static res:Resources.CPC_Libelle}" Foreground="{StaticResource TextMuted}" FontSize="11" FontWeight="SemiBold" Margin="16,8"/>
+                                <TextBlock Grid.Column="1" Text="{x:Static res:Resources.CPC_MontantMAD}" Foreground="{StaticResource TextMuted}" FontSize="11" FontWeight="SemiBold" TextAlignment="Right" Margin="0,8,16,8"/>
                             </Grid>
                             <Rectangle Fill="{StaticResource BorderLight}" Height="1"/>
                             <ItemsControl x:Name="ChargesNonCourantesList">
@@ -665,13 +574,9 @@
                                                 <RowDefinition Height="36"/>
                                                 <RowDefinition Height="Auto"/>
                                             </Grid.RowDefinitions>
-                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="{Binding Libelle}"
-                                                       Style="{StaticResource RowLabel}" Margin="16,0,0,0"/>
-                                            <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding MontantFormatted}"
-                                                       Style="{StaticResource RowAmount}" Foreground="#475569"
-                                                       Margin="0,0,16,0"/>
-                                            <Rectangle Grid.Row="1" Grid.ColumnSpan="2"
-                                                       Fill="{StaticResource BorderLight}" Height="1" Opacity="0.5"/>
+                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="{Binding Libelle}" Style="{StaticResource RowLabel}" Margin="16,0,0,0"/>
+                                            <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding MontantFormatted}" Style="{StaticResource RowAmount}" Foreground="#475569" Margin="0,0,16,0"/>
+                                            <Rectangle Grid.Row="1" Grid.ColumnSpan="2" Fill="{StaticResource BorderLight}" Height="1" Opacity="0.5"/>
                                         </Grid>
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>
@@ -682,11 +587,8 @@
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="160"/>
                                     </Grid.ColumnDefinitions>
-                                    <TextBlock Grid.Column="0" Text="TOTAL CHARGES NON-COURANTES"
-                                               Style="{StaticResource TotalLabel}" Foreground="#334155"/>
-                                    <TextBlock Grid.Column="1" x:Name="TxtTotalChargesNonCourant"
-                                               Style="{StaticResource TotalAmount}" Foreground="#475569"
-                                               Margin="0,0,16,0"/>
+                                    <TextBlock Grid.Column="0" Text="{x:Static res:Resources.CPC_TotalChargesNonCourant}" Style="{StaticResource TotalLabel}" Foreground="#334155"/>
+                                    <TextBlock Grid.Column="1" x:Name="TxtTotalChargesNonCourant" Style="{StaticResource TotalAmount}" Foreground="#475569" Margin="0,0,16,0"/>
                                 </Grid>
                             </Border>
                         </StackPanel>
@@ -696,9 +598,7 @@
             </Grid>
         </ScrollViewer>
 
-        <!-- ══════════════════════════════════════════
-             RÉSULTAT NET FOOTER
-        ════════════════════════════════════════════ -->
+        <!-- ══════════ RÉSULTAT NET FOOTER ══════════ -->
         <Border x:Name="ResultatFooter" Grid.Row="3"
                 BorderBrush="{StaticResource BorderLight}" BorderThickness="0,1,0,0"
                 Padding="24,16">
@@ -711,38 +611,30 @@
                     <ColumnDefinition Width="320"/>
                 </Grid.ColumnDefinitions>
 
-                <!-- Sub-results -->
                 <Border Grid.Column="0" CornerRadius="8" Padding="16,12" Margin="0,0,10,0"
                         Background="#F0FDF4" BorderBrush="#A7F3D0" BorderThickness="1">
                     <StackPanel>
-                        <TextBlock Text="RÉSULTAT D'EXPLOITATION" FontSize="10" FontWeight="Bold"
-                                   Foreground="#065F46" Margin="0,0,0,4"/>
-                        <TextBlock x:Name="TxtResultatExploitation" FontSize="18" FontWeight="Bold"
-                                   FontFamily="Consolas" Foreground="#059669"/>
+                        <TextBlock Text="{x:Static res:Resources.CPC_ResultatExploitation}" FontSize="10" FontWeight="Bold" Foreground="#065F46" Margin="0,0,0,4"/>
+                        <TextBlock x:Name="TxtResultatExploitation" FontSize="18" FontWeight="Bold" FontFamily="Consolas" Foreground="#059669"/>
                     </StackPanel>
                 </Border>
 
                 <Border Grid.Column="1" CornerRadius="8" Padding="16,12" Margin="0,0,10,0"
                         Background="#EFF6FF" BorderBrush="#BFDBFE" BorderThickness="1">
                     <StackPanel>
-                        <TextBlock Text="RÉSULTAT FINANCIER" FontSize="10" FontWeight="Bold"
-                                   Foreground="#1E40AF" Margin="0,0,0,4"/>
-                        <TextBlock x:Name="TxtResultatFinancier" FontSize="18" FontWeight="Bold"
-                                   FontFamily="Consolas" Foreground="#2563EB"/>
+                        <TextBlock Text="{x:Static res:Resources.CPC_ResultatFinancier}" FontSize="10" FontWeight="Bold" Foreground="#1E40AF" Margin="0,0,0,4"/>
+                        <TextBlock x:Name="TxtResultatFinancier" FontSize="18" FontWeight="Bold" FontFamily="Consolas" Foreground="#2563EB"/>
                     </StackPanel>
                 </Border>
 
-                <Border Grid.Column="2" CornerRadius="8" Padding="16,12" Margin="0,0,0,0"
+                <Border Grid.Column="2" CornerRadius="8" Padding="16,12"
                         Background="#F5F3FF" BorderBrush="#DDD6FE" BorderThickness="1">
                     <StackPanel>
-                        <TextBlock Text="RÉSULTAT NON-COURANT" FontSize="10" FontWeight="Bold"
-                                   Foreground="#6D28D9" Margin="0,0,0,4"/>
-                        <TextBlock x:Name="TxtResultatNonCourant" FontSize="18" FontWeight="Bold"
-                                   FontFamily="Consolas" Foreground="#7C3AED"/>
+                        <TextBlock Text="{x:Static res:Resources.CPC_ResultatNonCourant}" FontSize="10" FontWeight="Bold" Foreground="#6D28D9" Margin="0,0,0,4"/>
+                        <TextBlock x:Name="TxtResultatNonCourant" FontSize="18" FontWeight="Bold" FontFamily="Consolas" Foreground="#7C3AED"/>
                     </StackPanel>
                 </Border>
 
-                <!-- Big Net Result -->
                 <Border x:Name="ResultatNetCard" Grid.Column="4" CornerRadius="10" Padding="20,14">
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -750,10 +642,8 @@
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
                         <StackPanel Grid.Column="0" VerticalAlignment="Center">
-                            <TextBlock Text="RÉSULTAT NET" FontSize="11" FontWeight="Bold"
-                                       Foreground="White" Opacity="0.85"/>
-                            <TextBlock x:Name="TxtResultatNetLabel" Text="BÉNÉFICE"
-                                       FontSize="13" FontWeight="Bold" Foreground="White" Opacity="0.7"/>
+                            <TextBlock Text="{x:Static res:Resources.CPC_ResultatNet}" FontSize="11" FontWeight="Bold" Foreground="White" Opacity="0.85"/>
+                            <TextBlock x:Name="TxtResultatNetLabel" Text="{x:Static res:Resources.CPC_Benefice}" FontSize="13" FontWeight="Bold" Foreground="White" Opacity="0.7"/>
                         </StackPanel>
                         <TextBlock Grid.Column="1" x:Name="TxtResultatNet"
                                    FontSize="26" FontWeight="Bold" FontFamily="Consolas"

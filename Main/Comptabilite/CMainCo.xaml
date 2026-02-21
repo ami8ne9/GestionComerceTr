@@ -3,11 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:res="clr-namespace:GestionComerce.Resources"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1400">
 
     <UserControl.Resources>
-        <!-- Button Styles -->
         <Style x:Key="MenuButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="Foreground" Value="#2D3748"/>
@@ -21,11 +21,8 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}" 
-                                CornerRadius="8" 
-                                Padding="{TemplateBinding Padding}">
-                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
-                                            VerticalAlignment="Center"/>
+                        <Border Background="{TemplateBinding Background}" CornerRadius="8" Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="Center"/>
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
@@ -56,8 +53,7 @@
                                     <GradientStop Color="#764BA2" Offset="1"/>
                                 </LinearGradientBrush>
                             </Border.Background>
-                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
-                                            VerticalAlignment="Center"/>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="Center"/>
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
@@ -82,147 +78,117 @@
 
                 <!-- Header -->
                 <StackPanel Grid.Row="0" Margin="20,20,20,30">
-                    <TextBlock Text="💼 Comptabilité" FontSize="24" FontWeight="Bold" Foreground="#1E293B" Margin="0,0,0,5"/>
-                    <TextBlock Text="Gestion Financière" FontSize="13" Foreground="#64748B"/>
+                    <TextBlock Text="{x:Static res:Resources.CMainCo_Title}" FontSize="24" FontWeight="Bold" Foreground="#1E293B" Margin="0,0,0,5"/>
+                    <TextBlock Text="{x:Static res:Resources.CMainCo_Subtitle}" FontSize="13" Foreground="#64748B"/>
                 </StackPanel>
 
                 <!-- Menu Items -->
                 <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
                     <StackPanel Margin="15,0,15,20">
-                        <!-- Dashboard -->
-                        <Button x:Name="DashboardButton" 
-                                Style="{StaticResource MenuButtonStyle}"
-                                Click="Dashboard_Click">
+
+                        <Button x:Name="DashboardButton" Style="{StaticResource MenuButtonStyle}" Click="Dashboard_Click">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="📊" FontSize="18" Margin="0,0,12,0"/>
-                                <TextBlock Text="Tableau de Bord" VerticalAlignment="Center"/>
+                                <TextBlock Text="{x:Static res:Resources.CMainCo_Dashboard}" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button>
 
-                        <!-- Journal Général -->
-                        <Button x:Name="JournalButton" 
-                                Style="{StaticResource MenuButtonStyle}"
-                                Click="Journal_Click">
+                        <Button x:Name="JournalButton" Style="{StaticResource MenuButtonStyle}" Click="Journal_Click">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="📖" FontSize="18" Margin="0,0,12,0"/>
-                                <TextBlock Text="Journal Général" VerticalAlignment="Center"/>
+                                <TextBlock Text="{x:Static res:Resources.CMainCo_Journal}" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button>
 
-                        <!-- Grand Livre -->
-                        <Button x:Name="GrandLivreButton" 
-                                Style="{StaticResource MenuButtonStyle}"
-                                Click="GrandLivre_Click">
+                        <Button x:Name="GrandLivreButton" Style="{StaticResource MenuButtonStyle}" Click="GrandLivre_Click">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="📚" FontSize="18" Margin="0,0,12,0"/>
-                                <TextBlock Text="Grand Livre" VerticalAlignment="Center"/>
+                                <TextBlock Text="{x:Static res:Resources.CMainCo_GrandLivre}" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button>
 
-                        <!-- Plan Comptable -->
-                        <Button x:Name="PlanComptableButton" 
-                                Style="{StaticResource MenuButtonStyle}"
-                                Click="PlanComptable_Click">
+                        <Button x:Name="PlanComptableButton" Style="{StaticResource MenuButtonStyle}" Click="PlanComptable_Click">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="🗂️" FontSize="18" Margin="0,0,12,0"/>
-                                <TextBlock Text="Plan Comptable" VerticalAlignment="Center"/>
+                                <TextBlock Text="{x:Static res:Resources.CMainCo_PlanComptable}" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button>
-                        <Button x:Name="ExpectationButton" 
-                                Style="{StaticResource MenuButtonStyle}"
-                                Click="Expectation_Click">
+
+                        <Button x:Name="ExpectationButton" Style="{StaticResource MenuButtonStyle}" Click="Expectation_Click">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="🗂️" FontSize="18" Margin="0,0,12,0"/>
-                                <TextBlock Text="Expectation et Projection" VerticalAlignment="Center"/>
+                                <TextBlock Text="{x:Static res:Resources.CMainCo_Expectation}" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button>
 
                         <Separator Margin="0,15" Background="#E2E8F0"/>
 
-                        <!-- Rapports Financiers -->
-                        <TextBlock Text="RAPPORTS" FontSize="11" FontWeight="SemiBold" 
+                        <TextBlock Text="{x:Static res:Resources.CMainCo_Rapports}" FontSize="11" FontWeight="SemiBold" 
                                    Foreground="#94A3B8" Margin="20,10,0,10"/>
 
-                        <Button x:Name="BilanButton" 
-                                Style="{StaticResource MenuButtonStyle}"
-                                Click="Bilan_Click">
+                        <Button x:Name="BilanButton" Style="{StaticResource MenuButtonStyle}" Click="Bilan_Click">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="⚖️" FontSize="18" Margin="0,0,12,0"/>
-                                <TextBlock Text="Bilan" VerticalAlignment="Center"/>
+                                <TextBlock Text="{x:Static res:Resources.CMainCo_Bilan}" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button>
 
-                        <Button x:Name="CPCButton" 
-                                Style="{StaticResource MenuButtonStyle}"
-                                Click="CPC_Click">
+                        <Button x:Name="CPCButton" Style="{StaticResource MenuButtonStyle}" Click="CPC_Click">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="📈" FontSize="18" Margin="0,0,12,0"/>
-                                <TextBlock Text="CPC" VerticalAlignment="Center"/>
+                                <TextBlock Text="{x:Static res:Resources.CMainCo_CPC}" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button>
 
-                        <Button x:Name="GraphesButton" 
-                                Style="{StaticResource MenuButtonStyle}"
-                                Click="Graphes_Click">
+                        <Button x:Name="GraphesButton" Style="{StaticResource MenuButtonStyle}" Click="Graphes_Click">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="📉" FontSize="18" Margin="0,0,12,0"/>
-                                <TextBlock Text="Graphiques" VerticalAlignment="Center"/>
+                                <TextBlock Text="{x:Static res:Resources.CMainCo_Graphiques}" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button>
 
                         <Separator Margin="0,15" Background="#E2E8F0"/>
 
-                        <!-- Gestion -->
-                        <TextBlock Text="GESTION" FontSize="11" FontWeight="SemiBold" 
+                        <TextBlock Text="{x:Static res:Resources.CMainCo_Gestion}" FontSize="11" FontWeight="SemiBold" 
                                    Foreground="#94A3B8" Margin="20,10,0,10"/>
 
-                        <Button x:Name="GestionEmployesButton" 
-                                Style="{StaticResource MenuButtonStyle}"
-                                Click="BtnGestionEmployes_Click">
+                        <Button x:Name="GestionEmployesButton" Style="{StaticResource MenuButtonStyle}" Click="BtnGestionEmployes_Click">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="👥" FontSize="18" Margin="0,0,12,0"/>
-                                <TextBlock Text="Employés" VerticalAlignment="Center"/>
+                                <TextBlock Text="{x:Static res:Resources.CMainCo_Employes}" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button>
 
-                        <Button x:Name="SalaireButton" 
-                                Style="{StaticResource MenuButtonStyle}"
-                                Click="BtnGestionSalaire_Click">
+                        <Button x:Name="SalaireButton" Style="{StaticResource MenuButtonStyle}" Click="BtnGestionSalaire_Click">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="💰" FontSize="18" Margin="0,0,12,0"/>
-                                <TextBlock Text="Salaires" VerticalAlignment="Center"/>
+                                <TextBlock Text="{x:Static res:Resources.CMainCo_Salaires}" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button>
 
-                        <Button x:Name="ExpensesButton" 
-                                Style="{StaticResource MenuButtonStyle}"
-                                Click="Expenses_Click">
+                        <Button x:Name="ExpensesButton" Style="{StaticResource MenuButtonStyle}" Click="Expenses_Click">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="💳" FontSize="18" Margin="0,0,12,0"/>
-                                <TextBlock Text="Dépenses" VerticalAlignment="Center"/>
+                                <TextBlock Text="{x:Static res:Resources.CMainCo_Depenses}" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button>
 
-                        <Button x:Name="RapportButton" 
-                                Style="{StaticResource MenuButtonStyle}"
-                                Click="RapportStats_Click">
+                        <Button x:Name="RapportButton" Style="{StaticResource MenuButtonStyle}" Click="RapportStats_Click">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="📄" FontSize="18" Margin="0,0,12,0"/>
-                                <TextBlock Text="Rapports Stats" VerticalAlignment="Center"/>
+                                <TextBlock Text="{x:Static res:Resources.CMainCo_RapportsStats}" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button>
 
                         <Separator Margin="0,15" Background="#E2E8F0"/>
 
-                        <!-- AI Assistant (with gradient) -->
-                        <Button x:Name="AIButton" 
-                                Style="{StaticResource AIButtonStyle}"
-                                Click="AI_Click">
+                        <Button x:Name="AIButton" Style="{StaticResource AIButtonStyle}" Click="AI_Click">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="🤖" FontSize="18" Margin="0,0,12,0"/>
-                                <TextBlock Text="Assistant IA" VerticalAlignment="Center"/>
+                                <TextBlock Text="{x:Static res:Resources.CMainCo_AI}" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button>
+
                     </StackPanel>
                 </ScrollViewer>
 
@@ -243,7 +209,7 @@
                                         Padding="{TemplateBinding Padding}">
                                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                                         <TextBlock Text="←" FontSize="16" Margin="0,0,8,0" Foreground="#3B82F6"/>
-                                        <TextBlock Text="Retour au Menu" FontSize="13" FontWeight="SemiBold" Foreground="#3B82F6"/>
+                                        <TextBlock Text="{x:Static res:Resources.CMainCo_Retour}" FontSize="13" FontWeight="SemiBold" Foreground="#3B82F6"/>
                                     </StackPanel>
                                 </Border>
                             </ControlTemplate>

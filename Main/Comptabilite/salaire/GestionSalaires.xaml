@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:p="clr-namespace:GestionComerce.Resources"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1200"
              Background="#FAFBFC">
@@ -279,11 +280,11 @@
                 <StackPanel Orientation="Horizontal" Grid.Column="0">
                     <TextBlock Text="📊" FontSize="24" Margin="0,0,12,0" VerticalAlignment="Center"/>
                     <StackPanel>
-                        <TextBlock Text="Gestion des Salaires" 
+                        <TextBlock Text="{x:Static p:Resources.GestionSalaires_Title}" 
                                  FontSize="22" 
                                  FontWeight="SemiBold"
                                  Foreground="#1A202C"/>
-                        <TextBlock Text="Gérez les bulletins de paie de vos employés" 
+                        <TextBlock Text="{x:Static p:Resources.GestionSalaires_Subtitle}" 
                                  FontSize="13" 
                                  Foreground="#718096"
                                  Margin="0,4,0,0"/>
@@ -291,11 +292,11 @@
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right">
-                    <Button Content="Nouveau Salaire" 
+                    <Button Content="{x:Static p:Resources.GestionSalaires_NewSalary}" 
                             Style="{StaticResource PrimaryButton}"
                             Click="BtnNouveauSalaire_Click"
                             Margin="0,0,12,0"/>
-                    <Button Content="Exporter Excel" 
+                    <Button Content="{x:Static p:Resources.GestionSalaires_Export}" 
                             Style="{StaticResource SecondaryButton}"
                             Click="BtnExporter_Click"/>
                 </StackPanel>
@@ -323,28 +324,28 @@
                     <!-- Filters -->
                     <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,20">
                         <StackPanel Margin="0,0,16,0">
-                            <TextBlock Text="Mois" Style="{StaticResource FormLabel}"/>
+                            <TextBlock Text="{x:Static p:Resources.GestionSalaires_Month}" Style="{StaticResource FormLabel}"/>
                             <ComboBox x:Name="cmbMois" 
                                     Width="150" 
                                     Style="{StaticResource ModernComboBox}"
                                     SelectionChanged="Filter_Changed"/>
                         </StackPanel>
                         <StackPanel Margin="0,0,16,0">
-                            <TextBlock Text="Année" Style="{StaticResource FormLabel}"/>
+                            <TextBlock Text="{x:Static p:Resources.GestionSalaires_Year}" Style="{StaticResource FormLabel}"/>
                             <ComboBox x:Name="cmbAnnee" 
                                     Width="120" 
                                     Style="{StaticResource ModernComboBox}"
                                     SelectionChanged="Filter_Changed"/>
                         </StackPanel>
                         <StackPanel Margin="0,0,16,0">
-                            <TextBlock Text="Statut" Style="{StaticResource FormLabel}"/>
+                            <TextBlock Text="{x:Static p:Resources.GestionSalaires_StatusLabel}" Style="{StaticResource FormLabel}"/>
                             <ComboBox x:Name="cmbStatut" 
                                     Width="150" 
                                     Style="{StaticResource ModernComboBox}"
                                     SelectionChanged="Filter_Changed"/>
                         </StackPanel>
                         <StackPanel Margin="0,0,0,0">
-                            <TextBlock Text="Rechercher" Style="{StaticResource FormLabel}"/>
+                            <TextBlock Text="{x:Static p:Resources.GestionSalaires_SearchLabel}" Style="{StaticResource FormLabel}"/>
                             <TextBox x:Name="txtRecherche" 
                                    Width="250" 
                                    Style="{StaticResource ModernTextBox}"
@@ -358,9 +359,9 @@
                             x:Name="dgSalaires"
                             SelectionChanged="DgSalaires_SelectionChanged">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Employé" Binding="{Binding NomComplet}" Width="200"/>
-                            <DataGridTextColumn Header="CIN" Binding="{Binding CIN}" Width="100"/>
-                            <DataGridTextColumn Header="Période" Width="100">
+                            <DataGridTextColumn Header="{x:Static p:Resources.GestionSalaires_ColEmployee}" Binding="{Binding NomComplet}" Width="200"/>
+                            <DataGridTextColumn Header="{x:Static p:Resources.GestionSalaires_ColCIN}" Binding="{Binding CIN}" Width="100"/>
+                            <DataGridTextColumn Header="{x:Static p:Resources.GestionSalaires_ColPeriod}" Width="100">
                                 <DataGridTextColumn.Binding>
                                     <MultiBinding StringFormat="{}{0:00}/{1}">
                                         <Binding Path="Mois"/>
@@ -368,12 +369,12 @@
                                     </MultiBinding>
                                 </DataGridTextColumn.Binding>
                             </DataGridTextColumn>
-                            <DataGridTextColumn Header="Salaire Base" Binding="{Binding SalaireBase, StringFormat='{}{0:N2} DH'}" Width="120"/>
-                            <DataGridTextColumn Header="Salaire Brut" Binding="{Binding SalaireBrut, StringFormat='{}{0:N2} DH'}" Width="130"/>
-                            <DataGridTextColumn Header="CNSS" Binding="{Binding CotisationCNSS, StringFormat='{}{0:N2} DH'}" Width="100"/>
-                            <DataGridTextColumn Header="AMO" Binding="{Binding CotisationAMO, StringFormat='{}{0:N2} DH'}" Width="100"/>
-                            <DataGridTextColumn Header="IR" Binding="{Binding MontantIR, StringFormat='{}{0:N2} DH'}" Width="100"/>
-                            <DataGridTextColumn Header="Salaire Net" Binding="{Binding SalaireNet, StringFormat='{}{0:N2} DH'}" Width="130">
+                            <DataGridTextColumn Header="{x:Static p:Resources.GestionSalaires_ColBaseSalary}" Binding="{Binding SalaireBase, StringFormat='{}{0:N2} DH'}" Width="120"/>
+                            <DataGridTextColumn Header="{x:Static p:Resources.GestionSalaires_ColGrossSalary}" Binding="{Binding SalaireBrut, StringFormat='{}{0:N2} DH'}" Width="130"/>
+                            <DataGridTextColumn Header="{x:Static p:Resources.GestionSalaires_ColCNSS}" Binding="{Binding CotisationCNSS, StringFormat='{}{0:N2} DH'}" Width="100"/>
+                            <DataGridTextColumn Header="{x:Static p:Resources.GestionSalaires_ColAMO}" Binding="{Binding CotisationAMO, StringFormat='{}{0:N2} DH'}" Width="100"/>
+                            <DataGridTextColumn Header="{x:Static p:Resources.GestionSalaires_ColIR}" Binding="{Binding MontantIR, StringFormat='{}{0:N2} DH'}" Width="100"/>
+                            <DataGridTextColumn Header="{x:Static p:Resources.GestionSalaires_ColNetSalary}" Binding="{Binding SalaireNet, StringFormat='{}{0:N2} DH'}" Width="130">
                                 <DataGridTextColumn.ElementStyle>
                                     <Style TargetType="TextBlock">
                                         <Setter Property="FontWeight" Value="SemiBold"/>
@@ -381,7 +382,7 @@
                                     </Style>
                                 </DataGridTextColumn.ElementStyle>
                             </DataGridTextColumn>
-                            <DataGridTemplateColumn Header="Statut" Width="120">
+                            <DataGridTemplateColumn Header="{x:Static p:Resources.GestionSalaires_ColStatus}" Width="120">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <Border Padding="8,4" 
@@ -425,12 +426,12 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Header="Actions" Width="200">
+                            <DataGridTemplateColumn Header="{x:Static p:Resources.GestionSalaires_ColActions}" Width="200">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                                             <Button Content="👁" 
-                      ToolTip="Voir les détails"
+                      ToolTip="{x:Static p:Resources.GestionSalaires_ViewTooltip}"
                       Style="{StaticResource SecondaryButton}"
                       Height="32"
                       Width="36"
@@ -440,7 +441,7 @@
                       Click="BtnVoir_Click"
                       Tag="{Binding SalaireID}"/>
                                             <Button Content="✏" 
-                      ToolTip="Modifier"
+                      ToolTip="{x:Static p:Resources.GestionSalaires_ModifyTooltip}"
                       Style="{StaticResource SecondaryButton}"
                       Height="32"
                       Width="36"
@@ -450,7 +451,7 @@
                       Click="BtnModifier_Click"
                       Tag="{Binding SalaireID}"/>
                                             <Button Content="🗑" 
-                      ToolTip="Supprimer"
+                      ToolTip="{x:Static p:Resources.GestionSalaires_DeleteTooltip}"
                       Style="{StaticResource DangerButton}"
                       Height="32"
                       Width="36"
@@ -472,7 +473,7 @@
                           CornerRadius="8"
                           Margin="0,20,0,0">
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                            <TextBlock Text="Total Salaires Nets: " 
+                            <TextBlock Text="{x:Static p:Resources.GestionSalaires_TotalNetSalaries}" 
                                      FontSize="16" 
                                      FontWeight="SemiBold"
                                      Foreground="#2D3748"
@@ -500,7 +501,7 @@
                                   Click="BtnRetour_Click"
                                   Margin="0,0,16,0"/>
                             <TextBlock x:Name="txtFormTitle" 
-                                     Text="Nouveau Bulletin de Salaire" 
+                                     Text="{x:Static p:Resources.GestionSalaires_NewBulletin}" 
                                      Style="{StaticResource SectionHeader}"
                                      VerticalAlignment="Center"
                                      Margin="0"/>
@@ -516,7 +517,7 @@
                             <!-- Left Column -->
                             <StackPanel Grid.Column="0">
                                 <!-- Employee Information Section -->
-                                <TextBlock Text="Informations de l'Employé" 
+                                <TextBlock Text="{x:Static p:Resources.GestionSalaires_EmployeeSection}" 
                                          Style="{StaticResource SectionHeader}"/>
 
                                 <Border Background="#F7FAFC" 
@@ -525,7 +526,7 @@
                                       Margin="0,0,0,24">
                                     <StackPanel>
                                         <StackPanel Margin="0,0,0,16">
-                                            <TextBlock Text="Employé *" Style="{StaticResource FormLabel}"/>
+                                            <TextBlock Text="{x:Static p:Resources.GestionSalaires_EmployeeLabel}" Style="{StaticResource FormLabel}"/>
                                             <ComboBox x:Name="cmbEmploye" 
                                                     Style="{StaticResource ModernComboBox}"
                                                     DisplayMemberPath="NomComplet"
@@ -560,7 +561,7 @@
                                 </Border>
 
                                 <!-- Salary Period Section -->
-                                <TextBlock Text="Période de Salaire" 
+                                <TextBlock Text="{x:Static p:Resources.GestionSalaires_SalaryPeriod}" 
                                          Style="{StaticResource SectionHeader}"/>
 
                                 <Border Background="#F7FAFC" 
@@ -575,13 +576,13 @@
                                         </Grid.ColumnDefinitions>
 
                                         <StackPanel Grid.Column="0">
-                                            <TextBlock Text="Mois *" Style="{StaticResource FormLabel}"/>
+                                            <TextBlock Text="{x:Static p:Resources.GestionSalaires_MonthLabel}" Style="{StaticResource FormLabel}"/>
                                             <ComboBox x:Name="cmbFormMois" 
                                                     Style="{StaticResource ModernComboBox}"/>
                                         </StackPanel>
 
                                         <StackPanel Grid.Column="2">
-                                            <TextBlock Text="Année *" Style="{StaticResource FormLabel}"/>
+                                            <TextBlock Text="{x:Static p:Resources.GestionSalaires_YearLabel}" Style="{StaticResource FormLabel}"/>
                                             <ComboBox x:Name="cmbFormAnnee" 
                                                     Style="{StaticResource ModernComboBox}"/>
                                         </StackPanel>
@@ -598,7 +599,7 @@
                                       Margin="0,0,0,24">
                                     <StackPanel>
                                         <StackPanel Margin="0,0,0,16">
-                                            <TextBlock Text="Salaire de Base (DH) *" Style="{StaticResource FormLabel}"/>
+                                            <TextBlock Text="{x:Static p:Resources.GestionSalaires_BaseSalaryLabel}" Style="{StaticResource FormLabel}"/>
                                             <TextBox x:Name="txtSalaireBase" 
                                                    Style="{StaticResource ModernTextBox}"
                                                    TextChanged="CalculateSalary"/>
@@ -612,7 +613,7 @@
                                             </Grid.ColumnDefinitions>
 
                                             <StackPanel Grid.Column="0">
-                                                <TextBlock Text="Taux Horaire (DH)" Style="{StaticResource FormLabel}"/>
+                                                <TextBlock Text="{x:Static p:Resources.GestionSalaires_HourlyRate}" Style="{StaticResource FormLabel}"/>
                                                 <TextBox x:Name="txtTauxHoraire" 
                                                        Style="{StaticResource ModernTextBox}"
                                                        IsReadOnly="True"
@@ -620,7 +621,7 @@
                                             </StackPanel>
 
                                             <StackPanel Grid.Column="2">
-                                                <TextBlock Text="Heures Normales" Style="{StaticResource FormLabel}"/>
+                                                <TextBlock Text="{x:Static p:Resources.GestionSalaires_NormalHours}" Style="{StaticResource FormLabel}"/>
                                                 <TextBox x:Name="txtHeuresNormales" 
                                                        Text="191"
                                                        Style="{StaticResource ModernTextBox}"
@@ -641,7 +642,7 @@
                                       Margin="0,0,0,24">
                                     <StackPanel>
                                         <StackPanel Margin="0,0,0,16">
-                                            <TextBlock Text="Heures Supplémentaires 25% (Jours normaux)" Style="{StaticResource FormLabel}"/>
+                                            <TextBlock Text="{x:Static p:Resources.GestionSalaires_Overtime25}" Style="{StaticResource FormLabel}"/>
                                             <TextBox x:Name="txtHeuresSupp25" 
                                                    Text="0"
                                                    Style="{StaticResource ModernTextBox}"
@@ -649,7 +650,7 @@
                                         </StackPanel>
 
                                         <StackPanel Margin="0,0,0,16">
-                                            <TextBlock Text="Heures Supplémentaires 50% (Nuits/Jours fériés)" Style="{StaticResource FormLabel}"/>
+                                            <TextBlock Text="{x:Static p:Resources.GestionSalaires_Overtime50}" Style="{StaticResource FormLabel}"/>
                                             <TextBox x:Name="txtHeuresSupp50" 
                                                    Text="0"
                                                    Style="{StaticResource ModernTextBox}"
@@ -657,7 +658,7 @@
                                         </StackPanel>
 
                                         <StackPanel>
-                                            <TextBlock Text="Heures Supplémentaires 100% (Repos hebdomadaire)" Style="{StaticResource FormLabel}"/>
+                                            <TextBlock Text="{x:Static p:Resources.GestionSalaires_Overtime100}" Style="{StaticResource FormLabel}"/>
                                             <TextBox x:Name="txtHeuresSupp100" 
                                                    Text="0"
                                                    Style="{StaticResource ModernTextBox}"
@@ -679,7 +680,7 @@
                                       Margin="0,0,0,24">
                                     <StackPanel>
                                         <StackPanel Margin="0,0,0,16">
-                                            <TextBlock Text="Prime d'Ancienneté (DH)" Style="{StaticResource FormLabel}"/>
+                                            <TextBlock Text="{x:Static p:Resources.GestionSalaires_SeniorityBonus}" Style="{StaticResource FormLabel}"/>
                                             <TextBox x:Name="txtPrimeAnciennete" 
                                                    Text="0"
                                                    Style="{StaticResource ModernTextBox}"
@@ -687,7 +688,7 @@
                                         </StackPanel>
 
                                         <StackPanel Margin="0,0,0,16">
-                                            <TextBlock Text="Prime de Rendement (DH)" Style="{StaticResource FormLabel}"/>
+                                            <TextBlock Text="{x:Static p:Resources.GestionSalaires_PerformanceBonus}" Style="{StaticResource FormLabel}"/>
                                             <TextBox x:Name="txtPrimeRendement" 
                                                    Text="0"
                                                    Style="{StaticResource ModernTextBox}"
@@ -695,7 +696,7 @@
                                         </StackPanel>
 
                                         <StackPanel Margin="0,0,0,16">
-                                            <TextBlock Text="Prime de Responsabilité (DH)" Style="{StaticResource FormLabel}"/>
+                                            <TextBlock Text="{x:Static p:Resources.GestionSalaires_ResponsibilityBonus}" Style="{StaticResource FormLabel}"/>
                                             <TextBox x:Name="txtPrimeResponsabilite" 
                                                    Text="0"
                                                    Style="{StaticResource ModernTextBox}"
@@ -703,7 +704,7 @@
                                         </StackPanel>
 
                                         <StackPanel Margin="0,0,0,16">
-                                            <TextBlock Text="Indemnité de Transport (DH)" Style="{StaticResource FormLabel}"/>
+                                            <TextBlock Text="{x:Static p:Resources.GestionSalaires_TransportAllowance}" Style="{StaticResource FormLabel}"/>
                                             <TextBox x:Name="txtIndemniteTransport" 
                                                    Text="0"
                                                    Style="{StaticResource ModernTextBox}"
@@ -711,7 +712,7 @@
                                         </StackPanel>
 
                                         <StackPanel Margin="0,0,0,16">
-                                            <TextBlock Text="Indemnité de Logement (DH)" Style="{StaticResource FormLabel}"/>
+                                            <TextBlock Text="{x:Static p:Resources.GestionSalaires_HousingAllowance}" Style="{StaticResource FormLabel}"/>
                                             <TextBox x:Name="txtIndemniteLogement" 
                                                    Text="0"
                                                    Style="{StaticResource ModernTextBox}"
@@ -719,7 +720,7 @@
                                         </StackPanel>
 
                                         <StackPanel>
-                                            <TextBlock Text="Autres Primes (DH)" Style="{StaticResource FormLabel}"/>
+                                            <TextBlock Text="{x:Static p:Resources.GestionSalaires_OtherBonuses}" Style="{StaticResource FormLabel}"/>
                                             <TextBox x:Name="txtAutresPrimes" 
                                                    Text="0"
                                                    Style="{StaticResource ModernTextBox}"
@@ -738,7 +739,7 @@
                                       Margin="0,0,0,24">
                                     <StackPanel>
                                         <StackPanel Margin="0,0,0,16">
-                                            <TextBlock Text="Avance sur Salaire (DH)" Style="{StaticResource FormLabel}"/>
+                                            <TextBlock Text="{x:Static p:Resources.GestionSalaires_Advance}" Style="{StaticResource FormLabel}"/>
                                             <TextBox x:Name="txtAvance" 
                                                    Text="0"
                                                    Style="{StaticResource ModernTextBox}"
@@ -746,7 +747,7 @@
                                         </StackPanel>
 
                                         <StackPanel Margin="0,0,0,16">
-                                            <TextBlock Text="Prêt Personnel (DH)" Style="{StaticResource FormLabel}"/>
+                                            <TextBlock Text="{x:Static p:Resources.GestionSalaires_Loan}" Style="{StaticResource FormLabel}"/>
                                             <TextBox x:Name="txtPret" 
                                                    Text="0"
                                                    Style="{StaticResource ModernTextBox}"
@@ -754,7 +755,7 @@
                                         </StackPanel>
 
                                         <StackPanel Margin="0,0,0,16">
-                                            <TextBlock Text="CIMR - Cotisation Facultative (DH)" Style="{StaticResource FormLabel}"/>
+                                            <TextBlock Text="{x:Static p:Resources.GestionSalaires_CIMR}" Style="{StaticResource FormLabel}"/>
                                             <TextBox x:Name="txtCIMR" 
                                                    Text="0"
                                                    Style="{StaticResource ModernTextBox}"
@@ -762,7 +763,7 @@
                                         </StackPanel>
 
                                         <StackPanel Margin="0,0,0,16">
-                                            <TextBlock Text="Pénalités (DH)" Style="{StaticResource FormLabel}"/>
+                                            <TextBlock Text="{x:Static p:Resources.GestionSalaires_Penalties}" Style="{StaticResource FormLabel}"/>
                                             <TextBox x:Name="txtPenalites" 
                                                    Text="0"
                                                    Style="{StaticResource ModernTextBox}"
@@ -770,7 +771,7 @@
                                         </StackPanel>
 
                                         <StackPanel>
-                                            <TextBlock Text="Autres Retenues (DH)" Style="{StaticResource FormLabel}"/>
+                                            <TextBlock Text="{x:Static p:Resources.GestionSalaires_OtherDeductions}" Style="{StaticResource FormLabel}"/>
                                             <TextBox x:Name="txtAutresRetenues" 
                                                    Text="0"
                                                    Style="{StaticResource ModernTextBox}"
@@ -788,7 +789,7 @@
                                       CornerRadius="8"
                                       Margin="0,0,0,24">
                                     <StackPanel>
-                                        <TextBlock Text="Remarques" Style="{StaticResource FormLabel}"/>
+                                        <TextBlock Text="{x:Static p:Resources.GestionSalaires_RemarksLabel}" Style="{StaticResource FormLabel}"/>
                                         <TextBox x:Name="txtRemarques" 
                                                Height="80"
                                                TextWrapping="Wrap"
@@ -816,7 +817,7 @@
 
                                 <!-- Gross Salary -->
                                 <StackPanel Grid.Column="0">
-                                    <TextBlock Text="SALAIRE BRUT" 
+                                    <TextBlock Text="{x:Static p:Resources.GestionSalaires_GrossSalary}" 
                                              FontSize="12" 
                                              FontWeight="SemiBold"
                                              Foreground="#718096"
@@ -826,7 +827,7 @@
                                              FontSize="24" 
                                              FontWeight="Bold"
                                              Foreground="#2D3748"/>
-                                    <TextBlock Text="Montant heures supp inclus" 
+                                    <TextBlock Text="{x:Static p:Resources.GestionSalaires_OvertimeIncluded}" 
                                              FontSize="11" 
                                              Foreground="#A0AEC0"
                                              Margin="0,4,0,0"/>
@@ -834,7 +835,7 @@
 
                                 <!-- Total Deductions -->
                                 <StackPanel Grid.Column="1">
-                                    <TextBlock Text="TOTAL RETENUES" 
+                                    <TextBlock Text="{x:Static p:Resources.GestionSalaires_TotalDeductions}" 
                                              FontSize="12" 
                                              FontWeight="SemiBold"
                                              Foreground="#718096"
@@ -862,7 +863,7 @@
 
                                 <!-- Net Salary -->
                                 <StackPanel Grid.Column="2">
-                                    <TextBlock Text="SALAIRE NET" 
+                                    <TextBlock Text="{x:Static p:Resources.GestionSalaires_NetSalary}" 
                                              FontSize="12" 
                                              FontWeight="SemiBold"
                                              Foreground="#718096"
@@ -872,7 +873,7 @@
                                              FontSize="28" 
                                              FontWeight="Bold"
                                              Foreground="#48BB78"/>
-                                    <TextBlock Text="Montant à verser" 
+                                    <TextBlock Text="{x:Static p:Resources.GestionSalaires_NetSalaryNote}" 
                                              FontSize="11" 
                                              Foreground="#A0AEC0"
                                              Margin="0,4,0,0"/>
@@ -887,7 +888,7 @@
                                   Click="BtnRetour_Click"
                                   Margin="0,0,12,0"/>
                             <Button x:Name="btnSauvegarder"
-                                  Content="Enregistrer le Salaire" 
+                                  Content="{x:Static p:Resources.GestionSalaires_SaveSalary}" 
                                   Style="{StaticResource PrimaryButton}"
                                   Click="BtnSauvegarder_Click"/>
                         </StackPanel>

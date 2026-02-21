@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:p="clr-namespace:GestionComerce.Resources"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1200"
              Background="#FAFBFC">
@@ -283,12 +284,12 @@
                         <TextBlock Text="👥" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
                     <StackPanel VerticalAlignment="Center">
-                        <TextBlock Text="Gestion des Employés" FontSize="22" FontWeight="SemiBold" Foreground="#1A202C"/>
-                        <TextBlock Text="Gérez les informations de vos employés" FontSize="13" Foreground="#718096" Margin="0,4,0,0"/>
+                        <TextBlock Text="{x:Static p:Resources.GestionEmployes_Title}" FontSize="22" FontWeight="SemiBold" Foreground="#1A202C"/>
+                        <TextBlock Text="{x:Static p:Resources.GestionEmployes_Subtitle}" FontSize="13" Foreground="#718096" Margin="0,4,0,0"/>
                     </StackPanel>
                 </StackPanel>
 
-                <Button Grid.Column="1" Content="+ Nouvel Employé" Style="{StaticResource PrimaryButton}" Click="BtnNouvelEmploye_Click"/>
+                <Button Grid.Column="1" Content="{x:Static p:Resources.GestionEmployes_NewEmployee}" Style="{StaticResource PrimaryButton}" Click="BtnNouvelEmploye_Click"/>
             </Grid>
         </Border>
 
@@ -308,7 +309,7 @@
 
                     <!-- Search -->
                     <StackPanel Grid.Row="0" Margin="0,0,0,20">
-                        <TextBlock Text="Rechercher" Style="{StaticResource FormLabel}"/>
+                        <TextBlock Text="{x:Static p:Resources.GestionEmployes_SearchLabel}" Style="{StaticResource FormLabel}"/>
                         <TextBox x:Name="txtRecherche" Width="350" HorizontalAlignment="Left"
                                Style="{StaticResource ModernTextBox}"
                                TextChanged="TxtRecherche_TextChanged"
@@ -318,7 +319,7 @@
                     <!-- DataGrid -->
                     <DataGrid Grid.Row="1" x:Name="dgEmployes">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="NOM COMPLET" Binding="{Binding NomComplet}" Width="200">
+                            <DataGridTextColumn Header="{x:Static p:Resources.GestionEmployes_ColFullName}" Binding="{Binding NomComplet}" Width="200">
                                 <DataGridTextColumn.ElementStyle>
                                     <Style TargetType="TextBlock">
                                         <Setter Property="FontWeight" Value="Medium"/>
@@ -326,42 +327,42 @@
                                     </Style>
                                 </DataGridTextColumn.ElementStyle>
                             </DataGridTextColumn>
-                            <DataGridTextColumn Header="CIN" Binding="{Binding CIN}" Width="120">
+                            <DataGridTextColumn Header="{x:Static p:Resources.GestionEmployes_ColCIN}" Binding="{Binding CIN}" Width="120">
                                 <DataGridTextColumn.ElementStyle>
                                     <Style TargetType="TextBlock">
                                         <Setter Property="Foreground" Value="#4A5568"/>
                                     </Style>
                                 </DataGridTextColumn.ElementStyle>
                             </DataGridTextColumn>
-                            <DataGridTextColumn Header="CNSS" Binding="{Binding CNSS}" Width="150">
+                            <DataGridTextColumn Header="{x:Static p:Resources.GestionEmployes_ColCNSS}" Binding="{Binding CNSS}" Width="150">
                                 <DataGridTextColumn.ElementStyle>
                                     <Style TargetType="TextBlock">
                                         <Setter Property="Foreground" Value="#4A5568"/>
                                     </Style>
                                 </DataGridTextColumn.ElementStyle>
                             </DataGridTextColumn>
-                            <DataGridTextColumn Header="TÉLÉPHONE" Binding="{Binding Telephone}" Width="130">
+                            <DataGridTextColumn Header="{x:Static p:Resources.GestionEmployes_ColPhone}" Binding="{Binding Telephone}" Width="130">
                                 <DataGridTextColumn.ElementStyle>
                                     <Style TargetType="TextBlock">
                                         <Setter Property="Foreground" Value="#4A5568"/>
                                     </Style>
                                 </DataGridTextColumn.ElementStyle>
                             </DataGridTextColumn>
-                            <DataGridTextColumn Header="EMAIL" Binding="{Binding Email}" Width="200">
+                            <DataGridTextColumn Header="{x:Static p:Resources.GestionEmployes_ColEmail}" Binding="{Binding Email}" Width="200">
                                 <DataGridTextColumn.ElementStyle>
                                     <Style TargetType="TextBlock">
                                         <Setter Property="Foreground" Value="#4A5568"/>
                                     </Style>
                                 </DataGridTextColumn.ElementStyle>
                             </DataGridTextColumn>
-                            <DataGridTextColumn Header="POSTE" Binding="{Binding Poste}" Width="150">
+                            <DataGridTextColumn Header="{x:Static p:Resources.GestionEmployes_ColPosition}" Binding="{Binding Poste}" Width="150">
                                 <DataGridTextColumn.ElementStyle>
                                     <Style TargetType="TextBlock">
                                         <Setter Property="Foreground" Value="#4A5568"/>
                                     </Style>
                                 </DataGridTextColumn.ElementStyle>
                             </DataGridTextColumn>
-                            <DataGridTemplateColumn Header="STATUT" Width="110">
+                            <DataGridTemplateColumn Header="{x:Static p:Resources.GestionEmployes_ColStatus}" Width="110">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <Border Padding="10,6" CornerRadius="6" HorizontalAlignment="Left">
@@ -397,11 +398,11 @@
                                                         <Style TargetType="TextBlock">
                                                             <Style.Triggers>
                                                                 <DataTrigger Binding="{Binding Actif}" Value="True">
-                                                                    <Setter Property="Text" Value="Actif"/>
+                                                                    <Setter Property="Text" Value="{x:Static p:Resources.GestionEmployes_Active}"/>
                                                                     <Setter Property="Foreground" Value="#047857"/>
                                                                 </DataTrigger>
                                                                 <DataTrigger Binding="{Binding Actif}" Value="False">
-                                                                    <Setter Property="Text" Value="Inactif"/>
+                                                                    <Setter Property="Text" Value="{x:Static p:Resources.GestionEmployes_Inactive}"/>
                                                                     <Setter Property="Foreground" Value="#DC2626"/>
                                                                 </DataTrigger>
                                                             </Style.Triggers>
@@ -413,7 +414,7 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Header="ACTIONS" Width="120">
+                            <DataGridTemplateColumn Header="{x:Static p:Resources.GestionEmployes_ColActions}" Width="120">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -422,7 +423,7 @@
                                                   Margin="0,0,6,0"
                                                   Click="BtnModifier_Click"
                                                   Tag="{Binding EmployeID}"/>
-                                            <Button Content="🗑️" ToolTip="Désactiver"
+                                            <Button Content="🗑️" ToolTip="{x:Static p:Resources.GestionEmployes_DeactivateTooltip}"
                                                   Style="{StaticResource DeleteIconButton}"
                                                   Click="BtnDesactiver_Click"
                                                   Tag="{Binding EmployeID}"/>
@@ -438,9 +439,9 @@
                 <ScrollViewer x:Name="FormPanel" Visibility="Collapsed" VerticalScrollBarVisibility="Auto">
                     <StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="0,0,0,24">
-                            <Button Content="← Retour" Style="{StaticResource SecondaryButton}"
+                            <Button Content="{x:Static p:Resources.GestionEmployes_BackButton}" Style="{StaticResource SecondaryButton}"
                                   Click="BtnRetour_Click" Margin="0,0,16,0"/>
-                            <TextBlock x:Name="txtFormTitle" Text="Nouvel Employé" 
+                            <TextBlock x:Name="txtFormTitle" Text="{x:Static p:Resources.GestionEmployes_NewEmployeeTitle}" 
                                      Style="{StaticResource SectionHeader}" VerticalAlignment="Center" Margin="0"/>
                         </StackPanel>
 
@@ -453,12 +454,12 @@
 
                             <!-- Left Column -->
                             <StackPanel Grid.Column="0">
-                                <TextBlock Text="Informations Personnelles" Style="{StaticResource SectionHeader}"/>
+                                <TextBlock Text="{x:Static p:Resources.GestionEmployes_PersonalInfo}" Style="{StaticResource SectionHeader}"/>
 
                                 <Border Background="#F7FAFC" Padding="20" CornerRadius="8" Margin="0,0,0,24">
                                     <StackPanel>
                                         <StackPanel Margin="0,0,0,16">
-                                            <TextBlock Text="Nom Complet *" Style="{StaticResource FormLabel}"/>
+                                            <TextBlock Text="{x:Static p:Resources.GestionEmployes_FullName}" Style="{StaticResource FormLabel}"/>
                                             <TextBox x:Name="txtNomComplet" Style="{StaticResource ModernTextBox}"/>
                                         </StackPanel>
 
@@ -470,23 +471,23 @@
                                             </Grid.ColumnDefinitions>
 
                                             <StackPanel Grid.Column="0" Margin="0,0,0,16">
-                                                <TextBlock Text="CIN" Style="{StaticResource FormLabel}"/>
+                                                <TextBlock Text="{x:Static p:Resources.GestionEmployes_ColCIN}" Style="{StaticResource FormLabel}"/>
                                                 <TextBox x:Name="txtCIN" Style="{StaticResource ModernTextBox}"/>
                                             </StackPanel>
 
                                             <StackPanel Grid.Column="2" Margin="0,0,0,16">
-                                                <TextBlock Text="Numéro CNSS" Style="{StaticResource FormLabel}"/>
+                                                <TextBlock Text="{x:Static p:Resources.GestionEmployes_CNSS}" Style="{StaticResource FormLabel}"/>
                                                 <TextBox x:Name="txtCNSS" Style="{StaticResource ModernTextBox}"/>
                                             </StackPanel>
                                         </Grid>
 
                                         <StackPanel Margin="0,0,0,16">
-                                            <TextBlock Text="Téléphone" Style="{StaticResource FormLabel}"/>
+                                            <TextBlock Text="{x:Static p:Resources.GestionEmployes_Phone}" Style="{StaticResource FormLabel}"/>
                                             <TextBox x:Name="txtTelephone" Style="{StaticResource ModernTextBox}"/>
                                         </StackPanel>
 
                                         <StackPanel>
-                                            <TextBlock Text="Email" Style="{StaticResource FormLabel}"/>
+                                            <TextBlock Text="{x:Static p:Resources.GestionEmployes_Email}" Style="{StaticResource FormLabel}"/>
                                             <TextBox x:Name="txtEmail" Style="{StaticResource ModernTextBox}"/>
                                         </StackPanel>
                                     </StackPanel>
@@ -495,27 +496,27 @@
 
                             <!-- Right Column -->
                             <StackPanel Grid.Column="2">
-                                <TextBlock Text="Informations Professionnelles" Style="{StaticResource SectionHeader}"/>
+                                <TextBlock Text="{x:Static p:Resources.GestionEmployes_ProfessionalInfo}" Style="{StaticResource SectionHeader}"/>
 
                                 <Border Background="#F7FAFC" Padding="20" CornerRadius="8" Margin="0,0,0,24">
                                     <StackPanel>
                                         <StackPanel Margin="0,0,0,16">
-                                            <TextBlock Text="Poste" Style="{StaticResource FormLabel}"/>
+                                            <TextBlock Text="{x:Static p:Resources.GestionEmployes_Position}" Style="{StaticResource FormLabel}"/>
                                             <TextBox x:Name="txtPoste" Style="{StaticResource ModernTextBox}"/>
                                         </StackPanel>
 
                                         <StackPanel Margin="0,0,0,16">
-                                            <TextBlock Text="Date d'Embauche" Style="{StaticResource FormLabel}"/>
+                                            <TextBlock Text="{x:Static p:Resources.GestionEmployes_HireDate}" Style="{StaticResource FormLabel}"/>
                                             <DatePicker x:Name="dpDateEmbauche" Height="40" FontSize="14"/>
                                         </StackPanel>
 
                                         <StackPanel Margin="0,0,0,16">
-                                            <TextBlock Text="Date de Naissance" Style="{StaticResource FormLabel}"/>
+                                            <TextBlock Text="{x:Static p:Resources.GestionEmployes_BirthDate}" Style="{StaticResource FormLabel}"/>
                                             <DatePicker x:Name="dpDateNaissance" Height="40" FontSize="14"/>
                                         </StackPanel>
 
                                         <StackPanel>
-                                            <TextBlock Text="Adresse" Style="{StaticResource FormLabel}"/>
+                                            <TextBlock Text="{x:Static p:Resources.GestionEmployes_AddressLabel}" Style="{StaticResource FormLabel}"/>
                                             <TextBox x:Name="txtAdresse" Height="80" TextWrapping="Wrap"
                                                    AcceptsReturn="True" VerticalScrollBarVisibility="Auto"
                                                    Style="{StaticResource ModernTextBox}"/>
@@ -527,9 +528,9 @@
 
                         <!-- Action Buttons -->
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                            <Button Content="Annuler" Style="{StaticResource SecondaryButton}"
+                            <Button Content="{x:Static p:Resources.GestionEmployes_CancelButton}" Style="{StaticResource SecondaryButton}"
                                   Click="BtnRetour_Click" Margin="0,0,12,0"/>
-                            <Button x:Name="btnSauvegarder" Content="Enregistrer" 
+                            <Button x:Name="btnSauvegarder" Content="{x:Static p:Resources.GestionEmployes_SaveButton}" 
                                   Style="{StaticResource PrimaryButton}" Click="BtnSauvegarder_Click"/>
                         </StackPanel>
                     </StackPanel>

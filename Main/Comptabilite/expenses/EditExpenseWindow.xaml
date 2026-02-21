@@ -1,7 +1,8 @@
 ﻿<Window x:Class="Superete.Main.Comptabilite.EditExpenseWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Modifier la Dépense"
+        xmlns:p="clr-namespace:GestionComerce.Resources"
+        Title="{x:Static p:Resources.EditExpense_WindowTitle}"
         Width="550"
         Height="650"
         WindowStartupLocation="CenterScreen"
@@ -175,7 +176,7 @@
 
                 <!-- Title -->
                 <TextBlock Grid.Row="0" 
-                           Text="✎ Modifier la Dépense"
+                           Text="{x:Static p:Resources.EditExpense_Title}"
                            FontSize="22"
                            FontWeight="Bold"
                            Foreground="#111827"
@@ -183,7 +184,7 @@
 
                 <!-- Expense Name -->
                 <TextBlock Grid.Row="1" 
-                           Text="Nom de la Dépense *" 
+                           Text="{x:Static p:Resources.EditExpense_NameLabel}" 
                            Style="{StaticResource LabelStyle}"/>
                 <TextBox Grid.Row="2"
                          x:Name="txtName" 
@@ -192,7 +193,7 @@
 
                 <!-- Category -->
                 <TextBlock Grid.Row="3" 
-                           Text="Catégorie *" 
+                           Text="{x:Static p:Resources.EditExpense_CategoryLabel}" 
                            Style="{StaticResource LabelStyle}"/>
                 <ComboBox Grid.Row="4"
                           x:Name="cmbCategory" 
@@ -202,7 +203,7 @@
 
                 <!-- Amount -->
                 <TextBlock Grid.Row="5" 
-                           Text="Montant (MAD) *" 
+                           Text="{x:Static p:Resources.EditExpense_AmountLabel}" 
                            Style="{StaticResource LabelStyle}"/>
                 <TextBox Grid.Row="6"
                          x:Name="txtAmount" 
@@ -211,7 +212,7 @@
 
                 <!-- Due Date -->
                 <TextBlock Grid.Row="7" 
-                           Text="Date d'échéance *" 
+                           Text="{x:Static p:Resources.EditExpense_DueDateLabel}" 
                            Style="{StaticResource LabelStyle}"/>
                 <DatePicker Grid.Row="8"
                             x:Name="dpDueDate" 
@@ -220,7 +221,7 @@
 
                 <!-- Recurring Type -->
                 <TextBlock Grid.Row="9" 
-                           Text="Type de Récurrence" 
+                           Text="{x:Static p:Resources.EditExpense_RecurrenceLabel}" 
                            Style="{StaticResource LabelStyle}"/>
                 <ComboBox Grid.Row="10"
                           x:Name="cmbRecurring" 
@@ -230,23 +231,23 @@
 
                 <!-- Notes -->
                 <TextBlock Grid.Row="11" 
-                           Text="Notes" 
+                           Text="{x:Static p:Resources.EditExpense_NotesLabel}" 
                            Style="{StaticResource LabelStyle}"/>
                 <TextBox Grid.Row="12"
-         x:Name="txtNotes" 
-         Style="{StaticResource MultiLineTextBox}"
-         Margin="0,0,0,24"/>
+                         x:Name="txtNotes" 
+                         Style="{StaticResource MultiLineTextBox}"
+                         Margin="0,0,0,24"/>
 
                 <!-- Buttons -->
                 <StackPanel Grid.Row="12" 
                             Orientation="Horizontal" 
                             HorizontalAlignment="Right"
                             Margin="0,120,0,0">
-                    <Button Content="Annuler"
+                    <Button Content="{x:Static p:Resources.Cancel}"
                             Style="{StaticResource SecondaryButton}"
                             Click="BtnCancel_Click"
                             Margin="0,0,12,0"/>
-                    <Button Content="💾 Sauvegarder"
+                    <Button Content="{x:Static p:Resources.EditExpense_SaveButton}"
                             Style="{StaticResource PrimaryButton}"
                             Click="BtnSave_Click"/>
                 </StackPanel>

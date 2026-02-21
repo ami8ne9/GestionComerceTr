@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:res="clr-namespace:GestionComerce.Resources"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1100">
 
@@ -49,7 +50,7 @@
             <!-- Header -->
             <Grid Grid.Row="0" Margin="0,0,0,30">
                 <StackPanel>
-                    <TextBlock Text="Tableau de Bord Financier" FontSize="28" FontWeight="Bold" Foreground="#1E293B" Margin="0,0,0,5"/>
+                    <TextBlock Text="{x:Static res:Resources.Dashboard_Title}" FontSize="28" FontWeight="Bold" Foreground="#1E293B" Margin="0,0,0,5"/>
                     <TextBlock x:Name="PeriodText" Text="Exercice 2026" FontSize="14" Foreground="#64748B"/>
                 </StackPanel>
                 <Button HorizontalAlignment="Right" Padding="16,10" Background="#3B82F6" Foreground="White" 
@@ -59,7 +60,7 @@
                             <Border Background="{TemplateBinding Background}" CornerRadius="8" Padding="{TemplateBinding Padding}">
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="🔄" FontSize="14" Margin="0,0,8,0"/>
-                                    <TextBlock Text="Actualiser" FontSize="13" FontWeight="SemiBold"/>
+                                    <TextBlock Text="{x:Static res:Resources.Dashboard_Refresh}" FontSize="13" FontWeight="SemiBold"/>
                                 </StackPanel>
                             </Border>
                         </ControlTemplate>
@@ -72,7 +73,7 @@
                     CornerRadius="8" Padding="30" Margin="0,0,0,20" HorizontalAlignment="Center">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="⏳" FontSize="20" Margin="0,0,10,0"/>
-                    <TextBlock Text="Chargement des données..." FontSize="14" Foreground="#64748B" VerticalAlignment="Center"/>
+                    <TextBlock Text="{x:Static res:Resources.Dashboard_Loading}" FontSize="14" Foreground="#64748B" VerticalAlignment="Center"/>
                 </StackPanel>
             </Border>
 
@@ -89,25 +90,25 @@
                     <!-- Total Sales -->
                     <Border Grid.Column="0" Style="{StaticResource DashboardCard}">
                         <StackPanel>
-                            <TextBlock Text="💵 VENTES TOTALES" Style="{StaticResource CardTitle}"/>
+                            <TextBlock Text="{x:Static res:Resources.Dashboard_VentesTotales}" Style="{StaticResource CardTitle}"/>
                             <TextBlock x:Name="TxtTotalVentes" Text="0,00 DH" Style="{StaticResource CardValue}" Foreground="#10B981"/>
-                            <TextBlock Text="Chiffre d'affaires" Style="{StaticResource CardSubtext}"/>
+                            <TextBlock Text="{x:Static res:Resources.Dashboard_CA}" Style="{StaticResource CardSubtext}"/>
                         </StackPanel>
                     </Border>
 
                     <!-- Net Profit -->
                     <Border Grid.Column="1" Style="{StaticResource DashboardCard}">
                         <StackPanel>
-                            <TextBlock Text="📊 BÉNÉFICE NET" Style="{StaticResource CardTitle}"/>
+                            <TextBlock Text="{x:Static res:Resources.Dashboard_BeneficeNet}" Style="{StaticResource CardTitle}"/>
                             <TextBlock x:Name="TxtBeneficeNet" Text="0,00 DH" Style="{StaticResource CardValue}" Foreground="#3B82F6"/>
-                            <TextBlock Text="Ventes - Charges" Style="{StaticResource CardSubtext}"/>
+                            <TextBlock Text="{x:Static res:Resources.Dashboard_VentesCharges}" Style="{StaticResource CardSubtext}"/>
                         </StackPanel>
                     </Border>
 
                     <!-- Treasury -->
                     <Border Grid.Column="2" Style="{StaticResource DashboardCard}" Margin="0">
                         <StackPanel>
-                            <TextBlock Text="💰 TRÉSORERIE" Style="{StaticResource CardTitle}"/>
+                            <TextBlock Text="{x:Static res:Resources.Dashboard_Tresorerie}" Style="{StaticResource CardTitle}"/>
                             <TextBlock x:Name="TxtTresorerie" Text="0,00 DH" Style="{StaticResource CardValue}" Foreground="#F59E0B"/>
                             <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
                                 <TextBlock Text="🏦 " FontSize="12"/>
@@ -129,7 +130,7 @@
 
                         <!-- Charges Summary -->
                         <StackPanel Grid.Column="0">
-                            <TextBlock Text="💳 CHARGES TOTALES" Style="{StaticResource CardTitle}"/>
+                            <TextBlock Text="{x:Static res:Resources.Dashboard_ChargesTotales}" Style="{StaticResource CardTitle}"/>
                             <TextBlock x:Name="TxtTotalCharges" Text="0,00 DH" 
                                        FontSize="28" FontWeight="Bold" Foreground="#EF4444" Margin="0,0,0,20"/>
 
@@ -141,7 +142,7 @@
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
-                                    <TextBlock Grid.Column="0" Text="🛒 Achats" FontSize="13" Foreground="#64748B"/>
+                                    <TextBlock Grid.Column="0" Text="{x:Static res:Resources.Dashboard_Achats}" FontSize="13" Foreground="#64748B"/>
                                     <Border Grid.Column="1" Height="1" Background="#E2E8F0" Margin="10,0" VerticalAlignment="Center"/>
                                     <TextBlock Grid.Column="2" x:Name="TxtAchats" Text="0,00 DH" FontSize="13" FontWeight="SemiBold" Foreground="#1E293B"/>
                                 </Grid>
@@ -152,7 +153,7 @@
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
-                                    <TextBlock Grid.Column="0" Text="👥 Salaires" FontSize="13" Foreground="#64748B"/>
+                                    <TextBlock Grid.Column="0" Text="{x:Static res:Resources.Dashboard_Salaires}" FontSize="13" Foreground="#64748B"/>
                                     <Border Grid.Column="1" Height="1" Background="#E2E8F0" Margin="10,0" VerticalAlignment="Center"/>
                                     <TextBlock Grid.Column="2" x:Name="TxtSalaires" Text="0,00 DH" FontSize="13" FontWeight="SemiBold" Foreground="#1E293B"/>
                                 </Grid>
@@ -163,7 +164,7 @@
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
-                                    <TextBlock Grid.Column="0" Text="📋 Autres" FontSize="13" Foreground="#64748B"/>
+                                    <TextBlock Grid.Column="0" Text="{x:Static res:Resources.Dashboard_Autres}" FontSize="13" Foreground="#64748B"/>
                                     <Border Grid.Column="1" Height="1" Background="#E2E8F0" Margin="10,0" VerticalAlignment="Center"/>
                                     <TextBlock Grid.Column="2" x:Name="TxtAutresDepenses" Text="0,00 DH" FontSize="13" FontWeight="SemiBold" Foreground="#1E293B"/>
                                 </Grid>
@@ -172,7 +173,7 @@
 
                         <!-- Visual Progress Bars -->
                         <StackPanel Grid.Column="1" Margin="40,0,0,0" VerticalAlignment="Center">
-                            <TextBlock Text="RÉPARTITION DES CHARGES" FontSize="12" FontWeight="SemiBold" 
+                            <TextBlock Text="{x:Static res:Resources.Dashboard_RepartitionCharges}" FontSize="12" FontWeight="SemiBold" 
                                        Foreground="#64748B" Margin="0,0,0,15"/>
 
                             <!-- Achats Bar -->
@@ -199,9 +200,9 @@
                 <!-- Quick Actions -->
                 <Border Style="{StaticResource DashboardCard}" Margin="0">
                     <StackPanel>
-                        <TextBlock Text="⚡ ACTIONS RAPIDES" Style="{StaticResource CardTitle}"/>
+                        <TextBlock Text="{x:Static res:Resources.Dashboard_ActionsRapides}" Style="{StaticResource CardTitle}"/>
                         <WrapPanel>
-                            <Button Content="📖 Journal Général" Margin="0,0,10,10" Padding="16,12" 
+                            <Button Content="{x:Static res:Resources.Dashboard_JournalGeneral}" Margin="0,0,10,10" Padding="16,12" 
                                     Background="#EFF6FF" Foreground="#3B82F6" BorderThickness="0" 
                                     FontSize="13" FontWeight="SemiBold" Cursor="Hand" Click="OpenJournal_Click">
                                 <Button.Template>
@@ -213,7 +214,7 @@
                                 </Button.Template>
                             </Button>
 
-                            <Button Content="📚 Grand Livre" Margin="0,0,10,10" Padding="16,12" 
+                            <Button Content="{x:Static res:Resources.Dashboard_GrandLivre}" Margin="0,0,10,10" Padding="16,12" 
                                     Background="#EFF6FF" Foreground="#3B82F6" BorderThickness="0" 
                                     FontSize="13" FontWeight="SemiBold" Cursor="Hand" Click="OpenGrandLivre_Click">
                                 <Button.Template>
@@ -225,7 +226,7 @@
                                 </Button.Template>
                             </Button>
 
-                            <Button Content="⚖️ Bilan" Margin="0,0,10,10" Padding="16,12" 
+                            <Button Content="{x:Static res:Resources.Dashboard_Bilan}" Margin="0,0,10,10" Padding="16,12" 
                                     Background="#F0FDF4" Foreground="#10B981" BorderThickness="0" 
                                     FontSize="13" FontWeight="SemiBold" Cursor="Hand" Click="OpenBilan_Click">
                                 <Button.Template>
@@ -237,7 +238,7 @@
                                 </Button.Template>
                             </Button>
 
-                            <Button Content="📈 CPC" Margin="0,0,10,10" Padding="16,12" 
+                            <Button Content="{x:Static res:Resources.Dashboard_CPC}" Margin="0,0,10,10" Padding="16,12" 
                                     Background="#F0FDF4" Foreground="#10B981" BorderThickness="0" 
                                     FontSize="13" FontWeight="SemiBold" Cursor="Hand" Click="OpenCPC_Click">
                                 <Button.Template>

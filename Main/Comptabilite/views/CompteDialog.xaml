@@ -1,7 +1,8 @@
 ﻿<Window x:Class="Superete.Main.Comptabilite.Views.CompteDialog"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Gestion Compte" 
+        xmlns:res="clr-namespace:GestionComerce.Resources"
+        Title="{x:Static res:Resources.CompteDialog_Title}"
         Height="550" 
         Width="500"
         WindowStartupLocation="CenterScreen"
@@ -161,11 +162,11 @@
                         <TextBlock Text="📋" FontSize="24" Margin="0,0,12,0" VerticalAlignment="Center"/>
                         <StackPanel>
                             <TextBlock x:Name="TitleText" 
-                                     Text="Nouveau Compte" 
+                                     Text="{x:Static res:Resources.CompteDialog_NewCompte}" 
                                      FontSize="20" 
                                      FontWeight="SemiBold"
                                      Foreground="White"/>
-                            <TextBlock Text="Plan Comptable Marocain" 
+                            <TextBlock Text="{x:Static res:Resources.CompteDialog_Subtitle}" 
                                      FontSize="12" 
                                      Foreground="#E0E7FF"
                                      Margin="0,2,0,0"/>
@@ -208,7 +209,7 @@
                 <StackPanel>
                     <!-- Code Compte -->
                     <StackPanel Margin="0,0,0,16">
-                        <TextBlock Text="Code Compte *" Style="{StaticResource FormLabel}"/>
+                        <TextBlock Text="{x:Static res:Resources.CompteDialog_CodeCompte}" Style="{StaticResource FormLabel}"/>
                         <TextBox x:Name="TxtCodeCompte" 
                                 Style="{StaticResource ModernTextBox}"
                                 MaxLength="10"/>
@@ -216,47 +217,47 @@
 
                     <!-- Libelle -->
                     <StackPanel Margin="0,0,0,16">
-                        <TextBlock Text="Libellé *" Style="{StaticResource FormLabel}"/>
+                        <TextBlock Text="{x:Static res:Resources.CompteDialog_Libelle}" Style="{StaticResource FormLabel}"/>
                         <TextBox x:Name="TxtLibelle" 
                                 Style="{StaticResource ModernTextBox}"/>
                     </StackPanel>
 
                     <!-- Classe -->
                     <StackPanel Margin="0,0,0,16">
-                        <TextBlock Text="Classe Comptable *" Style="{StaticResource FormLabel}"/>
+                        <TextBlock Text="{x:Static res:Resources.CompteDialog_Classe}" Style="{StaticResource FormLabel}"/>
                         <ComboBox x:Name="CmbClasse" 
                                  Style="{StaticResource ModernComboBox}">
-                            <ComboBoxItem Content="1 - Financement Permanent" Tag="1"/>
-                            <ComboBoxItem Content="2 - Actif Immobilisé" Tag="2"/>
-                            <ComboBoxItem Content="3 - Actif Circulant" Tag="3"/>
-                            <ComboBoxItem Content="4 - Passif Circulant" Tag="4"/>
-                            <ComboBoxItem Content="5 - Trésorerie" Tag="5"/>
-                            <ComboBoxItem Content="6 - Charges" Tag="6"/>
-                            <ComboBoxItem Content="7 - Produits" Tag="7"/>
-                            <ComboBoxItem Content="8 - Résultats" Tag="8"/>
+                            <ComboBoxItem Content="{x:Static res:Resources.CompteDialog_Classe1}" Tag="1"/>
+                            <ComboBoxItem Content="{x:Static res:Resources.CompteDialog_Classe2}" Tag="2"/>
+                            <ComboBoxItem Content="{x:Static res:Resources.CompteDialog_Classe3}" Tag="3"/>
+                            <ComboBoxItem Content="{x:Static res:Resources.CompteDialog_Classe4}" Tag="4"/>
+                            <ComboBoxItem Content="{x:Static res:Resources.CompteDialog_Classe5}" Tag="5"/>
+                            <ComboBoxItem Content="{x:Static res:Resources.CompteDialog_Classe6}" Tag="6"/>
+                            <ComboBoxItem Content="{x:Static res:Resources.CompteDialog_Classe7}" Tag="7"/>
+                            <ComboBoxItem Content="{x:Static res:Resources.CompteDialog_Classe8}" Tag="8"/>
                         </ComboBox>
                     </StackPanel>
 
                     <!-- Type de Compte -->
                     <StackPanel Margin="0,0,0,16">
-                        <TextBlock Text="Type de Compte *" Style="{StaticResource FormLabel}"/>
+                        <TextBlock Text="{x:Static res:Resources.CompteDialog_Type}" Style="{StaticResource FormLabel}"/>
                         <ComboBox x:Name="CmbType" 
                                  Style="{StaticResource ModernComboBox}">
-                            <ComboBoxItem Content="Actif"/>
-                            <ComboBoxItem Content="Passif"/>
-                            <ComboBoxItem Content="Charge"/>
-                            <ComboBoxItem Content="Produit"/>
-                            <ComboBoxItem Content="Résultat"/>
+                            <ComboBoxItem Content="{x:Static res:Resources.CompteDialog_TypeActif}"/>
+                            <ComboBoxItem Content="{x:Static res:Resources.CompteDialog_TypePassif}"/>
+                            <ComboBoxItem Content="{x:Static res:Resources.CompteDialog_TypeCharge}"/>
+                            <ComboBoxItem Content="{x:Static res:Resources.CompteDialog_TypeProduit}"/>
+                            <ComboBoxItem Content="{x:Static res:Resources.CompteDialog_TypeResultat}"/>
                         </ComboBox>
                     </StackPanel>
 
                     <!-- Sens Normal -->
                     <StackPanel Margin="0,0,0,16">
-                        <TextBlock Text="Sens Normal *" Style="{StaticResource FormLabel}"/>
+                        <TextBlock Text="{x:Static res:Resources.CompteDialog_SensNormal}" Style="{StaticResource FormLabel}"/>
                         <ComboBox x:Name="CmbSens" 
                                  Style="{StaticResource ModernComboBox}">
-                            <ComboBoxItem Content="Débit" Tag="Debit"/>
-                            <ComboBoxItem Content="Crédit" Tag="Credit"/>
+                            <ComboBoxItem Content="{x:Static res:Resources.CompteDialog_Debit}" Tag="Debit"/>
+                            <ComboBoxItem Content="{x:Static res:Resources.CompteDialog_Credit}" Tag="Credit"/>
                         </ComboBox>
                     </StackPanel>
 
@@ -266,7 +267,7 @@
                            CornerRadius="8"
                            Margin="0,8,0,0">
                         <CheckBox x:Name="ChkActif" 
-                                 Content="Compte Actif" 
+                                 Content="{x:Static res:Resources.CompteDialog_CompteActif}" 
                                  IsChecked="True"
                                  FontWeight="Medium"/>
                     </Border>
@@ -281,12 +282,12 @@
                    BorderBrush="#E2E8F0"
                    BorderThickness="0,1,0,0">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                    <Button Content="Annuler" 
+                    <Button Content="{x:Static res:Resources.Cancel}" 
                            Style="{StaticResource SecondaryButton}"
                            Width="120"
                            Click="BtnCancel_Click"
                            Margin="0,0,12,0"/>
-                    <Button Content="Enregistrer" 
+                    <Button Content="{x:Static res:Resources.CompteDialog_Save}" 
                            Style="{StaticResource PrimaryButton}"
                            Width="140"
                            Click="BtnSave_Click"/>

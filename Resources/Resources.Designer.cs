@@ -70,7 +70,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gestion des utilisateurs et rôles avec permissions.
+        ///   Looks up a localized string similar to Protection complète de vos données avec chiffrement et contrôle d&apos;accès..
         /// </summary>
         public static string About_AdvancedSecurityDesc {
             get {
@@ -88,7 +88,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Génération de factures professionnelles.
+        ///   Looks up a localized string similar to Génération automatique de factures professionnelles..
         /// </summary>
         public static string About_AutoInvoicingDesc {
             get {
@@ -97,7 +97,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Disponibilité.
+        ///   Looks up a localized string similar to Disponibilité 24/7.
         /// </summary>
         public static string About_Availability {
             get {
@@ -115,7 +115,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Suivi des clients et de leurs opérations.
+        ///   Looks up a localized string similar to Suivi complet de vos clients et leurs opérations..
         /// </summary>
         public static string About_ClientManagementDesc {
             get {
@@ -124,7 +124,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Notre équipe est disponible pour vous aider.
+        ///   Looks up a localized string similar to Notre équipe est disponible pour vous aider..
         /// </summary>
         public static string About_ContactDesc {
             get {
@@ -133,7 +133,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Contactez-nous.
+        ///   Looks up a localized string similar to Contactez-Nous.
         /// </summary>
         public static string About_ContactUs {
             get {
@@ -142,7 +142,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to © 2024 GestionComerce.
+        ///   Looks up a localized string similar to © 2024 GestionComerce. Tous droits réservés..
         /// </summary>
         public static string About_Copyright {
             get {
@@ -151,7 +151,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Solution complète pour la gestion de votre commerce.
+        ///   Looks up a localized string similar to Solution de gestion commerciale complète..
         /// </summary>
         public static string About_Description1 {
             get {
@@ -160,7 +160,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Développée avec les meilleures technologies modernes.
+        ///   Looks up a localized string similar to Optimisez votre gestion d&apos;entreprise..
         /// </summary>
         public static string About_Description2 {
             get {
@@ -178,7 +178,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Analyses et statistiques de votre activité.
+        ///   Looks up a localized string similar to Analyses et rapports complets pour votre activité..
         /// </summary>
         public static string About_DetailedReportsDesc {
             get {
@@ -196,7 +196,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to +212 6XX XXX XXX.
+        ///   Looks up a localized string similar to +212 600-000001.
         /// </summary>
         public static string About_Phone1 {
             get {
@@ -205,7 +205,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to +212 5XX XXX XXX.
+        ///   Looks up a localized string similar to +212 600-000002.
         /// </summary>
         public static string About_Phone2 {
             get {
@@ -223,7 +223,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tous droits réservés.
+        ///   Looks up a localized string similar to Tous droits réservés..
         /// </summary>
         public static string About_Rights {
             get {
@@ -241,7 +241,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gestion des ventes et transactions.
+        ///   Looks up a localized string similar to Gérez vos ventes et suivez vos performances..
         /// </summary>
         public static string About_SalesManagementDesc {
             get {
@@ -259,7 +259,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Solution de Gestion Commerciale.
+        ///   Looks up a localized string similar to Notre Solution.
         /// </summary>
         public static string About_SolutionTitle {
             get {
@@ -268,7 +268,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gestion de Stock.
+        ///   Looks up a localized string similar to Gestion du Stock.
         /// </summary>
         public static string About_StockManagement {
             get {
@@ -277,7 +277,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Suivi en temps réel des stocks.
+        ///   Looks up a localized string similar to Contrôle total de votre inventaire en temps réel..
         /// </summary>
         public static string About_StockManagementDesc {
             get {
@@ -286,7 +286,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Votre solution de gestion commerciale.
+        ///   Looks up a localized string similar to La solution idéale pour votre commerce.
         /// </summary>
         public static string About_Tagline {
             get {
@@ -304,7 +304,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Lun-Sam: 8h-18h.
+        ///   Looks up a localized string similar to Lun-Sam: 9h00-18h00.
         /// </summary>
         public static string About_WorkingHours {
             get {
@@ -322,7 +322,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Actions.
+        ///   Looks up a localized string similar to ACTIONS.
         /// </summary>
         public static string Actions {
             get {
@@ -331,7 +331,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Clients Actifs.
+        ///   Looks up a localized string similar to Clients actifs.
         /// </summary>
         public static string ActiveClients {
             get {
@@ -340,7 +340,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fournisseurs Actifs.
+        ///   Looks up a localized string similar to Fournisseurs actifs.
         /// </summary>
         public static string ActiveSuppliers {
             get {
@@ -358,11 +358,29 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to + Ajouter Article.
+        ///   Looks up a localized string similar to Ajouter Article.
         /// </summary>
         public static string AddArticle {
             get {
                 return ResourceManager.GetString("AddArticle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ajouter l&apos;Article.
+        /// </summary>
+        public static string AddArticleButton {
+            get {
+                return ResourceManager.GetString("AddArticleButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ajouter un Article.
+        /// </summary>
+        public static string AddArticleWindowTitle {
+            get {
+                return ResourceManager.GetString("AddArticleWindowTitle", resourceCulture);
             }
         }
         
@@ -376,11 +394,74 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ajouter le client.
+        ///   Looks up a localized string similar to ✓ Ajouter.
+        /// </summary>
+        public static string AddCategory_AddButton {
+            get {
+                return ResourceManager.GetString("AddCategory_AddButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description (optionnel).
+        /// </summary>
+        public static string AddCategory_DescLabel {
+            get {
+                return ResourceManager.GetString("AddCategory_DescLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nom de la Catégorie *.
+        /// </summary>
+        public static string AddCategory_NameLabel {
+            get {
+                return ResourceManager.GetString("AddCategory_NameLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ➕ Ajouter une Catégorie.
+        /// </summary>
+        public static string AddCategory_Title {
+            get {
+                return ResourceManager.GetString("AddCategory_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ajouter une Catégorie.
+        /// </summary>
+        public static string AddCategory_WindowTitle {
+            get {
+                return ResourceManager.GetString("AddCategory_WindowTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ajouter Client.
         /// </summary>
         public static string AddClient {
             get {
                 return ResourceManager.GetString("AddClient", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ajouter Stock d&apos;un Article Existant.
+        /// </summary>
+        public static string AddExistingArticleStock {
+            get {
+                return ResourceManager.GetString("AddExistingArticleStock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ajouter Famille.
+        /// </summary>
+        public static string AddFamily {
+            get {
+                return ResourceManager.GetString("AddFamily", resourceCulture);
             }
         }
         
@@ -394,6 +475,15 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ⚙️ Options Additionnelles.
+        /// </summary>
+        public static string AdditionalOptions {
+            get {
+                return ResourceManager.GetString("AdditionalOptions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ajouter / Modifier un Chèque.
         /// </summary>
         public static string AddModifyCheck {
@@ -403,11 +493,29 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ajouter / Modifier Facture Fournisseur.
+        ///   Looks up a localized string similar to Ajouter / Modifier une Facture Fournisseur.
         /// </summary>
         public static string AddModifySupplierInvoice {
             get {
                 return ResourceManager.GetString("AddModifySupplierInvoice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ajouter un nouvel article.
+        /// </summary>
+        public static string AddNewArticle {
+            get {
+                return ResourceManager.GetString("AddNewArticle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ajouter Stock d&apos;un nouveau Article ou Article existant avec nouveau fournisseur.
+        /// </summary>
+        public static string AddNewArticleStock {
+            get {
+                return ResourceManager.GetString("AddNewArticleStock", resourceCulture);
             }
         }
         
@@ -421,6 +529,60 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ajouter Quantité.
+        /// </summary>
+        public static string AddQuantityTitle {
+            get {
+                return ResourceManager.GetString("AddQuantityTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ➕ Ajouter.
+        /// </summary>
+        public static string AddRecord {
+            get {
+                return ResourceManager.GetString("AddRecord", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ✓ Ajouter.
+        /// </summary>
+        public static string AddRecurrence_AddButton {
+            get {
+                return ResourceManager.GetString("AddRecurrence_AddButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nom du Type de Récurrence *.
+        /// </summary>
+        public static string AddRecurrence_NameLabel {
+            get {
+                return ResourceManager.GetString("AddRecurrence_NameLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 🔄 Ajouter un Type de Récurrence.
+        /// </summary>
+        public static string AddRecurrence_Title {
+            get {
+                return ResourceManager.GetString("AddRecurrence_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ajouter un Type de Récurrence.
+        /// </summary>
+        public static string AddRecurrence_WindowTitle {
+            get {
+                return ResourceManager.GetString("AddRecurrence_WindowTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Adresse.
         /// </summary>
         public static string Address {
@@ -430,7 +592,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Adresse (requis).
+        ///   Looks up a localized string similar to Adresse Complète *.
         /// </summary>
         public static string AddressRequired {
             get {
@@ -448,7 +610,16 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ajouter un Fournisseur.
+        ///   Looks up a localized string similar to Ajouter Stock.
+        /// </summary>
+        public static string AddStock {
+            get {
+                return ResourceManager.GetString("AddStock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ajouter fournisseur.
         /// </summary>
         public static string AddSupplier {
             get {
@@ -475,7 +646,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Créer un nouveau compte utilisateur.
+        ///   Looks up a localized string similar to Créer un nouveau compte utilisateur..
         /// </summary>
         public static string AddUser_Description {
             get {
@@ -484,7 +655,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nom complet.
+        ///   Looks up a localized string similar to Nom Complet.
         /// </summary>
         public static string AddUser_FullName {
             get {
@@ -493,7 +664,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mot de passe.
+        ///   Looks up a localized string similar to Mot de Passe.
         /// </summary>
         public static string AddUser_Password {
             get {
@@ -511,7 +682,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ajouter un Utilisateur.
+        ///   Looks up a localized string similar to Ajouter Utilisateur.
         /// </summary>
         public static string AddUser_Title {
             get {
@@ -520,7 +691,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Toutes les données seront perdues définitivement..
+        ///   Looks up a localized string similar to Toutes les données associées seront définitivement perdues..
         /// </summary>
         public static string AllDataLost {
             get {
@@ -538,7 +709,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tous les types d&apos;opération.
+        ///   Looks up a localized string similar to Tous les types.
         /// </summary>
         public static string AllOperationTypes {
             get {
@@ -547,7 +718,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tous les Statuts.
+        ///   Looks up a localized string similar to Tous les statuts.
         /// </summary>
         public static string AllStatuses {
             get {
@@ -574,7 +745,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Montant en Lettres.
+        ///   Looks up a localized string similar to Montant avec lettre.
         /// </summary>
         public static string AmountInWords {
             get {
@@ -592,7 +763,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remise Appliquée.
+        ///   Looks up a localized string similar to Remise appliquée.
         /// </summary>
         public static string AppliedDiscount {
             get {
@@ -601,7 +772,16 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Êtes-vous sûr de vouloir annuler ce mouvement ?.
+        ///   Looks up a localized string similar to العربية.
+        /// </summary>
+        public static string Arabic {
+            get {
+                return ResourceManager.GetString("Arabic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Êtes-vous sûr de vouloir annuler ce mouvement?.
         /// </summary>
         public static string AreYouSureReverseMovement {
             get {
@@ -610,7 +790,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Êtes-vous sûr de vouloir annuler cette opération ?.
+        ///   Looks up a localized string similar to Êtes-vous sûr de vouloir annuler cette opération?.
         /// </summary>
         public static string AreYouSureReverseOperation {
             get {
@@ -628,11 +808,47 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Annulation d&apos;Articles.
+        ///   Looks up a localized string similar to Annulation d&apos;Article.
         /// </summary>
         public static string ArticleCancellation {
             get {
                 return ResourceManager.GetString("ArticleCancellation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Code Article.
+        /// </summary>
+        public static string ArticleCodeLabel {
+            get {
+                return ResourceManager.GetString("ArticleCodeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Code Article *.
+        /// </summary>
+        public static string ArticleCodeRequired {
+            get {
+                return ResourceManager.GetString("ArticleCodeRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 📦 Colonnes des Articles.
+        /// </summary>
+        public static string ArticleColumns {
+            get {
+                return ResourceManager.GetString("ArticleColumns", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Détails de l&apos;Article.
+        /// </summary>
+        public static string ArticleDetails {
+            get {
+                return ResourceManager.GetString("ArticleDetails", resourceCulture);
             }
         }
         
@@ -655,16 +871,25 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Informations Article.
+        ///   Looks up a localized string similar to Image de l&apos;article.
         /// </summary>
-        public static string ArticleInformation {
+        public static string ArticleImage {
             get {
-                return ResourceManager.GetString("ArticleInformation", resourceCulture);
+                return ResourceManager.GetString("ArticleImage", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nom de l&apos;Article.
+        ///   Looks up a localized string similar to Gestion des Articles.
+        /// </summary>
+        public static string ArticleManagement {
+            get {
+                return ResourceManager.GetString("ArticleManagement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nom Article.
         /// </summary>
         public static string ArticleName {
             get {
@@ -673,7 +898,16 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to articles.
+        ///   Looks up a localized string similar to Nom de l&apos;article *.
+        /// </summary>
+        public static string ArticleNameRequired {
+            get {
+                return ResourceManager.GetString("ArticleNameRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Articles.
         /// </summary>
         public static string Articles {
             get {
@@ -682,7 +916,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Articles dans cette Opération.
+        ///   Looks up a localized string similar to Articles dans cette opération.
         /// </summary>
         public static string ArticlesInThisOperation {
             get {
@@ -700,6 +934,15 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ARTICLE.
+        /// </summary>
+        public static string ArticleUpper {
+            get {
+                return ResourceManager.GetString("ArticleUpper", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Livreur Assigné.
         /// </summary>
         public static string AssignedDeliverer {
@@ -709,7 +952,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Facture Associée.
+        ///   Looks up a localized string similar to Facture Associée *.
         /// </summary>
         public static string AssociatedInvoice {
             get {
@@ -736,6 +979,15 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Quantité Disponible en Stock.
+        /// </summary>
+        public static string AvailableStock {
+            get {
+                return ResourceManager.GetString("AvailableStock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Retour.
         /// </summary>
         public static string Back {
@@ -745,7 +997,16 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Solde initial.
+        ///   Looks up a localized string similar to Sac.
+        /// </summary>
+        public static string BagUnit {
+            get {
+                return ResourceManager.GetString("BagUnit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Solde.
         /// </summary>
         public static string Balance {
             get {
@@ -754,7 +1015,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Solde Dû.
+        ///   Looks up a localized string similar to Solde dû.
         /// </summary>
         public static string BalanceDue {
             get {
@@ -781,11 +1042,191 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Numéro de lot.
+        /// </summary>
+        public static string BatchNumberLabel {
+            get {
+                return ResourceManager.GetString("BatchNumberLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Vélo.
         /// </summary>
         public static string Bike {
             get {
                 return ResourceManager.GetString("Bike", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BILAN (ACTIF).
+        /// </summary>
+        public static string Bilan_ActifTitle {
+            get {
+                return ResourceManager.GetString("Bilan_ActifTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Amort./Prov..
+        /// </summary>
+        public static string Bilan_AmortProv {
+            get {
+                return ResourceManager.GetString("Bilan_AmortProv", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Brut.
+        /// </summary>
+        public static string Bilan_Brut {
+            get {
+                return ResourceManager.GetString("Bilan_Brut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ✅ Bilan équilibré (Actif = Passif).
+        /// </summary>
+        public static string Bilan_Equilibre {
+            get {
+                return ResourceManager.GetString("Bilan_Equilibre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 📊 Excel.
+        /// </summary>
+        public static string Bilan_Excel {
+            get {
+                return ResourceManager.GetString("Bilan_Excel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EXERCICE.
+        /// </summary>
+        public static string Bilan_Exercice {
+            get {
+                return ResourceManager.GetString("Bilan_Exercice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exercice clos le :.
+        /// </summary>
+        public static string Bilan_ExerciceClos {
+            get {
+                return ResourceManager.GetString("Bilan_ExerciceClos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exercice N.
+        /// </summary>
+        public static string Bilan_ExerciceN {
+            get {
+                return ResourceManager.GetString("Bilan_ExerciceN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  — Modèle CGNC Marocain.
+        /// </summary>
+        public static string Bilan_Model {
+            get {
+                return ResourceManager.GetString("Bilan_Model", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to N-1.
+        /// </summary>
+        public static string Bilan_N1 {
+            get {
+                return ResourceManager.GetString("Bilan_N1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Net N.
+        /// </summary>
+        public static string Bilan_NetN {
+            get {
+                return ResourceManager.GetString("Bilan_NetN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Net N-1.
+        /// </summary>
+        public static string Bilan_NetN1 {
+            get {
+                return ResourceManager.GetString("Bilan_NetN1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BILAN (PASSIF).
+        /// </summary>
+        public static string Bilan_PassifTitle {
+            get {
+                return ResourceManager.GetString("Bilan_PassifTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 🖨 Imprimer.
+        /// </summary>
+        public static string Bilan_Print {
+            get {
+                return ResourceManager.GetString("Bilan_Print", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RAISON SOCIALE.
+        /// </summary>
+        public static string Bilan_RaisonSociale {
+            get {
+                return ResourceManager.GetString("Bilan_RaisonSociale", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prêt.
+        /// </summary>
+        public static string Bilan_Ready {
+            get {
+                return ResourceManager.GetString("Bilan_Ready", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BILAN COMPTABLE.
+        /// </summary>
+        public static string Bilan_Title {
+            get {
+                return ResourceManager.GetString("Bilan_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TOTAL ACTIF NET : .
+        /// </summary>
+        public static string Bilan_TotalActifNet {
+            get {
+                return ResourceManager.GetString("Bilan_TotalActifNet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TOTAL PASSIF : .
+        /// </summary>
+        public static string Bilan_TotalPassif {
+            get {
+                return ResourceManager.GetString("Bilan_TotalPassif", resourceCulture);
             }
         }
         
@@ -799,11 +1240,38 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Boîte.
+        /// </summary>
+        public static string BoxUnit {
+            get {
+                return ResourceManager.GetString("BoxUnit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Marque.
+        /// </summary>
+        public static string Brand {
+            get {
+                return ResourceManager.GetString("Brand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Parcourir.
         /// </summary>
         public static string Browse {
             get {
                 return ResourceManager.GetString("Browse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Importation en Masse.
+        /// </summary>
+        public static string BulkImport {
+            get {
+                return ResourceManager.GetString("BulkImport", resourceCulture);
             }
         }
         
@@ -817,7 +1285,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Appeler le Client.
+        ///   Looks up a localized string similar to Appeler Client.
         /// </summary>
         public static string CallClient {
             get {
@@ -844,11 +1312,20 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Annulé.
+        ///   Looks up a localized string similar to Annulée.
         /// </summary>
         public static string Cancelled {
             get {
                 return ResourceManager.GetString("Cancelled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bidon.
+        /// </summary>
+        public static string CanUnit {
+            get {
+                return ResourceManager.GetString("CanUnit", resourceCulture);
             }
         }
         
@@ -862,7 +1339,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vue Cartes.
+        ///   Looks up a localized string similar to Vue Carte.
         /// </summary>
         public static string CardView {
             get {
@@ -876,6 +1353,15 @@ namespace GestionComerce.Resources {
         public static string CartItems {
             get {
                 return ResourceManager.GetString("CartItems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Carton.
+        /// </summary>
+        public static string CartonUnit {
+            get {
+                return ResourceManager.GetString("CartonUnit", resourceCulture);
             }
         }
         
@@ -898,7 +1384,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Paiement en Espèces.
+        ///   Looks up a localized string similar to CASH.
         /// </summary>
         public static string CashPayment {
             get {
@@ -925,7 +1411,358 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Date du Chèque.
+        ///   Looks up a localized string similar to — Tous —.
+        /// </summary>
+        public static string CGraphe_AllEntities {
+            get {
+                return ResourceManager.GetString("CGraphe_AllEntities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Aires.
+        /// </summary>
+        public static string CGraphe_AreaChart {
+            get {
+                return ResourceManager.GetString("CGraphe_AreaChart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Article.
+        /// </summary>
+        public static string CGraphe_Article {
+            get {
+                return ResourceManager.GetString("CGraphe_Article", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Volume Articles.
+        /// </summary>
+        public static string CGraphe_ArticleVolume {
+            get {
+                return ResourceManager.GetString("CGraphe_ArticleVolume", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PANIER MOYEN.
+        /// </summary>
+        public static string CGraphe_AverageCart {
+            get {
+                return ResourceManager.GetString("CGraphe_AverageCart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Barres.
+        /// </summary>
+        public static string CGraphe_BarChart {
+            get {
+                return ResourceManager.GetString("CGraphe_BarChart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ÉCART FACTURATION.
+        /// </summary>
+        public static string CGraphe_BillingGap {
+            get {
+                return ResourceManager.GetString("CGraphe_BillingGap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Client.
+        /// </summary>
+        public static string CGraphe_Client {
+            get {
+                return ResourceManager.GetString("CGraphe_Client", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Performance Client.
+        /// </summary>
+        public static string CGraphe_ClientPerf {
+            get {
+                return ResourceManager.GetString("CGraphe_ClientPerf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MONTANT.
+        /// </summary>
+        public static string CGraphe_ColAmount {
+            get {
+                return ResourceManager.GetString("CGraphe_ColAmount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DATE.
+        /// </summary>
+        public static string CGraphe_ColDate {
+            get {
+                return ResourceManager.GetString("CGraphe_ColDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to LIBELLÉ.
+        /// </summary>
+        public static string CGraphe_ColLabel {
+            get {
+                return ResourceManager.GetString("CGraphe_ColLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to QTÉ.
+        /// </summary>
+        public static string CGraphe_ColQty {
+            get {
+                return ResourceManager.GetString("CGraphe_ColQty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SOURCE.
+        /// </summary>
+        public static string CGraphe_ColSource {
+            get {
+                return ResourceManager.GetString("CGraphe_ColSource", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to STATUT.
+        /// </summary>
+        public static string CGraphe_ColStatus {
+            get {
+                return ResourceManager.GetString("CGraphe_ColStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Combiné.
+        /// </summary>
+        public static string CGraphe_Combined {
+            get {
+                return ResourceManager.GetString("CGraphe_Combined", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Configurez les paramètres et cliquez sur.
+        /// </summary>
+        public static string CGraphe_Configure {
+            get {
+                return ResourceManager.GetString("CGraphe_Configure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Données Détaillées.
+        /// </summary>
+        public static string CGraphe_DetailedData {
+            get {
+                return ResourceManager.GetString("CGraphe_DetailedData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DATE DE FIN.
+        /// </summary>
+        public static string CGraphe_EndDate {
+            get {
+                return ResourceManager.GetString("CGraphe_EndDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TYPE D&apos;ENTITÉ.
+        /// </summary>
+        public static string CGraphe_EntityType {
+            get {
+                return ResourceManager.GetString("CGraphe_EntityType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ⟳  Générer le Graphe.
+        /// </summary>
+        public static string CGraphe_Generate {
+            get {
+                return ResourceManager.GetString("CGraphe_Generate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to « Générer le Graphe ».
+        /// </summary>
+        public static string CGraphe_GenerateHint {
+            get {
+                return ResourceManager.GetString("CGraphe_GenerateHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TYPE DE GRAPHE.
+        /// </summary>
+        public static string CGraphe_GraphType {
+            get {
+                return ResourceManager.GetString("CGraphe_GraphType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Écarts Ops / Factures.
+        /// </summary>
+        public static string CGraphe_InvoiceGap {
+            get {
+                return ResourceManager.GetString("CGraphe_InvoiceGap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Factures.
+        /// </summary>
+        public static string CGraphe_Invoices {
+            get {
+                return ResourceManager.GetString("CGraphe_Invoices", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ligne.
+        /// </summary>
+        public static string CGraphe_LineChart {
+            get {
+                return ResourceManager.GetString("CGraphe_LineChart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Chargement….
+        /// </summary>
+        public static string CGraphe_Loading {
+            get {
+                return ResourceManager.GetString("CGraphe_Loading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to VUE / MÉTRIQUE.
+        /// </summary>
+        public static string CGraphe_MetricLabel {
+            get {
+                return ResourceManager.GetString("CGraphe_MetricLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Revenu Mensuel.
+        /// </summary>
+        public static string CGraphe_MonthlyRevenue {
+            get {
+                return ResourceManager.GetString("CGraphe_MonthlyRevenue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NB. OPÉRATIONS.
+        /// </summary>
+        public static string CGraphe_NbOperations {
+            get {
+                return ResourceManager.GetString("CGraphe_NbOperations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Opérations.
+        /// </summary>
+        public static string CGraphe_Operations {
+            get {
+                return ResourceManager.GetString("CGraphe_Operations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RECHERCHER.
+        /// </summary>
+        public static string CGraphe_SearchLabel {
+            get {
+                return ResourceManager.GetString("CGraphe_SearchLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DATE DE DÉBUT.
+        /// </summary>
+        public static string CGraphe_StartDate {
+            get {
+                return ResourceManager.GetString("CGraphe_StartDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fournisseur.
+        /// </summary>
+        public static string CGraphe_Supplier {
+            get {
+                return ResourceManager.GetString("CGraphe_Supplier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Activité Fournisseur.
+        /// </summary>
+        public static string CGraphe_SupplierActivity {
+            get {
+                return ResourceManager.GetString("CGraphe_SupplierActivity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  à combler.
+        /// </summary>
+        public static string CGraphe_ToFill {
+            get {
+                return ResourceManager.GetString("CGraphe_ToFill", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TOTAL REVENU.
+        /// </summary>
+        public static string CGraphe_TotalRevenue {
+            get {
+                return ResourceManager.GetString("CGraphe_TotalRevenue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  vs préc..
+        /// </summary>
+        public static string CGraphe_VsPrev {
+            get {
+                return ResourceManager.GetString("CGraphe_VsPrev", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Changer le Statut.
+        /// </summary>
+        public static string ChangeStatus {
+            get {
+                return ResourceManager.GetString("ChangeStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date du Chèque *.
         /// </summary>
         public static string CheckDate {
             get {
@@ -934,7 +1771,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vérifier l&apos;Historique.
+        ///   Looks up a localized string similar to Vérifier l&apos;Historique des Chèques.
         /// </summary>
         public static string CheckHistory {
             get {
@@ -943,7 +1780,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vérifier l&apos;onglet Historique.
+        ///   Looks up a localized string similar to Historique de check.
         /// </summary>
         public static string CheckHistoryTab {
             get {
@@ -961,7 +1798,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Informations du Chèque.
+        ///   Looks up a localized string similar to Vérifier les Informations.
         /// </summary>
         public static string CheckInfo {
             get {
@@ -970,7 +1807,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Référence du Chèque.
+        ///   Looks up a localized string similar to Référence du Chèque *.
         /// </summary>
         public static string CheckReference {
             get {
@@ -979,11 +1816,29 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Référence Chèque.
+        ///   Looks up a localized string similar to Référence de Chèque.
         /// </summary>
         public static string ChequeReference {
             get {
                 return ResourceManager.GetString("ChequeReference", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choisissez les articles à inclure dans le devis.
+        /// </summary>
+        public static string ChooseArticlesForQuote {
+            get {
+                return ResourceManager.GetString("ChooseArticlesForQuote", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choisissez le type d&apos;ajout de stock.
+        /// </summary>
+        public static string ChooseStockAdditionType {
+            get {
+                return ResourceManager.GetString("ChooseStockAdditionType", resourceCulture);
             }
         }
         
@@ -997,7 +1852,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Centre-Ville (30 DH).
+        ///   Looks up a localized string similar to Centre Ville.
         /// </summary>
         public static string CityCenter {
             get {
@@ -1006,7 +1861,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ville / Code Postal.
+        ///   Looks up a localized string similar to Ville, Code Postal.
         /// </summary>
         public static string CityPostalCode {
             get {
@@ -1024,7 +1879,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Effacer les Filtres.
+        ///   Looks up a localized string similar to Effacer filtres.
         /// </summary>
         public static string ClearFilters {
             get {
@@ -1042,7 +1897,16 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Paiement par Crédit Client.
+        ///   Looks up a localized string similar to Adresse Client :.
+        /// </summary>
+        public static string ClientAddressLabel {
+            get {
+                return ResourceManager.GetString("ClientAddressLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Paiement Crédit Client.
         /// </summary>
         public static string ClientCreditPayment {
             get {
@@ -1069,6 +1933,15 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ICE Client :.
+        /// </summary>
+        public static string ClientICELabel {
+            get {
+                return ResourceManager.GetString("ClientICELabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ID Client.
         /// </summary>
         public static string ClientID {
@@ -1078,7 +1951,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Infos Client.
+        ///   Looks up a localized string similar to Informations Client.
         /// </summary>
         public static string ClientInfo {
             get {
@@ -1087,7 +1960,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Informations Client.
+        ///   Looks up a localized string similar to Informations du Client.
         /// </summary>
         public static string ClientInformation {
             get {
@@ -1105,6 +1978,15 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 👤 Informations Client.
+        /// </summary>
+        public static string ClientInfoSection {
+            get {
+                return ResourceManager.GetString("ClientInfoSection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Gestion des Clients.
         /// </summary>
         public static string ClientManagement {
@@ -1114,7 +1996,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gérer les clients et leurs informations.
+        ///   Looks up a localized string similar to Gérez et suivez toutes vos relations clients.
         /// </summary>
         public static string ClientManagementDescription {
             get {
@@ -1123,7 +2005,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nom du client.
+        ///   Looks up a localized string similar to Nom du Client.
         /// </summary>
         public static string ClientName {
             get {
@@ -1132,7 +2014,16 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nom du client (requis).
+        ///   Looks up a localized string similar to Nom du client :.
+        /// </summary>
+        public static string ClientNameLabel {
+            get {
+                return ResourceManager.GetString("ClientNameLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nom du Client *.
         /// </summary>
         public static string ClientNameRequired {
             get {
@@ -1141,7 +2032,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to NOM CLIENT.
+        ///   Looks up a localized string similar to NOM DU CLIENT.
         /// </summary>
         public static string ClientNameUpper {
             get {
@@ -1159,7 +2050,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Référence Client.
+        ///   Looks up a localized string similar to Référence de Client.
         /// </summary>
         public static string ClientReference {
             get {
@@ -1186,7 +2077,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Choisissez un client pour cette vente.
+        ///   Looks up a localized string similar to Sélectionnez un client pour la vente.
         /// </summary>
         public static string ClientSelectionSubtitle {
             get {
@@ -1195,7 +2086,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Signature du Client.
+        ///   Looks up a localized string similar to SIGNATURE CLIENT.
         /// </summary>
         public static string ClientSignature {
             get {
@@ -1209,6 +2100,843 @@ namespace GestionComerce.Resources {
         public static string Close {
             get {
                 return ResourceManager.GetString("Close", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fermer le panneau des articles.
+        /// </summary>
+        public static string CloseArticlesPanel {
+            get {
+                return ResourceManager.GetString("CloseArticlesPanel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ✕ Fermer.
+        /// </summary>
+        public static string CloseWindow {
+            get {
+                return ResourceManager.GetString("CloseWindow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assistant IA.
+        /// </summary>
+        public static string CMainCo_AI {
+            get {
+                return ResourceManager.GetString("CMainCo_AI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bilan.
+        /// </summary>
+        public static string CMainCo_Bilan {
+            get {
+                return ResourceManager.GetString("CMainCo_Bilan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CPC.
+        /// </summary>
+        public static string CMainCo_CPC {
+            get {
+                return ResourceManager.GetString("CMainCo_CPC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tableau de Bord.
+        /// </summary>
+        public static string CMainCo_Dashboard {
+            get {
+                return ResourceManager.GetString("CMainCo_Dashboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dépenses.
+        /// </summary>
+        public static string CMainCo_Depenses {
+            get {
+                return ResourceManager.GetString("CMainCo_Depenses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employés.
+        /// </summary>
+        public static string CMainCo_Employes {
+            get {
+                return ResourceManager.GetString("CMainCo_Employes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expectation et Projection.
+        /// </summary>
+        public static string CMainCo_Expectation {
+            get {
+                return ResourceManager.GetString("CMainCo_Expectation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GESTION.
+        /// </summary>
+        public static string CMainCo_Gestion {
+            get {
+                return ResourceManager.GetString("CMainCo_Gestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Grand Livre.
+        /// </summary>
+        public static string CMainCo_GrandLivre {
+            get {
+                return ResourceManager.GetString("CMainCo_GrandLivre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Graphiques.
+        /// </summary>
+        public static string CMainCo_Graphiques {
+            get {
+                return ResourceManager.GetString("CMainCo_Graphiques", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Journal Général.
+        /// </summary>
+        public static string CMainCo_Journal {
+            get {
+                return ResourceManager.GetString("CMainCo_Journal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Plan Comptable.
+        /// </summary>
+        public static string CMainCo_PlanComptable {
+            get {
+                return ResourceManager.GetString("CMainCo_PlanComptable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RAPPORTS.
+        /// </summary>
+        public static string CMainCo_Rapports {
+            get {
+                return ResourceManager.GetString("CMainCo_Rapports", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rapports Stats.
+        /// </summary>
+        public static string CMainCo_RapportsStats {
+            get {
+                return ResourceManager.GetString("CMainCo_RapportsStats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Retour au Menu.
+        /// </summary>
+        public static string CMainCo_Retour {
+            get {
+                return ResourceManager.GetString("CMainCo_Retour", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Salaires.
+        /// </summary>
+        public static string CMainCo_Salaires {
+            get {
+                return ResourceManager.GetString("CMainCo_Salaires", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gestion Financière.
+        /// </summary>
+        public static string CMainCo_Subtitle {
+            get {
+                return ResourceManager.GetString("CMainCo_Subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 💼 Comptabilité.
+        /// </summary>
+        public static string CMainCo_Title {
+            get {
+                return ResourceManager.GetString("CMainCo_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1 mois.
+        /// </summary>
+        public static string CMainEx_1Month {
+            get {
+                return ResourceManager.GetString("CMainEx_1Month", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1 an.
+        /// </summary>
+        public static string CMainEx_1Year {
+            get {
+                return ResourceManager.GetString("CMainEx_1Year", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 2 ans.
+        /// </summary>
+        public static string CMainEx_2Years {
+            get {
+                return ResourceManager.GetString("CMainEx_2Years", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 3 mois.
+        /// </summary>
+        public static string CMainEx_3Months {
+            get {
+                return ResourceManager.GetString("CMainEx_3Months", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 5 ans.
+        /// </summary>
+        public static string CMainEx_5Years {
+            get {
+                return ResourceManager.GetString("CMainEx_5Years", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 6 mois.
+        /// </summary>
+        public static string CMainEx_6Months {
+            get {
+                return ResourceManager.GetString("CMainEx_6Months", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 🔍 Analyse par Article.
+        /// </summary>
+        public static string CMainEx_ArticleAnalysis {
+            get {
+                return ResourceManager.GetString("CMainEx_ArticleAnalysis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 📦 Stock Actuel: .
+        /// </summary>
+        public static string CMainEx_CurrentStock {
+            get {
+                return ResourceManager.GetString("CMainEx_CurrentStock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ⏰ Jours Avant Rupture.
+        /// </summary>
+        public static string CMainEx_DaysBeforeStockout {
+            get {
+                return ResourceManager.GetString("CMainEx_DaysBeforeStockout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Votre inventaire et votre trésorerie sont en bonne santé..
+        /// </summary>
+        public static string CMainEx_HealthyStatus {
+            get {
+                return ResourceManager.GetString("CMainEx_HealthyStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Analyse des données en cours....
+        /// </summary>
+        public static string CMainEx_Loading {
+            get {
+                return ResourceManager.GetString("CMainEx_Loading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Excellent! Aucune action urgente requise..
+        /// </summary>
+        public static string CMainEx_NoUrgentAction {
+            get {
+                return ResourceManager.GetString("CMainEx_NoUrgentAction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Commandez avant cette date.
+        /// </summary>
+        public static string CMainEx_OrderBefore {
+            get {
+                return ResourceManager.GetString("CMainEx_OrderBefore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Chèques En Attente.
+        /// </summary>
+        public static string CMainEx_PendingChecks {
+            get {
+                return ResourceManager.GetString("CMainEx_PendingChecks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Période de projection:.
+        /// </summary>
+        public static string CMainEx_PeriodLabel {
+            get {
+                return ResourceManager.GetString("CMainEx_PeriodLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sélectionnez la période pour laquelle vous souhaitez voir les projections de revenus, profits et recommandations..
+        /// </summary>
+        public static string CMainEx_PeriodTooltip {
+            get {
+                return ResourceManager.GetString("CMainEx_PeriodTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Profit Net Potentiel.
+        /// </summary>
+        public static string CMainEx_PotentialProfit {
+            get {
+                return ResourceManager.GetString("CMainEx_PotentialProfit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Chiffre d&apos;Affaires Potentiel.
+        /// </summary>
+        public static string CMainEx_PotentialRevenue {
+            get {
+                return ResourceManager.GetString("CMainEx_PotentialRevenue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 💹 Marge Bénéficiaire.
+        /// </summary>
+        public static string CMainEx_ProfitMarginLabel {
+            get {
+                return ResourceManager.GetString("CMainEx_ProfitMarginLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ventes projetées:.
+        /// </summary>
+        public static string CMainEx_ProjectedSales {
+            get {
+                return ResourceManager.GetString("CMainEx_ProjectedSales", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 🔄 Actualiser.
+        /// </summary>
+        public static string CMainEx_Refresh {
+            get {
+                return ResourceManager.GetString("CMainEx_Refresh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 📅 Date de Réapprovisionnement.
+        /// </summary>
+        public static string CMainEx_RestockDate {
+            get {
+                return ResourceManager.GetString("CMainEx_RestockDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 💵 Prix de Vente: .
+        /// </summary>
+        public static string CMainEx_SalePriceLabel {
+            get {
+                return ResourceManager.GetString("CMainEx_SalePriceLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Article Sélectionné.
+        /// </summary>
+        public static string CMainEx_SelectedArticle {
+            get {
+                return ResourceManager.GetString("CMainEx_SelectedArticle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 💡 Conseiller Intelligent.
+        /// </summary>
+        public static string CMainEx_SmartAdvisor {
+            get {
+                return ResourceManager.GetString("CMainEx_SmartAdvisor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Santé du Stock.
+        /// </summary>
+        public static string CMainEx_StockHealth {
+            get {
+                return ResourceManager.GetString("CMainEx_StockHealth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Valeur totale du stock.
+        /// </summary>
+        public static string CMainEx_StockTotalValue {
+            get {
+                return ResourceManager.GetString("CMainEx_StockTotalValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 📊 Valeur Stock: .
+        /// </summary>
+        public static string CMainEx_StockValue {
+            get {
+                return ResourceManager.GetString("CMainEx_StockValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Projections financières et recommandations intelligentes basées sur vos données réelles.
+        /// </summary>
+        public static string CMainEx_Subtitle {
+            get {
+                return ResourceManager.GetString("CMainEx_Subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 📊 Tableau de Bord Stratégique.
+        /// </summary>
+        public static string CMainEx_Title {
+            get {
+                return ResourceManager.GetString("CMainEx_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Avril.
+        /// </summary>
+        public static string CMainR_April {
+            get {
+                return ResourceManager.GetString("CMainR_April", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Articles Achetés.
+        /// </summary>
+        public static string CMainR_ArticlesBought {
+            get {
+                return ResourceManager.GetString("CMainR_ArticlesBought", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Liste des Articles (Mouvements).
+        /// </summary>
+        public static string CMainR_ArticlesList {
+            get {
+                return ResourceManager.GetString("CMainR_ArticlesList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Articles Vendus.
+        /// </summary>
+        public static string CMainR_ArticlesSold {
+            get {
+                return ResourceManager.GetString("CMainR_ArticlesSold", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Août.
+        /// </summary>
+        public static string CMainR_August {
+            get {
+                return ResourceManager.GetString("CMainR_August", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Acheté.
+        /// </summary>
+        public static string CMainR_Bought {
+            get {
+                return ResourceManager.GetString("CMainR_Bought", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Personnalisé.
+        /// </summary>
+        public static string CMainR_Custom {
+            get {
+                return ResourceManager.GetString("CMainR_Custom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Période personnalisée.
+        /// </summary>
+        public static string CMainR_CustomPeriod {
+            get {
+                return ResourceManager.GetString("CMainR_CustomPeriod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Jour.
+        /// </summary>
+        public static string CMainR_Day {
+            get {
+                return ResourceManager.GetString("CMainR_Day", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Décembre.
+        /// </summary>
+        public static string CMainR_December {
+            get {
+                return ResourceManager.GetString("CMainR_December", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date de fin.
+        /// </summary>
+        public static string CMainR_EndDate {
+            get {
+                return ResourceManager.GetString("CMainR_EndDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Février.
+        /// </summary>
+        public static string CMainR_February {
+            get {
+                return ResourceManager.GetString("CMainR_February", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Janvier.
+        /// </summary>
+        public static string CMainR_January {
+            get {
+                return ResourceManager.GetString("CMainR_January", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Juillet.
+        /// </summary>
+        public static string CMainR_July {
+            get {
+                return ResourceManager.GetString("CMainR_July", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Juin.
+        /// </summary>
+        public static string CMainR_June {
+            get {
+                return ResourceManager.GetString("CMainR_June", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mars.
+        /// </summary>
+        public static string CMainR_March {
+            get {
+                return ResourceManager.GetString("CMainR_March", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mai.
+        /// </summary>
+        public static string CMainR_May {
+            get {
+                return ResourceManager.GetString("CMainR_May", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mois.
+        /// </summary>
+        public static string CMainR_Month {
+            get {
+                return ResourceManager.GetString("CMainR_Month", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Novembre.
+        /// </summary>
+        public static string CMainR_November {
+            get {
+                return ResourceManager.GetString("CMainR_November", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Octobre.
+        /// </summary>
+        public static string CMainR_October {
+            get {
+                return ResourceManager.GetString("CMainR_October", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Liste des Opérations.
+        /// </summary>
+        public static string CMainR_OperationsList {
+            get {
+                return ResourceManager.GetString("CMainR_OperationsList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vue d&apos;ensemble des performances de votre entreprise.
+        /// </summary>
+        public static string CMainR_PageSubtitle {
+            get {
+                return ResourceManager.GetString("CMainR_PageSubtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rapports et Statistiques.
+        /// </summary>
+        public static string CMainR_PageTitle {
+            get {
+                return ResourceManager.GetString("CMainR_PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Opérations Achat.
+        /// </summary>
+        public static string CMainR_PurchaseOps {
+            get {
+                return ResourceManager.GetString("CMainR_PurchaseOps", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Revenu.
+        /// </summary>
+        public static string CMainR_Revenue {
+            get {
+                return ResourceManager.GetString("CMainR_Revenue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reverse.
+        /// </summary>
+        public static string CMainR_Reverse {
+            get {
+                return ResourceManager.GetString("CMainR_Reverse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pertes inversées.
+        /// </summary>
+        public static string CMainR_ReversedLosses {
+            get {
+                return ResourceManager.GetString("CMainR_ReversedLosses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Opérations Vente.
+        /// </summary>
+        public static string CMainR_SaleOps {
+            get {
+                return ResourceManager.GetString("CMainR_SaleOps", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Voir Plus.
+        /// </summary>
+        public static string CMainR_SeeMore {
+            get {
+                return ResourceManager.GetString("CMainR_SeeMore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sélectionner une date.
+        /// </summary>
+        public static string CMainR_SelectDate {
+            get {
+                return ResourceManager.GetString("CMainR_SelectDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sélectionner un mois.
+        /// </summary>
+        public static string CMainR_SelectMonth {
+            get {
+                return ResourceManager.GetString("CMainR_SelectMonth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sélectionner une année.
+        /// </summary>
+        public static string CMainR_SelectYear {
+            get {
+                return ResourceManager.GetString("CMainR_SelectYear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Septembre.
+        /// </summary>
+        public static string CMainR_September {
+            get {
+                return ResourceManager.GetString("CMainR_September", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vendu.
+        /// </summary>
+        public static string CMainR_Sold {
+            get {
+                return ResourceManager.GetString("CMainR_Sold", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date de début.
+        /// </summary>
+        public static string CMainR_StartDate {
+            get {
+                return ResourceManager.GetString("CMainR_StartDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Top 5 Articles.
+        /// </summary>
+        public static string CMainR_Top5Articles {
+            get {
+                return ResourceManager.GetString("CMainR_Top5Articles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Top 5 Clients.
+        /// </summary>
+        public static string CMainR_Top5Clients {
+            get {
+                return ResourceManager.GetString("CMainR_Top5Clients", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Top 5 Salaires.
+        /// </summary>
+        public static string CMainR_Top5Salaries {
+            get {
+                return ResourceManager.GetString("CMainR_Top5Salaries", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Top 5 Fournisseurs.
+        /// </summary>
+        public static string CMainR_Top5Suppliers {
+            get {
+                return ResourceManager.GetString("CMainR_Top5Suppliers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bénéfice total.
+        /// </summary>
+        public static string CMainR_TotalBenefit {
+            get {
+                return ResourceManager.GetString("CMainR_TotalBenefit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Achats totaux.
+        /// </summary>
+        public static string CMainR_TotalPurchases {
+            get {
+                return ResourceManager.GetString("CMainR_TotalPurchases", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ventes totales.
+        /// </summary>
+        public static string CMainR_TotalSales {
+            get {
+                return ResourceManager.GetString("CMainR_TotalSales", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Année.
+        /// </summary>
+        public static string CMainR_Year {
+            get {
+                return ResourceManager.GetString("CMainR_Year", resourceCulture);
             }
         }
         
@@ -1294,7 +3022,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Siège Social.
+        ///   Looks up a localized string similar to Siège de l&apos;entreprise.
         /// </summary>
         public static string CompanyHeadquarters {
             get {
@@ -1303,11 +3031,29 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ID de l&apos;Entreprise.
+        ///   Looks up a localized string similar to ID de Société.
         /// </summary>
         public static string CompanyID {
             get {
                 return ResourceManager.GetString("CompanyID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ID de l&apos;entreprise.
+        /// </summary>
+        public static string CompanyIDLabel {
+            get {
+                return ResourceManager.GetString("CompanyIDLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 📋 Informations de l&apos;Entreprise.
+        /// </summary>
+        public static string CompanyInfoSection {
+            get {
+                return ResourceManager.GetString("CompanyInfoSection", resourceCulture);
             }
         }
         
@@ -1321,11 +3067,245 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nom de l&apos;entreprise.
+        ///   Looks up a localized string similar to Nom de l&apos;Entreprise.
         /// </summary>
         public static string CompanyName {
             get {
                 return ResourceManager.GetString("CompanyName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nom de l&apos;entreprise.
+        /// </summary>
+        public static string CompanyNameLabel {
+            get {
+                return ResourceManager.GetString("CompanyNameLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Classe Comptable *.
+        /// </summary>
+        public static string CompteDialog_Classe {
+            get {
+                return ResourceManager.GetString("CompteDialog_Classe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1 - Financement Permanent.
+        /// </summary>
+        public static string CompteDialog_Classe1 {
+            get {
+                return ResourceManager.GetString("CompteDialog_Classe1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 2 - Actif Immobilisé.
+        /// </summary>
+        public static string CompteDialog_Classe2 {
+            get {
+                return ResourceManager.GetString("CompteDialog_Classe2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 3 - Actif Circulant.
+        /// </summary>
+        public static string CompteDialog_Classe3 {
+            get {
+                return ResourceManager.GetString("CompteDialog_Classe3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 4 - Passif Circulant.
+        /// </summary>
+        public static string CompteDialog_Classe4 {
+            get {
+                return ResourceManager.GetString("CompteDialog_Classe4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 5 - Trésorerie.
+        /// </summary>
+        public static string CompteDialog_Classe5 {
+            get {
+                return ResourceManager.GetString("CompteDialog_Classe5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 6 - Charges.
+        /// </summary>
+        public static string CompteDialog_Classe6 {
+            get {
+                return ResourceManager.GetString("CompteDialog_Classe6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 7 - Produits.
+        /// </summary>
+        public static string CompteDialog_Classe7 {
+            get {
+                return ResourceManager.GetString("CompteDialog_Classe7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 8 - Résultats.
+        /// </summary>
+        public static string CompteDialog_Classe8 {
+            get {
+                return ResourceManager.GetString("CompteDialog_Classe8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Code Compte *.
+        /// </summary>
+        public static string CompteDialog_CodeCompte {
+            get {
+                return ResourceManager.GetString("CompteDialog_CodeCompte", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compte Actif.
+        /// </summary>
+        public static string CompteDialog_CompteActif {
+            get {
+                return ResourceManager.GetString("CompteDialog_CompteActif", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Crédit.
+        /// </summary>
+        public static string CompteDialog_Credit {
+            get {
+                return ResourceManager.GetString("CompteDialog_Credit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Débit.
+        /// </summary>
+        public static string CompteDialog_Debit {
+            get {
+                return ResourceManager.GetString("CompteDialog_Debit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Libellé *.
+        /// </summary>
+        public static string CompteDialog_Libelle {
+            get {
+                return ResourceManager.GetString("CompteDialog_Libelle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nouveau Compte.
+        /// </summary>
+        public static string CompteDialog_NewCompte {
+            get {
+                return ResourceManager.GetString("CompteDialog_NewCompte", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enregistrer.
+        /// </summary>
+        public static string CompteDialog_Save {
+            get {
+                return ResourceManager.GetString("CompteDialog_Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sens Normal *.
+        /// </summary>
+        public static string CompteDialog_SensNormal {
+            get {
+                return ResourceManager.GetString("CompteDialog_SensNormal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Plan Comptable Marocain.
+        /// </summary>
+        public static string CompteDialog_Subtitle {
+            get {
+                return ResourceManager.GetString("CompteDialog_Subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gestion Compte.
+        /// </summary>
+        public static string CompteDialog_Title {
+            get {
+                return ResourceManager.GetString("CompteDialog_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type de Compte *.
+        /// </summary>
+        public static string CompteDialog_Type {
+            get {
+                return ResourceManager.GetString("CompteDialog_Type", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Actif.
+        /// </summary>
+        public static string CompteDialog_TypeActif {
+            get {
+                return ResourceManager.GetString("CompteDialog_TypeActif", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Charge.
+        /// </summary>
+        public static string CompteDialog_TypeCharge {
+            get {
+                return ResourceManager.GetString("CompteDialog_TypeCharge", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Passif.
+        /// </summary>
+        public static string CompteDialog_TypePassif {
+            get {
+                return ResourceManager.GetString("CompteDialog_TypePassif", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Produit.
+        /// </summary>
+        public static string CompteDialog_TypeProduit {
+            get {
+                return ResourceManager.GetString("CompteDialog_TypeProduit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Résultat.
+        /// </summary>
+        public static string CompteDialog_TypeResultat {
+            get {
+                return ResourceManager.GetString("CompteDialog_TypeResultat", resourceCulture);
             }
         }
         
@@ -1348,7 +3328,16 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Confirmé.
+        ///   Looks up a localized string similar to Confirmer la suppression.
+        /// </summary>
+        public static string ConfirmDeletion {
+            get {
+                return ResourceManager.GetString("ConfirmDeletion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirmée.
         /// </summary>
         public static string Confirmed {
             get {
@@ -1366,7 +3355,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Consulter et gérer les factures.
+        ///   Looks up a localized string similar to Consultez et gérez toutes vos factures.
         /// </summary>
         public static string ConsultManageInvoices {
             get {
@@ -1384,11 +3373,299 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pays d&apos;origine.
+        /// </summary>
+        public static string CountryOfOriginLabel {
+            get {
+                return ResourceManager.GetString("CountryOfOriginLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Zone de Couverture.
         /// </summary>
         public static string CoverageZone {
             get {
                 return ResourceManager.GetString("CoverageZone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Année en cours.
+        /// </summary>
+        public static string CPC_AnneeEnCours {
+            get {
+                return ResourceManager.GetString("CPC_AnneeEnCours", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Au :.
+        /// </summary>
+        public static string CPC_Au {
+            get {
+                return ResourceManager.GetString("CPC_Au", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BÉNÉFICE.
+        /// </summary>
+        public static string CPC_Benefice {
+            get {
+                return ResourceManager.GetString("CPC_Benefice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CHARGES.
+        /// </summary>
+        public static string CPC_Charges {
+            get {
+                return ResourceManager.GetString("CPC_Charges", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Du :.
+        /// </summary>
+        public static string CPC_Du {
+            get {
+                return ResourceManager.GetString("CPC_Du", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exercice en cours.
+        /// </summary>
+        public static string CPC_ExerciceEnCours {
+            get {
+                return ResourceManager.GetString("CPC_ExerciceEnCours", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to D&apos;EXPLOITATION.
+        /// </summary>
+        public static string CPC_Exploitation {
+            get {
+                return ResourceManager.GetString("CPC_Exploitation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exporter.
+        /// </summary>
+        public static string CPC_Export {
+            get {
+                return ResourceManager.GetString("CPC_Export", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FINANCIÈRES.
+        /// </summary>
+        public static string CPC_Financieres {
+            get {
+                return ResourceManager.GetString("CPC_Financieres", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FINANCIERS.
+        /// </summary>
+        public static string CPC_Financiers {
+            get {
+                return ResourceManager.GetString("CPC_Financiers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Générer.
+        /// </summary>
+        public static string CPC_Generate {
+            get {
+                return ResourceManager.GetString("CPC_Generate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Libellé.
+        /// </summary>
+        public static string CPC_Libelle {
+            get {
+                return ResourceManager.GetString("CPC_Libelle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ⏳ Chargement....
+        /// </summary>
+        public static string CPC_Loading {
+            get {
+                return ResourceManager.GetString("CPC_Loading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mois en cours.
+        /// </summary>
+        public static string CPC_MoisEnCours {
+            get {
+                return ResourceManager.GetString("CPC_MoisEnCours", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Montant (MAD).
+        /// </summary>
+        public static string CPC_MontantMAD {
+            get {
+                return ResourceManager.GetString("CPC_MontantMAD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NON-COURANTES.
+        /// </summary>
+        public static string CPC_NonCourantes {
+            get {
+                return ResourceManager.GetString("CPC_NonCourantes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NON-COURANTS.
+        /// </summary>
+        public static string CPC_NonCourants {
+            get {
+                return ResourceManager.GetString("CPC_NonCourants", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Imprimer PDF.
+        /// </summary>
+        public static string CPC_PrintPDF {
+            get {
+                return ResourceManager.GetString("CPC_PrintPDF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PRODUITS.
+        /// </summary>
+        public static string CPC_Produits {
+            get {
+                return ResourceManager.GetString("CPC_Produits", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RÉSULTAT D&apos;EXPLOITATION.
+        /// </summary>
+        public static string CPC_ResultatExploitation {
+            get {
+                return ResourceManager.GetString("CPC_ResultatExploitation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RÉSULTAT FINANCIER.
+        /// </summary>
+        public static string CPC_ResultatFinancier {
+            get {
+                return ResourceManager.GetString("CPC_ResultatFinancier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RÉSULTAT NET.
+        /// </summary>
+        public static string CPC_ResultatNet {
+            get {
+                return ResourceManager.GetString("CPC_ResultatNet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RÉSULTAT NON-COURANT.
+        /// </summary>
+        public static string CPC_ResultatNonCourant {
+            get {
+                return ResourceManager.GetString("CPC_ResultatNonCourant", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compte de Produits et Charges.
+        /// </summary>
+        public static string CPC_Title {
+            get {
+                return ResourceManager.GetString("CPC_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TOTAL CHARGES D&apos;EXPLOITATION.
+        /// </summary>
+        public static string CPC_TotalChargesExpl {
+            get {
+                return ResourceManager.GetString("CPC_TotalChargesExpl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TOTAL CHARGES FINANCIÈRES.
+        /// </summary>
+        public static string CPC_TotalChargesFinancier {
+            get {
+                return ResourceManager.GetString("CPC_TotalChargesFinancier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TOTAL CHARGES NON-COURANTES.
+        /// </summary>
+        public static string CPC_TotalChargesNonCourant {
+            get {
+                return ResourceManager.GetString("CPC_TotalChargesNonCourant", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TOTAL PRODUITS D&apos;EXPLOITATION.
+        /// </summary>
+        public static string CPC_TotalProduitsExpl {
+            get {
+                return ResourceManager.GetString("CPC_TotalProduitsExpl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TOTAL PRODUITS FINANCIERS.
+        /// </summary>
+        public static string CPC_TotalProduitsFinancier {
+            get {
+                return ResourceManager.GetString("CPC_TotalProduitsFinancier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TOTAL PRODUITS NON-COURANTS.
+        /// </summary>
+        public static string CPC_TotalProduitsNonCourant {
+            get {
+                return ResourceManager.GetString("CPC_TotalProduitsNonCourant", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caisse.
+        /// </summary>
+        public static string CrateUnit {
+            get {
+                return ResourceManager.GetString("CrateUnit", resourceCulture);
             }
         }
         
@@ -1402,7 +3679,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Créé le.
+        ///   Looks up a localized string similar to Créée le 15/12/2024 à 14:30.
         /// </summary>
         public static string CreatedOn {
             get {
@@ -1411,7 +3688,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Créer une Facture.
+        ///   Looks up a localized string similar to Créer Facture.
         /// </summary>
         public static string CreateInvoice {
             get {
@@ -1429,7 +3706,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Montant du Crédit.
+        ///   Looks up a localized string similar to Montant Crédit.
         /// </summary>
         public static string CreditAmount {
             get {
@@ -1438,11 +3715,20 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Montant à mettre en crédit.
+        ///   Looks up a localized string similar to Note sur le montant crédit.
         /// </summary>
         public static string CreditAmountNote {
             get {
                 return ResourceManager.GetString("CreditAmountNote", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Crédit.
+        /// </summary>
+        public static string CreditField {
+            get {
+                return ResourceManager.GetString("CreditField", resourceCulture);
             }
         }
         
@@ -1456,7 +3742,16 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Valeur du Crédit.
+        ///   Looks up a localized string similar to CREDIT.
+        /// </summary>
+        public static string CreditPayment {
+            get {
+                return ResourceManager.GetString("CreditPayment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Valeur Crédit.
         /// </summary>
         public static string CreditValue {
             get {
@@ -1474,7 +3769,178 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ces données seront perdues définitivement..
+        ///   Looks up a localized string similar to Article Personnalisé.
+        /// </summary>
+        public static string CustomArticle {
+            get {
+                return ResourceManager.GetString("CustomArticle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 🛒 Achats.
+        /// </summary>
+        public static string Dashboard_Achats {
+            get {
+                return ResourceManager.GetString("Dashboard_Achats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ⚡ ACTIONS RAPIDES.
+        /// </summary>
+        public static string Dashboard_ActionsRapides {
+            get {
+                return ResourceManager.GetString("Dashboard_ActionsRapides", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 📋 Autres.
+        /// </summary>
+        public static string Dashboard_Autres {
+            get {
+                return ResourceManager.GetString("Dashboard_Autres", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 📊 BÉNÉFICE NET.
+        /// </summary>
+        public static string Dashboard_BeneficeNet {
+            get {
+                return ResourceManager.GetString("Dashboard_BeneficeNet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ⚖️ Bilan.
+        /// </summary>
+        public static string Dashboard_Bilan {
+            get {
+                return ResourceManager.GetString("Dashboard_Bilan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Chiffre d&apos;affaires.
+        /// </summary>
+        public static string Dashboard_CA {
+            get {
+                return ResourceManager.GetString("Dashboard_CA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 💳 CHARGES TOTALES.
+        /// </summary>
+        public static string Dashboard_ChargesTotales {
+            get {
+                return ResourceManager.GetString("Dashboard_ChargesTotales", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 📈 CPC.
+        /// </summary>
+        public static string Dashboard_CPC {
+            get {
+                return ResourceManager.GetString("Dashboard_CPC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 📚 Grand Livre.
+        /// </summary>
+        public static string Dashboard_GrandLivre {
+            get {
+                return ResourceManager.GetString("Dashboard_GrandLivre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 📖 Journal Général.
+        /// </summary>
+        public static string Dashboard_JournalGeneral {
+            get {
+                return ResourceManager.GetString("Dashboard_JournalGeneral", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Chargement des données....
+        /// </summary>
+        public static string Dashboard_Loading {
+            get {
+                return ResourceManager.GetString("Dashboard_Loading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Actualiser.
+        /// </summary>
+        public static string Dashboard_Refresh {
+            get {
+                return ResourceManager.GetString("Dashboard_Refresh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RÉPARTITION DES CHARGES.
+        /// </summary>
+        public static string Dashboard_RepartitionCharges {
+            get {
+                return ResourceManager.GetString("Dashboard_RepartitionCharges", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 👥 Salaires.
+        /// </summary>
+        public static string Dashboard_Salaires {
+            get {
+                return ResourceManager.GetString("Dashboard_Salaires", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tableau de Bord Financier.
+        /// </summary>
+        public static string Dashboard_Title {
+            get {
+                return ResourceManager.GetString("Dashboard_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 💰 TRÉSORERIE.
+        /// </summary>
+        public static string Dashboard_Tresorerie {
+            get {
+                return ResourceManager.GetString("Dashboard_Tresorerie", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ventes - Charges.
+        /// </summary>
+        public static string Dashboard_VentesCharges {
+            get {
+                return ResourceManager.GetString("Dashboard_VentesCharges", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 💵 VENTES TOTALES.
+        /// </summary>
+        public static string Dashboard_VentesTotales {
+            get {
+                return ResourceManager.GetString("Dashboard_VentesTotales", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Toutes les données associées seront définitivement perdues..
         /// </summary>
         public static string DataLostPermanently {
             get {
@@ -1492,7 +3958,25 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Date et Heure.
+        ///   Looks up a localized string similar to Date.
+        /// </summary>
+        public static string DateLabel {
+            get {
+                return ResourceManager.GetString("DateLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 📅 Dates et Lots.
+        /// </summary>
+        public static string DatesAndBatches {
+            get {
+                return ResourceManager.GetString("DatesAndBatches", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date/Heure.
         /// </summary>
         public static string DateTime {
             get {
@@ -1501,7 +3985,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DATE.
+        ///   Looks up a localized string similar to DATE:.
         /// </summary>
         public static string DateUpper {
             get {
@@ -1519,7 +4003,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Supprimer le Client.
+        ///   Looks up a localized string similar to Supprimer le client.
         /// </summary>
         public static string DeleteClient {
             get {
@@ -1537,7 +4021,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Confirmation de Suppression.
+        ///   Looks up a localized string similar to Confirmation de suppression.
         /// </summary>
         public static string DeleteConfirmation {
             get {
@@ -1546,7 +4030,16 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Supprimer le Fournisseur.
+        ///   Looks up a localized string similar to Supprimer.
+        /// </summary>
+        public static string DeleteLabel {
+            get {
+                return ResourceManager.GetString("DeleteLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Supprimer.
         /// </summary>
         public static string DeleteSupplier {
             get {
@@ -1564,7 +4057,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Supprimer.
+        ///   Looks up a localized string similar to Confirmer.
         /// </summary>
         public static string DeleteUser_Confirm {
             get {
@@ -1573,7 +4066,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Supprimer cet élément.
+        ///   Looks up a localized string similar to Confirmer la suppression.
         /// </summary>
         public static string DeleteUser_ConfirmTitle {
             get {
@@ -1591,7 +4084,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Êtes-vous sûr de vouloir supprimer cet élément ?.
+        ///   Looks up a localized string similar to Voulez-vous vraiment supprimer?.
         /// </summary>
         public static string DeleteUser_Question {
             get {
@@ -1600,7 +4093,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Supprimer.
+        ///   Looks up a localized string similar to Supprimer Utilisateur.
         /// </summary>
         public static string DeleteUser_Title {
             get {
@@ -1609,7 +4102,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cette action est irréversible..
+        ///   Looks up a localized string similar to Toutes les données seront perdues..
         /// </summary>
         public static string DeleteUser_Warning {
             get {
@@ -1627,7 +4120,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Livré.
+        ///   Looks up a localized string similar to Livrée.
         /// </summary>
         public static string Delivered {
             get {
@@ -1654,7 +4147,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gérer la liste des livreurs.
+        ///   Looks up a localized string similar to Gérez votre équipe de livraison.
         /// </summary>
         public static string DelivererManagementDescription {
             get {
@@ -1663,7 +4156,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nom du Livreur.
+        ///   Looks up a localized string similar to Nom du livreur.
         /// </summary>
         public static string DelivererName {
             get {
@@ -1672,7 +4165,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Signature du Livreur.
+        ///   Looks up a localized string similar to SIGNATURE LIVREUR.
         /// </summary>
         public static string DelivererSignature {
             get {
@@ -1690,7 +4183,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to LIVREUR.
+        ///   Looks up a localized string similar to LIVREUR:.
         /// </summary>
         public static string DelivererUpper {
             get {
@@ -1708,7 +4201,25 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Détails de la Livraison.
+        ///   Looks up a localized string similar to Date de Livraison.
+        /// </summary>
+        public static string DeliveryDate {
+            get {
+                return ResourceManager.GetString("DeliveryDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date de livraison.
+        /// </summary>
+        public static string DeliveryDateLabel {
+            get {
+                return ResourceManager.GetString("DeliveryDateLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Détails de Livraison.
         /// </summary>
         public static string DeliveryDetails {
             get {
@@ -1717,7 +4228,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Numéro de Livraison.
+        ///   Looks up a localized string similar to Détails de livraison N°.
         /// </summary>
         public static string DeliveryDetailsNumber {
             get {
@@ -1771,7 +4282,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Suivre et gérer les livraisons.
+        ///   Looks up a localized string similar to Gérez et suivez toutes vos livraisons.
         /// </summary>
         public static string DeliveryManagementDescription {
             get {
@@ -1780,11 +4291,20 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bon de Livraison.
+        ///   Looks up a localized string similar to Bon Livraison.
         /// </summary>
         public static string DeliveryNote {
             get {
                 return ResourceManager.GetString("DeliveryNote", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bon de livraison.
+        /// </summary>
+        public static string DeliveryNoteLabel {
+            get {
+                return ResourceManager.GetString("DeliveryNoteLabel", resourceCulture);
             }
         }
         
@@ -1825,11 +4345,38 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string DescriptionLabel {
+            get {
+                return ResourceManager.GetString("DescriptionLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Description / Notes.
         /// </summary>
         public static string DescriptionNotes {
             get {
                 return ResourceManager.GetString("DescriptionNotes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ✕ Tout désélectionner.
+        /// </summary>
+        public static string DeselectAllButton {
+            get {
+                return ResourceManager.GetString("DeselectAllButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Détails.
+        /// </summary>
+        public static string Details {
+            get {
+                return ResourceManager.GetString("Details", resourceCulture);
             }
         }
         
@@ -1844,6 +4391,15 @@ namespace GestionComerce.Resources {
         
         /// <summary>
         ///   Looks up a localized string similar to Remise.
+        /// </summary>
+        public static string DiscountField {
+            get {
+                return ResourceManager.GetString("DiscountField", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remise :.
         /// </summary>
         public static string DiscountLabel {
             get {
@@ -1861,11 +4417,92 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Modifier le Client.
+        ///   Looks up a localized string similar to Modifier les informations du client.
         /// </summary>
         public static string EditClient {
             get {
                 return ResourceManager.GetString("EditClient", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Montant (MAD) *.
+        /// </summary>
+        public static string EditExpense_AmountLabel {
+            get {
+                return ResourceManager.GetString("EditExpense_AmountLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Catégorie *.
+        /// </summary>
+        public static string EditExpense_CategoryLabel {
+            get {
+                return ResourceManager.GetString("EditExpense_CategoryLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date d&apos;échéance *.
+        /// </summary>
+        public static string EditExpense_DueDateLabel {
+            get {
+                return ResourceManager.GetString("EditExpense_DueDateLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nom de la Dépense *.
+        /// </summary>
+        public static string EditExpense_NameLabel {
+            get {
+                return ResourceManager.GetString("EditExpense_NameLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Notes.
+        /// </summary>
+        public static string EditExpense_NotesLabel {
+            get {
+                return ResourceManager.GetString("EditExpense_NotesLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type de Récurrence.
+        /// </summary>
+        public static string EditExpense_RecurrenceLabel {
+            get {
+                return ResourceManager.GetString("EditExpense_RecurrenceLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 💾 Sauvegarder.
+        /// </summary>
+        public static string EditExpense_SaveButton {
+            get {
+                return ResourceManager.GetString("EditExpense_SaveButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ✎ Modifier la Dépense.
+        /// </summary>
+        public static string EditExpense_Title {
+            get {
+                return ResourceManager.GetString("EditExpense_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Modifier la Dépense.
+        /// </summary>
+        public static string EditExpense_WindowTitle {
+            get {
+                return ResourceManager.GetString("EditExpense_WindowTitle", resourceCulture);
             }
         }
         
@@ -1879,7 +4516,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Modifier le Fournisseur.
+        ///   Looks up a localized string similar to Modifier.
         /// </summary>
         public static string EditSupplier {
             get {
@@ -1906,7 +4543,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Panier vide.
+        ///   Looks up a localized string similar to Panier Vide.
         /// </summary>
         public static string EmptyCart {
             get {
@@ -1915,7 +4552,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Date de Fin.
+        ///   Looks up a localized string similar to Date fin.
         /// </summary>
         public static string EndDate {
             get {
@@ -1924,11 +4561,29 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to En Route.
+        ///   Looks up a localized string similar to English.
+        /// </summary>
+        public static string English {
+            get {
+                return ResourceManager.GetString("English", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to En route.
         /// </summary>
         public static string EnRoute {
             get {
                 return ResourceManager.GetString("EnRoute", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 📋 Informations Essentielles.
+        /// </summary>
+        public static string EssentialInfo {
+            get {
+                return ResourceManager.GetString("EssentialInfo", resourceCulture);
             }
         }
         
@@ -1960,11 +4615,533 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ➕ Ajouter la Dépense.
+        /// </summary>
+        public static string Expenses_AddButton {
+            get {
+                return ResourceManager.GetString("Expenses_AddButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ajouter une nouvelle catégorie.
+        /// </summary>
+        public static string Expenses_AddCategoryTooltip {
+            get {
+                return ResourceManager.GetString("Expenses_AddCategoryTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ➕ Ajouter une Nouvelle Dépense.
+        /// </summary>
+        public static string Expenses_AddNewTitle {
+            get {
+                return ResourceManager.GetString("Expenses_AddNewTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ajouter un nouveau type de récurrence.
+        /// </summary>
+        public static string Expenses_AddRecurrenceTooltip {
+            get {
+                return ResourceManager.GetString("Expenses_AddRecurrenceTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 🔔 Configuration des Alertes de Paiement.
+        /// </summary>
+        public static string Expenses_AlertConfig {
+            get {
+                return ResourceManager.GetString("Expenses_AlertConfig", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Délai d&apos;alerte.
+        /// </summary>
+        public static string Expenses_AlertDelay {
+            get {
+                return ResourceManager.GetString("Expenses_AlertDelay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ⚙️ Paramètres d&apos;Alerte.
+        /// </summary>
+        public static string Expenses_AlertSettings {
+            get {
+                return ResourceManager.GetString("Expenses_AlertSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tous.
+        /// </summary>
+        public static string Expenses_AllStatus {
+            get {
+                return ResourceManager.GetString("Expenses_AllStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Montant (MAD) *.
+        /// </summary>
+        public static string Expenses_AmountRequired {
+            get {
+                return ResourceManager.GetString("Expenses_AmountRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Appliquer.
+        /// </summary>
+        public static string Expenses_ApplyFilter {
+            get {
+                return ResourceManager.GetString("Expenses_ApplyFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Catégorie.
+        /// </summary>
+        public static string Expenses_CategoryFilter {
+            get {
+                return ResourceManager.GetString("Expenses_CategoryFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Catégorie:.
+        /// </summary>
+        public static string Expenses_CategoryLabel {
+            get {
+                return ResourceManager.GetString("Expenses_CategoryLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Catégorie *.
+        /// </summary>
+        public static string Expenses_CategoryRequired {
+            get {
+                return ResourceManager.GetString("Expenses_CategoryRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Chèque.
+        /// </summary>
+        public static string Expenses_Cheque {
+            get {
+                return ResourceManager.GetString("Expenses_Cheque", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Actions.
+        /// </summary>
+        public static string Expenses_ColActions {
+            get {
+                return ResourceManager.GetString("Expenses_ColActions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Montant.
+        /// </summary>
+        public static string Expenses_ColAmount {
+            get {
+                return ResourceManager.GetString("Expenses_ColAmount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Catégorie.
+        /// </summary>
+        public static string Expenses_ColCategory {
+            get {
+                return ResourceManager.GetString("Expenses_ColCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Échéance.
+        /// </summary>
+        public static string Expenses_ColDueDate {
+            get {
+                return ResourceManager.GetString("Expenses_ColDueDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nom.
+        /// </summary>
+        public static string Expenses_ColName {
+            get {
+                return ResourceManager.GetString("Expenses_ColName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Récurrence.
+        /// </summary>
+        public static string Expenses_ColRecurrence {
+            get {
+                return ResourceManager.GetString("Expenses_ColRecurrence", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Statut.
+        /// </summary>
+        public static string Expenses_ColStatus {
+            get {
+                return ResourceManager.GetString("Expenses_ColStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Carte bancaire.
+        /// </summary>
+        public static string Expenses_CreditCard {
+            get {
+                return ResourceManager.GetString("Expenses_CreditCard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to jour(s).
+        /// </summary>
+        public static string Expenses_DaysSuffix {
+            get {
+                return ResourceManager.GetString("Expenses_DaysSuffix", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Jours.
+        /// </summary>
+        public static string Expenses_DaysUnit {
+            get {
+                return ResourceManager.GetString("Expenses_DaysUnit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Supprimer.
+        /// </summary>
+        public static string Expenses_DeleteTooltip {
+            get {
+                return ResourceManager.GetString("Expenses_DeleteTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date d&apos;échéance *.
+        /// </summary>
+        public static string Expenses_DueDateRequired {
+            get {
+                return ResourceManager.GetString("Expenses_DueDateRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ✎ Modifier.
+        /// </summary>
+        public static string Expenses_EditBtn {
+            get {
+                return ResourceManager.GetString("Expenses_EditBtn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 🔍 Filtrer.
+        /// </summary>
+        public static string Expenses_FilterButton {
+            get {
+                return ResourceManager.GetString("Expenses_FilterButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heures.
+        /// </summary>
+        public static string Expenses_Hours {
+            get {
+                return ResourceManager.GetString("Expenses_Hours", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dans.
+        /// </summary>
+        public static string Expenses_In {
+            get {
+                return ResourceManager.GetString("Expenses_In", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 📋 Liste des Dépenses.
+        /// </summary>
+        public static string Expenses_ListTitle {
+            get {
+                return ResourceManager.GetString("Expenses_ListTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nom de la Dépense *.
+        /// </summary>
+        public static string Expenses_NameRequired {
+            get {
+                return ResourceManager.GetString("Expenses_NameRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Informations supplémentaires.
+        /// </summary>
+        public static string Expenses_NotesTooltip {
+            get {
+                return ResourceManager.GetString("Expenses_NotesTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ✓ Payer.
+        /// </summary>
+        public static string Expenses_Pay {
+            get {
+                return ResourceManager.GetString("Expenses_Pay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Méthode de Paiement.
+        /// </summary>
+        public static string Expenses_PaymentMethod {
+            get {
+                return ResourceManager.GetString("Expenses_PaymentMethod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Période.
+        /// </summary>
+        public static string Expenses_PeriodFilter {
+            get {
+                return ResourceManager.GetString("Expenses_PeriodFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type de Récurrence.
+        /// </summary>
+        public static string Expenses_RecurrenceType {
+            get {
+                return ResourceManager.GetString("Expenses_RecurrenceType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 🔄 Actualiser.
+        /// </summary>
+        public static string Expenses_RefreshButton {
+            get {
+                return ResourceManager.GetString("Expenses_RefreshButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 🔄 Réinitialiser.
+        /// </summary>
+        public static string Expenses_Reset {
+            get {
+                return ResourceManager.GetString("Expenses_Reset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 💾 Sauvegarder.
+        /// </summary>
+        public static string Expenses_SaveBtn {
+            get {
+                return ResourceManager.GetString("Expenses_SaveBtn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Statut.
+        /// </summary>
+        public static string Expenses_StatusFilter {
+            get {
+                return ResourceManager.GetString("Expenses_StatusFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Suivez et gérez toutes vos dépenses professionnelles.
+        /// </summary>
+        public static string Expenses_Subtitle {
+            get {
+                return ResourceManager.GetString("Expenses_Subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ce mois.
+        /// </summary>
+        public static string Expenses_ThisMonth {
+            get {
+                return ResourceManager.GetString("Expenses_ThisMonth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ce trimestre.
+        /// </summary>
+        public static string Expenses_ThisQuarter {
+            get {
+                return ResourceManager.GetString("Expenses_ThisQuarter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cette année.
+        /// </summary>
+        public static string Expenses_ThisYear {
+            get {
+                return ResourceManager.GetString("Expenses_ThisYear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unité de temps.
+        /// </summary>
+        public static string Expenses_TimeUnit {
+            get {
+                return ResourceManager.GetString("Expenses_TimeUnit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 💰 Gestion des Dépenses.
+        /// </summary>
+        public static string Expenses_Title {
+            get {
+                return ResourceManager.GetString("Expenses_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Virement.
+        /// </summary>
+        public static string Expenses_Transfer {
+            get {
+                return ResourceManager.GetString("Expenses_Transfer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ⚠️ Paiements à venir.
+        /// </summary>
+        public static string Expenses_UpcomingPayments {
+            get {
+                return ResourceManager.GetString("Expenses_UpcomingPayments", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Semaines.
+        /// </summary>
+        public static string Expenses_Weeks {
+            get {
+                return ResourceManager.GetString("Expenses_Weeks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expiration.
+        /// </summary>
+        public static string Expiration {
+            get {
+                return ResourceManager.GetString("Expiration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date d&apos;Expiration.
+        /// </summary>
+        public static string ExpirationDate {
+            get {
+                return ResourceManager.GetString("ExpirationDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date d&apos;expiration.
+        /// </summary>
+        public static string ExpirationDateLabel {
+            get {
+                return ResourceManager.GetString("ExpirationDateLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Familles.
+        /// </summary>
+        public static string Families {
+            get {
+                return ResourceManager.GetString("Families", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Famille.
         /// </summary>
         public static string Family {
             get {
                 return ResourceManager.GetString("Family", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Famille/Catégorie.
+        /// </summary>
+        public static string FamilyCategoryLabel {
+            get {
+                return ResourceManager.GetString("FamilyCategoryLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Famille Management.
+        /// </summary>
+        public static string FamilyManagement {
+            get {
+                return ResourceManager.GetString("FamilyManagement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nom de la Famille.
+        /// </summary>
+        public static string FamilyName {
+            get {
+                return ResourceManager.GetString("FamilyName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Famille *.
+        /// </summary>
+        public static string FamilyRequired {
+            get {
+                return ResourceManager.GetString("FamilyRequired", resourceCulture);
             }
         }
         
@@ -1978,7 +5155,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Filtrer par Statut.
+        ///   Looks up a localized string similar to Filtrer par statut:.
         /// </summary>
         public static string FilterByStatus {
             get {
@@ -2023,11 +5200,20 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Prénom (requis).
+        ///   Looks up a localized string similar to Prénom *.
         /// </summary>
         public static string FirstNameRequired {
             get {
                 return ResourceManager.GetString("FirstNameRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Français.
+        /// </summary>
+        public static string French {
+            get {
+                return ResourceManager.GetString("French", resourceCulture);
             }
         }
         
@@ -2041,7 +5227,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Toujours afficher.
+        ///   Looks up a localized string similar to Toujours Afficher.
         /// </summary>
         public static string General_AlwaysShow {
             get {
@@ -2077,7 +5263,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vue Cartes.
+        ///   Looks up a localized string similar to Vue Carte.
         /// </summary>
         public static string General_CardView {
             get {
@@ -2113,7 +5299,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Supprimer articles à quantité zéro.
+        ///   Looks up a localized string similar to Supprimer Articles à Zéro.
         /// </summary>
         public static string General_DeleteZero {
             get {
@@ -2122,7 +5308,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Configuration générale de l&apos;application.
+        ///   Looks up a localized string similar to Paramètres de l&apos;Application.
         /// </summary>
         public static string General_Description {
             get {
@@ -2149,7 +5335,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Masquer les étiquettes vides.
+        ///   Looks up a localized string similar to Masquer Étiquettes Vides.
         /// </summary>
         public static string General_HideEmpty {
             get {
@@ -2158,7 +5344,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Taille d&apos;affichage des icônes.
+        ///   Looks up a localized string similar to Choisissez la taille des icônes dans la liste..
         /// </summary>
         public static string General_IconDesc {
             get {
@@ -2176,7 +5362,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Options d&apos;affichage de la facture.
+        ///   Looks up a localized string similar to Contrôlez l&apos;affichage des factures..
         /// </summary>
         public static string General_InvoiceDesc {
             get {
@@ -2185,7 +5371,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Affichage Facture.
+        ///   Looks up a localized string similar to Affichage des Factures.
         /// </summary>
         public static string General_InvoiceDisplay {
             get {
@@ -2194,7 +5380,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Activer ou désactiver le clavier virtuel.
+        ///   Looks up a localized string similar to Activez le clavier virtuel à l&apos;écran..
         /// </summary>
         public static string General_KeyboardDesc {
             get {
@@ -2212,7 +5398,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Choisissez la langue de l&apos;application.
+        ///   Looks up a localized string similar to Choisissez la langue de l&apos;application..
         /// </summary>
         public static string General_LanguageDesc {
             get {
@@ -2221,7 +5407,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Grandes icônes.
+        ///   Looks up a localized string similar to Grandes Icônes.
         /// </summary>
         public static string General_LargeIcons {
             get {
@@ -2239,7 +5425,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Icônes moyennes.
+        ///   Looks up a localized string similar to Icônes Moyennes.
         /// </summary>
         public static string General_MediumIcons {
             get {
@@ -2248,7 +5434,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nom (A-Z).
+        ///   Looks up a localized string similar to Nom A-Z.
         /// </summary>
         public static string General_NameAZ {
             get {
@@ -2257,7 +5443,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nom (Z-A).
+        ///   Looks up a localized string similar to Nom Z-A.
         /// </summary>
         public static string General_NameZA {
             get {
@@ -2266,7 +5452,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ne jamais afficher.
+        ///   Looks up a localized string similar to Ne Jamais Afficher.
         /// </summary>
         public static string General_NeverShow {
             get {
@@ -2275,7 +5461,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Plus récent d&apos;abord.
+        ///   Looks up a localized string similar to Plus Récent en Premier.
         /// </summary>
         public static string General_NewestFirst {
             get {
@@ -2284,7 +5470,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Plus ancien d&apos;abord.
+        ///   Looks up a localized string similar to Plus Ancien en Premier.
         /// </summary>
         public static string General_OldestFirst {
             get {
@@ -2293,7 +5479,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Méthode de paiement par défaut.
+        ///   Looks up a localized string similar to Définissez le mode de paiement par défaut..
         /// </summary>
         public static string General_PaymentDesc {
             get {
@@ -2302,7 +5488,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Prix croissant.
+        ///   Looks up a localized string similar to Prix Croissant.
         /// </summary>
         public static string General_PriceAsc {
             get {
@@ -2311,7 +5497,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Prix décroissant.
+        ///   Looks up a localized string similar to Prix Décroissant.
         /// </summary>
         public static string General_PriceDesc_Sort {
             get {
@@ -2320,7 +5506,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Options d&apos;impression par défaut.
+        ///   Looks up a localized string similar to Options d&apos;impression pour les tickets et factures..
         /// </summary>
         public static string General_PrintDesc {
             get {
@@ -2356,7 +5542,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Quantité croissante.
+        ///   Looks up a localized string similar to Quantité Croissante.
         /// </summary>
         public static string General_QtyAsc {
             get {
@@ -2365,20 +5551,11 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Quantité décroissante.
+        ///   Looks up a localized string similar to Quantité Décroissante.
         /// </summary>
         public static string General_QtyDesc {
             get {
                 return ResourceManager.GetString("General_QtyDesc", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Gestion des ventes simplifiée.
-        /// </summary>
-        public static string General_SalesManagementDesc {
-            get {
-                return ResourceManager.GetString("General_SalesManagementDesc", resourceCulture);
             }
         }
         
@@ -2392,7 +5569,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Petites icônes.
+        ///   Looks up a localized string similar to Petites Icônes.
         /// </summary>
         public static string General_SmallIcons {
             get {
@@ -2401,7 +5578,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ordre de tri par défaut des produits.
+        ///   Looks up a localized string similar to Choisissez le tri par défaut des articles..
         /// </summary>
         public static string General_SortDesc {
             get {
@@ -2410,7 +5587,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gestion des articles à stock nul.
+        ///   Looks up a localized string similar to Options de gestion du stock..
         /// </summary>
         public static string General_StockDesc {
             get {
@@ -2437,7 +5614,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mode d&apos;affichage par défaut.
+        ///   Looks up a localized string similar to Choisissez le mode d&apos;affichage par défaut..
         /// </summary>
         public static string General_ViewDesc {
             get {
@@ -2455,7 +5632,826 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remis par.
+        ///   Looks up a localized string similar to Générer.
+        /// </summary>
+        public static string GenerateInvoiceNumber {
+            get {
+                return ResourceManager.GetString("GenerateInvoiceNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Générer le Devis ✓.
+        /// </summary>
+        public static string GenerateQuote {
+            get {
+                return ResourceManager.GetString("GenerateQuote", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Actif.
+        /// </summary>
+        public static string GestionEmployes_Active {
+            get {
+                return ResourceManager.GetString("GestionEmployes_Active", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Adresse.
+        /// </summary>
+        public static string GestionEmployes_AddressLabel {
+            get {
+                return ResourceManager.GetString("GestionEmployes_AddressLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ← Retour.
+        /// </summary>
+        public static string GestionEmployes_BackButton {
+            get {
+                return ResourceManager.GetString("GestionEmployes_BackButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date de Naissance.
+        /// </summary>
+        public static string GestionEmployes_BirthDate {
+            get {
+                return ResourceManager.GetString("GestionEmployes_BirthDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Annuler.
+        /// </summary>
+        public static string GestionEmployes_CancelButton {
+            get {
+                return ResourceManager.GetString("GestionEmployes_CancelButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Numéro CNSS.
+        /// </summary>
+        public static string GestionEmployes_CNSS {
+            get {
+                return ResourceManager.GetString("GestionEmployes_CNSS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ACTIONS.
+        /// </summary>
+        public static string GestionEmployes_ColActions {
+            get {
+                return ResourceManager.GetString("GestionEmployes_ColActions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CIN.
+        /// </summary>
+        public static string GestionEmployes_ColCIN {
+            get {
+                return ResourceManager.GetString("GestionEmployes_ColCIN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CNSS.
+        /// </summary>
+        public static string GestionEmployes_ColCNSS {
+            get {
+                return ResourceManager.GetString("GestionEmployes_ColCNSS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EMAIL.
+        /// </summary>
+        public static string GestionEmployes_ColEmail {
+            get {
+                return ResourceManager.GetString("GestionEmployes_ColEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NOM COMPLET.
+        /// </summary>
+        public static string GestionEmployes_ColFullName {
+            get {
+                return ResourceManager.GetString("GestionEmployes_ColFullName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TÉLÉPHONE.
+        /// </summary>
+        public static string GestionEmployes_ColPhone {
+            get {
+                return ResourceManager.GetString("GestionEmployes_ColPhone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to POSTE.
+        /// </summary>
+        public static string GestionEmployes_ColPosition {
+            get {
+                return ResourceManager.GetString("GestionEmployes_ColPosition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to STATUT.
+        /// </summary>
+        public static string GestionEmployes_ColStatus {
+            get {
+                return ResourceManager.GetString("GestionEmployes_ColStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Désactiver.
+        /// </summary>
+        public static string GestionEmployes_DeactivateTooltip {
+            get {
+                return ResourceManager.GetString("GestionEmployes_DeactivateTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        public static string GestionEmployes_Email {
+            get {
+                return ResourceManager.GetString("GestionEmployes_Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nom Complet *.
+        /// </summary>
+        public static string GestionEmployes_FullName {
+            get {
+                return ResourceManager.GetString("GestionEmployes_FullName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date d&apos;Embauche.
+        /// </summary>
+        public static string GestionEmployes_HireDate {
+            get {
+                return ResourceManager.GetString("GestionEmployes_HireDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inactif.
+        /// </summary>
+        public static string GestionEmployes_Inactive {
+            get {
+                return ResourceManager.GetString("GestionEmployes_Inactive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Modifier.
+        /// </summary>
+        public static string GestionEmployes_ModifyTooltip {
+            get {
+                return ResourceManager.GetString("GestionEmployes_ModifyTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to + Nouvel Employé.
+        /// </summary>
+        public static string GestionEmployes_NewEmployee {
+            get {
+                return ResourceManager.GetString("GestionEmployes_NewEmployee", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nouvel Employé.
+        /// </summary>
+        public static string GestionEmployes_NewEmployeeTitle {
+            get {
+                return ResourceManager.GetString("GestionEmployes_NewEmployeeTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Informations Personnelles.
+        /// </summary>
+        public static string GestionEmployes_PersonalInfo {
+            get {
+                return ResourceManager.GetString("GestionEmployes_PersonalInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Téléphone.
+        /// </summary>
+        public static string GestionEmployes_Phone {
+            get {
+                return ResourceManager.GetString("GestionEmployes_Phone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Poste.
+        /// </summary>
+        public static string GestionEmployes_Position {
+            get {
+                return ResourceManager.GetString("GestionEmployes_Position", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Informations Professionnelles.
+        /// </summary>
+        public static string GestionEmployes_ProfessionalInfo {
+            get {
+                return ResourceManager.GetString("GestionEmployes_ProfessionalInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enregistrer.
+        /// </summary>
+        public static string GestionEmployes_SaveButton {
+            get {
+                return ResourceManager.GetString("GestionEmployes_SaveButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rechercher.
+        /// </summary>
+        public static string GestionEmployes_SearchLabel {
+            get {
+                return ResourceManager.GetString("GestionEmployes_SearchLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gérez les informations de vos employés.
+        /// </summary>
+        public static string GestionEmployes_Subtitle {
+            get {
+                return ResourceManager.GetString("GestionEmployes_Subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gestion des Employés.
+        /// </summary>
+        public static string GestionEmployes_Title {
+            get {
+                return ResourceManager.GetString("GestionEmployes_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Avance sur Salaire (DH).
+        /// </summary>
+        public static string GestionSalaires_Advance {
+            get {
+                return ResourceManager.GetString("GestionSalaires_Advance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ← Retour.
+        /// </summary>
+        public static string GestionSalaires_BackButton {
+            get {
+                return ResourceManager.GetString("GestionSalaires_BackButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Salaire de Base (DH) *.
+        /// </summary>
+        public static string GestionSalaires_BaseSalaryLabel {
+            get {
+                return ResourceManager.GetString("GestionSalaires_BaseSalaryLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Salaire de Base.
+        /// </summary>
+        public static string GestionSalaires_BaseSalarySection {
+            get {
+                return ResourceManager.GetString("GestionSalaires_BaseSalarySection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Primes et Indemnités.
+        /// </summary>
+        public static string GestionSalaires_BonusSection {
+            get {
+                return ResourceManager.GetString("GestionSalaires_BonusSection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CIMR - Cotisation Facultative (DH).
+        /// </summary>
+        public static string GestionSalaires_CIMR {
+            get {
+                return ResourceManager.GetString("GestionSalaires_CIMR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Actions.
+        /// </summary>
+        public static string GestionSalaires_ColActions {
+            get {
+                return ResourceManager.GetString("GestionSalaires_ColActions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to AMO.
+        /// </summary>
+        public static string GestionSalaires_ColAMO {
+            get {
+                return ResourceManager.GetString("GestionSalaires_ColAMO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Salaire Base.
+        /// </summary>
+        public static string GestionSalaires_ColBaseSalary {
+            get {
+                return ResourceManager.GetString("GestionSalaires_ColBaseSalary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CIN.
+        /// </summary>
+        public static string GestionSalaires_ColCIN {
+            get {
+                return ResourceManager.GetString("GestionSalaires_ColCIN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CNSS.
+        /// </summary>
+        public static string GestionSalaires_ColCNSS {
+            get {
+                return ResourceManager.GetString("GestionSalaires_ColCNSS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employé.
+        /// </summary>
+        public static string GestionSalaires_ColEmployee {
+            get {
+                return ResourceManager.GetString("GestionSalaires_ColEmployee", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Salaire Brut.
+        /// </summary>
+        public static string GestionSalaires_ColGrossSalary {
+            get {
+                return ResourceManager.GetString("GestionSalaires_ColGrossSalary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IR.
+        /// </summary>
+        public static string GestionSalaires_ColIR {
+            get {
+                return ResourceManager.GetString("GestionSalaires_ColIR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Salaire Net.
+        /// </summary>
+        public static string GestionSalaires_ColNetSalary {
+            get {
+                return ResourceManager.GetString("GestionSalaires_ColNetSalary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Période.
+        /// </summary>
+        public static string GestionSalaires_ColPeriod {
+            get {
+                return ResourceManager.GetString("GestionSalaires_ColPeriod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Statut.
+        /// </summary>
+        public static string GestionSalaires_ColStatus {
+            get {
+                return ResourceManager.GetString("GestionSalaires_ColStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Autres Retenues.
+        /// </summary>
+        public static string GestionSalaires_DeductionsSection {
+            get {
+                return ResourceManager.GetString("GestionSalaires_DeductionsSection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Supprimer.
+        /// </summary>
+        public static string GestionSalaires_DeleteTooltip {
+            get {
+                return ResourceManager.GetString("GestionSalaires_DeleteTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employé *.
+        /// </summary>
+        public static string GestionSalaires_EmployeeLabel {
+            get {
+                return ResourceManager.GetString("GestionSalaires_EmployeeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Informations de l&apos;Employé.
+        /// </summary>
+        public static string GestionSalaires_EmployeeSection {
+            get {
+                return ResourceManager.GetString("GestionSalaires_EmployeeSection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exporter Excel.
+        /// </summary>
+        public static string GestionSalaires_Export {
+            get {
+                return ResourceManager.GetString("GestionSalaires_Export", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SALAIRE BRUT.
+        /// </summary>
+        public static string GestionSalaires_GrossSalary {
+            get {
+                return ResourceManager.GetString("GestionSalaires_GrossSalary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Taux Horaire (DH).
+        /// </summary>
+        public static string GestionSalaires_HourlyRate {
+            get {
+                return ResourceManager.GetString("GestionSalaires_HourlyRate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Indemnité de Logement (DH).
+        /// </summary>
+        public static string GestionSalaires_HousingAllowance {
+            get {
+                return ResourceManager.GetString("GestionSalaires_HousingAllowance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prêt Personnel (DH).
+        /// </summary>
+        public static string GestionSalaires_Loan {
+            get {
+                return ResourceManager.GetString("GestionSalaires_Loan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Modifier.
+        /// </summary>
+        public static string GestionSalaires_ModifyTooltip {
+            get {
+                return ResourceManager.GetString("GestionSalaires_ModifyTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mois.
+        /// </summary>
+        public static string GestionSalaires_Month {
+            get {
+                return ResourceManager.GetString("GestionSalaires_Month", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mois *.
+        /// </summary>
+        public static string GestionSalaires_MonthLabel {
+            get {
+                return ResourceManager.GetString("GestionSalaires_MonthLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SALAIRE NET.
+        /// </summary>
+        public static string GestionSalaires_NetSalary {
+            get {
+                return ResourceManager.GetString("GestionSalaires_NetSalary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Montant à verser.
+        /// </summary>
+        public static string GestionSalaires_NetSalaryNote {
+            get {
+                return ResourceManager.GetString("GestionSalaires_NetSalaryNote", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nouveau Bulletin de Salaire.
+        /// </summary>
+        public static string GestionSalaires_NewBulletin {
+            get {
+                return ResourceManager.GetString("GestionSalaires_NewBulletin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nouveau Salaire.
+        /// </summary>
+        public static string GestionSalaires_NewSalary {
+            get {
+                return ResourceManager.GetString("GestionSalaires_NewSalary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heures Normales.
+        /// </summary>
+        public static string GestionSalaires_NormalHours {
+            get {
+                return ResourceManager.GetString("GestionSalaires_NormalHours", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Autres Primes (DH).
+        /// </summary>
+        public static string GestionSalaires_OtherBonuses {
+            get {
+                return ResourceManager.GetString("GestionSalaires_OtherBonuses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Autres Retenues (DH).
+        /// </summary>
+        public static string GestionSalaires_OtherDeductions {
+            get {
+                return ResourceManager.GetString("GestionSalaires_OtherDeductions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heures Supplémentaires 100% (Repos hebdomadaire).
+        /// </summary>
+        public static string GestionSalaires_Overtime100 {
+            get {
+                return ResourceManager.GetString("GestionSalaires_Overtime100", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heures Supplémentaires 25% (Jours normaux).
+        /// </summary>
+        public static string GestionSalaires_Overtime25 {
+            get {
+                return ResourceManager.GetString("GestionSalaires_Overtime25", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heures Supplémentaires 50% (Nuits/Jours fériés).
+        /// </summary>
+        public static string GestionSalaires_Overtime50 {
+            get {
+                return ResourceManager.GetString("GestionSalaires_Overtime50", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Montant heures supp inclus.
+        /// </summary>
+        public static string GestionSalaires_OvertimeIncluded {
+            get {
+                return ResourceManager.GetString("GestionSalaires_OvertimeIncluded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heures Supplémentaires.
+        /// </summary>
+        public static string GestionSalaires_OvertimeSection {
+            get {
+                return ResourceManager.GetString("GestionSalaires_OvertimeSection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pénalités (DH).
+        /// </summary>
+        public static string GestionSalaires_Penalties {
+            get {
+                return ResourceManager.GetString("GestionSalaires_Penalties", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prime de Rendement (DH).
+        /// </summary>
+        public static string GestionSalaires_PerformanceBonus {
+            get {
+                return ResourceManager.GetString("GestionSalaires_PerformanceBonus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remarques.
+        /// </summary>
+        public static string GestionSalaires_RemarksLabel {
+            get {
+                return ResourceManager.GetString("GestionSalaires_RemarksLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remarques.
+        /// </summary>
+        public static string GestionSalaires_RemarksSection {
+            get {
+                return ResourceManager.GetString("GestionSalaires_RemarksSection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prime de Responsabilité (DH).
+        /// </summary>
+        public static string GestionSalaires_ResponsibilityBonus {
+            get {
+                return ResourceManager.GetString("GestionSalaires_ResponsibilityBonus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Période de Salaire.
+        /// </summary>
+        public static string GestionSalaires_SalaryPeriod {
+            get {
+                return ResourceManager.GetString("GestionSalaires_SalaryPeriod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enregistrer le Salaire.
+        /// </summary>
+        public static string GestionSalaires_SaveSalary {
+            get {
+                return ResourceManager.GetString("GestionSalaires_SaveSalary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rechercher.
+        /// </summary>
+        public static string GestionSalaires_SearchLabel {
+            get {
+                return ResourceManager.GetString("GestionSalaires_SearchLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prime d&apos;Ancienneté (DH).
+        /// </summary>
+        public static string GestionSalaires_SeniorityBonus {
+            get {
+                return ResourceManager.GetString("GestionSalaires_SeniorityBonus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Statut.
+        /// </summary>
+        public static string GestionSalaires_StatusLabel {
+            get {
+                return ResourceManager.GetString("GestionSalaires_StatusLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gérez les bulletins de paie de vos employés.
+        /// </summary>
+        public static string GestionSalaires_Subtitle {
+            get {
+                return ResourceManager.GetString("GestionSalaires_Subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gestion des Salaires.
+        /// </summary>
+        public static string GestionSalaires_Title {
+            get {
+                return ResourceManager.GetString("GestionSalaires_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TOTAL RETENUES.
+        /// </summary>
+        public static string GestionSalaires_TotalDeductions {
+            get {
+                return ResourceManager.GetString("GestionSalaires_TotalDeductions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total Salaires Nets: .
+        /// </summary>
+        public static string GestionSalaires_TotalNetSalaries {
+            get {
+                return ResourceManager.GetString("GestionSalaires_TotalNetSalaries", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Indemnité de Transport (DH).
+        /// </summary>
+        public static string GestionSalaires_TransportAllowance {
+            get {
+                return ResourceManager.GetString("GestionSalaires_TransportAllowance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Voir les détails.
+        /// </summary>
+        public static string GestionSalaires_ViewTooltip {
+            get {
+                return ResourceManager.GetString("GestionSalaires_ViewTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Année.
+        /// </summary>
+        public static string GestionSalaires_Year {
+            get {
+                return ResourceManager.GetString("GestionSalaires_Year", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Année *.
+        /// </summary>
+        public static string GestionSalaires_YearLabel {
+            get {
+                return ResourceManager.GetString("GestionSalaires_YearLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nom que Donne.
         /// </summary>
         public static string GivenBy {
             get {
@@ -2464,7 +6460,133 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Paiement Partiel.
+        ///   Looks up a localized string similar to Réception de marchandises.
+        /// </summary>
+        public static string GoodsReceipt {
+            get {
+                return ResourceManager.GetString("GoodsReceipt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Afficher.
+        /// </summary>
+        public static string GrandLivre_Afficher {
+            get {
+                return ResourceManager.GetString("GrandLivre_Afficher", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compte:.
+        /// </summary>
+        public static string GrandLivre_Compte {
+            get {
+                return ResourceManager.GetString("GrandLivre_Compte", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Crédit.
+        /// </summary>
+        public static string GrandLivre_Credit {
+            get {
+                return ResourceManager.GetString("GrandLivre_Credit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date.
+        /// </summary>
+        public static string GrandLivre_Date {
+            get {
+                return ResourceManager.GetString("GrandLivre_Date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Débit.
+        /// </summary>
+        public static string GrandLivre_Debit {
+            get {
+                return ResourceManager.GetString("GrandLivre_Debit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Libellé.
+        /// </summary>
+        public static string GrandLivre_Libelle {
+            get {
+                return ResourceManager.GetString("GrandLivre_Libelle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sélectionnez un compte.
+        /// </summary>
+        public static string GrandLivre_SelectCompte {
+            get {
+                return ResourceManager.GetString("GrandLivre_SelectCompte", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choisissez un compte dans la liste ci-dessus.
+        /// </summary>
+        public static string GrandLivre_SelectCompteHint {
+            get {
+                return ResourceManager.GetString("GrandLivre_SelectCompteHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Solde:.
+        /// </summary>
+        public static string GrandLivre_Solde {
+            get {
+                return ResourceManager.GetString("GrandLivre_Solde", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Historique par compte.
+        /// </summary>
+        public static string GrandLivre_Subtitle {
+            get {
+                return ResourceManager.GetString("GrandLivre_Subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 📚 Grand Livre.
+        /// </summary>
+        public static string GrandLivre_Title {
+            get {
+                return ResourceManager.GetString("GrandLivre_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 50/50.
+        /// </summary>
+        public static string HalfAndHalf {
+            get {
+                return ResourceManager.GetString("HalfAndHalf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Moitié/Moitié.
+        /// </summary>
+        public static string HalfHalf {
+            get {
+                return ResourceManager.GetString("HalfHalf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Demi Paiement.
         /// </summary>
         public static string HalfPayment {
             get {
@@ -2487,6 +6609,15 @@ namespace GestionComerce.Resources {
         public static string ICE {
             get {
                 return ResourceManager.GetString("ICE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ICE.
+        /// </summary>
+        public static string ICELabel {
+            get {
+                return ResourceManager.GetString("ICELabel", resourceCulture);
             }
         }
         
@@ -2518,7 +6649,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Solde Initial.
+        ///   Looks up a localized string similar to Solde initial.
         /// </summary>
         public static string InitialBalance {
             get {
@@ -2527,11 +6658,20 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Quantité Initiale.
+        ///   Looks up a localized string similar to Qté Initiale.
         /// </summary>
         public static string InitialQuantity {
             get {
                 return ResourceManager.GetString("InitialQuantity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quantité initiale *.
+        /// </summary>
+        public static string InitialQuantityRequired {
+            get {
+                return ResourceManager.GetString("InitialQuantityRequired", resourceCulture);
             }
         }
         
@@ -2545,7 +6685,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to En Préparation.
+        ///   Looks up a localized string similar to En préparation.
         /// </summary>
         public static string InPreparation {
             get {
@@ -2581,7 +6721,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nombre de Factures.
+        ///   Looks up a localized string similar to facture(s).
         /// </summary>
         public static string InvoiceCount {
             get {
@@ -2599,7 +6739,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Emetteur de la Facture.
+        ///   Looks up a localized string similar to Donneur de Facture.
         /// </summary>
         public static string InvoiceGiver {
             get {
@@ -2617,7 +6757,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Historique des Factures.
+        ///   Looks up a localized string similar to Historique Facture.
         /// </summary>
         public static string InvoiceHistoryTab {
             get {
@@ -2626,7 +6766,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to N° Facture.
+        ///   Looks up a localized string similar to Facture ID.
         /// </summary>
         public static string InvoiceID {
             get {
@@ -2635,7 +6775,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Image de la Facture.
+        ///   Looks up a localized string similar to Image de la Facture *.
         /// </summary>
         public static string InvoiceImage {
             get {
@@ -2644,7 +6784,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Index Facture.
+        ///   Looks up a localized string similar to Index de Facture.
         /// </summary>
         public static string InvoiceIndex {
             get {
@@ -2662,7 +6802,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FACTURE N° .
+        ///   Looks up a localized string similar to N° Facture.
         /// </summary>
         public static string InvoiceNumber {
             get {
@@ -2671,7 +6811,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Destinataire de la Facture.
+        ///   Looks up a localized string similar to Receveur de Facture.
         /// </summary>
         public static string InvoiceReceiver {
             get {
@@ -2689,7 +6829,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to État Facture.
+        ///   Looks up a localized string similar to État de Facture.
         /// </summary>
         public static string InvoiceStatus {
             get {
@@ -2698,7 +6838,16 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Action irréversible.
+        ///   Looks up a localized string similar to Type de Facture.
+        /// </summary>
+        public static string InvoiceType {
+            get {
+                return ResourceManager.GetString("InvoiceType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cette action est irréversible.
         /// </summary>
         public static string IrreversibleAction {
             get {
@@ -2712,6 +6861,204 @@ namespace GestionComerce.Resources {
         public static string IsCompany {
             get {
                 return ResourceManager.GetString("IsCompany", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to articles.
+        /// </summary>
+        public static string ItemsCount {
+            get {
+                return ResourceManager.GetString("ItemsCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Achat.
+        /// </summary>
+        public static string Journal_Achat {
+            get {
+                return ResourceManager.GetString("Journal_Achat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Au:.
+        /// </summary>
+        public static string Journal_Au {
+            get {
+                return ResourceManager.GetString("Journal_Au", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compte.
+        /// </summary>
+        public static string Journal_Compte {
+            get {
+                return ResourceManager.GetString("Journal_Compte", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Crédit.
+        /// </summary>
+        public static string Journal_Credit {
+            get {
+                return ResourceManager.GetString("Journal_Credit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date.
+        /// </summary>
+        public static string Journal_Date {
+            get {
+                return ResourceManager.GetString("Journal_Date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Débit.
+        /// </summary>
+        public static string Journal_Debit {
+            get {
+                return ResourceManager.GetString("Journal_Debit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Depense.
+        /// </summary>
+        public static string Journal_Depense {
+            get {
+                return ResourceManager.GetString("Journal_Depense", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Différence:.
+        /// </summary>
+        public static string Journal_Difference {
+            get {
+                return ResourceManager.GetString("Journal_Difference", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Du:.
+        /// </summary>
+        public static string Journal_Du {
+            get {
+                return ResourceManager.GetString("Journal_Du", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exporter Excel.
+        /// </summary>
+        public static string Journal_ExportExcel {
+            get {
+                return ResourceManager.GetString("Journal_ExportExcel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Filtrer.
+        /// </summary>
+        public static string Journal_Filter {
+            get {
+                return ResourceManager.GetString("Journal_Filter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Libellé Compte.
+        /// </summary>
+        public static string Journal_LibelleCompte {
+            get {
+                return ResourceManager.GetString("Journal_LibelleCompte", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Libellé Écriture.
+        /// </summary>
+        public static string Journal_LibelleEcriture {
+            get {
+                return ResourceManager.GetString("Journal_LibelleEcriture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Salaire.
+        /// </summary>
+        public static string Journal_Salaire {
+            get {
+                return ResourceManager.GetString("Journal_Salaire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Toutes les écritures comptables.
+        /// </summary>
+        public static string Journal_Subtitle {
+            get {
+                return ResourceManager.GetString("Journal_Subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 📖 Journal Général.
+        /// </summary>
+        public static string Journal_Title {
+            get {
+                return ResourceManager.GetString("Journal_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total Crédit:.
+        /// </summary>
+        public static string Journal_TotalCredit {
+            get {
+                return ResourceManager.GetString("Journal_TotalCredit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total Débit:.
+        /// </summary>
+        public static string Journal_TotalDebit {
+            get {
+                return ResourceManager.GetString("Journal_TotalDebit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tous.
+        /// </summary>
+        public static string Journal_Tous {
+            get {
+                return ResourceManager.GetString("Journal_Tous", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type:.
+        /// </summary>
+        public static string Journal_Type {
+            get {
+                return ResourceManager.GetString("Journal_Type", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vente.
+        /// </summary>
+        public static string Journal_Vente {
+            get {
+                return ResourceManager.GetString("Journal_Vente", resourceCulture);
             }
         }
         
@@ -2743,7 +7090,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Langue du Clavier.
+        ///   Looks up a localized string similar to Langue.
         /// </summary>
         public static string Keyboard_Language {
             get {
@@ -2752,7 +7099,16 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Grandes icônes.
+        ///   Looks up a localized string similar to Kg.
+        /// </summary>
+        public static string KgUnit {
+            get {
+                return ResourceManager.GetString("KgUnit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Grandes Icônes.
         /// </summary>
         public static string LargeIcons {
             get {
@@ -2761,7 +7117,16 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to État juridique.
+        ///   Looks up a localized string similar to Date dernier réappro..
+        /// </summary>
+        public static string LastRestockDateLabel {
+            get {
+                return ResourceManager.GetString("LastRestockDateLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to État Juridique.
         /// </summary>
         public static string LegalStatus {
             get {
@@ -2770,11 +7135,20 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Forme Juridique.
+        ///   Looks up a localized string similar to État juridique.
         /// </summary>
         public static string LegalStatusField {
             get {
                 return ResourceManager.GetString("LegalStatusField", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to État Juridique.
+        /// </summary>
+        public static string LegalStatusLabel {
+            get {
+                return ResourceManager.GetString("LegalStatusLabel", resourceCulture);
             }
         }
         
@@ -2788,6 +7162,15 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Litre.
+        /// </summary>
+        public static string LitreUnit {
+            get {
+                return ResourceManager.GetString("LitreUnit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Chargement....
         /// </summary>
         public static string Loading {
@@ -2797,7 +7180,16 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Effectuer un Paiement.
+        ///   Looks up a localized string similar to Numéro de Lot.
+        /// </summary>
+        public static string LotNumber {
+            get {
+                return ResourceManager.GetString("LotNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Effectuer un paiement.
         /// </summary>
         public static string MakePayment {
             get {
@@ -2806,7 +7198,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gérer les Livreurs.
+        ///   Looks up a localized string similar to Gérer Livreurs.
         /// </summary>
         public static string ManageDeliverers {
             get {
@@ -2815,7 +7207,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gérer les Entrées/Sorties de Stock.
+        ///   Looks up a localized string similar to Gérer les entrées et sorties de stock.
         /// </summary>
         public static string ManageInventoryInOut {
             get {
@@ -2824,7 +7216,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gérer et suivre vos fournisseurs.
+        ///   Looks up a localized string similar to Gérez et suivez toutes vos relations avec les fournisseurs.
         /// </summary>
         public static string ManageTrackSuppliers {
             get {
@@ -2833,7 +7225,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gérer et consulter les chèques.
+        ///   Looks up a localized string similar to Gérez et visualisez tous vos chèques avec leurs factures associées.
         /// </summary>
         public static string ManageViewChecks {
             get {
@@ -2851,11 +7243,92 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Icônes moyennes.
+        ///   Looks up a localized string similar to Sélection Manuelle des Articles.
+        /// </summary>
+        public static string ManualArticleSelection {
+            get {
+                return ResourceManager.GetString("ManualArticleSelection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fabricant.
+        /// </summary>
+        public static string ManufacturerLabel {
+            get {
+                return ResourceManager.GetString("ManufacturerLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prix du Marché.
+        /// </summary>
+        public static string MarketPrice {
+            get {
+                return ResourceManager.GetString("MarketPrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Valeur Marché.
+        /// </summary>
+        public static string MarketValue {
+            get {
+                return ResourceManager.GetString("MarketValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stock maximum.
+        /// </summary>
+        public static string MaxStock {
+            get {
+                return ResourceManager.GetString("MaxStock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Icônes Moyennes.
         /// </summary>
         public static string MediumIcons {
             get {
                 return ResourceManager.GetString("MediumIcons", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Méthode.
+        /// </summary>
+        public static string Method {
+            get {
+                return ResourceManager.GetString("Method", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mètre.
+        /// </summary>
+        public static string MetreUnit {
+            get {
+                return ResourceManager.GetString("MetreUnit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Qté min pour prix de gros.
+        /// </summary>
+        public static string MinQtyForWholesale {
+            get {
+                return ResourceManager.GetString("MinQtyForWholesale", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stock minimum.
+        /// </summary>
+        public static string MinStock {
+            get {
+                return ResourceManager.GetString("MinStock", resourceCulture);
             }
         }
         
@@ -2914,6 +7387,15 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Prix MP (DH) *.
+        /// </summary>
+        public static string MPPriceRequired {
+            get {
+                return ResourceManager.GetString("MPPriceRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nom.
         /// </summary>
         public static string Name {
@@ -2923,11 +7405,29 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nom (requis).
+        ///   Looks up a localized string similar to Nom A-Z.
+        /// </summary>
+        public static string NameAZ {
+            get {
+                return ResourceManager.GetString("NameAZ", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nom *.
         /// </summary>
         public static string NameRequired {
             get {
                 return ResourceManager.GetString("NameRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nom Z-A.
+        /// </summary>
+        public static string NameZA {
+            get {
+                return ResourceManager.GetString("NameZA", resourceCulture);
             }
         }
         
@@ -2941,7 +7441,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bénéfice Net.
+        ///   Looks up a localized string similar to Bénéfice net.
         /// </summary>
         public static string NetProfit {
             get {
@@ -2977,11 +7477,38 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nouveau Livreur.
+        /// </summary>
+        public static string NewDeliverer {
+            get {
+                return ResourceManager.GetString("NewDeliverer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nouvelle Livraison.
         /// </summary>
         public static string NewDelivery {
             get {
                 return ResourceManager.GetString("NewDelivery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nouvelle Entrée.
+        /// </summary>
+        public static string NewEntry {
+            get {
+                return ResourceManager.GetString("NewEntry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Plus Récent au Plus Ancien.
+        /// </summary>
+        public static string NewestToOldest {
+            get {
+                return ResourceManager.GetString("NewestToOldest", resourceCulture);
             }
         }
         
@@ -2995,11 +7522,11 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sans Client.
+        ///   Looks up a localized string similar to Non.
         /// </summary>
-        public static string NoClient {
+        public static string No {
             get {
-                return ResourceManager.GetString("NoClient", resourceCulture);
+                return ResourceManager.GetString("No", resourceCulture);
             }
         }
         
@@ -3013,7 +7540,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Aucun client sélectionné.
+        ///   Looks up a localized string similar to Aucun Client Sélectionné.
         /// </summary>
         public static string NoClientSelected {
             get {
@@ -3022,7 +7549,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Aucun produit sélectionné.
+        ///   Looks up a localized string similar to Aucun Produit Sélectionné.
         /// </summary>
         public static string NoProductSelected {
             get {
@@ -3058,7 +7585,25 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to NOTES.
+        ///   Looks up a localized string similar to Section Notes/Remarques.
+        /// </summary>
+        public static string NotesSectionCheck {
+            get {
+                return ResourceManager.GetString("NotesSectionCheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 📝 Notes.
+        /// </summary>
+        public static string NotesSectionTitle {
+            get {
+                return ResourceManager.GetString("NotesSectionTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NOTES:.
         /// </summary>
         public static string NotesUpper {
             get {
@@ -3067,7 +7612,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nombre d&apos;Articles.
+        ///   Looks up a localized string similar to Nombre d&apos;articles.
         /// </summary>
         public static string NumberOfArticles {
             get {
@@ -3076,11 +7621,38 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Objet.
+        ///   Looks up a localized string similar to Nombre d&apos;articles :.
+        /// </summary>
+        public static string NumberOfArticlesLabel {
+            get {
+                return ResourceManager.GetString("NumberOfArticlesLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Object.
         /// </summary>
         public static string Object {
             get {
                 return ResourceManager.GetString("Object", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OK.
+        /// </summary>
+        public static string OK {
+            get {
+                return ResourceManager.GetString("OK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Plus Ancien au Plus Récent.
+        /// </summary>
+        public static string OldestToNewest {
+            get {
+                return ResourceManager.GetString("OldestToNewest", resourceCulture);
             }
         }
         
@@ -3094,7 +7666,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Articles de l&apos;Opération.
+        ///   Looks up a localized string similar to Articles de l&apos;opération.
         /// </summary>
         public static string OperationArticles {
             get {
@@ -3103,7 +7675,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Date de l&apos;Opération.
+        ///   Looks up a localized string similar to Date Opération.
         /// </summary>
         public static string OperationDate {
             get {
@@ -3130,7 +7702,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Informations de l&apos;Opération.
+        ///   Looks up a localized string similar to Informations sur l&apos;opération.
         /// </summary>
         public static string OperationInformation {
             get {
@@ -3148,7 +7720,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sélection de l&apos;Opération.
+        ///   Looks up a localized string similar to Sélection d&apos;Opération.
         /// </summary>
         public static string OperationSelection {
             get {
@@ -3157,7 +7729,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sélectionnez l&apos;opération à associer.
+        ///   Looks up a localized string similar to Sélectionnez les opérations à livrer.
         /// </summary>
         public static string OperationSelectionDescription {
             get {
@@ -3166,7 +7738,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Type d&apos;Opération.
+        ///   Looks up a localized string similar to Type d&apos;opération.
         /// </summary>
         public static string OperationType {
             get {
@@ -3184,11 +7756,56 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hors Zone (100 DH).
+        ///   Looks up a localized string similar to Autre.
+        /// </summary>
+        public static string OtherUnit {
+            get {
+                return ResourceManager.GetString("OtherUnit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hors Zone.
         /// </summary>
         public static string OutOfZone {
             get {
                 return ResourceManager.GetString("OutOfZone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dimensions (ex: 30x20x15 cm).
+        /// </summary>
+        public static string PackageDimensionsLabel {
+            get {
+                return ResourceManager.GetString("PackageDimensionsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type d&apos;emballage.
+        /// </summary>
+        public static string PackageTypeLabel {
+            get {
+                return ResourceManager.GetString("PackageTypeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Poids de l&apos;emballage (Kg).
+        /// </summary>
+        public static string PackageWeightLabel {
+            get {
+                return ResourceManager.GetString("PackageWeightLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 📦 Informations d&apos;Emballage.
+        /// </summary>
+        public static string PackagingInfo {
+            get {
+                return ResourceManager.GetString("PackagingInfo", resourceCulture);
             }
         }
         
@@ -3202,6 +7819,15 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Palette.
+        /// </summary>
+        public static string PaletteUnit {
+            get {
+                return ResourceManager.GetString("PaletteUnit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Payer.
         /// </summary>
         public static string Pay {
@@ -3211,7 +7837,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Payer le Maximum.
+        ///   Looks up a localized string similar to Payer le maximum.
         /// </summary>
         public static string PayMaximum {
             get {
@@ -3229,7 +7855,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ajoutez votre première méthode de paiement.
+        ///   Looks up a localized string similar to Ajoutez votre première méthode de paiement..
         /// </summary>
         public static string Payment_AddFirst {
             get {
@@ -3238,7 +7864,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ajouter la Méthode.
+        ///   Looks up a localized string similar to Ajouter Méthode.
         /// </summary>
         public static string Payment_AddMethod {
             get {
@@ -3265,7 +7891,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gérer les méthodes de paiement acceptées.
+        ///   Looks up a localized string similar to Gérez vos méthodes de paiement..
         /// </summary>
         public static string Payment_Description {
             get {
@@ -3310,7 +7936,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Image / Icône.
+        ///   Looks up a localized string similar to Icône/Image.
         /// </summary>
         public static string Payment_ImageIcon {
             get {
@@ -3337,7 +7963,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nouvelle Méthode de Paiement.
+        ///   Looks up a localized string similar to Nouvelle Méthode.
         /// </summary>
         public static string Payment_NewMethod {
             get {
@@ -3346,7 +7972,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Aucune méthode de paiement définie.
+        ///   Looks up a localized string similar to Aucune méthode de paiement..
         /// </summary>
         public static string Payment_NoMethods {
             get {
@@ -3364,7 +7990,16 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Montant du Paiement.
+        ///   Looks up a localized string similar to Paiement à 30 jours.
+        /// </summary>
+        public static string Payment30Days {
+            get {
+                return ResourceManager.GetString("Payment30Days", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Montant du paiement.
         /// </summary>
         public static string PaymentAmount {
             get {
@@ -3373,7 +8008,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gestion des Paiements.
+        ///   Looks up a localized string similar to Gestion des paiements.
         /// </summary>
         public static string PaymentManagement {
             get {
@@ -3382,11 +8017,20 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Méthode de Paiement.
+        ///   Looks up a localized string similar to Method de Payment.
         /// </summary>
         public static string PaymentMethod {
             get {
                 return ResourceManager.GetString("PaymentMethod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Méthode de Paiement :.
+        /// </summary>
+        public static string PaymentMethodLabel {
+            get {
+                return ResourceManager.GetString("PaymentMethodLabel", resourceCulture);
             }
         }
         
@@ -3400,7 +8044,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to MODE DE PAIEMENT.
+        ///   Looks up a localized string similar to MODE DE PAIEMENT:.
         /// </summary>
         public static string PaymentModeUpper {
             get {
@@ -3409,7 +8053,16 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Type de Paiement.
+        ///   Looks up a localized string similar to Conditions de paiement.
+        /// </summary>
+        public static string PaymentTermsLabel {
+            get {
+                return ResourceManager.GetString("PaymentTermsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type de paiement.
         /// </summary>
         public static string PaymentType {
             get {
@@ -3418,7 +8071,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to En Attente.
+        ///   Looks up a localized string similar to En attente.
         /// </summary>
         public static string Pending {
             get {
@@ -3436,7 +8089,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Périphérie (50 DH).
+        ///   Looks up a localized string similar to Périphérie.
         /// </summary>
         public static string Periphery {
             get {
@@ -3445,7 +8098,16 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Accès à la Livraison.
+        ///   Looks up a localized string similar to Produit périssable.
+        /// </summary>
+        public static string PerishableProduct {
+            get {
+                return ResourceManager.GetString("PerishableProduct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Accès Livraison.
         /// </summary>
         public static string Perm_AccessDelivery {
             get {
@@ -3454,7 +8116,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Accès à la Facturation.
+        ///   Looks up a localized string similar to Accès Facturation.
         /// </summary>
         public static string Perm_AccessInvoicing {
             get {
@@ -3481,7 +8143,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ajouter des Articles.
+        ///   Looks up a localized string similar to Ajouter Articles.
         /// </summary>
         public static string Perm_AddArticles {
             get {
@@ -3490,7 +8152,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ajouter des Familles.
+        ///   Looks up a localized string similar to Ajouter Familles.
         /// </summary>
         public static string Perm_AddFamilies {
             get {
@@ -3499,7 +8161,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ajouter des Méthodes.
+        ///   Looks up a localized string similar to Ajouter Méthodes Paiement.
         /// </summary>
         public static string Perm_AddPayMethods {
             get {
@@ -3508,7 +8170,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ajouter des Rôles.
+        ///   Looks up a localized string similar to Ajouter Rôles.
         /// </summary>
         public static string Perm_AddRoles {
             get {
@@ -3517,7 +8179,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ajouter des Utilisateurs.
+        ///   Looks up a localized string similar to Ajouter Utilisateurs.
         /// </summary>
         public static string Perm_AddUsers {
             get {
@@ -3553,7 +8215,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Encaisser (Client).
+        ///   Looks up a localized string similar to Encaissement Client.
         /// </summary>
         public static string Perm_CashClient {
             get {
@@ -3562,7 +8224,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Encaisser (Fournisseur).
+        ///   Looks up a localized string similar to Paiement Fournisseur.
         /// </summary>
         public static string Perm_CashSupplier {
             get {
@@ -3571,7 +8233,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Historique des Chèques.
+        ///   Looks up a localized string similar to Historique Chèques.
         /// </summary>
         public static string Perm_CheckHistory {
             get {
@@ -3598,7 +8260,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Configuration des Permissions.
+        ///   Looks up a localized string similar to Configuration des Rôles.
         /// </summary>
         public static string Perm_ConfigTitle {
             get {
@@ -3607,7 +8269,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Créer un Client.
+        ///   Looks up a localized string similar to Créer Client.
         /// </summary>
         public static string Perm_CreateClient {
             get {
@@ -3616,7 +8278,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Créer une Livraison.
+        ///   Looks up a localized string similar to Créer Livraison.
         /// </summary>
         public static string Perm_CreateDelivery {
             get {
@@ -3625,7 +8287,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Créer une Facture.
+        ///   Looks up a localized string similar to Créer Facture.
         /// </summary>
         public static string Perm_CreateInvoice {
             get {
@@ -3634,7 +8296,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Créer un Fournisseur.
+        ///   Looks up a localized string similar to Créer Fournisseur.
         /// </summary>
         public static string Perm_CreateSupplier {
             get {
@@ -3661,7 +8323,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Supprimer des Articles.
+        ///   Looks up a localized string similar to Supprimer Articles.
         /// </summary>
         public static string Perm_DeleteArticles {
             get {
@@ -3670,7 +8332,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Supprimer un Client.
+        ///   Looks up a localized string similar to Supprimer Client.
         /// </summary>
         public static string Perm_DeleteClient {
             get {
@@ -3679,7 +8341,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Supprimer des Familles.
+        ///   Looks up a localized string similar to Supprimer Familles.
         /// </summary>
         public static string Perm_DeleteFamilies {
             get {
@@ -3688,7 +8350,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Supprimer des Méthodes.
+        ///   Looks up a localized string similar to Supprimer Méthodes Paiement.
         /// </summary>
         public static string Perm_DeletePayMethods {
             get {
@@ -3697,7 +8359,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Supprimer des Rôles.
+        ///   Looks up a localized string similar to Supprimer Rôles.
         /// </summary>
         public static string Perm_DeleteRoles {
             get {
@@ -3706,7 +8368,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Supprimer un Fournisseur.
+        ///   Looks up a localized string similar to Supprimer Fournisseur.
         /// </summary>
         public static string Perm_DeleteSupplier {
             get {
@@ -3715,7 +8377,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Supprimer des Utilisateurs.
+        ///   Looks up a localized string similar to Supprimer Utilisateurs.
         /// </summary>
         public static string Perm_DeleteUsers {
             get {
@@ -3733,7 +8395,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gestion des Livraisons.
+        ///   Looks up a localized string similar to Gestion Livraison.
         /// </summary>
         public static string Perm_DeliveryMgmt {
             get {
@@ -3742,7 +8404,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Modifier des Articles.
+        ///   Looks up a localized string similar to Modifier Articles.
         /// </summary>
         public static string Perm_EditArticles {
             get {
@@ -3751,7 +8413,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Modifier des Familles.
+        ///   Looks up a localized string similar to Modifier Familles.
         /// </summary>
         public static string Perm_EditFamilies {
             get {
@@ -3760,7 +8422,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Modifier des Utilisateurs.
+        ///   Looks up a localized string similar to Modifier Utilisateurs.
         /// </summary>
         public static string Perm_EditUsers {
             get {
@@ -3787,7 +8449,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Page Stock.
+        ///   Looks up a localized string similar to Page Inventaire.
         /// </summary>
         public static string Perm_InventoryPage {
             get {
@@ -3796,7 +8458,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Historique des Factures.
+        ///   Looks up a localized string similar to Historique Factures.
         /// </summary>
         public static string Perm_InvoiceHistory {
             get {
@@ -3805,7 +8467,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Paramètres de Facture.
+        ///   Looks up a localized string similar to Paramètres Facture.
         /// </summary>
         public static string Perm_InvoiceSettings {
             get {
@@ -3832,7 +8494,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Configurer les permissions du rôle.
+        ///   Looks up a localized string similar to Configurez les permissions pour ce rôle..
         /// </summary>
         public static string Perm_ManageDesc {
             get {
@@ -3850,7 +8512,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Modifier un Client.
+        ///   Looks up a localized string similar to Modifier Client.
         /// </summary>
         public static string Perm_ModifyClient {
             get {
@@ -3868,7 +8530,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Modifier des Méthodes.
+        ///   Looks up a localized string similar to Modifier Méthodes Paiement.
         /// </summary>
         public static string Perm_ModifyPayMethods {
             get {
@@ -3877,7 +8539,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Modifier un Fournisseur.
+        ///   Looks up a localized string similar to Modifier Fournisseur.
         /// </summary>
         public static string Perm_ModifySupplier {
             get {
@@ -3904,7 +8566,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Régler un Client.
+        ///   Looks up a localized string similar to Payer Client.
         /// </summary>
         public static string Perm_PayClient {
             get {
@@ -3922,7 +8584,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Régler un Fournisseur.
+        ///   Looks up a localized string similar to Payer Fournisseur.
         /// </summary>
         public static string Perm_PaySupplier {
             get {
@@ -3940,7 +8602,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Annuler un Mouvement.
+        ///   Looks up a localized string similar to Annuler Mouvement.
         /// </summary>
         public static string Perm_ReverseMove {
             get {
@@ -3949,7 +8611,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Annuler une Opération.
+        ///   Looks up a localized string similar to Annuler Opération.
         /// </summary>
         public static string Perm_ReverseOp {
             get {
@@ -3985,7 +8647,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Régler Crédit Client.
+        ///   Looks up a localized string similar to Régler Client.
         /// </summary>
         public static string Perm_SettleClient {
             get {
@@ -4003,7 +8665,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Régler Crédit Fournisseur.
+        ///   Looks up a localized string similar to Régler Fournisseur.
         /// </summary>
         public static string Perm_SettleSupplier {
             get {
@@ -4012,7 +8674,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Éteindre.
+        ///   Looks up a localized string similar to Arrêter.
         /// </summary>
         public static string Perm_Shutdown {
             get {
@@ -4048,7 +8710,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Utilisateurs et Rôles.
+        ///   Looks up a localized string similar to Utilisateurs &amp; Rôles.
         /// </summary>
         public static string Perm_UsersRoles {
             get {
@@ -4057,7 +8719,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Voir A Propos.
+        ///   Looks up a localized string similar to Voir À Propos.
         /// </summary>
         public static string Perm_ViewAbout {
             get {
@@ -4066,7 +8728,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Voir les Articles.
+        ///   Looks up a localized string similar to Voir Articles.
         /// </summary>
         public static string Perm_ViewArticles {
             get {
@@ -4075,7 +8737,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Voir les Clients.
+        ///   Looks up a localized string similar to Voir Client.
         /// </summary>
         public static string Perm_ViewClient {
             get {
@@ -4084,7 +8746,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Voir le Crédit Client.
+        ///   Looks up a localized string similar to Voir Crédit Client.
         /// </summary>
         public static string Perm_ViewClientCredit {
             get {
@@ -4093,7 +8755,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Voir les Opérations Client.
+        ///   Looks up a localized string similar to Voir Opérations Client.
         /// </summary>
         public static string Perm_ViewClientOps {
             get {
@@ -4102,7 +8764,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Voir les Familles.
+        ///   Looks up a localized string similar to Voir Familles.
         /// </summary>
         public static string Perm_ViewFamilies {
             get {
@@ -4120,7 +8782,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Voir les Mouvements.
+        ///   Looks up a localized string similar to Voir Mouvements.
         /// </summary>
         public static string Perm_ViewMoves {
             get {
@@ -4129,7 +8791,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Voir les Opérations.
+        ///   Looks up a localized string similar to Voir Opérations.
         /// </summary>
         public static string Perm_ViewOps {
             get {
@@ -4138,7 +8800,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Voir les Méthodes.
+        ///   Looks up a localized string similar to Voir Méthodes Paiement.
         /// </summary>
         public static string Perm_ViewPayMethods {
             get {
@@ -4156,7 +8818,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Voir les Rapports.
+        ///   Looks up a localized string similar to Voir Rapports.
         /// </summary>
         public static string Perm_ViewReports {
             get {
@@ -4165,7 +8827,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Voir les Rôles.
+        ///   Looks up a localized string similar to Voir Rôles.
         /// </summary>
         public static string Perm_ViewRoles {
             get {
@@ -4174,7 +8836,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Voir les Paramètres.
+        ///   Looks up a localized string similar to Voir Paramètres.
         /// </summary>
         public static string Perm_ViewSettings {
             get {
@@ -4183,7 +8845,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Voir les Fournisseurs.
+        ///   Looks up a localized string similar to Voir Fournisseur.
         /// </summary>
         public static string Perm_ViewSupplier {
             get {
@@ -4192,7 +8854,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Voir le Crédit Fournisseur.
+        ///   Looks up a localized string similar to Voir Crédit Fournisseur.
         /// </summary>
         public static string Perm_ViewSupplierCredit {
             get {
@@ -4201,7 +8863,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Voir les Opérations Fournisseur.
+        ///   Looks up a localized string similar to Voir Opérations Fournisseur.
         /// </summary>
         public static string Perm_ViewSupplierOps {
             get {
@@ -4210,7 +8872,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Voir les Utilisateurs.
+        ///   Looks up a localized string similar to Voir Utilisateurs.
         /// </summary>
         public static string Perm_ViewUsers {
             get {
@@ -4237,6 +8899,15 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Téléphone.
+        /// </summary>
+        public static string PhoneLabel {
+            get {
+                return ResourceManager.GetString("PhoneLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Numéro de téléphone.
         /// </summary>
         public static string PhoneNumber {
@@ -4246,7 +8917,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Téléphone (requis).
+        ///   Looks up a localized string similar to Téléphone *.
         /// </summary>
         public static string PhoneRequired {
             get {
@@ -4255,7 +8926,187 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gestion des ventes.
+        ///   Looks up a localized string similar to Pièces par emballage.
+        /// </summary>
+        public static string PiecesPerPackageLabel {
+            get {
+                return ResourceManager.GetString("PiecesPerPackageLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pièce.
+        /// </summary>
+        public static string PieceUnit {
+            get {
+                return ResourceManager.GetString("PieceUnit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Actif.
+        /// </summary>
+        public static string PlanComptable_Actif {
+            get {
+                return ResourceManager.GetString("PlanComptable_Actif", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Classe.
+        /// </summary>
+        public static string PlanComptable_Classe {
+            get {
+                return ResourceManager.GetString("PlanComptable_Classe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Classe.
+        /// </summary>
+        public static string PlanComptable_ClasseLabel {
+            get {
+                return ResourceManager.GetString("PlanComptable_ClasseLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Code Compte.
+        /// </summary>
+        public static string PlanComptable_CodeCompte {
+            get {
+                return ResourceManager.GetString("PlanComptable_CodeCompte", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 📊 Exporter Excel.
+        /// </summary>
+        public static string PlanComptable_ExportExcel {
+            get {
+                return ResourceManager.GetString("PlanComptable_ExportExcel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inactif.
+        /// </summary>
+        public static string PlanComptable_Inactif {
+            get {
+                return ResourceManager.GetString("PlanComptable_Inactif", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Libellé.
+        /// </summary>
+        public static string PlanComptable_Libelle {
+            get {
+                return ResourceManager.GetString("PlanComptable_Libelle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ➕ Nouveau Compte.
+        /// </summary>
+        public static string PlanComptable_NewCompte {
+            get {
+                return ResourceManager.GetString("PlanComptable_NewCompte", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rechercher.
+        /// </summary>
+        public static string PlanComptable_Rechercher {
+            get {
+                return ResourceManager.GetString("PlanComptable_Rechercher", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sens Normal.
+        /// </summary>
+        public static string PlanComptable_SensNormal {
+            get {
+                return ResourceManager.GetString("PlanComptable_SensNormal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Statut.
+        /// </summary>
+        public static string PlanComptable_Statut {
+            get {
+                return ResourceManager.GetString("PlanComptable_Statut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gestion du plan comptable selon les normes marocaines.
+        /// </summary>
+        public static string PlanComptable_Subtitle {
+            get {
+                return ResourceManager.GetString("PlanComptable_Subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Plan Comptable Marocain.
+        /// </summary>
+        public static string PlanComptable_Title {
+            get {
+                return ResourceManager.GetString("PlanComptable_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total Comptes: .
+        /// </summary>
+        public static string PlanComptable_TotalComptes {
+            get {
+                return ResourceManager.GetString("PlanComptable_TotalComptes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tous.
+        /// </summary>
+        public static string PlanComptable_Tous {
+            get {
+                return ResourceManager.GetString("PlanComptable_Tous", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Toutes.
+        /// </summary>
+        public static string PlanComptable_Toutes {
+            get {
+                return ResourceManager.GetString("PlanComptable_Toutes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type.
+        /// </summary>
+        public static string PlanComptable_Type {
+            get {
+                return ResourceManager.GetString("PlanComptable_Type", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type de Compte.
+        /// </summary>
+        public static string PlanComptable_TypeCompte {
+            get {
+                return ResourceManager.GetString("PlanComptable_TypeCompte", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Point de Vente - Gestion des Transactions.
         /// </summary>
         public static string POS_Subtitle {
             get {
@@ -4291,7 +9142,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fermer l&apos;Aperçu.
+        ///   Looks up a localized string similar to Fermer.
         /// </summary>
         public static string Preview_Close {
             get {
@@ -4300,7 +9151,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Aperçu.
+        ///   Looks up a localized string similar to Aperçu de la Facture.
         /// </summary>
         public static string Preview_Header {
             get {
@@ -4309,7 +9160,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Aperçu de la Facture.
+        ///   Looks up a localized string similar to Aperçu.
         /// </summary>
         public static string Preview_Title {
             get {
@@ -4318,7 +9169,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Aperçu du Document.
+        ///   Looks up a localized string similar to Prévisualiser.
         /// </summary>
         public static string PreviewDoc {
             get {
@@ -4336,6 +9187,33 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 💰 Prix et Stock.
+        /// </summary>
+        public static string PriceAndStock {
+            get {
+                return ResourceManager.GetString("PriceAndStock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prix Croissant.
+        /// </summary>
+        public static string PriceAscending {
+            get {
+                return ResourceManager.GetString("PriceAscending", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prix Décroissant.
+        /// </summary>
+        public static string PriceDescending {
+            get {
+                return ResourceManager.GetString("PriceDescending", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Imprimer.
         /// </summary>
         public static string Print {
@@ -4345,7 +9223,16 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Imprimer la Facture.
+        ///   Looks up a localized string similar to 🖨️ Imprimer.
+        /// </summary>
+        public static string PrintButton {
+            get {
+                return ResourceManager.GetString("PrintButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Imprimer la facture.
         /// </summary>
         public static string PrintInvoice {
             get {
@@ -4354,7 +9241,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Imprimer le Ticket.
+        ///   Looks up a localized string similar to Imprimer Ticket.
         /// </summary>
         public static string PrintTicket {
             get {
@@ -4363,11 +9250,20 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Traiter le Paiement.
+        ///   Looks up a localized string similar to Traiter le paiement.
         /// </summary>
         public static string ProcessPayment {
             get {
                 return ResourceManager.GetString("ProcessPayment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quantité.
+        /// </summary>
+        public static string ProductQuantity {
+            get {
+                return ResourceManager.GetString("ProductQuantity", resourceCulture);
             }
         }
         
@@ -4381,7 +9277,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Rechercher un Produit.
+        ///   Looks up a localized string similar to Rechercher Produit.
         /// </summary>
         public static string ProductSearch {
             get {
@@ -4390,7 +9286,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Proforma.
+        ///   Looks up a localized string similar to Pro Format.
         /// </summary>
         public static string ProForma {
             get {
@@ -4408,11 +9304,47 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bon de Commande.
+        ///   Looks up a localized string similar to Bon Commande.
         /// </summary>
         public static string PurchaseOrder {
             get {
                 return ResourceManager.GetString("PurchaseOrder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prix d&apos;Achat.
+        /// </summary>
+        public static string PurchasePrice {
+            get {
+                return ResourceManager.GetString("PurchasePrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prix d&apos;achat (DH) *.
+        /// </summary>
+        public static string PurchasePriceRequired {
+            get {
+                return ResourceManager.GetString("PurchasePriceRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nombre d&apos;achats.
+        /// </summary>
+        public static string PurchasesCount {
+            get {
+                return ResourceManager.GetString("PurchasesCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Valeur d&apos;Achat.
+        /// </summary>
+        public static string PurchaseValue {
+            get {
+                return ResourceManager.GetString("PurchaseValue", resourceCulture);
             }
         }
         
@@ -4431,6 +9363,24 @@ namespace GestionComerce.Resources {
         public static string Quantity {
             get {
                 return ResourceManager.GetString("Quantity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quantité Croissante.
+        /// </summary>
+        public static string QuantityAscending {
+            get {
+                return ResourceManager.GetString("QuantityAscending", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quantité Décroissante.
+        /// </summary>
+        public static string QuantityDescending {
+            get {
+                return ResourceManager.GetString("QuantityDescending", resourceCulture);
             }
         }
         
@@ -4462,7 +9412,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Devis.
+        ///   Looks up a localized string similar to Belle.
         /// </summary>
         public static string Quote {
             get {
@@ -4471,7 +9421,61 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Reçu par.
+        ///   Looks up a localized string similar to Personnalisation du Devis.
+        /// </summary>
+        public static string QuoteCustomization {
+            get {
+                return ResourceManager.GetString("QuoteCustomization", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date du Devis.
+        /// </summary>
+        public static string QuoteDateLabel {
+            get {
+                return ResourceManager.GetString("QuoteDateLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 📄 Informations du Devis.
+        /// </summary>
+        public static string QuoteInfoSection {
+            get {
+                return ResourceManager.GetString("QuoteInfoSection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Numéro de Devis.
+        /// </summary>
+        public static string QuoteNumberLabel {
+            get {
+                return ResourceManager.GetString("QuoteNumberLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Aperçu du Devis.
+        /// </summary>
+        public static string QuotePreview {
+            get {
+                return ResourceManager.GetString("QuotePreview", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Validité du Devis.
+        /// </summary>
+        public static string QuoteValidityLabel {
+            get {
+                return ResourceManager.GetString("QuoteValidityLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nom que Reçoit.
         /// </summary>
         public static string ReceivedBy {
             get {
@@ -4480,7 +9484,25 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Destinataire.
+        ///   Looks up a localized string similar to Mouvements récents.
+        /// </summary>
+        public static string RecentMovements {
+            get {
+                return ResourceManager.GetString("RecentMovements", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Opérations récentes.
+        /// </summary>
+        public static string RecentOperations {
+            get {
+                return ResourceManager.GetString("RecentOperations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DESTINATAIRE:.
         /// </summary>
         public static string Recipient {
             get {
@@ -4534,7 +9556,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Solde Restant.
+        ///   Looks up a localized string similar to Solde restant.
         /// </summary>
         public static string RemainingBalance {
             get {
@@ -4588,7 +9610,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Supprimer le Rôle.
+        ///   Looks up a localized string similar to Supprimer Rôle.
         /// </summary>
         public static string Role_Delete {
             get {
@@ -4597,7 +9619,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Modifier le Rôle.
+        ///   Looks up a localized string similar to Modifier Rôle.
         /// </summary>
         public static string Role_Modify {
             get {
@@ -4606,7 +9628,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ajouter un Rôle.
+        ///   Looks up a localized string similar to Ajouter Rôle.
         /// </summary>
         public static string RoleWindow_AddRole {
             get {
@@ -4624,7 +9646,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gérer les rôles et permissions.
+        ///   Looks up a localized string similar to Gérez les rôles et permissions..
         /// </summary>
         public static string RoleWindow_Description {
             get {
@@ -4633,11 +9655,353 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Rôles.
+        ///   Looks up a localized string similar to Gestion des Rôles.
         /// </summary>
         public static string RoleWindow_Title {
             get {
                 return ResourceManager.GetString("RoleWindow_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Avance sur Salaire.
+        /// </summary>
+        public static string SalaireDetails_Advance {
+            get {
+                return ResourceManager.GetString("SalaireDetails_Advance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to AMO (2.26%).
+        /// </summary>
+        public static string SalaireDetails_AMO {
+            get {
+                return ResourceManager.GetString("SalaireDetails_AMO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Salaire de Base.
+        /// </summary>
+        public static string SalaireDetails_BaseSalaryLabel {
+            get {
+                return ResourceManager.GetString("SalaireDetails_BaseSalaryLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Salaire de Base.
+        /// </summary>
+        public static string SalaireDetails_BaseSalarySection {
+            get {
+                return ResourceManager.GetString("SalaireDetails_BaseSalarySection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Primes et Indemnités.
+        /// </summary>
+        public static string SalaireDetails_BonusSection {
+            get {
+                return ResourceManager.GetString("SalaireDetails_BonusSection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CIMR.
+        /// </summary>
+        public static string SalaireDetails_CIMR {
+            get {
+                return ResourceManager.GetString("SalaireDetails_CIMR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CIN:.
+        /// </summary>
+        public static string SalaireDetails_CINLabel {
+            get {
+                return ResourceManager.GetString("SalaireDetails_CINLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fermer.
+        /// </summary>
+        public static string SalaireDetails_CloseButton {
+            get {
+                return ResourceManager.GetString("SalaireDetails_CloseButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CNSS (4.48%).
+        /// </summary>
+        public static string SalaireDetails_CNSS {
+            get {
+                return ResourceManager.GetString("SalaireDetails_CNSS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CNSS:.
+        /// </summary>
+        public static string SalaireDetails_CNSSLabel {
+            get {
+                return ResourceManager.GetString("SalaireDetails_CNSSLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Retenues.
+        /// </summary>
+        public static string SalaireDetails_DeductionsSection {
+            get {
+                return ResourceManager.GetString("SalaireDetails_DeductionsSection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DÉTAILS DU SALAIRE.
+        /// </summary>
+        public static string SalaireDetails_DetailsSection {
+            get {
+                return ResourceManager.GetString("SalaireDetails_DetailsSection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to INFORMATIONS EMPLOYÉ.
+        /// </summary>
+        public static string SalaireDetails_EmployeeSection {
+            get {
+                return ResourceManager.GetString("SalaireDetails_EmployeeSection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nom Complet:.
+        /// </summary>
+        public static string SalaireDetails_FullNameLabel {
+            get {
+                return ResourceManager.GetString("SalaireDetails_FullNameLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SALAIRE BRUT.
+        /// </summary>
+        public static string SalaireDetails_GrossSalary {
+            get {
+                return ResourceManager.GetString("SalaireDetails_GrossSalary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Taux Horaire.
+        /// </summary>
+        public static string SalaireDetails_HourlyRate {
+            get {
+                return ResourceManager.GetString("SalaireDetails_HourlyRate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Indemnité de Logement.
+        /// </summary>
+        public static string SalaireDetails_HousingAllowance {
+            get {
+                return ResourceManager.GetString("SalaireDetails_HousingAllowance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Impôt sur le Revenu (IR).
+        /// </summary>
+        public static string SalaireDetails_IR {
+            get {
+                return ResourceManager.GetString("SalaireDetails_IR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prêt Personnel.
+        /// </summary>
+        public static string SalaireDetails_Loan {
+            get {
+                return ResourceManager.GetString("SalaireDetails_Loan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SALAIRE NET À PAYER.
+        /// </summary>
+        public static string SalaireDetails_NetSalary {
+            get {
+                return ResourceManager.GetString("SalaireDetails_NetSalary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Autres Primes.
+        /// </summary>
+        public static string SalaireDetails_OtherBonuses {
+            get {
+                return ResourceManager.GetString("SalaireDetails_OtherBonuses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Autres Retenues.
+        /// </summary>
+        public static string SalaireDetails_OtherDeductions {
+            get {
+                return ResourceManager.GetString("SalaireDetails_OtherDeductions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heures Supp. 100%.
+        /// </summary>
+        public static string SalaireDetails_Overtime100 {
+            get {
+                return ResourceManager.GetString("SalaireDetails_Overtime100", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heures Supp. 25%.
+        /// </summary>
+        public static string SalaireDetails_Overtime25 {
+            get {
+                return ResourceManager.GetString("SalaireDetails_Overtime25", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heures Supp. 50%.
+        /// </summary>
+        public static string SalaireDetails_Overtime50 {
+            get {
+                return ResourceManager.GetString("SalaireDetails_Overtime50", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heures Supplémentaires.
+        /// </summary>
+        public static string SalaireDetails_OvertimeSection {
+            get {
+                return ResourceManager.GetString("SalaireDetails_OvertimeSection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pénalités.
+        /// </summary>
+        public static string SalaireDetails_Penalties {
+            get {
+                return ResourceManager.GetString("SalaireDetails_Penalties", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prime de Rendement.
+        /// </summary>
+        public static string SalaireDetails_PerformanceBonus {
+            get {
+                return ResourceManager.GetString("SalaireDetails_PerformanceBonus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 🖨 Imprimer.
+        /// </summary>
+        public static string SalaireDetails_PrintButton {
+            get {
+                return ResourceManager.GetString("SalaireDetails_PrintButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remarques.
+        /// </summary>
+        public static string SalaireDetails_RemarksSection {
+            get {
+                return ResourceManager.GetString("SalaireDetails_RemarksSection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prime de Responsabilité.
+        /// </summary>
+        public static string SalaireDetails_ResponsibilityBonus {
+            get {
+                return ResourceManager.GetString("SalaireDetails_ResponsibilityBonus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prime d&apos;Ancienneté.
+        /// </summary>
+        public static string SalaireDetails_SeniorityBonus {
+            get {
+                return ResourceManager.GetString("SalaireDetails_SeniorityBonus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to STATUT.
+        /// </summary>
+        public static string SalaireDetails_StatusHeader {
+            get {
+                return ResourceManager.GetString("SalaireDetails_StatusHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 📄 BULLETIN DE PAIE.
+        /// </summary>
+        public static string SalaireDetails_Title {
+            get {
+                return ResourceManager.GetString("SalaireDetails_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TOTAL RETENUES.
+        /// </summary>
+        public static string SalaireDetails_TotalDeductions {
+            get {
+                return ResourceManager.GetString("SalaireDetails_TotalDeductions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total Heures Supp..
+        /// </summary>
+        public static string SalaireDetails_TotalOvertime {
+            get {
+                return ResourceManager.GetString("SalaireDetails_TotalOvertime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Indemnité de Transport.
+        /// </summary>
+        public static string SalaireDetails_TransportAllowance {
+            get {
+                return ResourceManager.GetString("SalaireDetails_TransportAllowance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bulletin de Paie.
+        /// </summary>
+        public static string SalaireDetails_WindowTitle {
+            get {
+                return ResourceManager.GetString("SalaireDetails_WindowTitle", resourceCulture);
             }
         }
         
@@ -4647,6 +10011,33 @@ namespace GestionComerce.Resources {
         public static string Sale {
             get {
                 return ResourceManager.GetString("Sale", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mouvement de vente.
+        /// </summary>
+        public static string SaleMovement {
+            get {
+                return ResourceManager.GetString("SaleMovement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prix de vente (DH) *.
+        /// </summary>
+        public static string SalePriceRequired {
+            get {
+                return ResourceManager.GetString("SalePriceRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nombre de ventes.
+        /// </summary>
+        public static string SalesCount {
+            get {
+                return ResourceManager.GetString("SalesCount", resourceCulture);
             }
         }
         
@@ -4678,7 +10069,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enregistrer comme Facture.
+        ///   Looks up a localized string similar to Sauvegarder comme Facture.
         /// </summary>
         public static string SaveAsInvoice {
             get {
@@ -4687,7 +10078,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enregistrer en PDF.
+        ///   Looks up a localized string similar to Enregistrer PDF.
         /// </summary>
         public static string SaveAsPDF {
             get {
@@ -4696,7 +10087,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enregistrer les Modifications.
+        ///   Looks up a localized string similar to Enregistrer les modifications.
         /// </summary>
         public static string SaveChanges {
             get {
@@ -4714,7 +10105,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Factures enregistrées et en attente.
+        ///   Looks up a localized string similar to Enregistrez et gérez les factures reçues de vos fournisseurs.
         /// </summary>
         public static string SavedInvoicesDescription {
             get {
@@ -4723,7 +10114,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Factures Fournisseurs Enregistrées.
+        ///   Looks up a localized string similar to Factures Enregistrées (Fournisseurs).
         /// </summary>
         public static string SavedInvoicesSuppliers {
             get {
@@ -4732,11 +10123,20 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enregistrement....
+        ///   Looks up a localized string similar to 💾 Enregistrer PDF.
         /// </summary>
-        public static string Saving {
+        public static string SavePDFButton {
             get {
-                return ResourceManager.GetString("Saving", resourceCulture);
+                return ResourceManager.GetString("SavePDFButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ✅ Enregistrer.
+        /// </summary>
+        public static string SaveRecord {
+            get {
+                return ResourceManager.GetString("SaveRecord", resourceCulture);
             }
         }
         
@@ -4750,7 +10150,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Rechercher un article.
+        ///   Looks up a localized string similar to Rechercher un Article.
         /// </summary>
         public static string SearchArticle {
             get {
@@ -4759,7 +10159,25 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Rechercher par numéro, client ou ICE.
+        ///   Looks up a localized string similar to 🔍 Rechercher un article....
+        /// </summary>
+        public static string SearchArticlePlaceholder {
+            get {
+                return ResourceManager.GetString("SearchArticlePlaceholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rechercher par.
+        /// </summary>
+        public static string SearchBy {
+            get {
+                return ResourceManager.GetString("SearchBy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rechercher par numéro, client, ICE....
         /// </summary>
         public static string SearchByNumberClientICE {
             get {
@@ -4768,7 +10186,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Rechercher par référence.
+        ///   Looks up a localized string similar to Rechercher par référence....
         /// </summary>
         public static string SearchByReference {
             get {
@@ -4777,7 +10195,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Rechercher par référence ou description.
+        ///   Looks up a localized string similar to Rechercher par référence ou description....
         /// </summary>
         public static string SearchByReferenceOrDescription {
             get {
@@ -4786,7 +10204,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Rechercher un client par nom.
+        ///   Looks up a localized string similar to Rechercher Client par nom.
         /// </summary>
         public static string SearchClientByName {
             get {
@@ -4795,7 +10213,16 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Rechercher une opération par ID.
+        ///   Looks up a localized string similar to Rechercher dans l&apos;Inventaire.
+        /// </summary>
+        public static string SearchInInventory {
+            get {
+                return ResourceManager.GetString("SearchInInventory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rechercher operation par id ou noum de client.
         /// </summary>
         public static string SearchOperationByID {
             get {
@@ -4831,7 +10258,25 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sélectionnez les articles à annuler.
+        ///   Looks up a localized string similar to ✓ Tout sélectionner.
+        /// </summary>
+        public static string SelectAllButton {
+            get {
+                return ResourceManager.GetString("SelectAllButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sélectionner un Article.
+        /// </summary>
+        public static string SelectArticle {
+            get {
+                return ResourceManager.GetString("SelectArticle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sélectionner les Articles à Annuler.
         /// </summary>
         public static string SelectArticlesToCancel {
             get {
@@ -4840,7 +10285,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sélectionner articles à annuler.
+        ///   Looks up a localized string similar to Sélectionner les articles à annuler.
         /// </summary>
         public static string SelectArticlesToReverse {
             get {
@@ -4849,7 +10294,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sélectionner un Article.
+        ///   Looks up a localized string similar to Sélectionner Article.
         /// </summary>
         public static string SelectArticleTitle {
             get {
@@ -4858,7 +10303,16 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sélectionnez au moins une opération.
+        ///   Looks up a localized string similar to Choisissez un article du stock ou créez-en un personnalisé.
+        /// </summary>
+        public static string SelectArticleType {
+            get {
+                return ResourceManager.GetString("SelectArticleType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ⚠️ Veuillez sélectionner au moins une opération.
         /// </summary>
         public static string SelectAtLeastOneOperation {
             get {
@@ -4867,7 +10321,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sélectionner un Client.
+        ///   Looks up a localized string similar to Sélectionner Client.
         /// </summary>
         public static string SelectClient {
             get {
@@ -4885,6 +10339,15 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ✓ Sélectionnés :.
+        /// </summary>
+        public static string SelectedLabel {
+            get {
+                return ResourceManager.GetString("SelectedLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Produit Sélectionné.
         /// </summary>
         public static string SelectedProduct {
@@ -4894,7 +10357,25 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sélectionner une Opération.
+        ///   Looks up a localized string similar to 📁 Sélectionner une image.
+        /// </summary>
+        public static string SelectImage {
+            get {
+                return ResourceManager.GetString("SelectImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sélectionnez les informations à afficher sur le devis.
+        /// </summary>
+        public static string SelectInfoForQuote {
+            get {
+                return ResourceManager.GetString("SelectInfoForQuote", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sélectionner Opération.
         /// </summary>
         public static string SelectOperation {
             get {
@@ -4903,7 +10384,25 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A Propos de Nous.
+        ///   Looks up a localized string similar to Prix de Vente.
+        /// </summary>
+        public static string SellingPrice {
+            get {
+                return ResourceManager.GetString("SellingPrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Valeur de Vente.
+        /// </summary>
+        public static string SellingValue {
+            get {
+                return ResourceManager.GetString("SellingValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to À Propos.
         /// </summary>
         public static string Settings_AboutUs {
             get {
@@ -4912,7 +10411,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Retour aux Paramètres.
+        ///   Looks up a localized string similar to Retour.
         /// </summary>
         public static string Settings_BackButton {
             get {
@@ -4921,7 +10420,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Méthode de Paiement.
+        ///   Looks up a localized string similar to Méthodes de Paiement.
         /// </summary>
         public static string Settings_PaymentMethod {
             get {
@@ -4966,11 +10465,20 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Expédition.
+        ///   Looks up a localized string similar to Expedition.
         /// </summary>
         public static string Shipment {
             get {
                 return ResourceManager.GetString("Shipment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to expédiés.
+        /// </summary>
+        public static string Shipped {
+            get {
+                return ResourceManager.GetString("Shipped", resourceCulture);
             }
         }
         
@@ -4984,7 +10492,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Afficher Tout.
+        ///   Looks up a localized string similar to Tout afficher.
         /// </summary>
         public static string ShowAll {
             get {
@@ -4993,7 +10501,16 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Six Mois.
+        ///   Looks up a localized string similar to Afficher section client.
+        /// </summary>
+        public static string ShowClientSection {
+            get {
+                return ResourceManager.GetString("ShowClientSection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 6 mois.
         /// </summary>
         public static string SixMonths {
             get {
@@ -5002,7 +10519,16 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Petites icônes.
+        ///   Looks up a localized string similar to SKU.
+        /// </summary>
+        public static string SKULabel {
+            get {
+                return ResourceManager.GetString("SKULabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Petites Icônes.
         /// </summary>
         public static string SmallIcons {
             get {
@@ -5011,7 +10537,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nom (A-Z).
+        ///   Looks up a localized string similar to Trier Nom A-Z.
         /// </summary>
         public static string SortNameAZ {
             get {
@@ -5020,7 +10546,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nom (Z-A).
+        ///   Looks up a localized string similar to Trier Nom Z-A.
         /// </summary>
         public static string SortNameZA {
             get {
@@ -5029,7 +10555,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Plus récent.
+        ///   Looks up a localized string similar to Plus Récent.
         /// </summary>
         public static string SortNewest {
             get {
@@ -5038,7 +10564,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Plus ancien.
+        ///   Looks up a localized string similar to Plus Ancien.
         /// </summary>
         public static string SortOldest {
             get {
@@ -5047,7 +10573,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Prix croissant.
+        ///   Looks up a localized string similar to Prix Croissant.
         /// </summary>
         public static string SortPriceAsc {
             get {
@@ -5056,7 +10582,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Prix décroissant.
+        ///   Looks up a localized string similar to Prix Décroissant.
         /// </summary>
         public static string SortPriceDesc {
             get {
@@ -5065,7 +10591,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Quantité croissante.
+        ///   Looks up a localized string similar to Quantité Croissante.
         /// </summary>
         public static string SortQtyAsc {
             get {
@@ -5074,7 +10600,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Quantité décroissante.
+        ///   Looks up a localized string similar to Quantité Décroissante.
         /// </summary>
         public static string SortQtyDesc {
             get {
@@ -5083,7 +10609,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Date de Début.
+        ///   Looks up a localized string similar to Date début.
         /// </summary>
         public static string StartDate {
             get {
@@ -5092,7 +10618,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Etat.
+        ///   Looks up a localized string similar to État.
         /// </summary>
         public static string State {
             get {
@@ -5119,6 +10645,42 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ajout de Stock.
+        /// </summary>
+        public static string StockAddition {
+            get {
+                return ResourceManager.GetString("StockAddition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Article du Stock.
+        /// </summary>
+        public static string StockArticle {
+            get {
+                return ResourceManager.GetString("StockArticle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gestion du Stock.
+        /// </summary>
+        public static string StockManagement {
+            get {
+                return ResourceManager.GetString("StockManagement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 📊 Gestion de Stock.
+        /// </summary>
+        public static string StockManagementSection {
+            get {
+                return ResourceManager.GetString("StockManagementSection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Mouvement de Stock.
         /// </summary>
         public static string StockMovement {
@@ -5128,7 +10690,34 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sous-total.
+        ///   Looks up a localized string similar to Quantité en Stock.
+        /// </summary>
+        public static string StockQuantity {
+            get {
+                return ResourceManager.GetString("StockQuantity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to STOCK.
+        /// </summary>
+        public static string StockUpper {
+            get {
+                return ResourceManager.GetString("StockUpper", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Emplacement de stockage.
+        /// </summary>
+        public static string StorageLocationLabel {
+            get {
+                return ResourceManager.GetString("StorageLocationLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sous-Total.
         /// </summary>
         public static string Subtotal {
             get {
@@ -5137,7 +10726,16 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sous-total.
+        ///   Looks up a localized string similar to Sous-total (HT).
+        /// </summary>
+        public static string SubtotalHT {
+            get {
+                return ResourceManager.GetString("SubtotalHT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sous-total :.
         /// </summary>
         public static string SubtotalLabel {
             get {
@@ -5146,7 +10744,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Banlieue (70 DH).
+        ///   Looks up a localized string similar to Banlieue.
         /// </summary>
         public static string Suburb {
             get {
@@ -5155,7 +10753,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Récapitulatif.
+        ///   Looks up a localized string similar to Résumé.
         /// </summary>
         public static string Summary {
             get {
@@ -5173,7 +10771,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Code Fournisseur.
+        ///   Looks up a localized string similar to Code.
         /// </summary>
         public static string SupplierCode {
             get {
@@ -5182,7 +10780,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Paiement par Crédit Fournisseur.
+        ///   Looks up a localized string similar to Paiement Crédit Fournisseur.
         /// </summary>
         public static string SupplierCreditPayment {
             get {
@@ -5191,7 +10789,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ID Fournisseur.
+        ///   Looks up a localized string similar to Fournisseur ID.
         /// </summary>
         public static string SupplierID {
             get {
@@ -5200,7 +10798,16 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gestion des Fournisseurs.
+        ///   Looks up a localized string similar to Fournisseur.
+        /// </summary>
+        public static string SupplierLabel {
+            get {
+                return ResourceManager.GetString("SupplierLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gestion des fournisseurs.
         /// </summary>
         public static string SupplierManagement {
             get {
@@ -5209,7 +10816,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nom du Fournisseur.
+        ///   Looks up a localized string similar to NOM FOURNISSEUR.
         /// </summary>
         public static string SupplierName {
             get {
@@ -5218,7 +10825,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Le nom du fournisseur est requis.
+        ///   Looks up a localized string similar to Nom du fournisseur *.
         /// </summary>
         public static string SupplierNameRequired {
             get {
@@ -5236,11 +10843,38 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fournisseur (requis).
+        ///   Looks up a localized string similar to Fournisseur *.
         /// </summary>
         public static string SupplierRequired {
             get {
                 return ResourceManager.GetString("SupplierRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fournisseurs.
+        /// </summary>
+        public static string Suppliers {
+            get {
+                return ResourceManager.GetString("Suppliers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FOURNISSEUR.
+        /// </summary>
+        public static string SupplierUpper {
+            get {
+                return ResourceManager.GetString("SupplierUpper", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Êtes-vous sûr de vouloir supprimer cet article ?.
+        /// </summary>
+        public static string SureDeleteArticle {
+            get {
+                return ResourceManager.GetString("SureDeleteArticle", resourceCulture);
             }
         }
         
@@ -5263,7 +10897,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Merci pour votre confiance !.
+        ///   Looks up a localized string similar to Merci de votre confiance !.
         /// </summary>
         public static string ThankYou {
             get {
@@ -5272,7 +10906,16 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cette action est irréversible et ne peut pas être annulée..
+        ///   Looks up a localized string similar to Merci de votre confiance..
+        /// </summary>
+        public static string ThankYouMessage {
+            get {
+                return ResourceManager.GetString("ThankYouMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cette action est irréversible.
         /// </summary>
         public static string ThisActionIsIrreversible {
             get {
@@ -5281,7 +10924,25 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Numéro de Ticket.
+        ///   Looks up a localized string similar to +12 cette semaine.
+        /// </summary>
+        public static string ThisWeekPlus {
+            get {
+                return ResourceManager.GetString("ThisWeekPlus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ticket.
+        /// </summary>
+        public static string Ticket {
+            get {
+                return ResourceManager.GetString("Ticket", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BON N°:.
         /// </summary>
         public static string TicketNumber {
             get {
@@ -5299,7 +10960,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to HEURE.
+        ///   Looks up a localized string similar to HEURE:.
         /// </summary>
         public static string TimeUpper {
             get {
@@ -5317,11 +10978,38 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Aujourd&apos;hui +.
+        ///   Looks up a localized string similar to +8 aujourd&apos;hui.
         /// </summary>
         public static string TodayPlus {
             get {
                 return ResourceManager.GetString("TodayPlus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entrées d&apos;aujourd&apos;hui.
+        /// </summary>
+        public static string TodaysEntries {
+            get {
+                return ResourceManager.GetString("TodaysEntries", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sorties d&apos;aujourd&apos;hui.
+        /// </summary>
+        public static string TodaysExits {
+            get {
+                return ResourceManager.GetString("TodaysExits", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to À traiter.
+        /// </summary>
+        public static string ToProcess {
+            get {
+                return ResourceManager.GetString("ToProcess", resourceCulture);
             }
         }
         
@@ -5335,7 +11023,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Total Après Remise.
+        ///   Looks up a localized string similar to Montant TTC après Remise.
         /// </summary>
         public static string TotalAfterDiscount {
             get {
@@ -5344,7 +11032,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Montant Total.
+        ///   Looks up a localized string similar to MONTANT TOTAL.
         /// </summary>
         public static string TotalAmount {
             get {
@@ -5371,11 +11059,29 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Montant Total (MAD).
+        ///   Looks up a localized string similar to Montant Total (MAD) *.
         /// </summary>
         public static string TotalAmountMAD {
             get {
                 return ResourceManager.GetString("TotalAmountMAD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total Articles.
+        /// </summary>
+        public static string TotalArticles {
+            get {
+                return ResourceManager.GetString("TotalArticles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 📦 Total :.
+        /// </summary>
+        public static string TotalArticlesLabel {
+            get {
+                return ResourceManager.GetString("TotalArticlesLabel", resourceCulture);
             }
         }
         
@@ -5389,7 +11095,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Total Crédit.
+        ///   Looks up a localized string similar to Crédit Total.
         /// </summary>
         public static string TotalCredit {
             get {
@@ -5407,7 +11113,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Total des Frais.
+        ///   Looks up a localized string similar to Frais Totaux.
         /// </summary>
         public static string TotalFees {
             get {
@@ -5425,7 +11131,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Total HT.
+        ///   Looks up a localized string similar to Total HT (DH).
         /// </summary>
         public static string TotalHT {
             get {
@@ -5434,7 +11140,16 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Total de l&apos;Opération.
+        ///   Looks up a localized string similar to TOTAL :.
+        /// </summary>
+        public static string TotalLabel {
+            get {
+                return ResourceManager.GetString("TotalLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total Opération.
         /// </summary>
         public static string TotalOperation {
             get {
@@ -5443,7 +11158,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Total de la Commande.
+        ///   Looks up a localized string similar to Total Commande.
         /// </summary>
         public static string TotalOrder {
             get {
@@ -5470,7 +11185,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Total Payé.
+        ///   Looks up a localized string similar to Total payé.
         /// </summary>
         public static string TotalPaid {
             get {
@@ -5479,7 +11194,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Total des Paiements.
+        ///   Looks up a localized string similar to Total des paiements.
         /// </summary>
         public static string TotalPayments {
             get {
@@ -5488,7 +11203,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Prix Total.
+        ///   Looks up a localized string similar to Prix total.
         /// </summary>
         public static string TotalPrice {
             get {
@@ -5497,7 +11212,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Quantité Totale.
+        ///   Looks up a localized string similar to Quantité totale.
         /// </summary>
         public static string TotalQuantity {
             get {
@@ -5506,7 +11221,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to QTÉ TOTALE.
+        ///   Looks up a localized string similar to Qté Totale.
         /// </summary>
         public static string TotalQuantityHeader {
             get {
@@ -5515,7 +11230,16 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Total Fournisseurs.
+        ///   Looks up a localized string similar to 💰 Totaux.
+        /// </summary>
+        public static string TotalsSection {
+            get {
+                return ResourceManager.GetString("TotalsSection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total fournisseurs.
         /// </summary>
         public static string TotalSuppliers {
             get {
@@ -5533,6 +11257,24 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Total TTC.
+        /// </summary>
+        public static string TotalTTCLabel {
+            get {
+                return ResourceManager.GetString("TotalTTCLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total TVA.
+        /// </summary>
+        public static string TotalTVALabel {
+            get {
+                return ResourceManager.GetString("TotalTVALabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Transaction effectuée avec succès.
         /// </summary>
         public static string TransactionCompletedSuccessfully {
@@ -5542,7 +11284,25 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Type de Transaction.
+        ///   Looks up a localized string similar to Confirmation de transaction.
+        /// </summary>
+        public static string TransactionConfirmation {
+            get {
+                return ResourceManager.GetString("TransactionConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Résumé de la transaction.
+        /// </summary>
+        public static string TransactionSummary {
+            get {
+                return ResourceManager.GetString("TransactionSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type de transaction.
         /// </summary>
         public static string TransactionType {
             get {
@@ -5551,7 +11311,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to TVA (%).
+        ///   Looks up a localized string similar to TVA %.
         /// </summary>
         public static string TVA {
             get {
@@ -5578,7 +11338,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Taux de TVA.
+        ///   Looks up a localized string similar to Taux TVA (%).
         /// </summary>
         public static string TVARate {
             get {
@@ -5596,6 +11356,15 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tapez pour rechercher.
+        /// </summary>
+        public static string TypeToSearch {
+            get {
+                return ResourceManager.GetString("TypeToSearch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Indisponible.
         /// </summary>
         public static string Unavailable {
@@ -5605,7 +11374,16 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Prix Unitaire.
+        ///   Looks up a localized string similar to Unité de mesure.
+        /// </summary>
+        public static string UnitOfMeasureLabel {
+            get {
+                return ResourceManager.GetString("UnitOfMeasureLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prix Unitaire (DH).
         /// </summary>
         public static string UnitPrice {
             get {
@@ -5614,7 +11392,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to P.U.
+        ///   Looks up a localized string similar to Prix Unit..
         /// </summary>
         public static string UnitPriceHeader {
             get {
@@ -5623,7 +11401,16 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to P.U.
+        ///   Looks up a localized string similar to Prix Unitaire.
+        /// </summary>
+        public static string UnitPriceLabel {
+            get {
+                return ResourceManager.GetString("UnitPriceLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prix Unit..
         /// </summary>
         public static string UnitPriceShort {
             get {
@@ -5632,7 +11419,16 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Solde Impayé.
+        ///   Looks up a localized string similar to Stock illimité.
+        /// </summary>
+        public static string UnlimitedStock {
+            get {
+                return ResourceManager.GetString("UnlimitedStock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Solde impayé.
         /// </summary>
         public static string UnpaidBalance {
             get {
@@ -5641,7 +11437,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mettre à Jour.
+        ///   Looks up a localized string similar to Mettre à jour.
         /// </summary>
         public static string Update {
             get {
@@ -5659,7 +11455,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Modifier les informations de l&apos;utilisateur.
+        ///   Looks up a localized string similar to Modifier les informations de l&apos;utilisateur..
         /// </summary>
         public static string UpdateUser_Description {
             get {
@@ -5668,7 +11464,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Modifier l&apos;Utilisateur.
+        ///   Looks up a localized string similar to Modifier Utilisateur.
         /// </summary>
         public static string UpdateUser_Title {
             get {
@@ -5686,7 +11482,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Actions Utilisateur.
+        ///   Looks up a localized string similar to Actions.
         /// </summary>
         public static string User_Actions {
             get {
@@ -5695,7 +11491,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Code Utilisateur.
+        ///   Looks up a localized string similar to Code.
         /// </summary>
         public static string User_Code {
             get {
@@ -5722,7 +11518,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ID Utilisateur.
+        ///   Looks up a localized string similar to ID.
         /// </summary>
         public static string User_ID {
             get {
@@ -5731,7 +11527,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nom d&apos;Utilisateur.
+        ///   Looks up a localized string similar to Nom.
         /// </summary>
         public static string User_Name {
             get {
@@ -5740,7 +11536,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Rôle Utilisateur.
+        ///   Looks up a localized string similar to Rôle.
         /// </summary>
         public static string User_Role {
             get {
@@ -5749,7 +11545,43 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fourgonnette.
+        ///   Looks up a localized string similar to Informations de l&apos;Utilisateur.
+        /// </summary>
+        public static string UserInformation {
+            get {
+                return ResourceManager.GetString("UserInformation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Valider la sélection →.
+        /// </summary>
+        public static string ValidateSelection {
+            get {
+                return ResourceManager.GetString("ValidateSelection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Validité (jours) :.
+        /// </summary>
+        public static string ValidityDaysLabel {
+            get {
+                return ResourceManager.GetString("ValidityDaysLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Valeur.
+        /// </summary>
+        public static string Value {
+            get {
+                return ResourceManager.GetString("Value", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Camionnette.
         /// </summary>
         public static string Van {
             get {
@@ -5758,7 +11590,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to TVA.
+        ///   Looks up a localized string similar to VAT.
         /// </summary>
         public static string VAT {
             get {
@@ -5776,7 +11608,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Numéro TVA.
+        ///   Looks up a localized string similar to Numéro VAT.
         /// </summary>
         public static string VATNumber {
             get {
@@ -5785,11 +11617,29 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Taux TVA.
+        ///   Looks up a localized string similar to Taux TVA (%).
         /// </summary>
         public static string VATRate {
             get {
                 return ResourceManager.GetString("VATRate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to VAT/TVA.
+        /// </summary>
+        public static string VATTVALabel {
+            get {
+                return ResourceManager.GetString("VATTVALabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Véhicule.
+        /// </summary>
+        public static string Vehicle {
+            get {
+                return ResourceManager.GetString("Vehicle", resourceCulture);
             }
         }
         
@@ -5812,7 +11662,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Voir le Bon de Livraison.
+        ///   Looks up a localized string similar to Voir Bon de Livraison.
         /// </summary>
         public static string ViewDeliveryTicket {
             get {
@@ -5821,7 +11671,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Voir l&apos;Image.
+        ///   Looks up a localized string similar to Voir.
         /// </summary>
         public static string ViewImage {
             get {
@@ -5830,7 +11680,25 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Voir les Opérations.
+        ///   Looks up a localized string similar to Voir plus.
+        /// </summary>
+        public static string ViewMore {
+            get {
+                return ResourceManager.GetString("ViewMore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Voir Plus d&apos;Articles.
+        /// </summary>
+        public static string ViewMoreArticles {
+            get {
+                return ResourceManager.GetString("ViewMoreArticles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Voir Opérations.
         /// </summary>
         public static string ViewOperations {
             get {
@@ -5839,7 +11707,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Voir l&apos;Itinéraire.
+        ///   Looks up a localized string similar to Voir Itinéraire.
         /// </summary>
         public static string ViewRoute {
             get {
@@ -5857,11 +11725,29 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Prix de gros (DH).
+        /// </summary>
+        public static string WholesalePrice {
+            get {
+                return ResourceManager.GetString("WholesalePrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Année.
         /// </summary>
         public static string Year {
             get {
                 return ResourceManager.GetString("Year", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Oui.
+        /// </summary>
+        public static string Yes {
+            get {
+                return ResourceManager.GetString("Yes", resourceCulture);
             }
         }
         
@@ -5875,7 +11761,7 @@ namespace GestionComerce.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ZONE.
+        ///   Looks up a localized string similar to ZONE:.
         /// </summary>
         public static string ZoneUpper {
             get {

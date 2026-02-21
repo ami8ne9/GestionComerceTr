@@ -1,7 +1,8 @@
-﻿<Window x:Class="GestionComerce.Main.Inventory.WAddArticle"
+<Window x:Class="GestionComerce.Main.Inventory.WAddArticle"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Ajouter un Article"
+        xmlns:res="clr-namespace:GestionComerce.Resources"
+        Title="{x:Static res:Resources.AddArticleWindowTitle}"
         Width="1400" Height="900"
         ResizeMode="NoResize"
         Background="Transparent"
@@ -9,7 +10,6 @@
         AllowsTransparency="True" WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
-        <!-- Elite Color Palette -->
         <SolidColorBrush x:Key="PrimaryDark" Color="#1E293B"/>
         <SolidColorBrush x:Key="PrimaryBlue" Color="#3B82F6"/>
         <SolidColorBrush x:Key="AccentCyan" Color="#06B6D4"/>
@@ -24,11 +24,9 @@
         <SolidColorBrush x:Key="TextSecondary" Color="#64748B"/>
         <SolidColorBrush x:Key="TextTertiary" Color="#94A3B8"/>
 
-        <!-- Premium Shadows -->
         <DropShadowEffect x:Key="ShadowXl" BlurRadius="48" ShadowDepth="0" Color="#000000" Opacity="0.12"/>
         <DropShadowEffect x:Key="ShadowLg" BlurRadius="32" ShadowDepth="0" Color="#000000" Opacity="0.08"/>
 
-        <!-- Header Title Style -->
         <Style x:Key="HeaderTitleStyle" TargetType="TextBlock">
             <Setter Property="FontFamily" Value="Segoe UI"/>
             <Setter Property="FontSize" Value="28"/>
@@ -36,7 +34,6 @@
             <Setter Property="Foreground" Value="{StaticResource TextPrimary}"/>
         </Style>
 
-        <!-- Section Title Style -->
         <Style x:Key="SectionTitleStyle" TargetType="TextBlock">
             <Setter Property="FontFamily" Value="Segoe UI"/>
             <Setter Property="FontSize" Value="16"/>
@@ -45,7 +42,6 @@
             <Setter Property="Margin" Value="0,0,0,20"/>
         </Style>
 
-        <!-- Label Style -->
         <Style x:Key="LabelStyle" TargetType="TextBlock">
             <Setter Property="FontSize" Value="13"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
@@ -53,7 +49,6 @@
             <Setter Property="Margin" Value="0,0,0,8"/>
         </Style>
 
-        <!-- Modern TextBox Style -->
         <Style x:Key="ModernTextBoxStyle" TargetType="TextBox">
             <Setter Property="Height" Value="44"/>
             <Setter Property="Padding" Value="14,0"/>
@@ -99,7 +94,6 @@
             </Setter>
         </Style>
 
-        <!-- Required TextBox Style -->
         <Style x:Key="RequiredTextBoxStyle" TargetType="TextBox" BasedOn="{StaticResource ModernTextBoxStyle}">
             <Style.Triggers>
                 <Trigger Property="Text" Value="">
@@ -108,7 +102,6 @@
             </Style.Triggers>
         </Style>
 
-        <!-- Modern DatePicker Style -->
         <Style x:Key="ModernDatePickerStyle" TargetType="DatePicker">
             <Setter Property="Height" Value="44"/>
             <Setter Property="Padding" Value="14,12"/>
@@ -120,7 +113,6 @@
             <Setter Property="Margin" Value="0,0,0,16"/>
         </Style>
 
-        <!-- Modern ComboBox Style -->
         <Style x:Key="ModernComboBoxStyle" TargetType="ComboBox">
             <Setter Property="Height" Value="44"/>
             <Setter Property="Padding" Value="14,12"/>
@@ -132,7 +124,6 @@
             <Setter Property="Margin" Value="0,0,0,16"/>
         </Style>
 
-        <!-- Modern CheckBox Style -->
         <Style x:Key="ModernCheckBoxStyle" TargetType="CheckBox">
             <Setter Property="FontSize" Value="14"/>
             <Setter Property="FontFamily" Value="Segoe UI"/>
@@ -141,7 +132,6 @@
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
 
-        <!-- Icon Button Style -->
         <Style x:Key="IconButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="{StaticResource SuccessGreen}"/>
             <Setter Property="Foreground" Value="White"/>
@@ -175,7 +165,6 @@
             </Setter>
         </Style>
 
-        <!-- Close Button Style -->
         <Style x:Key="CloseButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="Foreground" Value="{StaticResource TextSecondary}"/>
@@ -203,7 +192,6 @@
             </Setter>
         </Style>
 
-        <!-- Primary Button Style -->
         <Style x:Key="PrimaryButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="{StaticResource PrimaryBlue}"/>
             <Setter Property="Foreground" Value="White"/>
@@ -239,7 +227,6 @@
             </Setter>
         </Style>
 
-        <!-- Success Button Style -->
         <Style x:Key="SuccessButtonStyle" TargetType="Button" BasedOn="{StaticResource PrimaryButtonStyle}">
             <Setter Property="Background" Value="{StaticResource SuccessGreen}"/>
             <Style.Triggers>
@@ -252,7 +239,6 @@
             </Style.Triggers>
         </Style>
 
-        <!-- Danger Button Style -->
         <Style x:Key="DangerButtonStyle" TargetType="Button" BasedOn="{StaticResource PrimaryButtonStyle}">
             <Setter Property="Background" Value="{StaticResource DangerRed}"/>
             <Style.Triggers>
@@ -265,7 +251,6 @@
             </Style.Triggers>
         </Style>
 
-        <!-- Purple Button Style -->
         <Style x:Key="PurpleButtonStyle" TargetType="Button" BasedOn="{StaticResource PrimaryButtonStyle}">
             <Setter Property="Background" Value="{StaticResource AccentPurple}"/>
             <Style.Triggers>
@@ -278,7 +263,6 @@
             </Style.Triggers>
         </Style>
 
-        <!-- Section Card Style -->
         <Style x:Key="SectionCardStyle" TargetType="Border">
             <Setter Property="Background" Value="#FAFBFC"/>
             <Setter Property="BorderBrush" Value="{StaticResource BorderLight}"/>
@@ -313,7 +297,7 @@
                                    RadiusX="2" RadiusY="2"
                                    Margin="0,0,16,0"/>
                         <TextBlock x:Name="HeaderText"
-                                   Text="Ajouter un nouvel article"
+                                   Text="{x:Static res:Resources.AddNewArticle}"
                                    Style="{StaticResource HeaderTitleStyle}"/>
                     </StackPanel>
 
@@ -335,7 +319,7 @@
                     <!-- Essential Information Section -->
                     <Border Style="{StaticResource SectionCardStyle}">
                         <StackPanel>
-                            <TextBlock Text="📋 Informations Essentielles" 
+                            <TextBlock Text="{x:Static res:Resources.EssentialInfo}" 
                                        Style="{StaticResource SectionTitleStyle}"/>
 
                             <Grid>
@@ -351,7 +335,7 @@
 
                                 <!-- Column 1 -->
                                 <StackPanel Grid.Column="0">
-                                    <TextBlock Text="Fournisseur *" Style="{StaticResource LabelStyle}"/>
+                                    <TextBlock Text="{x:Static res:Resources.SupplierRequired}" Style="{StaticResource LabelStyle}"/>
                                     <Grid Margin="0,0,0,16">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="*"/>
@@ -369,14 +353,14 @@
                                                 Click="AddSupplierButton_Click"/>
                                     </Grid>
 
-                                    <TextBlock Text="Code Article *" Style="{StaticResource LabelStyle}"/>
+                                    <TextBlock Text="{x:Static res:Resources.ArticleCodeRequired}" Style="{StaticResource LabelStyle}"/>
                                     <TextBox x:Name="Code" 
                                              MaxLength="18"
                                              Style="{StaticResource RequiredTextBoxStyle}"
                                              PreviewTextInput="IntegerTextBox_PreviewTextInput"
                                              DataObject.Pasting="IntegerTextBox_Pasting"/>
 
-                                    <TextBlock Text="SKU" Style="{StaticResource LabelStyle}"/>
+                                    <TextBlock Text="{x:Static res:Resources.SKULabel}" Style="{StaticResource LabelStyle}"/>
                                     <TextBox x:Name="SKU" 
                                              Style="{StaticResource ModernTextBoxStyle}"
                                              MaxLength="50"/>
@@ -384,12 +368,12 @@
 
                                 <!-- Column 2 -->
                                 <StackPanel Grid.Column="2">
-                                    <TextBlock Text="Nom de l'article *" Style="{StaticResource LabelStyle}"/>
+                                    <TextBlock Text="{x:Static res:Resources.ArticleNameRequired}" Style="{StaticResource LabelStyle}"/>
                                     <TextBox x:Name="ArticleName" 
                                              Style="{StaticResource RequiredTextBoxStyle}"
                                              MaxLength="100"/>
 
-                                    <TextBlock Text="Famille *" Style="{StaticResource LabelStyle}"/>
+                                    <TextBlock Text="{x:Static res:Resources.FamilyRequired}" Style="{StaticResource LabelStyle}"/>
                                     <Grid Margin="0,0,0,16">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="*"/>
@@ -407,7 +391,7 @@
                                                 Click="AddFamillyButton_Click"/>
                                     </Grid>
 
-                                    <TextBlock Text="Marque" Style="{StaticResource LabelStyle}"/>
+                                    <TextBlock Text="{x:Static res:Resources.Brand}" Style="{StaticResource LabelStyle}"/>
                                     <TextBox x:Name="Marque" 
                                              Style="{StaticResource ModernTextBoxStyle}"
                                              MaxLength="100"/>
@@ -415,31 +399,31 @@
 
                                 <!-- Column 3 -->
                                 <StackPanel Grid.Column="4">
-                                    <TextBlock Text="Fabricant" Style="{StaticResource LabelStyle}"/>
+                                    <TextBlock Text="{x:Static res:Resources.ManufacturerLabel}" Style="{StaticResource LabelStyle}"/>
                                     <TextBox x:Name="Manufacturer" 
                                              Style="{StaticResource ModernTextBoxStyle}"
                                              MaxLength="200"/>
 
-                                    <TextBlock Text="Pays d'origine" Style="{StaticResource LabelStyle}"/>
+                                    <TextBlock Text="{x:Static res:Resources.CountryOfOriginLabel}" Style="{StaticResource LabelStyle}"/>
                                     <TextBox x:Name="CountryOfOrigin" 
                                              Style="{StaticResource ModernTextBoxStyle}"
                                              MaxLength="100"/>
 
-                                    <TextBlock Text="Unité de mesure" Style="{StaticResource LabelStyle}"/>
+                                    <TextBlock Text="{x:Static res:Resources.UnitOfMeasureLabel}" Style="{StaticResource LabelStyle}"/>
                                     <ComboBox x:Name="UnitOfMeasure"
                                               Style="{StaticResource ModernComboBoxStyle}">
-                                        <ComboBoxItem Content="Pièce" IsSelected="True"/>
-                                        <ComboBoxItem Content="Kg"/>
-                                        <ComboBoxItem Content="Litre"/>
-                                        <ComboBoxItem Content="Mètre"/>
-                                        <ComboBoxItem Content="Boîte"/>
-                                        <ComboBoxItem Content="Carton"/>
+                                        <ComboBoxItem Content="{x:Static res:Resources.PieceUnit}" IsSelected="True"/>
+                                        <ComboBoxItem Content="{x:Static res:Resources.KgUnit}"/>
+                                        <ComboBoxItem Content="{x:Static res:Resources.LitreUnit}"/>
+                                        <ComboBoxItem Content="{x:Static res:Resources.MetreUnit}"/>
+                                        <ComboBoxItem Content="{x:Static res:Resources.BoxUnit}"/>
+                                        <ComboBoxItem Content="{x:Static res:Resources.CartonUnit}"/>
                                     </ComboBox>
                                 </StackPanel>
 
                                 <!-- Column 4 -->
                                 <StackPanel Grid.Column="6">
-                                    <TextBlock Text="Image de l'article" Style="{StaticResource LabelStyle}"/>
+                                    <TextBlock Text="{x:Static res:Resources.ArticleImage}" Style="{StaticResource LabelStyle}"/>
                                     <Grid>
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="Auto"/>
@@ -461,7 +445,7 @@
 
                                         <Button Grid.Row="2"
                                                 Name="SelectImageButton"
-                                                Content="📁 Sélectionner une image"
+                                                Content="{x:Static res:Resources.SelectImage}"
                                                 Style="{StaticResource PrimaryButtonStyle}"
                                                 Height="40"
                                                 Click="SelectImageButton_Click"/>
@@ -470,7 +454,7 @@
                             </Grid>
 
                             <!-- Description (Full Width) -->
-                            <TextBlock Text="Description" Style="{StaticResource LabelStyle}" Margin="0,8,0,8"/>
+                            <TextBlock Text="{x:Static res:Resources.DescriptionLabel}" Style="{StaticResource LabelStyle}" Margin="0,8,0,8"/>
                             <TextBox x:Name="Description"
                                      TextWrapping="Wrap"
                                      AcceptsReturn="True"
@@ -485,7 +469,7 @@
                     <!-- Pricing & Stock Section -->
                     <Border Style="{StaticResource SectionCardStyle}">
                         <StackPanel>
-                            <TextBlock Text="💰 Prix et Stock" 
+                            <TextBlock Text="{x:Static res:Resources.PriceAndStock}" 
                                        Style="{StaticResource SectionTitleStyle}"/>
 
                             <Grid>
@@ -501,7 +485,7 @@
 
                                 <!-- Column 1 -->
                                 <StackPanel Grid.Column="0">
-                                    <TextBlock Text="Prix d'achat (DH) *" Style="{StaticResource LabelStyle}"/>
+                                    <TextBlock Text="{x:Static res:Resources.PurchasePriceRequired}" Style="{StaticResource LabelStyle}"/>
                                     <TextBox Name="PrixA" 
                                              Style="{StaticResource RequiredTextBoxStyle}" 
                                              Text="0.00" 
@@ -509,7 +493,7 @@
                                              MaxLength="18" 
                                              DataObject.Pasting="DecimalTextBox_Pasting"/>
 
-                                    <TextBlock Text="Prix de gros (DH)" Style="{StaticResource LabelStyle}"/>
+                                    <TextBlock Text="{x:Static res:Resources.WholesalePrice}" Style="{StaticResource LabelStyle}"/>
                                     <TextBox Name="PrixGros" 
                                              Style="{StaticResource ModernTextBoxStyle}" 
                                              Text="0.00" 
@@ -520,7 +504,7 @@
 
                                 <!-- Column 2 -->
                                 <StackPanel Grid.Column="2">
-                                    <TextBlock Text="Prix de vente (DH) *" Style="{StaticResource LabelStyle}"/>
+                                    <TextBlock Text="{x:Static res:Resources.SalePriceRequired}" Style="{StaticResource LabelStyle}"/>
                                     <TextBox Name="PrixV" 
                                              Style="{StaticResource RequiredTextBoxStyle}" 
                                              PreviewTextInput="DecimalTextBox_PreviewTextInput" 
@@ -528,7 +512,7 @@
                                              Text="0.00" 
                                              DataObject.Pasting="DecimalTextBox_Pasting"/>
 
-                                    <TextBlock Text="Qté min pour prix de gros" Style="{StaticResource LabelStyle}"/>
+                                    <TextBlock Text="{x:Static res:Resources.MinQtyForWholesale}" Style="{StaticResource LabelStyle}"/>
                                     <TextBox Name="MinQuantityForGros" 
                                              Style="{StaticResource ModernTextBoxStyle}"
                                              Text="0"
@@ -539,7 +523,7 @@
 
                                 <!-- Column 3 -->
                                 <StackPanel Grid.Column="4">
-                                    <TextBlock Text="Prix MP (DH) *" Style="{StaticResource LabelStyle}"/>
+                                    <TextBlock Text="{x:Static res:Resources.MPPriceRequired}" Style="{StaticResource LabelStyle}"/>
                                     <TextBox Name="PrixMP" 
                                              Style="{StaticResource RequiredTextBoxStyle}" 
                                              Text="0.00" 
@@ -547,7 +531,7 @@
                                              MaxLength="18" 
                                              DataObject.Pasting="DecimalTextBox_Pasting"/>
 
-                                    <TextBlock Text="TVA (%)" Style="{StaticResource LabelStyle}"/>
+                                    <TextBlock Text="{x:Static res:Resources.TVAPercent}" Style="{StaticResource LabelStyle}"/>
                                     <TextBox x:Name="TVA" 
                                              Style="{StaticResource ModernTextBoxStyle}"
                                              Text="0.00"
@@ -558,7 +542,7 @@
 
                                 <!-- Column 4 -->
                                 <StackPanel Grid.Column="6">
-                                    <TextBlock Text="Quantité initiale *" Style="{StaticResource LabelStyle}"/>
+                                    <TextBlock Text="{x:Static res:Resources.InitialQuantityRequired}" Style="{StaticResource LabelStyle}"/>
                                     <TextBox Name="Quantite" 
                                              Style="{StaticResource RequiredTextBoxStyle}" 
                                              Text="0" 
@@ -567,7 +551,7 @@
                                              DataObject.Pasting="IntegerTextBox_Pasting"/>
 
                                     <CheckBox x:Name="IsUnlimitedStock"
-                                              Content="Stock illimité"
+                                              Content="{x:Static res:Resources.UnlimitedStock}"
                                               Style="{StaticResource ModernCheckBoxStyle}"/>
                                 </StackPanel>
                             </Grid>
@@ -577,7 +561,7 @@
                     <!-- Stock Management Section -->
                     <Border Style="{StaticResource SectionCardStyle}">
                         <StackPanel>
-                            <TextBlock Text="📊 Gestion de Stock" 
+                            <TextBlock Text="{x:Static res:Resources.StockManagementSection}" 
                                        Style="{StaticResource SectionTitleStyle}"/>
 
                             <Grid>
@@ -592,7 +576,7 @@
                                 </Grid.ColumnDefinitions>
 
                                 <StackPanel Grid.Column="0">
-                                    <TextBlock Text="Stock minimum" Style="{StaticResource LabelStyle}"/>
+                                    <TextBlock Text="{x:Static res:Resources.MinStock}" Style="{StaticResource LabelStyle}"/>
                                     <TextBox x:Name="MinimumStock" 
                                              Style="{StaticResource ModernTextBoxStyle}"
                                              Text="0"
@@ -602,7 +586,7 @@
                                 </StackPanel>
 
                                 <StackPanel Grid.Column="2">
-                                    <TextBlock Text="Stock maximum" Style="{StaticResource LabelStyle}"/>
+                                    <TextBlock Text="{x:Static res:Resources.MaxStock}" Style="{StaticResource LabelStyle}"/>
                                     <TextBox x:Name="MaximumStock" 
                                              Style="{StaticResource ModernTextBoxStyle}"
                                              Text="0"
@@ -612,7 +596,7 @@
                                 </StackPanel>
 
                                 <StackPanel Grid.Column="4">
-                                    <TextBlock Text="Emplacement de stockage" Style="{StaticResource LabelStyle}"/>
+                                    <TextBlock Text="{x:Static res:Resources.StorageLocationLabel}" Style="{StaticResource LabelStyle}"/>
                                     <TextBox x:Name="StorageLocation" 
                                              Style="{StaticResource ModernTextBoxStyle}"
                                              MaxLength="100"/>
@@ -620,7 +604,7 @@
 
                                 <StackPanel Grid.Column="6">
                                     <CheckBox x:Name="IsPerishable"
-                                              Content="Produit périssable"
+                                              Content="{x:Static res:Resources.PerishableProduct}"
                                               Style="{StaticResource ModernCheckBoxStyle}"
                                               Margin="0,28,0,16"/>
                                 </StackPanel>
@@ -631,7 +615,7 @@
                     <!-- Packaging Information Section -->
                     <Border Style="{StaticResource SectionCardStyle}">
                         <StackPanel>
-                            <TextBlock Text="📦 Informations d'Emballage" 
+                            <TextBlock Text="{x:Static res:Resources.PackagingInfo}" 
                                        Style="{StaticResource SectionTitleStyle}"/>
 
                             <Grid>
@@ -646,7 +630,7 @@
                                 </Grid.ColumnDefinitions>
 
                                 <StackPanel Grid.Column="0">
-                                    <TextBlock Text="Pièces par emballage" Style="{StaticResource LabelStyle}"/>
+                                    <TextBlock Text="{x:Static res:Resources.PiecesPerPackageLabel}" Style="{StaticResource LabelStyle}"/>
                                     <TextBox x:Name="PiecesPerPackage" 
                                              Style="{StaticResource ModernTextBoxStyle}"
                                              Text="1"
@@ -656,21 +640,21 @@
                                 </StackPanel>
 
                                 <StackPanel Grid.Column="2">
-                                    <TextBlock Text="Type d'emballage" Style="{StaticResource LabelStyle}"/>
+                                    <TextBlock Text="{x:Static res:Resources.PackageTypeLabel}" Style="{StaticResource LabelStyle}"/>
                                     <ComboBox x:Name="PackageType"
                                               Style="{StaticResource ModernComboBoxStyle}">
-                                        <ComboBoxItem Content="Boîte" IsSelected="True"/>
-                                        <ComboBoxItem Content="Carton"/>
-                                        <ComboBoxItem Content="Sac"/>
-                                        <ComboBoxItem Content="Palette"/>
-                                        <ComboBoxItem Content="Caisse"/>
-                                        <ComboBoxItem Content="Bidon"/>
-                                        <ComboBoxItem Content="Autre"/>
+                                        <ComboBoxItem Content="{x:Static res:Resources.BoxUnit}" IsSelected="True"/>
+                                        <ComboBoxItem Content="{x:Static res:Resources.CartonUnit}"/>
+                                        <ComboBoxItem Content="{x:Static res:Resources.BagUnit}"/>
+                                        <ComboBoxItem Content="{x:Static res:Resources.PaletteUnit}"/>
+                                        <ComboBoxItem Content="{x:Static res:Resources.CrateUnit}"/>
+                                        <ComboBoxItem Content="{x:Static res:Resources.CanUnit}"/>
+                                        <ComboBoxItem Content="{x:Static res:Resources.OtherUnit}"/>
                                     </ComboBox>
                                 </StackPanel>
 
                                 <StackPanel Grid.Column="4">
-                                    <TextBlock Text="Poids de l'emballage (Kg)" Style="{StaticResource LabelStyle}"/>
+                                    <TextBlock Text="{x:Static res:Resources.PackageWeightLabel}" Style="{StaticResource LabelStyle}"/>
                                     <TextBox x:Name="PackageWeight" 
                                              Style="{StaticResource ModernTextBoxStyle}"
                                              Text="0.00"
@@ -680,7 +664,7 @@
                                 </StackPanel>
 
                                 <StackPanel Grid.Column="6">
-                                    <TextBlock Text="Dimensions (ex: 30x20x15 cm)" Style="{StaticResource LabelStyle}"/>
+                                    <TextBlock Text="{x:Static res:Resources.PackageDimensionsLabel}" Style="{StaticResource LabelStyle}"/>
                                     <TextBox x:Name="PackageDimensions" 
                                              Style="{StaticResource ModernTextBoxStyle}"
                                              MaxLength="50"/>
@@ -692,7 +676,7 @@
                     <!-- Dates & Lot Information Section -->
                     <Border Style="{StaticResource SectionCardStyle}">
                         <StackPanel>
-                            <TextBlock Text="📅 Dates et Lots" 
+                            <TextBlock Text="{x:Static res:Resources.DatesAndBatches}" 
                                        Style="{StaticResource SectionTitleStyle}"/>
 
                             <Grid>
@@ -710,40 +694,40 @@
 
                                 <!-- Row 1 -->
                                 <StackPanel Grid.Column="0" Grid.Row="0">
-                                    <TextBlock Text="Date" Style="{StaticResource LabelStyle}"/>
+                                    <TextBlock Text="{x:Static res:Resources.DateLabel}" Style="{StaticResource LabelStyle}"/>
                                     <DatePicker x:Name="DateArticle" 
                                                 Style="{StaticResource ModernDatePickerStyle}"/>
                                 </StackPanel>
 
                                 <StackPanel Grid.Column="2" Grid.Row="0">
-                                    <TextBlock Text="Date de livraison" Style="{StaticResource LabelStyle}"/>
+                                    <TextBlock Text="{x:Static res:Resources.DeliveryDateLabel}" Style="{StaticResource LabelStyle}"/>
                                     <DatePicker x:Name="DateLivraison" 
                                                 Style="{StaticResource ModernDatePickerStyle}"/>
                                 </StackPanel>
 
                                 <StackPanel Grid.Column="4" Grid.Row="0">
-                                    <TextBlock Text="Date d'expiration" Style="{StaticResource LabelStyle}"/>
+                                    <TextBlock Text="{x:Static res:Resources.ExpirationDateLabel}" Style="{StaticResource LabelStyle}"/>
                                     <DatePicker x:Name="DateExpiration" 
                                                 Style="{StaticResource ModernDatePickerStyle}"/>
                                 </StackPanel>
 
                                 <!-- Row 2 -->
                                 <StackPanel Grid.Column="0" Grid.Row="1">
-                                    <TextBlock Text="Numéro de lot" Style="{StaticResource LabelStyle}"/>
+                                    <TextBlock Text="{x:Static res:Resources.BatchNumberLabel}" Style="{StaticResource LabelStyle}"/>
                                     <TextBox x:Name="NumeroLot" 
                                              Style="{StaticResource ModernTextBoxStyle}"
                                              MaxLength="50"/>
                                 </StackPanel>
 
                                 <StackPanel Grid.Column="2" Grid.Row="1">
-                                    <TextBlock Text="Bon de livraison" Style="{StaticResource LabelStyle}"/>
+                                    <TextBlock Text="{x:Static res:Resources.DeliveryNoteLabel}" Style="{StaticResource LabelStyle}"/>
                                     <TextBox x:Name="BonLivraison" 
                                              Style="{StaticResource ModernTextBoxStyle}"
                                              MaxLength="50"/>
                                 </StackPanel>
 
                                 <StackPanel Grid.Column="4" Grid.Row="1">
-                                    <TextBlock Text="Date dernier réappro." Style="{StaticResource LabelStyle}"/>
+                                    <TextBlock Text="{x:Static res:Resources.LastRestockDateLabel}" Style="{StaticResource LabelStyle}"/>
                                     <DatePicker x:Name="LastRestockDate" 
                                                 Style="{StaticResource ModernDatePickerStyle}"/>
                                 </StackPanel>
@@ -754,7 +738,7 @@
                     <!-- Notes Section -->
                     <Border Style="{StaticResource SectionCardStyle}">
                         <StackPanel>
-                            <TextBlock Text="📝 Notes" 
+                            <TextBlock Text="{x:Static res:Resources.NotesSectionTitle}" 
                                        Style="{StaticResource SectionTitleStyle}"/>
 
                             <TextBox x:Name="Notes"
@@ -789,7 +773,7 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
 
-                            <TextBlock Text="Méthode de Paiement:" 
+                            <TextBlock Text="{x:Static res:Resources.PaymentMethodLabel}" 
                                        Grid.Column="0"
                                        VerticalAlignment="Center"
                                        Style="{StaticResource LabelStyle}"
@@ -817,7 +801,7 @@
                                     Click="CashButton_Click">
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="💵" FontSize="18" Margin="0,0,8,0"/>
-                                    <TextBlock Text="CASH" FontSize="13" FontWeight="SemiBold" VerticalAlignment="Center"/>
+                                    <TextBlock Text="{x:Static res:Resources.CashPayment}" FontSize="13" FontWeight="SemiBold" VerticalAlignment="Center"/>
                                 </StackPanel>
                             </Button>
 
@@ -827,7 +811,7 @@
                                     Click="HalfButton_Click">
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="⚖️" FontSize="18" Margin="0,0,8,0"/>
-                                    <TextBlock Text="50/50" FontSize="13" FontWeight="SemiBold" VerticalAlignment="Center"/>
+                                    <TextBlock Text="{x:Static res:Resources.HalfAndHalf}" FontSize="13" FontWeight="SemiBold" VerticalAlignment="Center"/>
                                 </StackPanel>
                             </Button>
 
@@ -837,20 +821,20 @@
                                     Click="CreditButton_Click">
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="💳" FontSize="18" Margin="0,0,8,0"/>
-                                    <TextBlock Text="CREDIT" FontSize="13" FontWeight="SemiBold" VerticalAlignment="Center"/>
+                                    <TextBlock Text="{x:Static res:Resources.CreditPayment}" FontSize="13" FontWeight="SemiBold" VerticalAlignment="Center"/>
                                 </StackPanel>
                             </Button>
                         </Grid>
                     </StackPanel>
 
                     <Button x:Name="EnregistrerButton" 
-                            Content="✅ Enregistrer" 
+                            Content="{x:Static res:Resources.SaveRecord}" 
                             Style="{StaticResource PrimaryButtonStyle}"
                             Click="EnregistrerButton_Click" 
                             Visibility="Collapsed"/>
 
                     <Button x:Name="AjouterButton" 
-                            Content="➕ Ajouter" 
+                            Content="{x:Static res:Resources.AddRecord}" 
                             Style="{StaticResource SuccessButtonStyle}"
                             Click="AjouterButton_Click" 
                             Visibility="Collapsed"/>

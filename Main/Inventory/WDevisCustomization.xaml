@@ -1,7 +1,8 @@
-﻿<Window x:Class="GestionComerce.Main.Inventory.WDevisCustomization"
+<Window x:Class="GestionComerce.Main.Inventory.WDevisCustomization"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Personnalisation du Devis" 
+        xmlns:res="clr-namespace:GestionComerce.Resources"
+        Title="{x:Static res:Resources.QuoteCustomization}" 
         Height="750" Width="1000"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
@@ -91,11 +92,10 @@
 
         <!-- Header -->
         <StackPanel Grid.Row="0">
-            <TextBlock Text="Personnalisation du Devis" 
-                       FontSize="28" 
-                       FontWeight="Bold"
+            <TextBlock Text="{x:Static res:Resources.QuoteCustomization}" 
+                       FontSize="28" FontWeight="Bold"
                        Foreground="{StaticResource TextPrimary}"/>
-            <TextBlock Text="Sélectionnez les informations à afficher sur le devis" 
+            <TextBlock Text="{x:Static res:Resources.SelectInfoForQuote}" 
                        FontSize="14"
                        Foreground="{StaticResource TextSecondary}"
                        Margin="0,8,0,0"/>
@@ -115,108 +115,85 @@
                     <!-- Company Information Section -->
                     <Border Style="{StaticResource SectionBorder}">
                         <StackPanel>
-                            <TextBlock Text="📋 Informations de l'Entreprise" 
-                                       FontSize="16" 
-                                       FontWeight="SemiBold"
+                            <TextBlock Text="{x:Static res:Resources.CompanyInfoSection}" 
+                                       FontSize="16" FontWeight="SemiBold"
                                        Foreground="{StaticResource TextPrimary}"
                                        Margin="0,0,0,16"/>
 
                             <CheckBox x:Name="ShowLogoCheckBox" 
-                                      Content="Logo de l'entreprise" 
-                                      IsChecked="True"
-                                      Style="{StaticResource CheckBoxStyle}"/>
+                                      Content="{x:Static res:Resources.CompanyLogo}" 
+                                      IsChecked="True" Style="{StaticResource CheckBoxStyle}"/>
                             <CheckBox x:Name="ShowCompanyNameCheckBox" 
-                                      Content="Nom de l'entreprise" 
-                                      IsChecked="True"
-                                      Style="{StaticResource CheckBoxStyle}"/>
+                                      Content="{x:Static res:Resources.CompanyNameLabel}" 
+                                      IsChecked="True" Style="{StaticResource CheckBoxStyle}"/>
                             <CheckBox x:Name="ShowICECheckBox" 
-                                      Content="ICE" 
-                                      IsChecked="True"
-                                      Style="{StaticResource CheckBoxStyle}"/>
+                                      Content="{x:Static res:Resources.ICELabel}" 
+                                      IsChecked="True" Style="{StaticResource CheckBoxStyle}"/>
                             <CheckBox x:Name="ShowVATCheckBox" 
-                                      Content="VAT/TVA" 
-                                      IsChecked="True"
-                                      Style="{StaticResource CheckBoxStyle}"/>
+                                      Content="{x:Static res:Resources.VATTVALabel}" 
+                                      IsChecked="True" Style="{StaticResource CheckBoxStyle}"/>
                             <CheckBox x:Name="ShowCompanyIdCheckBox" 
-                                      Content="ID de l'entreprise" 
-                                      IsChecked="True"
-                                      Style="{StaticResource CheckBoxStyle}"/>
+                                      Content="{x:Static res:Resources.CompanyIDLabel}" 
+                                      IsChecked="True" Style="{StaticResource CheckBoxStyle}"/>
                             <CheckBox x:Name="ShowEtatJuridicCheckBox" 
-                                      Content="État Juridique" 
-                                      IsChecked="True"
-                                      Style="{StaticResource CheckBoxStyle}"/>
+                                      Content="{x:Static res:Resources.LegalStatusLabel}" 
+                                      IsChecked="True" Style="{StaticResource CheckBoxStyle}"/>
                             <CheckBox x:Name="ShowSiegeCheckBox" 
-                                      Content="Siège de l'entreprise" 
-                                      IsChecked="True"
-                                      Style="{StaticResource CheckBoxStyle}"/>
+                                      Content="{x:Static res:Resources.CompanyHeadquarters}" 
+                                      IsChecked="True" Style="{StaticResource CheckBoxStyle}"/>
                             <CheckBox x:Name="ShowTelephoneCheckBox" 
-                                      Content="Téléphone" 
-                                      IsChecked="True"
-                                      Style="{StaticResource CheckBoxStyle}"/>
+                                      Content="{x:Static res:Resources.PhoneLabel}" 
+                                      IsChecked="True" Style="{StaticResource CheckBoxStyle}"/>
                             <CheckBox x:Name="ShowAdresseCheckBox" 
-                                      Content="Adresse" 
-                                      IsChecked="True"
-                                      Style="{StaticResource CheckBoxStyle}"/>
+                                      Content="{x:Static res:Resources.Address}" 
+                                      IsChecked="True" Style="{StaticResource CheckBoxStyle}"/>
                         </StackPanel>
                     </Border>
 
                     <!-- Article Fields Section -->
                     <Border Style="{StaticResource SectionBorder}">
                         <StackPanel>
-                            <TextBlock Text="📦 Colonnes des Articles" 
-                                       FontSize="16" 
-                                       FontWeight="SemiBold"
+                            <TextBlock Text="{x:Static res:Resources.ArticleColumns}" 
+                                       FontSize="16" FontWeight="SemiBold"
                                        Foreground="{StaticResource TextPrimary}"
                                        Margin="0,0,0,16"/>
 
                             <CheckBox x:Name="ShowCodeCheckBox" 
-                                      Content="Code Article" 
-                                      IsChecked="True"
-                                      Style="{StaticResource CheckBoxStyle}"/>
+                                      Content="{x:Static res:Resources.ArticleCodeLabel}" 
+                                      IsChecked="True" Style="{StaticResource CheckBoxStyle}"/>
                             <CheckBox x:Name="ShowArticleNameCheckBox" 
-                                      Content="Nom de l'article" 
-                                      IsChecked="True"
-                                      Style="{StaticResource CheckBoxStyle}"/>
+                                      Content="{x:Static res:Resources.ArticleNameRequired}" 
+                                      IsChecked="True" Style="{StaticResource CheckBoxStyle}"/>
                             <CheckBox x:Name="ShowQuantityCheckBox" 
-                                      Content="Quantité" 
-                                      IsChecked="True"
-                                      Style="{StaticResource CheckBoxStyle}"/>
+                                      Content="{x:Static res:Resources.QuantityLabel}" 
+                                      IsChecked="True" Style="{StaticResource CheckBoxStyle}"/>
                             <CheckBox x:Name="ShowUnitPriceCheckBox" 
-                                      Content="Prix Unitaire" 
-                                      IsChecked="True"
-                                      Style="{StaticResource CheckBoxStyle}"/>
+                                      Content="{x:Static res:Resources.UnitPriceLabel}" 
+                                      IsChecked="True" Style="{StaticResource CheckBoxStyle}"/>
                             <CheckBox x:Name="ShowTotalPriceCheckBox" 
-                                      Content="Prix Total" 
-                                      IsChecked="True"
-                                      Style="{StaticResource CheckBoxStyle}"/>
+                                      Content="{x:Static res:Resources.TotalPrice}" 
+                                      IsChecked="True" Style="{StaticResource CheckBoxStyle}"/>
                             <CheckBox x:Name="ShowTVACheckBox" 
-                                      Content="TVA %" 
-                                      IsChecked="True"
-                                      Style="{StaticResource CheckBoxStyle}"/>
+                                      Content="{x:Static res:Resources.TVAPercent}" 
+                                      IsChecked="True" Style="{StaticResource CheckBoxStyle}"/>
                             <CheckBox x:Name="ShowFamilleCheckBox" 
-                                      Content="Famille/Catégorie" 
-                                      IsChecked="False"
-                                      Style="{StaticResource CheckBoxStyle}"/>
+                                      Content="{x:Static res:Resources.FamilyCategoryLabel}" 
+                                      IsChecked="False" Style="{StaticResource CheckBoxStyle}"/>
                             <CheckBox x:Name="ShowFournisseurCheckBox" 
-                                      Content="Fournisseur" 
-                                      IsChecked="False"
-                                      Style="{StaticResource CheckBoxStyle}"/>
+                                      Content="{x:Static res:Resources.SupplierLabel}" 
+                                      IsChecked="False" Style="{StaticResource CheckBoxStyle}"/>
                             <CheckBox x:Name="ShowMarqueCheckBox" 
-                                      Content="Marque" 
-                                      IsChecked="False"
-                                      Style="{StaticResource CheckBoxStyle}"/>
+                                      Content="{x:Static res:Resources.Brand}" 
+                                      IsChecked="False" Style="{StaticResource CheckBoxStyle}"/>
                             <CheckBox x:Name="ShowLotCheckBox" 
-                                      Content="Numéro de Lot" 
-                                      IsChecked="False"
-                                      Style="{StaticResource CheckBoxStyle}"/>
+                                      Content="{x:Static res:Resources.BatchNumberLabel}" 
+                                      IsChecked="False" Style="{StaticResource CheckBoxStyle}"/>
                             <CheckBox x:Name="ShowBonLivraisonCheckBox" 
-                                      Content="Bon de Livraison" 
-                                      IsChecked="False"
-                                      Style="{StaticResource CheckBoxStyle}"/>
+                                      Content="{x:Static res:Resources.DeliveryNoteLabel}" 
+                                      IsChecked="False" Style="{StaticResource CheckBoxStyle}"/>
                             <CheckBox x:Name="ShowExpirationCheckBox" 
-                                      Content="Date d'Expiration" 
-                                      IsChecked="False"
-                                      Style="{StaticResource CheckBoxStyle}"/>
+                                      Content="{x:Static res:Resources.ExpirationDateLabel}" 
+                                      IsChecked="False" Style="{StaticResource CheckBoxStyle}"/>
                         </StackPanel>
                     </Border>
                 </StackPanel>
@@ -226,89 +203,57 @@
                     <!-- Devis Information Section -->
                     <Border Style="{StaticResource SectionBorder}">
                         <StackPanel>
-                            <TextBlock Text="📄 Informations du Devis" 
-                                       FontSize="16" 
-                                       FontWeight="SemiBold"
+                            <TextBlock Text="{x:Static res:Resources.QuoteInfoSection}" 
+                                       FontSize="16" FontWeight="SemiBold"
                                        Foreground="{StaticResource TextPrimary}"
                                        Margin="0,0,0,16"/>
 
                             <CheckBox x:Name="ShowDevisNumberCheckBox" 
-                                      Content="Numéro de Devis" 
-                                      IsChecked="True"
-                                      Style="{StaticResource CheckBoxStyle}"/>
+                                      Content="{x:Static res:Resources.QuoteNumberLabel}" 
+                                      IsChecked="True" Style="{StaticResource CheckBoxStyle}"/>
                             <CheckBox x:Name="ShowDevisDateCheckBox" 
-                                      Content="Date du Devis" 
-                                      IsChecked="True"
-                                      Style="{StaticResource CheckBoxStyle}"/>
+                                      Content="{x:Static res:Resources.QuoteDateLabel}" 
+                                      IsChecked="True" Style="{StaticResource CheckBoxStyle}"/>
                             <CheckBox x:Name="ShowValidityCheckBox" 
-                                      Content="Validité du Devis" 
-                                      IsChecked="True"
-                                      Style="{StaticResource CheckBoxStyle}"/>
+                                      Content="{x:Static res:Resources.QuoteValidityLabel}" 
+                                      IsChecked="True" Style="{StaticResource CheckBoxStyle}"/>
 
-                            <TextBlock Text="Validité (jours):" 
+                            <TextBlock Text="{x:Static res:Resources.ValidityDaysLabel}" 
                                        FontSize="13"
                                        Foreground="{StaticResource TextSecondary}"
                                        Margin="24,8,0,4"/>
                             <TextBox x:Name="ValidityDaysTextBox"
-                                     Text="30"
-                                     Width="100"
-                                     Height="36"
-                                     Padding="8"
-                                     FontSize="14"
-                                     HorizontalAlignment="Left"
-                                     Margin="24,0,0,12"/>
+                                     Text="30" Width="100" Height="36" Padding="8" FontSize="14"
+                                     HorizontalAlignment="Left" Margin="24,0,0,12"/>
                         </StackPanel>
                     </Border>
 
                     <!-- Client Information Section -->
                     <Border Style="{StaticResource SectionBorder}">
                         <StackPanel>
-                            <TextBlock Text="👤 Informations Client" 
-                                       FontSize="16" 
-                                       FontWeight="SemiBold"
+                            <TextBlock Text="{x:Static res:Resources.ClientInfoSection}" 
+                                       FontSize="16" FontWeight="SemiBold"
                                        Foreground="{StaticResource TextPrimary}"
                                        Margin="0,0,0,16"/>
 
                             <CheckBox x:Name="ShowClientSectionCheckBox" 
-                                      Content="Afficher section client" 
-                                      IsChecked="True"
-                                      Style="{StaticResource CheckBoxStyle}"
+                                      Content="{x:Static res:Resources.ShowClientSection}" 
+                                      IsChecked="True" Style="{StaticResource CheckBoxStyle}"
                                       Checked="ClientSection_CheckChanged"
                                       Unchecked="ClientSection_CheckChanged"/>
 
                             <StackPanel x:Name="ClientFieldsPanel" Margin="24,0,0,0">
-                                <TextBlock Text="Nom du client:" 
-                                           FontSize="13"
-                                           Foreground="{StaticResource TextSecondary}"
-                                           Margin="0,0,0,4"/>
-                                <TextBox x:Name="ClientNameTextBox"
-                                         Text=""
-                                         Height="36"
-                                         Padding="8"
-                                         FontSize="14"
-                                         Margin="0,0,0,12"/>
+                                <TextBlock Text="{x:Static res:Resources.ClientNameLabel}" 
+                                           FontSize="13" Foreground="{StaticResource TextSecondary}" Margin="0,0,0,4"/>
+                                <TextBox x:Name="ClientNameTextBox" Text="" Height="36" Padding="8" FontSize="14" Margin="0,0,0,12"/>
 
-                                <TextBlock Text="ICE Client:" 
-                                           FontSize="13"
-                                           Foreground="{StaticResource TextSecondary}"
-                                           Margin="0,0,0,4"/>
-                                <TextBox x:Name="ClientICETextBox"
-                                         Text=""
-                                         Height="36"
-                                         Padding="8"
-                                         FontSize="14"
-                                         Margin="0,0,0,12"/>
+                                <TextBlock Text="{x:Static res:Resources.ClientICELabel}" 
+                                           FontSize="13" Foreground="{StaticResource TextSecondary}" Margin="0,0,0,4"/>
+                                <TextBox x:Name="ClientICETextBox" Text="" Height="36" Padding="8" FontSize="14" Margin="0,0,0,12"/>
 
-                                <TextBlock Text="Adresse Client:" 
-                                           FontSize="13"
-                                           Foreground="{StaticResource TextSecondary}"
-                                           Margin="0,0,0,4"/>
-                                <TextBox x:Name="ClientAddressTextBox"
-                                         Text=""
-                                         Height="36"
-                                         Padding="8"
-                                         FontSize="14"
-                                         Margin="0,0,0,12"/>
+                                <TextBlock Text="{x:Static res:Resources.ClientAddressLabel}" 
+                                           FontSize="13" Foreground="{StaticResource TextSecondary}" Margin="0,0,0,4"/>
+                                <TextBox x:Name="ClientAddressTextBox" Text="" Height="36" Padding="8" FontSize="14" Margin="0,0,0,12"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>
@@ -316,65 +261,53 @@
                     <!-- Totals Section -->
                     <Border Style="{StaticResource SectionBorder}">
                         <StackPanel>
-                            <TextBlock Text="💰 Totaux" 
-                                       FontSize="16" 
-                                       FontWeight="SemiBold"
+                            <TextBlock Text="{x:Static res:Resources.TotalsSection}" 
+                                       FontSize="16" FontWeight="SemiBold"
                                        Foreground="{StaticResource TextPrimary}"
                                        Margin="0,0,0,16"/>
 
                             <CheckBox x:Name="ShowSubtotalCheckBox" 
-                                      Content="Sous-total (HT)" 
-                                      IsChecked="True"
-                                      Style="{StaticResource CheckBoxStyle}"/>
+                                      Content="{x:Static res:Resources.SubtotalHT}" 
+                                      IsChecked="True" Style="{StaticResource CheckBoxStyle}"/>
                             <CheckBox x:Name="ShowTVATotalCheckBox" 
-                                      Content="Total TVA" 
-                                      IsChecked="True"
-                                      Style="{StaticResource CheckBoxStyle}"/>
+                                      Content="{x:Static res:Resources.TotalTVALabel}" 
+                                      IsChecked="True" Style="{StaticResource CheckBoxStyle}"/>
                             <CheckBox x:Name="ShowGrandTotalCheckBox" 
-                                      Content="Total TTC" 
-                                      IsChecked="True"
-                                      Style="{StaticResource CheckBoxStyle}"/>
+                                      Content="{x:Static res:Resources.TotalTTCLabel}" 
+                                      IsChecked="True" Style="{StaticResource CheckBoxStyle}"/>
                         </StackPanel>
                     </Border>
 
                     <!-- Additional Options -->
                     <Border Style="{StaticResource SectionBorder}">
                         <StackPanel>
-                            <TextBlock Text="⚙️ Options Additionnelles" 
-                                       FontSize="16" 
-                                       FontWeight="SemiBold"
+                            <TextBlock Text="{x:Static res:Resources.AdditionalOptions}" 
+                                       FontSize="16" FontWeight="SemiBold"
                                        Foreground="{StaticResource TextPrimary}"
                                        Margin="0,0,0,16"/>
 
                             <CheckBox x:Name="ShowNotesCheckBox" 
-                                      Content="Section Notes/Remarques" 
-                                      IsChecked="True"
-                                      Style="{StaticResource CheckBoxStyle}"
+                                      Content="{x:Static res:Resources.NotesSectionCheck}" 
+                                      IsChecked="True" Style="{StaticResource CheckBoxStyle}"
                                       Checked="NotesSection_CheckChanged"
                                       Unchecked="NotesSection_CheckChanged"/>
 
                             <TextBox x:Name="NotesTextBox"
-                                     Text="Merci de votre confiance."
-                                     Height="80"
-                                     Padding="8"
-                                     FontSize="13"
-                                     TextWrapping="Wrap"
-                                     AcceptsReturn="True"
+                                     Text="{x:Static res:Resources.ThankYouMessage}"
+                                     Height="80" Padding="8" FontSize="13"
+                                     TextWrapping="Wrap" AcceptsReturn="True"
                                      VerticalScrollBarVisibility="Auto"
                                      Margin="24,0,0,12"/>
 
                             <CheckBox x:Name="ShowPaymentTermsCheckBox" 
-                                      Content="Conditions de paiement" 
-                                      IsChecked="True"
-                                      Style="{StaticResource CheckBoxStyle}"
+                                      Content="{x:Static res:Resources.PaymentTermsLabel}" 
+                                      IsChecked="True" Style="{StaticResource CheckBoxStyle}"
                                       Checked="PaymentTerms_CheckChanged"
                                       Unchecked="PaymentTerms_CheckChanged"/>
 
                             <TextBox x:Name="PaymentTermsTextBox"
-                                     Text="Paiement à 30 jours"
-                                     Height="36"
-                                     Padding="8"
-                                     FontSize="13"
+                                     Text="{x:Static res:Resources.Payment30Days}"
+                                     Height="36" Padding="8" FontSize="13"
                                      Margin="24,0,0,0"/>
                         </StackPanel>
                     </Border>
@@ -383,16 +316,14 @@
         </ScrollViewer>
 
         <!-- Actions -->
-        <StackPanel Grid.Row="4" 
-                    Orientation="Horizontal" 
-                    HorizontalAlignment="Right">
-            <Button Content="← Retour"
+        <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="{x:Static res:Resources.Back}"
                     Width="140" Height="48"
                     Style="{StaticResource SecondaryButtonStyle}"
                     Click="Back_Click"
                     Margin="0,0,12,0"/>
             <Button x:Name="GenerateButton"
-                    Content="Générer le Devis ✓"
+                    Content="{x:Static res:Resources.GenerateQuote}"
                     Width="200" Height="48"
                     Style="{StaticResource PrimaryButtonStyle}"
                     Click="Generate_Click">

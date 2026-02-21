@@ -1,7 +1,8 @@
-﻿<Window x:Class="GestionComerce.Main.Inventory.WManualArticleSelection"
+<Window x:Class="GestionComerce.Main.Inventory.WManualArticleSelection"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Sélection Manuelle des Articles" 
+        xmlns:res="clr-namespace:GestionComerce.Resources"
+        Title="{x:Static res:Resources.ManualArticleSelection}" 
         Height="700" Width="1000"
         WindowStartupLocation="CenterScreen"
         Background="#F8FAFC">
@@ -149,12 +150,11 @@
                       Width="32" Height="32"
                       Margin="0,0,16,0" 
                       Stretch="Fill"/>
-                <TextBlock Text="Sélection Manuelle des Articles" 
-                           FontSize="28" 
-                           FontWeight="Bold"
+                <TextBlock Text="{x:Static res:Resources.ManualArticleSelection}" 
+                           FontSize="28" FontWeight="Bold"
                            Foreground="{StaticResource TextPrimary}"/>
             </StackPanel>
-            <TextBlock Text="Choisissez les articles à inclure dans le devis" 
+            <TextBlock Text="{x:Static res:Resources.ChooseArticlesForQuote}" 
                        FontSize="14"
                        Foreground="{StaticResource TextSecondary}"
                        Margin="48,8,0,0"/>
@@ -172,7 +172,6 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
-            <!-- Category Filter ComboBox -->
             <ComboBox x:Name="CategoryFilterComboBox"
                       Grid.Column="0"
                       Height="44"
@@ -188,17 +187,17 @@
             <TextBox x:Name="SearchTextBox"
                      Grid.Column="2"
                      Style="{StaticResource SearchBoxStyle}"
-                     Tag="🔍 Rechercher un article..."
+                     Tag="{x:Static res:Resources.SearchArticlePlaceholder}"
                      TextChanged="SearchTextBox_TextChanged"/>
 
             <Button Grid.Column="4"
-                    Content="✓ Tout sélectionner"
+                    Content="{x:Static res:Resources.SelectAllButton}"
                     Width="180" Height="44"
                     Style="{StaticResource SecondaryButtonStyle}"
                     Click="SelectAll_Click"/>
 
             <Button Grid.Column="6"
-                    Content="✕ Tout désélectionner"
+                    Content="{x:Static res:Resources.DeselectAllButton}"
                     Width="200" Height="44"
                     Style="{StaticResource SecondaryButtonStyle}"
                     Click="DeselectAll_Click"/>
@@ -225,28 +224,24 @@
                         Padding="24,16">
                     <Grid>
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="📦 Total:" 
-                                       FontSize="14"
-                                       FontWeight="SemiBold"
+                            <TextBlock Text="{x:Static res:Resources.TotalArticlesLabel}" 
+                                       FontSize="14" FontWeight="SemiBold"
                                        Foreground="{StaticResource TextSecondary}"
                                        Margin="0,0,8,0"/>
                             <TextBlock x:Name="TotalArticlesText"
                                        Text="0"
-                                       FontSize="14"
-                                       FontWeight="Bold"
+                                       FontSize="14" FontWeight="Bold"
                                        Foreground="{StaticResource PrimaryBlue}"/>
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                            <TextBlock Text="✓ Sélectionnés:" 
-                                       FontSize="14"
-                                       FontWeight="SemiBold"
+                            <TextBlock Text="{x:Static res:Resources.SelectedLabel}" 
+                                       FontSize="14" FontWeight="SemiBold"
                                        Foreground="{StaticResource TextSecondary}"
                                        Margin="0,0,8,0"/>
                             <TextBlock x:Name="SelectedCountText"
                                        Text="0"
-                                       FontSize="14"
-                                       FontWeight="Bold"
+                                       FontSize="14" FontWeight="Bold"
                                        Foreground="{StaticResource SuccessGreen}"/>
                         </StackPanel>
                     </Grid>
@@ -262,16 +257,14 @@
         </Border>
 
         <!-- Action Buttons -->
-        <StackPanel Grid.Row="6" 
-                    Orientation="Horizontal" 
-                    HorizontalAlignment="Right">
-            <Button Content="← Annuler"
+        <StackPanel Grid.Row="6" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="{x:Static res:Resources.Cancel}"
                     Width="140" Height="48"
                     Style="{StaticResource SecondaryButtonStyle}"
                     Click="Cancel_Click"
                     Margin="0,0,12,0"/>
             <Button x:Name="ValidateButton"
-                    Content="Valider la sélection →"
+                    Content="{x:Static res:Resources.ValidateSelection}"
                     Width="220" Height="48"
                     Style="{StaticResource PrimaryButtonStyle}"
                     Click="Validate_Click">

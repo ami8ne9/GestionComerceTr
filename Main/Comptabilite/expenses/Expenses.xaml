@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:p="clr-namespace:GestionComerce.Resources"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1200"
              Background="#F8F9FA">
@@ -466,18 +467,18 @@
                 </Grid.ColumnDefinitions>
 
                 <StackPanel Grid.Column="0">
-                    <TextBlock Text="💰 Gestion des Dépenses" 
+                    <TextBlock Text="{x:Static p:Resources.Expenses_Title}" 
                                FontSize="28" 
                                FontWeight="Bold"
                                Foreground="#111827"
                                Margin="0,0,0,4"/>
-                    <TextBlock Text="Suivez et gérez toutes vos dépenses professionnelles"
+                    <TextBlock Text="{x:Static p:Resources.Expenses_Subtitle}"
                                FontSize="14"
                                Foreground="#6B7280"/>
                 </StackPanel>
 
                 <Button Grid.Column="1"
-                        Content="⚙️ Paramètres d'Alerte"
+                        Content="{x:Static p:Resources.Expenses_AlertSettings}"
                         Style="{StaticResource SecondaryButton}"
                         Click="BtnAlertSettings_Click"
                         VerticalAlignment="Center"/>
@@ -498,7 +499,7 @@
                     </Grid.RowDefinitions>
 
                     <TextBlock Grid.Row="0" 
-                               Text="🔔 Configuration des Alertes de Paiement" 
+                               Text="{x:Static p:Resources.Expenses_AlertConfig}" 
                                Style="{StaticResource SectionTitle}"
                                Foreground="#92400E"/>
 
@@ -510,7 +511,7 @@
                         </Grid.ColumnDefinitions>
 
                         <StackPanel Grid.Column="0" Margin="0,0,15,0">
-                            <TextBlock Text="Délai d'alerte" Style="{StaticResource LabelStyle}" Foreground="#92400E"/>
+                            <TextBlock Text="{x:Static p:Resources.Expenses_AlertDelay}" Style="{StaticResource LabelStyle}" Foreground="#92400E"/>
                             <TextBox x:Name="txtAlertValue" 
                                      Style="{StaticResource ModernTextBox}"
                                      Text="5"
@@ -518,18 +519,18 @@
                         </StackPanel>
 
                         <StackPanel Grid.Column="1" Margin="15,0,15,0">
-                            <TextBlock Text="Unité de temps" Style="{StaticResource LabelStyle}" Foreground="#92400E"/>
+                            <TextBlock Text="{x:Static p:Resources.Expenses_TimeUnit}" Style="{StaticResource LabelStyle}" Foreground="#92400E"/>
                             <ComboBox x:Name="cmbAlertUnit" 
                                       Style="{StaticResource ModernComboBox}"
                                       SelectedIndex="1">
-                                <ComboBoxItem Content="Heures" Tag="hours"/>
-                                <ComboBoxItem Content="Jours" Tag="days"/>
-                                <ComboBoxItem Content="Semaines" Tag="weeks"/>
+                                <ComboBoxItem Content="{x:Static p:Resources.Expenses_Hours}" Tag="hours"/>
+                                <ComboBoxItem Content="{x:Static p:Resources.Expenses_DaysUnit}" Tag="days"/>
+                                <ComboBoxItem Content="{x:Static p:Resources.Expenses_Weeks}" Tag="weeks"/>
                             </ComboBox>
                         </StackPanel>
 
                         <Button Grid.Column="2"
-                                Content="💾 Sauvegarder"
+                                Content="{x:Static p:Resources.Expenses_SaveBtn}"
                                 Style="{StaticResource PrimaryButton}"
                                 Click="BtnSaveAlertSettings_Click"
                                 VerticalAlignment="Bottom"/>
@@ -553,7 +554,7 @@
                         </Grid.ColumnDefinitions>
 
                         <TextBlock Grid.Column="0"
-                                   Text="⚠️ Paiements à venir" 
+                                   Text="{x:Static p:Resources.Expenses_UpcomingPayments}" 
                                    FontSize="18" 
                                    FontWeight="SemiBold"
                                    Foreground="#991B1B"/>
@@ -586,7 +587,7 @@
                                                        Foreground="#111827"
                                                        Margin="0,0,0,4"/>
                                             <TextBlock Foreground="#6B7280" FontSize="13">
-                                                <Run Text="Catégorie:"/>
+                                                <Run Text="{x:Static p:Resources.Expenses_CategoryLabel}"/>
                                                 <Run Text="{Binding Category}" FontWeight="Medium"/>
                                             </TextBlock>
                                         </StackPanel>
@@ -607,9 +608,9 @@
                                             <TextBlock Foreground="#991B1B" 
                                                        FontWeight="SemiBold"
                                                        FontSize="13">
-                                                <Run Text="Dans"/>
+                                                <Run Text="{x:Static p:Resources.Expenses_In}"/>
                                                 <Run Text="{Binding DaysUntilDue, Mode=OneWay}"/>
-                                                <Run Text="jour(s)"/>
+                                                <Run Text="{x:Static p:Resources.Expenses_DaysSuffix}"/>
                                             </TextBlock>
                                         </Border>
                                     </Grid>
@@ -629,7 +630,7 @@
                     </Grid.RowDefinitions>
 
                     <TextBlock Grid.Row="0" 
-                               Text="➕ Ajouter une Nouvelle Dépense" 
+                               Text="{x:Static p:Resources.Expenses_AddNewTitle}" 
                                Style="{StaticResource SectionTitle}"/>
 
                     <Grid Grid.Row="1">
@@ -647,7 +648,7 @@
 
                         <!-- Row 1 -->
                         <StackPanel Grid.Row="0" Grid.Column="0" Margin="0,0,12,16">
-                            <TextBlock Text="Nom de la Dépense *" Style="{StaticResource LabelStyle}"/>
+                            <TextBlock Text="{x:Static p:Resources.Expenses_NameRequired}" Style="{StaticResource LabelStyle}"/>
                             <TextBox x:Name="txtExpenseName" 
                                      Style="{StaticResource ModernTextBox}"
                                      ToolTip="Ex: Loyer de bureau"/>
@@ -659,7 +660,7 @@
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Grid.Column="0" Text="Catégorie *" Style="{StaticResource LabelStyle}"/>
+                                <TextBlock Grid.Column="0" Text="{x:Static p:Resources.Expenses_CategoryRequired}" Style="{StaticResource LabelStyle}"/>
                                 <Button Grid.Column="1" 
                                         Content="+"
                                         Width="24" Height="24"
@@ -669,7 +670,7 @@
                                         Foreground="White"
                                         BorderThickness="0"
                                         Cursor="Hand"
-                                        ToolTip="Ajouter une nouvelle catégorie"
+                                        ToolTip="{x:Static p:Resources.Expenses_AddCategoryTooltip}"
                                         Click="BtnAddCategory_Click">
                                     <Button.Template>
                                         <ControlTemplate TargetType="Button">
@@ -696,7 +697,7 @@
                         </StackPanel>
 
                         <StackPanel Grid.Row="0" Grid.Column="2" Margin="12,0,0,16">
-                            <TextBlock Text="Montant (MAD) *" Style="{StaticResource LabelStyle}"/>
+                            <TextBlock Text="{x:Static p:Resources.Expenses_AmountRequired}" Style="{StaticResource LabelStyle}"/>
                             <TextBox x:Name="txtAmount" 
                                      Style="{StaticResource ModernTextBox}"
                                      ToolTip="Ex: 5000.00"
@@ -705,7 +706,7 @@
 
                         <!-- Row 2 -->
                         <StackPanel Grid.Row="1" Grid.Column="0" Margin="0,0,12,16">
-                            <TextBlock Text="Date d'échéance *" Style="{StaticResource LabelStyle}"/>
+                            <TextBlock Text="{x:Static p:Resources.Expenses_DueDateRequired}" Style="{StaticResource LabelStyle}"/>
                             <DatePicker x:Name="dpDueDate" 
                                         Style="{StaticResource ModernDatePicker}"
                                         SelectedDateFormat="Short"/>
@@ -717,7 +718,7 @@
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Grid.Column="0" Text="Type de Récurrence" Style="{StaticResource LabelStyle}"/>
+                                <TextBlock Grid.Column="0" Text="{x:Static p:Resources.Expenses_RecurrenceType}" Style="{StaticResource LabelStyle}"/>
                                 <Button Grid.Column="1" 
                                         Content="+"
                                         Width="24" Height="24"
@@ -727,7 +728,7 @@
                                         Foreground="White"
                                         BorderThickness="0"
                                         Cursor="Hand"
-                                        ToolTip="Ajouter un nouveau type de récurrence"
+                                        ToolTip="{x:Static p:Resources.Expenses_AddRecurrenceTooltip}"
                                         Click="BtnAddRecurrence_Click">
                                     <Button.Template>
                                         <ControlTemplate TargetType="Button">
@@ -754,21 +755,21 @@
                         </StackPanel>
 
                         <StackPanel Grid.Row="1" Grid.Column="2" Margin="12,0,0,16">
-                            <TextBlock Text="Méthode de Paiement" Style="{StaticResource LabelStyle}"/>
+                            <TextBlock Text="{x:Static p:Resources.Expenses_PaymentMethod}" Style="{StaticResource LabelStyle}"/>
                             <ComboBox x:Name="cmbPaymentMethod" 
                                       Style="{StaticResource ModernComboBox}"
                                       SelectedIndex="0">
                                 <ComboBoxItem Content="Cash"/>
-                                <ComboBoxItem Content="Carte bancaire"/>
-                                <ComboBoxItem Content="Virement"/>
-                                <ComboBoxItem Content="Chèque"/>
+                                <ComboBoxItem Content="{x:Static p:Resources.Expenses_CreditCard}"/>
+                                <ComboBoxItem Content="{x:Static p:Resources.Expenses_Transfer}"/>
+                                <ComboBoxItem Content="{x:Static p:Resources.Expenses_Cheque}"/>
                                 <ComboBoxItem Content="Mobile Money"/>
                             </ComboBox>
                         </StackPanel>
 
                         <!-- Row 3 -->
                         <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Margin="0,0,0,16">
-                            <TextBlock Text="Notes" Style="{StaticResource LabelStyle}"/>
+                            <TextBlock Text="{x:Static p:Resources.EditExpense_NotesLabel}" Style="{StaticResource LabelStyle}"/>
                             <TextBox x:Name="txtNotes" 
                                      Height="90" 
                                      TextWrapping="Wrap" 
@@ -777,18 +778,18 @@
                                      Style="{StaticResource ModernTextBox}"
                                      VerticalContentAlignment="Top"
                                      Padding="14,12"
-                                     ToolTip="Informations supplémentaires"/>
+                                     ToolTip="{x:Static p:Resources.Expenses_NotesTooltip}"/>
                         </StackPanel>
 
                         <!-- Row 4 - Action Buttons -->
                         <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" 
                                     Orientation="Horizontal" 
                                     HorizontalAlignment="Right">
-                            <Button Content="🔄 Réinitialiser"
+                            <Button Content="{x:Static p:Resources.Expenses_Reset}"
                                     Style="{StaticResource SecondaryButton}"
                                     Click="BtnClearForm_Click"
                                     Margin="0,0,12,0"/>
-                            <Button Content="➕ Ajouter la Dépense"
+                            <Button Content="{x:Static p:Resources.Expenses_AddButton}"
                                     Style="{StaticResource PrimaryButton}"
                                     Click="BtnAddExpense_Click"/>
                         </StackPanel>
@@ -812,16 +813,16 @@
                         </Grid.ColumnDefinitions>
 
                         <TextBlock Grid.Column="0"
-                                   Text="📋 Liste des Dépenses" 
+                                   Text="{x:Static p:Resources.Expenses_ListTitle}" 
                                    Style="{StaticResource SectionTitle}"/>
 
                         <StackPanel Grid.Column="1" Orientation="Horizontal">
-                            <Button Content="🔍 Filtrer"
+                            <Button Content="{x:Static p:Resources.Expenses_FilterButton}"
                                     Style="{StaticResource SecondaryButton}"
                                     Height="40"
                                     Margin="0,0,8,0"
                                     Click="BtnFilter_Click"/>
-                            <Button Content="🔄 Actualiser"
+                            <Button Content="{x:Static p:Resources.Expenses_RefreshButton}"
                                     Style="{StaticResource SecondaryButton}"
                                     Height="40"
                                     Click="BtnRefresh_Click"/>
@@ -845,11 +846,11 @@
                             </Grid.ColumnDefinitions>
 
                             <StackPanel Grid.Column="0" Margin="0,0,12,0">
-                                <TextBlock Text="Statut" Style="{StaticResource LabelStyle}"/>
+                                <TextBlock Text="{x:Static p:Resources.Expenses_StatusFilter}" Style="{StaticResource LabelStyle}"/>
                                 <ComboBox x:Name="cmbFilterStatus" 
                                           Style="{StaticResource ModernComboBox}"
                                           Height="40">
-                                    <ComboBoxItem Content="Tous" IsSelected="True"/>
+                                    <ComboBoxItem Content="{x:Static p:Resources.Expenses_AllStatus}" IsSelected="True"/>
                                     <ComboBoxItem Content="Pending"/>
                                     <ComboBoxItem Content="Paid"/>
                                     <ComboBoxItem Content="Overdue"/>
@@ -857,27 +858,27 @@
                             </StackPanel>
 
                             <StackPanel Grid.Column="1" Margin="12,0,12,0">
-                                <TextBlock Text="Catégorie" Style="{StaticResource LabelStyle}"/>
+                                <TextBlock Text="{x:Static p:Resources.Expenses_CategoryFilter}" Style="{StaticResource LabelStyle}"/>
                                 <ComboBox x:Name="cmbFilterCategory" 
                                           Style="{StaticResource ModernComboBox}"
                                           Height="40"/>
                             </StackPanel>
 
                             <StackPanel Grid.Column="2" Margin="12,0,12,0">
-                                <TextBlock Text="Période" Style="{StaticResource LabelStyle}"/>
+                                <TextBlock Text="{x:Static p:Resources.Expenses_PeriodFilter}" Style="{StaticResource LabelStyle}"/>
                                 <ComboBox x:Name="cmbFilterPeriod" 
                                           Style="{StaticResource ModernComboBox}"
                                           Height="40"
                                           SelectedIndex="0">
-                                    <ComboBoxItem Content="Tous"/>
-                                    <ComboBoxItem Content="Ce mois"/>
-                                    <ComboBoxItem Content="Ce trimestre"/>
-                                    <ComboBoxItem Content="Cette année"/>
+                                    <ComboBoxItem Content="{x:Static p:Resources.Expenses_AllStatus}"/>
+                                    <ComboBoxItem Content="{x:Static p:Resources.Expenses_ThisMonth}"/>
+                                    <ComboBoxItem Content="{x:Static p:Resources.Expenses_ThisQuarter}"/>
+                                    <ComboBoxItem Content="{x:Static p:Resources.Expenses_ThisYear}"/>
                                 </ComboBox>
                             </StackPanel>
 
                             <Button Grid.Column="3"
-                                    Content="Appliquer"
+                                    Content="{x:Static p:Resources.Expenses_ApplyFilter}"
                                     Style="{StaticResource PrimaryButton}"
                                     Height="40"
                                     VerticalAlignment="Bottom"
@@ -931,7 +932,7 @@
                         </DataGrid.CellStyle>
 
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Nom" 
+                            <DataGridTextColumn Header="{x:Static p:Resources.Expenses_ColName}" 
                                                 Binding="{Binding ExpenseName}" 
                                                 Width="*" 
                                                 MinWidth="150">
@@ -943,7 +944,7 @@
                                 </DataGridTextColumn.ElementStyle>
                             </DataGridTextColumn>
 
-                            <DataGridTextColumn Header="Catégorie" 
+                            <DataGridTextColumn Header="{x:Static p:Resources.Expenses_ColCategory}" 
                                                 Binding="{Binding Category}" 
                                                 Width="140">
                                 <DataGridTextColumn.ElementStyle>
@@ -953,7 +954,7 @@
                                 </DataGridTextColumn.ElementStyle>
                             </DataGridTextColumn>
 
-                            <DataGridTextColumn Header="Montant" 
+                            <DataGridTextColumn Header="{x:Static p:Resources.Expenses_ColAmount}" 
                                                 Binding="{Binding Amount, StringFormat='{}{0:N2} MAD'}" 
                                                 Width="130">
                                 <DataGridTextColumn.ElementStyle>
@@ -965,7 +966,7 @@
                                 </DataGridTextColumn.ElementStyle>
                             </DataGridTextColumn>
 
-                            <DataGridTextColumn Header="Échéance" 
+                            <DataGridTextColumn Header="{x:Static p:Resources.Expenses_ColDueDate}" 
                                                 Binding="{Binding DueDate, StringFormat='dd/MM/yyyy'}" 
                                                 Width="110">
                                 <DataGridTextColumn.ElementStyle>
@@ -975,7 +976,7 @@
                                 </DataGridTextColumn.ElementStyle>
                             </DataGridTextColumn>
 
-                            <DataGridTemplateColumn Header="Statut" Width="120">
+                            <DataGridTemplateColumn Header="{x:Static p:Resources.Expenses_ColStatus}" Width="120">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <Border>
@@ -1019,7 +1020,7 @@
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
 
-                            <DataGridTextColumn Header="Récurrence" 
+                            <DataGridTextColumn Header="{x:Static p:Resources.Expenses_ColRecurrence}" 
                                                 Binding="{Binding RecurringType}" 
                                                 Width="110">
                                 <DataGridTextColumn.ElementStyle>
@@ -1030,26 +1031,26 @@
                                 </DataGridTextColumn.ElementStyle>
                             </DataGridTextColumn>
 
-                            <DataGridTemplateColumn Header="Actions" Width="220">
+                            <DataGridTemplateColumn Header="{x:Static p:Resources.Expenses_ColActions}" Width="220">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal" 
                                                     HorizontalAlignment="Center"
                                                     VerticalAlignment="Center"
                                                     Margin="4,0">
-                                            <Button Content="✓ Payer" 
+                                            <Button Content="{x:Static p:Resources.Expenses_Pay}" 
                                                     Style="{StaticResource SuccessButton}"
                                                     Margin="0,0,4,0"
                                                     Click="BtnPayExpense_Click"
                                                     Tag="{Binding}"/>
-                                            <Button Content="✎ Modifier" 
+                                            <Button Content="{x:Static p:Resources.Expenses_EditBtn}" 
                                                     Style="{StaticResource EditButton}"
                                                     Margin="0,0,4,0"
                                                     Click="BtnEditExpense_Click"
                                                     Tag="{Binding}"/>
                                             <Button Content="🗑️" 
                                                     Style="{StaticResource DangerButton}"
-                                                    ToolTip="Supprimer"
+                                                    ToolTip="{x:Static p:Resources.Expenses_DeleteTooltip}"
                                                     Click="BtnDeleteExpense_Click"
                                                     Tag="{Binding}"/>
                                         </StackPanel>

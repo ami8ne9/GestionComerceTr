@@ -1,7 +1,8 @@
 ﻿<Window x:Class="Superete.Main.Comptabilite.AddRecurrenceWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Ajouter un Type de Récurrence"
+        xmlns:p="clr-namespace:GestionComerce.Resources"
+        Title="{x:Static p:Resources.AddRecurrence_WindowTitle}"
         Width="450"
         Height="280"
         WindowStartupLocation="CenterScreen"
@@ -119,7 +120,7 @@
 
             <!-- Title -->
             <TextBlock Grid.Row="0" 
-                       Text="🔄 Ajouter un Type de Récurrence"
+                       Text="{x:Static p:Resources.AddRecurrence_Title}"
                        FontSize="22"
                        FontWeight="Bold"
                        Foreground="#111827"
@@ -127,7 +128,7 @@
 
             <!-- Recurrence Name -->
             <TextBlock Grid.Row="1" 
-                       Text="Nom du Type de Récurrence *" 
+                       Text="{x:Static p:Resources.AddRecurrence_NameLabel}" 
                        Style="{StaticResource LabelStyle}"/>
 
             <TextBox Grid.Row="2"
@@ -140,11 +141,11 @@
                         Orientation="Horizontal" 
                         HorizontalAlignment="Right"
                         Margin="0,20,0,0">
-                <Button Content="Annuler"
+                <Button Content="{x:Static p:Resources.Cancel}"
                         Style="{StaticResource SecondaryButton}"
                         Click="BtnCancel_Click"
                         Margin="0,0,12,0"/>
-                <Button Content="✓ Ajouter"
+                <Button Content="{x:Static p:Resources.AddRecurrence_AddButton}"
                         Style="{StaticResource PrimaryButton}"
                         Click="BtnAdd_Click"/>
             </StackPanel>

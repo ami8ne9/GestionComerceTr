@@ -1,7 +1,8 @@
-﻿<Window x:Class="GestionComerce.Main.Inventory.WConfirmTransaction"
+<Window x:Class="GestionComerce.Main.Inventory.WConfirmTransaction"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Confirmation de transaction" Height="450" Width="500" 
+        xmlns:res="clr-namespace:GestionComerce.Resources"
+        Title="{x:Static res:Resources.TransactionConfirmation}" Height="450" Width="500" 
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         Background="Transparent"
@@ -10,7 +11,6 @@
         AllowsTransparency="True">
 
     <Window.Resources>
-        <!-- Confirm Button Style -->
         <Style x:Key="ConfirmButton" TargetType="Button">
             <Setter Property="Background" Value="#10B981"/>
             <Setter Property="Foreground" Value="White"/>
@@ -41,7 +41,6 @@
             </Setter>
         </Style>
 
-        <!-- Cancel Button Style -->
         <Style x:Key="CancelButton" TargetType="Button">
             <Setter Property="Background" Value="#6B7280"/>
             <Setter Property="Foreground" Value="White"/>
@@ -72,7 +71,6 @@
             </Setter>
         </Style>
 
-        <!-- Label Style -->
         <Style x:Key="LabelStyle" TargetType="TextBlock">
             <Setter Property="FontSize" Value="13"/>
             <Setter Property="FontWeight" Value="Medium"/>
@@ -80,14 +78,12 @@
             <Setter Property="Margin" Value="0,0,10,0"/>
         </Style>
 
-        <!-- Value Style -->
         <Style x:Key="ValueStyle" TargetType="TextBlock">
             <Setter Property="FontSize" Value="13"/>
             <Setter Property="Foreground" Value="#1F2937"/>
             <Setter Property="HorizontalAlignment" Value="Right"/>
         </Style>
 
-        <!-- Total Style -->
         <Style x:Key="TotalStyle" TargetType="TextBlock">
             <Setter Property="FontSize" Value="18"/>
             <Setter Property="FontWeight" Value="Bold"/>
@@ -101,11 +97,8 @@
         <Grid Margin="0,0,0,-7">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
-                <!-- Header -->
                 <RowDefinition Height="*"/>
-                <!-- Content -->
                 <RowDefinition Height="Auto"/>
-                <!-- Buttons -->
             </Grid.RowDefinitions>
 
             <!-- Header -->
@@ -116,7 +109,6 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <!-- Check Icon -->
                     <Ellipse Grid.Column="0" Width="24" Height="24" Fill="White" Margin="0,0,10,0">
                         <Ellipse.OpacityMask>
                             <VisualBrush>
@@ -130,7 +122,7 @@
                         </Ellipse.OpacityMask>
                     </Ellipse>
 
-                    <TextBlock Grid.Column="1" Text="Confirmation de transaction" 
+                    <TextBlock Grid.Column="1" Text="{x:Static res:Resources.TransactionConfirmation}" 
                               FontSize="16" FontWeight="Bold" 
                               Foreground="White"
                               VerticalAlignment="Center"/>
@@ -140,8 +132,7 @@
             <!-- Content -->
             <ScrollViewer Grid.Row="1" Margin="30,25,30,5" VerticalScrollBarVisibility="Auto">
                 <StackPanel>
-                    <!-- Transaction Summary -->
-                    <TextBlock Text="Résumé de la transaction" 
+                    <TextBlock Text="{x:Static res:Resources.TransactionSummary}" 
                               FontSize="16" FontWeight="SemiBold" 
                               Foreground="#1F2937"
                               Margin="0,0,0,15"/>
@@ -162,28 +153,18 @@
                                 <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
 
-                            <!-- Number of Items -->
-                            <TextBlock Grid.Row="0" Grid.Column="0" Text="Nombre d'articles:" Style="{StaticResource LabelStyle}"/>
+                            <TextBlock Grid.Row="0" Grid.Column="0" Text="{x:Static res:Resources.NumberOfArticlesLabel}" Style="{StaticResource LabelStyle}"/>
                             <TextBlock Grid.Row="0" Grid.Column="1" x:Name="NbrArticle" Text="0" Style="{StaticResource ValueStyle}" Margin="0,0,0,8" MaxWidth="150"/>
 
-                            <!-- Subtotal -->
-                            <TextBlock Grid.Row="1" Grid.Column="0" Text="Sous-total:" Style="{StaticResource LabelStyle}"/>
+                            <TextBlock Grid.Row="1" Grid.Column="0" Text="{x:Static res:Resources.SubtotalLabel}" Style="{StaticResource LabelStyle}"/>
                             <TextBlock Grid.Row="1" Grid.Column="1" x:Name="Subtotal" Text="0.00 DH" Style="{StaticResource ValueStyle}" Margin="0,0,0,8" MaxWidth="150"/>
 
-                            <!-- Tax -->
-                            <!--
-                            <TextBlock Grid.Row="2" Grid.Column="0" Text="TVA (20%):" Style="{StaticResource LabelStyle}"/>
-                            <TextBlock Grid.Row="2" Grid.Column="1" x:Name="Tax" Text="€0.00" Style="{StaticResource ValueStyle}" Margin="0,0,0,8"/>-->
-
-                            <!-- Discount -->
-                            <TextBlock Grid.Row="3" Grid.Column="0" Text="Remise:" Style="{StaticResource LabelStyle}"/>
+                            <TextBlock Grid.Row="3" Grid.Column="0" Text="{x:Static res:Resources.DiscountLabel}" Style="{StaticResource LabelStyle}"/>
                             <TextBlock Grid.Row="3" Grid.Column="1" x:Name="Remise" Text="-0.00 DH" Style="{StaticResource ValueStyle}" Margin="0,0,0,16" Foreground="#DC2626" MaxWidth="150"/>
 
-                            <!-- Separator -->
                             <Border Grid.Row="4" Grid.ColumnSpan="2" Background="#D1D5DB" Height="1" Margin="0,0,0,16"/>
 
-                            <!-- Total -->
-                            <TextBlock Grid.Row="5" Grid.Column="0" Text="TOTAL:" FontSize="18" FontWeight="Bold" Foreground="#1F2937"/>
+                            <TextBlock Grid.Row="5" Grid.Column="0" Text="{x:Static res:Resources.TotalLabel}" FontSize="18" FontWeight="Bold" Foreground="#1F2937"/>
                             <TextBlock Grid.Row="5" Grid.Column="1" x:Name="FinalTotal" Text="0.00 DH" Style="{StaticResource TotalStyle}" MaxWidth="150"/>
                         </Grid>
                     </Border>
@@ -197,23 +178,22 @@
                         </Grid.ColumnDefinitions>
 
                         <StackPanel Grid.Column="0">
-                            <TextBlock Text="Remise" FontSize="14" FontWeight="SemiBold" Foreground="#1F2937" Margin="0,0,0,8"/>
+                            <TextBlock Text="{x:Static res:Resources.DiscountField}" FontSize="14" FontWeight="SemiBold" Foreground="#1F2937" Margin="0,0,0,8"/>
                             <TextBox x:Name="RemiseInput" Height="35" Padding="10,8" FontSize="13" MaxLength="18"
                                     Background="White" BorderBrush="#D1D5DB" BorderThickness="1"
                                     Text="0" TextChanged="RemiseInput_TextChanged" PreviewTextInput="DecimalTextBox_PreviewTextInput"
-DataObject.Pasting="DecimalTextBox_Pasting"/>
+                                    DataObject.Pasting="DecimalTextBox_Pasting"/>
                         </StackPanel>
 
                         <StackPanel Grid.Column="2" Name="CreditStack">
-                            <TextBlock Text="Credit" FontSize="14" FontWeight="SemiBold" Foreground="#1F2937" Margin="0,0,0,8"/>
-                            <TextBox x:Name="CreditInput" Height="35" Padding="10,8" FontSize="13"  MaxLength="18"
-                                    Background="White" BorderBrush="#D1D5DB" BorderThickness="1" PreviewTextInput="DecimalTextBox_PreviewTextInput"
-DataObject.Pasting="DecimalTextBox_Pasting"
+                            <TextBlock Text="{x:Static res:Resources.CreditField}" FontSize="14" FontWeight="SemiBold" Foreground="#1F2937" Margin="0,0,0,8"/>
+                            <TextBox x:Name="CreditInput" Height="35" Padding="10,8" FontSize="13" MaxLength="18"
+                                    Background="White" BorderBrush="#D1D5DB" BorderThickness="1" 
+                                    PreviewTextInput="DecimalTextBox_PreviewTextInput"
+                                    DataObject.Pasting="DecimalTextBox_Pasting"
                                     Text="0"/>
                         </StackPanel>
                     </Grid>
-
-                    <!-- Customer Info -->
                 </StackPanel>
             </ScrollViewer>
 
@@ -221,13 +201,13 @@ DataObject.Pasting="DecimalTextBox_Pasting"
             <Border Grid.Row="1" Background="#F9FAFB" CornerRadius="0,0,10,10" Padding="20,15" Margin="0,328,0,5">
                 <StackPanel Orientation="Horizontal" 
                            HorizontalAlignment="Right">
-                    <Button Content="Annuler" 
+                    <Button Content="{x:Static res:Resources.Cancel}" 
                            Style="{StaticResource CancelButton}"
                            Click="CancelButton_Click"
                            Margin="0,0,15,0"
                            Width="90"/>
 
-                    <Button Content="Confirmer" 
+                    <Button Content="{x:Static res:Resources.Confirm}" 
                            Style="{StaticResource ConfirmButton}"
                            Click="ConfirmButton_Click"
                            Width="120"/>

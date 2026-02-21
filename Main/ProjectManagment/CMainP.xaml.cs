@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -70,12 +70,6 @@ namespace GestionComerce.Main.ProjectManagment
                         StockButton.IsEnabled = false;
                         MouvmentContent.Visibility = Visibility.Collapsed;
                     }
-
-                    // Remove Repport-related code since it's moved to CMainR
-                    // if (r.Repport == false)
-                    // {
-                    //     Repportbtn.IsEnabled = false;
-                    // }
                     break;
                 }
             }
@@ -156,7 +150,6 @@ namespace GestionComerce.Main.ProjectManagment
                     VenteCount++;
                     Finance += operation.PrixOperation;
 
-                    // ✅ Only articles linked to this operation
                     foreach (OperationArticle oa in main.loa.Where(x => x.OperationID == operation.OperationID && !x.Reversed))
                     {
                         Article article = main.la.FirstOrDefault(a => a.ArticleID == oa.ArticleID);
@@ -183,7 +176,6 @@ namespace GestionComerce.Main.ProjectManagment
                     }
                 }
             }
-            // ✅ Update UI labels once at the end
             VenteCountLabel.Text = VenteCount.ToString("0");
             AchatCountLabel.Text = AchatCount.ToString("0");
             FinanceLabel.Text = Finance.ToString("0.00") + " DH";
@@ -192,10 +184,8 @@ namespace GestionComerce.Main.ProjectManagment
             MouvmentFinance.Text = MouvmentFinanceCount.ToString("0.00") + " DH";
         }
 
-        // Add this method as a stub for backward compatibility with WReverseConfirmation
         public void LoadStatistics()
         {
-            // This is just a wrapper that calls LoadStats for backward compatibility
             LoadStats();
         }
 
@@ -238,18 +228,11 @@ namespace GestionComerce.Main.ProjectManagment
 
         private void RepportButton_Click(object sender, RoutedEventArgs e)
         {
-            // Navigate to CMainR
             CMainR mainR = new CMainR(u, main);
 
-            // Find parent window and navigate
             Window parentWindow = Window.GetWindow(this);
             if (parentWindow is MainWindow mainWindow)
             {
-                // Assuming MainWindow has a content area - adjust the property name as needed
-                // If you have a specific content control, use its name
-                // For example: mainWindow.MainContentArea.Content = mainR;
-
-                // Or navigate back through the visual tree
                 var parent = this.Parent;
                 while (parent != null && !(parent is ContentControl))
                 {
@@ -277,130 +260,156 @@ namespace GestionComerce.Main.ProjectManagment
 
         private void ApplyFilters()
         {
+            if (!isInitialized) return;
+
             IEnumerable<Operation> lo = main.lo;
 
             lo = lo.Where(op => op.OperationType != "Livraison Groupée" &&
                                 op.OperationType != "VenteLiv");
 
+            // --- Search filter (index-based) ---
+            // SearchTypeFilter: 0=OperationID, 1=Client, 2=Supplier, 3=User
             string searchText = SearchInput.Text?.Trim() ?? "";
-            string searchType = (SearchTypeFilter.SelectedItem as ComboBoxItem)?.Content.ToString();
+            int searchTypeIndex = SearchTypeFilter.SelectedIndex;
 
             if (!string.IsNullOrEmpty(searchText))
             {
-                if (searchType == "Operation ID")
+                switch (searchTypeIndex)
                 {
-                    lo = lo.Where(op => op.OperationID.ToString().Contains(searchText));
-                }
-                else if (searchType == "Client")
-                {
-                    lo = lo.Where(op => main.lc.Any(c => c.ClientID == op.ClientID && c.Nom.Contains(searchText)));
-                }
-                else if (searchType == "Fournisseur")
-                {
-                    lo = lo.Where(op => main.lfo.Any(f => f.FournisseurID == op.FournisseurID && f.Nom.Contains(searchText)));
-                }
-                else if (searchType == "Utilisateur")
-                {
-                    lo = lo.Where(op => main.lu.Any(u => u.UserID == op.UserID && u.UserName.Contains(searchText)));
+                    case 0: // Operation ID
+                        lo = lo.Where(op => op.OperationID.ToString().Contains(searchText));
+                        break;
+                    case 1: // Client
+                        lo = lo.Where(op => main.lc.Any(c => c.ClientID == op.ClientID && c.Nom.Contains(searchText)));
+                        break;
+                    case 2: // Supplier
+                        lo = lo.Where(op => main.lfo.Any(f => f.FournisseurID == op.FournisseurID && f.Nom.Contains(searchText)));
+                        break;
+                    case 3: // User
+                        lo = lo.Where(op => main.lu.Any(u => u.UserID == op.UserID && u.UserName.Contains(searchText)));
+                        break;
                 }
             }
 
-            string type = (TypeOperationFilter.SelectedItem as ComboBoxItem)?.Content.ToString();
-            if (type == "Vente") lo = lo.Where(op => op.OperationType.StartsWith("V"));
-            else if (type == "Achat") lo = lo.Where(op => op.OperationType.StartsWith("A"));
-            else if (type == "Modification") lo = lo.Where(op => op.OperationType.StartsWith("M"));
-            else if (type == "Suppression") lo = lo.Where(op => op.OperationType.StartsWith("D"));
-            else if (type == "Payment Credit Client") lo = lo.Where(op => op.OperationType.StartsWith("P"));
-            else if (type == "Payment Credit Fournisseur") lo = lo.Where(op => op.OperationType.StartsWith("S"));
+            // --- Operation type filter (index-based) ---
+            // TypeOperationFilter: 0=All, 1=Sale, 2=Purchase, 3=ClientCredit, 4=SupplierCredit, 5=Modification, 6=Deletion
+            switch (TypeOperationFilter.SelectedIndex)
+            {
+                case 1: lo = lo.Where(op => op.OperationType.StartsWith("V", StringComparison.OrdinalIgnoreCase)); break;
+                case 2: lo = lo.Where(op => op.OperationType.StartsWith("A", StringComparison.OrdinalIgnoreCase)); break;
+                case 3: lo = lo.Where(op => op.OperationType.StartsWith("P", StringComparison.OrdinalIgnoreCase)); break;
+                case 4: lo = lo.Where(op => op.OperationType.StartsWith("S", StringComparison.OrdinalIgnoreCase)); break;
+                case 5: lo = lo.Where(op => op.OperationType.StartsWith("M", StringComparison.OrdinalIgnoreCase)); break;
+                case 6: lo = lo.Where(op => op.OperationType.StartsWith("D", StringComparison.OrdinalIgnoreCase)); break;
+                // case 0: All — no filter
+            }
 
-            string status = (StatusFilter.SelectedItem as ComboBoxItem)?.Content.ToString();
-            if (status == "Normal") lo = lo.Where(op => !op.Reversed);
-            else if (status == "Reversed") lo = lo.Where(op => op.Reversed);
+            // --- Status filter (index-based) ---
+            // StatusFilter: 0=All, 1=Normal, 2=Reversed
+            switch (StatusFilter.SelectedIndex)
+            {
+                case 1: lo = lo.Where(op => !op.Reversed); break;
+                case 2: lo = lo.Where(op => op.Reversed);  break;
+            }
 
-            string dateFilter = (DateFilter.SelectedItem as ComboBoxItem)?.Content.ToString();
+            // --- Date filter (index-based) ---
+            // DateFilter: 0=All, 1=Today, 2=Week, 3=Month, 4=SixMonths, 5=Year
             DateTime today = DateTime.Today;
-
-            if (dateFilter == "Today") lo = lo.Where(op => op.DateOperation > today.AddDays(-1));
-            else if (dateFilter == "Week") lo = lo.Where(op => op.DateOperation > today.AddDays(-7));
-            else if (dateFilter == "Month") lo = lo.Where(op => op.DateOperation > today.AddMonths(-1));
-            else if (dateFilter == "6 month") lo = lo.Where(op => op.DateOperation > today.AddMonths(-6));
-            else if (dateFilter == "Year") lo = lo.Where(op => op.DateOperation > today.AddYears(-1));
+            switch (DateFilter.SelectedIndex)
+            {
+                case 1: lo = lo.Where(op => op.DateOperation > today.AddDays(-1));    break;
+                case 2: lo = lo.Where(op => op.DateOperation > today.AddDays(-7));    break;
+                case 3: lo = lo.Where(op => op.DateOperation > today.AddMonths(-1));  break;
+                case 4: lo = lo.Where(op => op.DateOperation > today.AddMonths(-6));  break;
+                case 5: lo = lo.Where(op => op.DateOperation > today.AddYears(-1));   break;
+            }
 
             LoadOperations(lo.ToList());
         }
 
         private void ApplyMouvmentFilters()
         {
+            if (!isInitialized) return;
+
             var query =
                 from oa in main.loa
                 join o in main.lo on oa.OperationID equals o.OperationID
                 select new { OA = oa, O = o };
 
+            // --- Search filter (index-based) ---
+            // SearchTypeMouvmentFilter: 0=Article, 1=Client, 2=Supplier, 3=User
             string searchText = SearchMouvmentInput.Text?.Trim() ?? "";
-            string searchType = (SearchTypeMouvmentFilter.SelectedItem as ComboBoxItem)?.Content.ToString();
+            int searchTypeIndex = SearchTypeMouvmentFilter.SelectedIndex;
 
             if (!string.IsNullOrEmpty(searchText))
             {
                 string lowerSearch = searchText.ToLower();
-
-                if (searchType == "Article")
+                switch (searchTypeIndex)
                 {
-                    query = from q in query
-                            join a in main.laa on q.OA.ArticleID equals a.ArticleID
-                            where a.ArticleName != null && a.ArticleName.ToLower().Contains(lowerSearch)
-                            select q;
-                }
-                else if (searchType == "Client")
-                {
-                    query = from q in query
-                            join c in main.lc on q.O.ClientID equals c.ClientID
-                            where c.Nom != null && c.Nom.ToLower().Contains(lowerSearch)
-                            select q;
-                }
-                else if (searchType == "Fournisseur")
-                {
-                    query = from q in query
-                            join f in main.lfo on q.O.FournisseurID equals f.FournisseurID
-                            where f.Nom != null && f.Nom.ToLower().Contains(lowerSearch)
-                            select q;
-                }
-                else if (searchType == "Utilisateur")
-                {
-                    query = from q in query
-                            join u in main.lu on q.O.UserID equals u.UserID
-                            where u.UserName != null && u.UserName.ToLower().Contains(lowerSearch)
-                            select q;
+                    case 0: // Article
+                        query = from q in query
+                                join a in main.laa on q.OA.ArticleID equals a.ArticleID
+                                where a.ArticleName != null && a.ArticleName.ToLower().Contains(lowerSearch)
+                                select q;
+                        break;
+                    case 1: // Client
+                        query = from q in query
+                                join c in main.lc on q.O.ClientID equals c.ClientID
+                                where c.Nom != null && c.Nom.ToLower().Contains(lowerSearch)
+                                select q;
+                        break;
+                    case 2: // Supplier
+                        query = from q in query
+                                join f in main.lfo on q.O.FournisseurID equals f.FournisseurID
+                                where f.Nom != null && f.Nom.ToLower().Contains(lowerSearch)
+                                select q;
+                        break;
+                    case 3: // User
+                        query = from q in query
+                                join u in main.lu on q.O.UserID equals u.UserID
+                                where u.UserName != null && u.UserName.ToLower().Contains(lowerSearch)
+                                select q;
+                        break;
                 }
             }
 
-            string type = (TypeMouvmentFilter.SelectedItem as ComboBoxItem)?.Content.ToString();
-            if (type == "Vente") query = query.Where(q => q.O.OperationType.StartsWith("V", StringComparison.OrdinalIgnoreCase));
-            else if (type == "Achat") query = query.Where(q => q.O.OperationType.StartsWith("A", StringComparison.OrdinalIgnoreCase));
-            else if (type == "Modification") query = query.Where(q => q.O.OperationType.StartsWith("M", StringComparison.OrdinalIgnoreCase));
-            else if (type == "Suppression") query = query.Where(q => q.O.OperationType.StartsWith("D", StringComparison.OrdinalIgnoreCase));
-
-            string status = (StatusMouvmentReversedFilter.SelectedItem as ComboBoxItem)?.Content.ToString();
-            if (status == "Normal") query = query.Where(q => !q.OA.Reversed);
-            else if (status == "Reversed") query = query.Where(q => q.OA.Reversed);
-
-            string status1 = (StatusMouvmenttFilter.SelectedItem as ComboBoxItem)?.Content.ToString();
-            if (status1 == "Normal")
+            // --- Movement type filter (index-based) ---
+            // TypeMouvmentFilter: 0=All, 1=Sale, 2=Purchase, 3=Modification, 4=Deletion
+            switch (TypeMouvmentFilter.SelectedIndex)
             {
-                query = query.Where(oa => main.laa.Any(a => a.ArticleID == oa.OA.ArticleID && a.Etat == true));
-            }
-            else if (status1 == "Supprime")
-            {
-                query = query.Where(oa => main.laa.Any(a => a.ArticleID == oa.OA.ArticleID && a.Etat == false));
+                case 1: query = query.Where(q => q.O.OperationType.StartsWith("V", StringComparison.OrdinalIgnoreCase)); break;
+                case 2: query = query.Where(q => q.O.OperationType.StartsWith("A", StringComparison.OrdinalIgnoreCase)); break;
+                case 3: query = query.Where(q => q.O.OperationType.StartsWith("M", StringComparison.OrdinalIgnoreCase)); break;
+                case 4: query = query.Where(q => q.O.OperationType.StartsWith("D", StringComparison.OrdinalIgnoreCase)); break;
             }
 
-            string dateFilter = (DateMouvmentFilter.SelectedItem as ComboBoxItem)?.Content.ToString();
+            // --- Reversed filter (index-based) ---
+            // StatusMouvmentReversedFilter: 0=All, 1=Normal, 2=Reversed
+            switch (StatusMouvmentReversedFilter.SelectedIndex)
+            {
+                case 1: query = query.Where(q => !q.OA.Reversed); break;
+                case 2: query = query.Where(q => q.OA.Reversed);  break;
+            }
+
+            // --- Article status filter (index-based) ---
+            // StatusMouvmenttFilter: 0=All, 1=Normal (active), 2=Supprime (deleted)
+            switch (StatusMouvmenttFilter.SelectedIndex)
+            {
+                case 1: query = query.Where(oa => main.laa.Any(a => a.ArticleID == oa.OA.ArticleID && a.Etat == true));  break;
+                case 2: query = query.Where(oa => main.laa.Any(a => a.ArticleID == oa.OA.ArticleID && a.Etat == false)); break;
+            }
+
+            // --- Date filter (index-based) ---
+            // DateMouvmentFilter: 0=All, 1=Today, 2=Last Week, 3=Last Month, 4=Last 6 Months, 5=Last Year
             DateTime today = DateTime.Today;
-
-            if (dateFilter == "Today") query = query.Where(q => q.O.DateOperation > today.AddDays(-1));
-            else if (dateFilter == "Week") query = query.Where(q => q.O.DateOperation > today.AddDays(-7));
-            else if (dateFilter == "Month") query = query.Where(q => q.O.DateOperation > today.AddMonths(-1));
-            else if (dateFilter == "6 month") query = query.Where(q => q.O.DateOperation > today.AddMonths(-6));
-            else if (dateFilter == "Year") query = query.Where(q => q.O.DateOperation > today.AddYears(-1));
+            switch (DateMouvmentFilter.SelectedIndex)
+            {
+                case 1: query = query.Where(q => q.O.DateOperation > today.AddDays(-1));   break;
+                case 2: query = query.Where(q => q.O.DateOperation > today.AddDays(-7));   break;
+                case 3: query = query.Where(q => q.O.DateOperation > today.AddMonths(-1)); break;
+                case 4: query = query.Where(q => q.O.DateOperation > today.AddMonths(-6)); break;
+                case 5: query = query.Where(q => q.O.DateOperation > today.AddYears(-1));  break;
+            }
 
             LoadMouvments(query.Select(q => q.OA).ToList());
         }

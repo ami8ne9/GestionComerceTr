@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:Superete.Main.Comptabilite.Graphes"
+             xmlns:p="clr-namespace:GestionComerce.Resources"
              mc:Ignorable="d"
              d:DesignHeight="900" d:DesignWidth="1100"
              Background="Transparent">
@@ -389,21 +390,21 @@
 
                         <!-- View (metric) -->
                         <StackPanel Grid.Column="0">
-                            <TextBlock Text="VUE / MÉTRIQUE" Style="{StaticResource SettingsLabel}"/>
+                            <TextBlock Text="{x:Static p:Resources.CGraphe_MetricLabel}" Style="{StaticResource SettingsLabel}"/>
                             <ComboBox x:Name="MetricComboBox"
                                       Style="{StaticResource ModernComboBox}"
                                       SelectionChanged="MetricComboBox_SelectionChanged">
-                                <ComboBoxItem Content="Revenu Mensuel"       Tag="revenue"    IsSelected="True"/>
-                                <ComboBoxItem Content="Volume Articles"      Tag="stock"/>
-                                <ComboBoxItem Content="Écarts Ops / Factures" Tag="invoicegap"/>
-                                <ComboBoxItem Content="Performance Client"   Tag="client"/>
-                                <ComboBoxItem Content="Activité Fournisseur" Tag="supplier"/>
+                                <ComboBoxItem Content="{x:Static p:Resources.CGraphe_MonthlyRevenue}"       Tag="revenue"    IsSelected="True"/>
+                                <ComboBoxItem Content="{x:Static p:Resources.CGraphe_ArticleVolume}"      Tag="stock"/>
+                                <ComboBoxItem Content="{x:Static p:Resources.CGraphe_InvoiceGap}" Tag="invoicegap"/>
+                                <ComboBoxItem Content="{x:Static p:Resources.CGraphe_ClientPerf}"   Tag="client"/>
+                                <ComboBoxItem Content="{x:Static p:Resources.CGraphe_SupplierActivity}" Tag="supplier"/>
                             </ComboBox>
                         </StackPanel>
 
                         <!-- Date début -->
                         <StackPanel Grid.Column="2">
-                            <TextBlock Text="DATE DE DÉBUT" Style="{StaticResource SettingsLabel}"/>
+                            <TextBlock Text="{x:Static p:Resources.CGraphe_StartDate}" Style="{StaticResource SettingsLabel}"/>
                             <DatePicker x:Name="StartDatePicker"
                                         Style="{StaticResource ModernDatePicker}"
                                         SelectedDateChanged="DatePicker_Changed"/>
@@ -411,7 +412,7 @@
 
                         <!-- Date fin -->
                         <StackPanel Grid.Column="4">
-                            <TextBlock Text="DATE DE FIN" Style="{StaticResource SettingsLabel}"/>
+                            <TextBlock Text="{x:Static p:Resources.CGraphe_EndDate}" Style="{StaticResource SettingsLabel}"/>
                             <DatePicker x:Name="EndDatePicker"
                                         Style="{StaticResource ModernDatePicker}"
                                         SelectedDateChanged="DatePicker_Changed"/>
@@ -450,20 +451,20 @@
 
                         <!-- Entity type selector -->
                         <StackPanel Grid.Column="0">
-                            <TextBlock Text="TYPE D'ENTITÉ" Style="{StaticResource SettingsLabel}"/>
+                            <TextBlock Text="{x:Static p:Resources.CGraphe_EntityType}" Style="{StaticResource SettingsLabel}"/>
                             <ComboBox x:Name="EntityTypeComboBox"
                                       Style="{StaticResource ModernComboBox}"
                                       SelectionChanged="EntityTypeComboBox_SelectionChanged">
-                                <ComboBoxItem Content="— Tous —"    Tag=""           IsSelected="True"/>
-                                <ComboBoxItem Content="Article"     Tag="article"/>
-                                <ComboBoxItem Content="Client"      Tag="client"/>
-                                <ComboBoxItem Content="Fournisseur" Tag="fournisseur"/>
+                                <ComboBoxItem Content="{x:Static p:Resources.CGraphe_AllEntities}"    Tag=""           IsSelected="True"/>
+                                <ComboBoxItem Content="{x:Static p:Resources.CGraphe_Article}"     Tag="article"/>
+                                <ComboBoxItem Content="{x:Static p:Resources.CGraphe_Client}"      Tag="client"/>
+                                <ComboBoxItem Content="{x:Static p:Resources.CGraphe_Supplier}" Tag="fournisseur"/>
                             </ComboBox>
                         </StackPanel>
 
                         <!-- Search within selected type -->
                         <StackPanel Grid.Column="2">
-                            <TextBlock Text="RECHERCHER" Style="{StaticResource SettingsLabel}"/>
+                            <TextBlock Text="{x:Static p:Resources.CGraphe_SearchLabel}" Style="{StaticResource SettingsLabel}"/>
                             <Grid>
                                 <TextBox x:Name="EntitySearchBox"
                                          Height="40" Padding="12,0,36,0"
@@ -489,13 +490,13 @@
 
                         <!-- Graph type -->
                         <StackPanel Grid.Column="4">
-                            <TextBlock Text="TYPE DE GRAPHE" Style="{StaticResource SettingsLabel}"/>
+                            <TextBlock Text="{x:Static p:Resources.CGraphe_GraphType}" Style="{StaticResource SettingsLabel}"/>
                             <ComboBox x:Name="GraphTypeComboBox"
                                       Style="{StaticResource ModernComboBox}"
                                       SelectionChanged="GraphTypeComboBox_SelectionChanged">
-                                <ComboBoxItem Content="Aires"  Tag="area" IsSelected="True"/>
-                                <ComboBoxItem Content="Ligne"  Tag="line"/>
-                                <ComboBoxItem Content="Barres" Tag="bar"/>
+                                <ComboBoxItem Content="{x:Static p:Resources.CGraphe_AreaChart}"  Tag="area" IsSelected="True"/>
+                                <ComboBoxItem Content="{x:Static p:Resources.CGraphe_LineChart}"  Tag="line"/>
+                                <ComboBoxItem Content="{x:Static p:Resources.CGraphe_BarChart}" Tag="bar"/>
                             </ComboBox>
                         </StackPanel>
 
@@ -509,7 +510,7 @@
                                     <Border Width="8" Height="8" CornerRadius="1"
                                             Background="{StaticResource AccentBlue}"
                                             Margin="0,0,6,0" VerticalAlignment="Center"/>
-                                    <TextBlock Text="Opérations" Style="{StaticResource BodyText}"
+                                    <TextBlock Text="{x:Static p:Resources.CGraphe_Operations}" Style="{StaticResource BodyText}"
                                                VerticalAlignment="Center"/>
                                 </StackPanel>
                             </CheckBox>
@@ -520,7 +521,7 @@
                                     <Border Width="8" Height="8" CornerRadius="1"
                                             Background="{StaticResource AccentPurple}"
                                             Margin="0,0,6,0" VerticalAlignment="Center"/>
-                                    <TextBlock Text="Factures" Style="{StaticResource BodyText}"
+                                    <TextBlock Text="{x:Static p:Resources.CGraphe_Invoices}" Style="{StaticResource BodyText}"
                                                VerticalAlignment="Center"/>
                                 </StackPanel>
                             </CheckBox>
@@ -533,7 +534,7 @@
                                     <Border Width="8" Height="8" CornerRadius="1"
                                             Background="#38B2AC"
                                             Margin="0,0,6,0" VerticalAlignment="Center"/>
-                                    <TextBlock Text="Combiné" Style="{StaticResource BodyText}"
+                                    <TextBlock Text="{x:Static p:Resources.CGraphe_Combined}" Style="{StaticResource BodyText}"
                                                VerticalAlignment="Center"/>
                                 </StackPanel>
                             </CheckBox>
@@ -541,7 +542,7 @@
 
                         <!-- Apply button -->
                         <StackPanel Grid.Column="8" VerticalAlignment="Bottom">
-                            <Button x:Name="ApplyBtn" Content="⟳  Générer le Graphe"
+                            <Button x:Name="ApplyBtn" Content="{x:Static p:Resources.CGraphe_Generate}"
                                     Style="{StaticResource ApplyButton}"
                                     Click="ApplyButton_Click"/>
                         </StackPanel>
@@ -560,13 +561,13 @@
                     <StackPanel>
                         <Border Height="3" CornerRadius="1.5" Background="{StaticResource AccentGrad}"
                                 Margin="-18,-14,-18,12"/>
-                        <TextBlock Text="TOTAL REVENU" Style="{StaticResource KpiLabel}"/>
+                        <TextBlock Text="{x:Static p:Resources.CGraphe_TotalRevenue}" Style="{StaticResource KpiLabel}"/>
                         <TextBlock x:Name="Kpi1Value" Text="—" Style="{StaticResource KpiValue}"/>
                         <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
                             <TextBlock x:Name="Kpi1Trend" Text="— %"
                                        FontFamily="Segoe UI" FontSize="12" FontWeight="SemiBold"
                                        Foreground="{StaticResource TrendUp}"/>
-                            <TextBlock Text=" vs préc." Style="{StaticResource BodyText}"
+                            <TextBlock Text="{x:Static p:Resources.CGraphe_VsPrev}" Style="{StaticResource BodyText}"
                                        FontSize="11" Margin="4,0,0,0"/>
                         </StackPanel>
                     </StackPanel>
@@ -577,13 +578,13 @@
                     <StackPanel>
                         <Border Height="3" CornerRadius="1.5" Background="{StaticResource TealGrad}"
                                 Margin="-18,-14,-18,12"/>
-                        <TextBlock Text="NB. OPÉRATIONS" Style="{StaticResource KpiLabel}"/>
+                        <TextBlock Text="{x:Static p:Resources.CGraphe_NbOperations}" Style="{StaticResource KpiLabel}"/>
                         <TextBlock x:Name="Kpi2Value" Text="—" Style="{StaticResource KpiValue}"/>
                         <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
                             <TextBlock x:Name="Kpi2Trend" Text="— %"
                                        FontFamily="Segoe UI" FontSize="12" FontWeight="SemiBold"
                                        Foreground="{StaticResource TrendUp}"/>
-                            <TextBlock Text=" vs préc." Style="{StaticResource BodyText}"
+                            <TextBlock Text="{x:Static p:Resources.CGraphe_VsPrev}" Style="{StaticResource BodyText}"
                                        FontSize="11" Margin="4,0,0,0"/>
                         </StackPanel>
                     </StackPanel>
@@ -594,13 +595,13 @@
                     <StackPanel>
                         <Border Height="3" CornerRadius="1.5" Background="{StaticResource GoldGrad}"
                                 Margin="-18,-14,-18,12"/>
-                        <TextBlock Text="PANIER MOYEN" Style="{StaticResource KpiLabel}"/>
+                        <TextBlock Text="{x:Static p:Resources.CGraphe_AverageCart}" Style="{StaticResource KpiLabel}"/>
                         <TextBlock x:Name="Kpi3Value" Text="—" Style="{StaticResource KpiValue}"/>
                         <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
                             <TextBlock x:Name="Kpi3Trend" Text="— %"
                                        FontFamily="Segoe UI" FontSize="12" FontWeight="SemiBold"
                                        Foreground="{StaticResource TrendUp}"/>
-                            <TextBlock Text=" vs préc." Style="{StaticResource BodyText}"
+                            <TextBlock Text="{x:Static p:Resources.CGraphe_VsPrev}" Style="{StaticResource BodyText}"
                                        FontSize="11" Margin="4,0,0,0"/>
                         </StackPanel>
                     </StackPanel>
@@ -611,13 +612,13 @@
                     <StackPanel>
                         <Border Height="3" CornerRadius="1.5" Background="{StaticResource RoseGrad}"
                                 Margin="-18,-14,-18,12"/>
-                        <TextBlock Text="ÉCART FACTURATION" Style="{StaticResource KpiLabel}"/>
+                        <TextBlock Text="{x:Static p:Resources.CGraphe_BillingGap}" Style="{StaticResource KpiLabel}"/>
                         <TextBlock x:Name="Kpi4Value" Text="—" Style="{StaticResource KpiValue}"/>
                         <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
                             <TextBlock x:Name="Kpi4Trend" Text="— %"
                                        FontFamily="Segoe UI" FontSize="12" FontWeight="SemiBold"
                                        Foreground="{StaticResource TrendDown}"/>
-                            <TextBlock Text=" à combler" Style="{StaticResource BodyText}"
+                            <TextBlock Text="{x:Static p:Resources.CGraphe_ToFill}" Style="{StaticResource BodyText}"
                                        FontSize="11" Margin="4,0,0,0"/>
                         </StackPanel>
                     </StackPanel>
@@ -724,11 +725,11 @@
                                         Visibility="Visible">
                                 <TextBlock Text="📊" FontSize="60"
                                            HorizontalAlignment="Center" Opacity="0.25"/>
-                                <TextBlock Text="Configurez les paramètres et cliquez sur"
+                                <TextBlock Text="{x:Static p:Resources.CGraphe_Configure}"
                                            FontFamily="Segoe UI" FontSize="14"
                                            Foreground="{StaticResource TextMuted}"
                                            HorizontalAlignment="Center" Margin="0,12,0,4"/>
-                                <TextBlock Text="« Générer le Graphe »"
+                                <TextBlock Text="{x:Static p:Resources.CGraphe_GenerateHint}"
                                            FontFamily="Segoe UI" FontSize="14" FontWeight="SemiBold"
                                            Foreground="{StaticResource AccentBlue}"
                                            HorizontalAlignment="Center"/>
@@ -759,7 +760,7 @@
                                                 </EventTrigger>
                                             </TextBlock.Triggers>
                                         </TextBlock>
-                                        <TextBlock Text="Chargement…"
+                                        <TextBlock Text="{x:Static p:Resources.CGraphe_Loading}"
                                                    FontFamily="Segoe UI" FontSize="13"
                                                    Foreground="{StaticResource TextSecondary}"
                                                    HorizontalAlignment="Center" Margin="0,10,0,0"/>
@@ -790,7 +791,7 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock Text="Données Détaillées" Style="{StaticResource SectionTitle}"/>
+                        <TextBlock Text="{x:Static p:Resources.CGraphe_DetailedData}" Style="{StaticResource SectionTitle}"/>
                         <TextBlock x:Name="RowCountText" Grid.Column="1"
                                    Text="0 lignes" Style="{StaticResource BodyText}"
                                    FontSize="12" VerticalAlignment="Center"
@@ -808,7 +809,7 @@
                         <DataGrid.Columns>
 
                             <!-- Source badge -->
-                            <DataGridTemplateColumn Header="SOURCE" Width="100">
+                            <DataGridTemplateColumn Header="{x:Static p:Resources.CGraphe_ColSource}" Width="100">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <Border CornerRadius="5" Padding="8,3"
@@ -841,7 +842,7 @@
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
 
-                            <DataGridTextColumn Header="DATE" Binding="{Binding DateLabel}" Width="110">
+                            <DataGridTextColumn Header="{x:Static p:Resources.CGraphe_ColDate}" Binding="{Binding DateLabel}" Width="110">
                                 <DataGridTextColumn.ElementStyle>
                                     <Style TargetType="TextBlock">
                                         <Setter Property="FontFamily" Value="Cascadia Code, Consolas"/>
@@ -853,7 +854,7 @@
                                 </DataGridTextColumn.ElementStyle>
                             </DataGridTextColumn>
 
-                            <DataGridTextColumn Header="LIBELLÉ" Binding="{Binding Label}" Width="*">
+                            <DataGridTextColumn Header="{x:Static p:Resources.CGraphe_ColLabel}" Binding="{Binding Label}" Width="*">
                                 <DataGridTextColumn.ElementStyle>
                                     <Style TargetType="TextBlock">
                                         <Setter Property="FontSize"   Value="13"/>
@@ -864,7 +865,7 @@
                                 </DataGridTextColumn.ElementStyle>
                             </DataGridTextColumn>
 
-                            <DataGridTextColumn Header="QTÉ" Binding="{Binding Quantity}" Width="80">
+                            <DataGridTextColumn Header="{x:Static p:Resources.CGraphe_ColQty}" Binding="{Binding Quantity}" Width="80">
                                 <DataGridTextColumn.ElementStyle>
                                     <Style TargetType="TextBlock">
                                         <Setter Property="FontFamily" Value="Cascadia Code, Consolas"/>
@@ -877,7 +878,7 @@
                                 </DataGridTextColumn.ElementStyle>
                             </DataGridTextColumn>
 
-                            <DataGridTextColumn Header="MONTANT" Binding="{Binding ValueFormatted}" Width="130">
+                            <DataGridTextColumn Header="{x:Static p:Resources.CGraphe_ColAmount}" Binding="{Binding ValueFormatted}" Width="130">
                                 <DataGridTextColumn.ElementStyle>
                                     <Style TargetType="TextBlock">
                                         <Setter Property="FontFamily" Value="Cascadia Code, Consolas"/>
@@ -892,7 +893,7 @@
                             </DataGridTextColumn>
 
                             <!-- Status badge -->
-                            <DataGridTemplateColumn Header="STATUT" Width="100">
+                            <DataGridTemplateColumn Header="{x:Static p:Resources.CGraphe_ColStatus}" Width="100">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <Border CornerRadius="5" Padding="8,3"
