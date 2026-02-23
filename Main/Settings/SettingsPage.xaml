@@ -105,14 +105,21 @@
             <StackPanel Margin="0,24,0,0">
                 <!-- Header -->
                 <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
-                    <Button Content="{x:Static res:Resources.Settings_BackButton}"
-                            Width="40" Height="38" FontSize="25"
-                            Background="Transparent" BorderThickness="0" FontWeight="Bold"
-                            HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
-                            Padding="0" Margin="-2,0,0,0" Click="Button_Click">
+                    <Button Width="40" Height="38"
+        Background="Transparent" BorderThickness="0"
+        Padding="0" Margin="-2,0,0,0" Click="Button_Click">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
-                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <Border Background="Transparent">
+                                    <Path Data="M 28,19 L 4,19 M 4,19 L 12,11 M 4,19 L 12,27"
+                      Stroke="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}"
+                      StrokeThickness="2.5"
+                      StrokeLineJoin="Round"
+                      StrokeStartLineCap="Round"
+                      StrokeEndLineCap="Round"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center"/>
+                                </Border>
                             </ControlTemplate>
                         </Button.Template>
                     </Button>

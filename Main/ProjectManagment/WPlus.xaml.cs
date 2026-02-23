@@ -241,7 +241,9 @@ namespace GestionComerce.Main.ProjectManagment
             {
                 IconColor.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#828181"));
                 OperationType1.Text += " (Reversed)";
-                ReverseAritcles.Visibility = Visibility.Collapsed;
+                // Keep button visible so user can unreverse — just update the label
+                ReverseAritcles.Content = "Unreverse Articles";
+                ReverseAritcles.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#4d4d4d"));
             }
         }
         public CSingleOperation so;int count;

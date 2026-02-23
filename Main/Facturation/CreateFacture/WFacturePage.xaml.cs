@@ -302,7 +302,7 @@ namespace GestionComerce.Main.Facturation.CreateFacture
             {
                 currentPage.Add(article);
 
-                int pageLimit = isFirstPage ? 8 : 19;
+                int pageLimit = isFirstPage ? 11 : 23;
 
                 if (currentPage.Count >= pageLimit)
                 {
@@ -1094,7 +1094,7 @@ namespace GestionComerce.Main.Facturation.CreateFacture
                     return (420, 250);
                 case "2.png":
                 case "2E.png":
-                    return (495, 25);
+                    return (490, 265);
                 case "3.png":
                 case "3E.png":
                     return (210, 570);

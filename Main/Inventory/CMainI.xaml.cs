@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
@@ -7,9 +7,6 @@ using Superete;
 
 namespace GestionComerce.Main.Inventory
 {
-    /// <summary>
-    /// Logique d'interaction pour CMainI.xaml
-    /// </summary>
     public partial class CMainI : UserControl
     {
         public List<Famille> lf;
@@ -17,13 +14,18 @@ namespace GestionComerce.Main.Inventory
         public User u;
         public List<Fournisseur> lfo;
         public List<Article> la;
-        private int cardsPerRow = 7; // Default for moyenne taille
+        private int cardsPerRow = 7;
         private string currentIconSize = "Moyennes";
         private int articlesPerPage = 12;
         private int currentlyLoadedCount = 0;
         private List<Article> filteredArticles;
-        private bool isCardLayout = false; // Track current layout mode
-        private string currentSortCriteria = "Plus récent au plus ancien"; // Default sort
+        private bool isCardLayout = false;
+
+        // Sort index:
+        // 0=NameAZ, 1=NameZA, 2=PriceAsc, 3=PriceDesc,
+        // 4=QtyAsc, 5=QtyDesc, 6=Newest, 7=Oldest
+        private int currentSortIndex = 6; // Default: newest to oldest
+
         private ParametresGeneraux _parametres;
 
         public CMainI(User u, List<Article> la, List<Famille> lf, List<Fournisseur> lfo, MainWindow main)
@@ -36,7 +38,6 @@ namespace GestionComerce.Main.Inventory
             this.lfo = lfo;
             this.filteredArticles = new List<Article>();
 
-            // Charger les paramètres utilisateur
             ChargerParametres();
 
             foreach (Role r in main.lr)
@@ -44,30 +45,38 @@ namespace GestionComerce.Main.Inventory
                 if (u.RoleID == r.RoleID)
                 {
                     if (r.ViewFamilly == false && r.AddFamilly == false)
-                    {
                         ManageFamillies.IsEnabled = false;
-                    }
                     if (r.AddArticle == false)
                     {
                         NewArticleButton.IsEnabled = false;
                         AddMultipleArticlesButton.IsEnabled = false;
                     }
                     if (r.ViewFournisseur == false)
-                    {
                         FournisseurManage.IsEnabled = false;
-                    }
                     if (r.ViewArticle == true)
-                    {
                         RefreshArticlesList(la, true);
-                    }
                     break;
                 }
             }
         }
 
-        /// <summary>
-        /// Charge les paramètres généraux de l'utilisateur
-        /// </summary>
+        // ── Maps French DB sort string → ComboBox index ──────────────────────
+        private int SortStringToIndex(string french)
+        {
+            switch (french)
+            {
+                case "Nom (A-Z)":            return 0;
+                case "Nom (Z-A)":            return 1;
+                case "Prix croissant":       return 2;
+                case "Prix décroissant":     return 3;
+                case "Quantité croissante":  return 4;
+                case "Quantité décroissante":return 5;
+                case "Plus récent au plus ancien": return 6;
+                case "Plus ancien au plus récent": return 7;
+                default:                     return 6;
+            }
+        }
+
         private void ChargerParametres()
         {
             try
@@ -75,12 +84,10 @@ namespace GestionComerce.Main.Inventory
                 string connectionString = "Server=localhost\\SQLEXPRESS;Database=GESTIONCOMERCEP;Trusted_Connection=True;";
                 _parametres = ParametresGeneraux.ObtenirOuCreerParametres(u.UserID, connectionString);
 
-                // SI LES PARAMETRES VIENNENT D'ÊTRE CRÉÉS, FORCER LES BONNES VALEURS PAR DÉFAUT
                 if (_parametres != null)
                 {
                     bool needsUpdate = false;
 
-                    // Forcer VueParDefaut à "Row" seulement si vide ou valeur invalide
                     if (string.IsNullOrEmpty(_parametres.VueParDefaut) ||
                         (_parametres.VueParDefaut != "Row" && _parametres.VueParDefaut != "Cartes"))
                     {
@@ -88,21 +95,16 @@ namespace GestionComerce.Main.Inventory
                         needsUpdate = true;
                     }
 
-                    // Forcer TrierParDefaut à "Plus récent au plus ancien" SEULEMENT si vide
                     if (string.IsNullOrEmpty(_parametres.TrierParDefaut))
                     {
                         _parametres.TrierParDefaut = "Plus récent au plus ancien";
                         needsUpdate = true;
                     }
 
-                    // Si on a modifié quelque chose, sauvegarder
                     if (needsUpdate)
-                    {
                         _parametres.MettreAJourParametres(connectionString);
-                    }
                 }
 
-                // Appliquer les paramètres
                 AppliquerParametres();
             }
             catch (Exception ex)
@@ -112,14 +114,14 @@ namespace GestionComerce.Main.Inventory
                 _parametres = null;
             }
         }
+
         private void AppliquerParametres()
         {
             if (_parametres == null) return;
 
             try
             {
-                // 1. Appliquer la Vue par défaut (Cartes ou Row)
-                // FORCE DEFAULT TO ROW IF EMPTY OR INVALID
+                // 1. Vue par défaut
                 string vueParDefaut = string.IsNullOrEmpty(_parametres.VueParDefaut) ? "Row" : _parametres.VueParDefaut;
 
                 if (vueParDefaut == "Cartes")
@@ -130,17 +132,10 @@ namespace GestionComerce.Main.Inventory
                         CardLayoutButton.Style = (Style)FindResource("ActiveToggleButtonStyle");
                         RowLayoutButton.Style = (Style)FindResource("ToggleButtonStyle");
                     }
-                    if (TableHeader != null)
-                    {
-                        TableHeader.Visibility = Visibility.Collapsed;
-                    }
-                    // Show IconSizeComboBox for card layout
-                    if (IconSizeComboBox != null)
-                    {
-                        IconSizeComboBox.Visibility = Visibility.Visible;
-                    }
+                    if (TableHeader != null) TableHeader.Visibility = Visibility.Collapsed;
+                    if (IconSizeComboBox != null) IconSizeComboBox.Visibility = Visibility.Visible;
                 }
-                else // "Row"
+                else
                 {
                     isCardLayout = false;
                     if (CardLayoutButton != null && RowLayoutButton != null)
@@ -148,39 +143,21 @@ namespace GestionComerce.Main.Inventory
                         RowLayoutButton.Style = (Style)FindResource("ActiveToggleButtonStyle");
                         CardLayoutButton.Style = (Style)FindResource("ToggleButtonStyle");
                     }
-                    if (TableHeader != null)
-                    {
-                        TableHeader.Visibility = Visibility.Visible;
-                    }
-                    // Hide IconSizeComboBox for row layout
-                    if (IconSizeComboBox != null)
-                    {
-                        IconSizeComboBox.Visibility = Visibility.Collapsed;
-                    }
+                    if (TableHeader != null) TableHeader.Visibility = Visibility.Visible;
+                    if (IconSizeComboBox != null) IconSizeComboBox.Visibility = Visibility.Collapsed;
                 }
 
-                // 2. Appliquer le Tri par défaut
-                // FORCE DEFAULT TO "Plus récent au plus ancien" IF EMPTY
-                string trierParDefaut = string.IsNullOrEmpty(_parametres.TrierParDefaut) ? "Plus récent au plus ancien" : _parametres.TrierParDefaut;
-                currentSortCriteria = trierParDefaut;
+                // 2. Tri par défaut — use index, not content string
+                string trierParDefaut = string.IsNullOrEmpty(_parametres.TrierParDefaut)
+                    ? "Plus récent au plus ancien"
+                    : _parametres.TrierParDefaut;
+
+                currentSortIndex = SortStringToIndex(trierParDefaut);
 
                 if (SortComboBox != null && SortComboBox.Items.Count > 0)
-                {
-                    for (int i = 0; i < SortComboBox.Items.Count; i++)
-                    {
-                        if (SortComboBox.Items[i] is ComboBoxItem item)
-                        {
-                            string itemContent = item.Content.ToString();
-                            if (itemContent == trierParDefaut)
-                            {
-                                SortComboBox.SelectedIndex = i;
-                                break;
-                            }
-                        }
-                    }
-                }
+                    SortComboBox.SelectedIndex = currentSortIndex;
 
-                // 3. Appliquer la Taille des Icônes
+                // 3. Taille des icônes
                 if (!string.IsNullOrEmpty(_parametres.TailleIcones))
                 {
                     currentIconSize = _parametres.TailleIcones;
@@ -218,36 +195,30 @@ namespace GestionComerce.Main.Inventory
                 System.Diagnostics.Debug.WriteLine($"Erreur lors de l'application des paramètres : {ex.Message}");
             }
         }
-        // REPLACE your existing IconSizeComboBox_SelectionChanged method with this:
 
+        // Icon size uses SelectedIndex — language-agnostic
         private void IconSizeComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (IconSizeComboBox == null || IconSizeComboBox.SelectedIndex < 0)
                 return;
 
-            int selectedIndex = IconSizeComboBox.SelectedIndex;
-
-            // Update based on index (0 = Large, 1 = Medium, 2 = Small)
-            switch (selectedIndex)
+            switch (IconSizeComboBox.SelectedIndex)
             {
-                case 0: // Grandes (Large - 3 big dots)
+                case 0: // Large
                     currentIconSize = "Grandes";
                     cardsPerRow = 6;
                     articlesPerPage = 12;
                     break;
-
-                case 1: // Moyennes (Medium - 3 medium dots) 
+                case 1: // Medium
                     currentIconSize = "Moyennes";
                     cardsPerRow = 7;
                     articlesPerPage = 14;
                     break;
-
-                case 2: // Petites (Small - 3 small dots)
+                case 2: // Small
                     currentIconSize = "Petites";
                     cardsPerRow = 11;
                     articlesPerPage = 22;
                     break;
-
                 default:
                     currentIconSize = "Moyennes";
                     cardsPerRow = 7;
@@ -255,7 +226,6 @@ namespace GestionComerce.Main.Inventory
                     break;
             }
 
-            // Save preference to database if _parametres is available
             if (_parametres != null)
             {
                 try
@@ -270,22 +240,16 @@ namespace GestionComerce.Main.Inventory
                 }
             }
 
-            // Recharger l'affichage si on a des articles ET qu'on est en mode carte
             if (la != null && la.Count > 0 && isCardLayout)
-            {
                 RefreshArticlesList(la, false);
-            }
         }
 
-        // Main public method - called from other windows
         public void LoadArticles(List<Article> la)
         {
-            // SIMPLE FIX: Just refresh with the provided list
             this.la = la;
             RefreshArticlesList(la, false);
         }
 
-        // Internal refresh method
         private void RefreshArticlesList(List<Article> la, bool resetPagination)
         {
             foreach (Role r in main.lr)
@@ -295,19 +259,11 @@ namespace GestionComerce.Main.Inventory
                     if (r.ViewArticle == true)
                     {
                         this.la = la;
-
-                        // Apply sorting to the list
                         var sortedList = ApplySorting(la);
 
                         filteredArticles = new List<Article>();
-
                         foreach (Article a in sortedList)
-                        {
-                            if (a.Etat)
-                            {
-                                filteredArticles.Add(a);
-                            }
-                        }
+                            if (a.Etat) filteredArticles.Add(a);
 
                         int previousCount = resetPagination ? 0 : currentlyLoadedCount;
                         ArticlesContainer.Children.Clear();
@@ -315,13 +271,9 @@ namespace GestionComerce.Main.Inventory
 
                         int articlesToLoad;
                         if (resetPagination || previousCount == 0)
-                        {
                             articlesToLoad = Math.Min(articlesPerPage, filteredArticles.Count);
-                        }
                         else
-                        {
                             articlesToLoad = Math.Min(previousCount, filteredArticles.Count);
-                        }
 
                         currentlyLoadedCount = articlesToLoad;
                         RefreshCurrentView();
@@ -331,37 +283,20 @@ namespace GestionComerce.Main.Inventory
             }
         }
 
-        // Apply sorting based on current sort criteria
+        // Sort by index — completely language-agnostic
         private List<Article> ApplySorting(List<Article> articles)
         {
-            switch (currentSortCriteria)
+            switch (currentSortIndex)
             {
-                case "Nom (A-Z)":
-                    return articles.OrderBy(a => a.ArticleName).ToList();
-
-                case "Nom (Z-A)":
-                    return articles.OrderByDescending(a => a.ArticleName).ToList();
-
-                case "Prix croissant":
-                    return articles.OrderBy(a => a.PrixVente).ToList();
-
-                case "Prix décroissant":
-                    return articles.OrderByDescending(a => a.PrixVente).ToList();
-
-                case "Quantité croissante":
-                    return articles.OrderBy(a => a.Quantite).ToList();
-
-                case "Quantité décroissante":
-                    return articles.OrderByDescending(a => a.Quantite).ToList();
-
-                case "Plus récent au plus ancien":
-                    return articles.OrderByDescending(a => a.Date ?? DateTime.MinValue).ToList();
-
-                case "Plus ancien au plus récent":
-                    return articles.OrderBy(a => a.Date ?? DateTime.MaxValue).ToList();
-
-                default:
-                    return articles;
+                case 0: return articles.OrderBy(a => a.ArticleName).ToList();
+                case 1: return articles.OrderByDescending(a => a.ArticleName).ToList();
+                case 2: return articles.OrderBy(a => a.PrixVente).ToList();
+                case 3: return articles.OrderByDescending(a => a.PrixVente).ToList();
+                case 4: return articles.OrderBy(a => a.Quantite).ToList();
+                case 5: return articles.OrderByDescending(a => a.Quantite).ToList();
+                case 6: return articles.OrderByDescending(a => a.Date ?? DateTime.MinValue).ToList();
+                case 7: return articles.OrderBy(a => a.Date ?? DateTime.MaxValue).ToList();
+                default: return articles;
             }
         }
 
@@ -375,11 +310,8 @@ namespace GestionComerce.Main.Inventory
         private void UpdateViewMoreButtonVisibility()
         {
             if (ViewMoreButton != null)
-            {
                 ViewMoreButton.Visibility = (currentlyLoadedCount < filteredArticles.Count)
-                    ? Visibility.Visible
-                    : Visibility.Collapsed;
-            }
+                    ? Visibility.Visible : Visibility.Collapsed;
         }
 
         private void LayoutToggleButton_Click(object sender, RoutedEventArgs e)
@@ -392,7 +324,7 @@ namespace GestionComerce.Main.Inventory
                 RowLayoutButton.Style = (Style)FindResource("ActiveToggleButtonStyle");
                 CardLayoutButton.Style = (Style)FindResource("ToggleButtonStyle");
                 TableHeader.Visibility = Visibility.Visible;
-                IconSizeComboBox.Visibility = Visibility.Collapsed; // Hide icon size selector
+                IconSizeComboBox.Visibility = Visibility.Collapsed;
             }
             else if (clickedButton == CardLayoutButton)
             {
@@ -400,25 +332,19 @@ namespace GestionComerce.Main.Inventory
                 CardLayoutButton.Style = (Style)FindResource("ActiveToggleButtonStyle");
                 RowLayoutButton.Style = (Style)FindResource("ToggleButtonStyle");
                 TableHeader.Visibility = Visibility.Collapsed;
-                IconSizeComboBox.Visibility = Visibility.Visible; // Show icon size selector
+                IconSizeComboBox.Visibility = Visibility.Visible;
             }
 
             LoadArticles(la);
         }
 
-        // Sorting ComboBox selection changed
+        // Sort changed — store index, not content string
         private void SortComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (SortComboBox.SelectedItem is ComboBoxItem selectedItem)
-            {
-                currentSortCriteria = selectedItem.Content.ToString();
+            currentSortIndex = SortComboBox.SelectedIndex;
 
-                // Refresh the list with new sorting
-                if (la != null && la.Count > 0)
-                {
-                    RefreshArticlesList(la, false);
-                }
-            }
+            if (la != null && la.Count > 0)
+                RefreshArticlesList(la, false);
         }
 
         private void RefreshCurrentView()
@@ -427,56 +353,34 @@ namespace GestionComerce.Main.Inventory
 
             if (isCardLayout)
             {
-                // Determine cards per row based on size
-                int cardsPerRow = 0;
+                int cpr = 0;
                 switch (currentIconSize)
                 {
-                    case "Grandes":
-                        cardsPerRow = 6;
-                        break;
-                    case "Moyennes":
-                        cardsPerRow = 7;
-                        break;
-                    case "Petites":
-                        cardsPerRow = 11;
-                        break;
+                    case "Grandes": cpr = 6;  break;
+                    case "Moyennes": cpr = 7; break;
+                    case "Petites": cpr = 11; break;
+                    default: cpr = 7; break;
                 }
 
-                // Create Grid for proper layout
-                var grid = new Grid();
-
-                // Calculate rows needed
+                var grid = new System.Windows.Controls.Grid();
                 int articlesToShow = Math.Min(currentlyLoadedCount, filteredArticles.Count);
-                int totalRows = (int)Math.Ceiling((double)articlesToShow / cardsPerRow);
+                int totalRows = (int)Math.Ceiling((double)articlesToShow / cpr);
 
-                // Add row definitions
                 for (int i = 0; i < totalRows; i++)
-                {
                     grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
-                }
-
-                // Add column definitions
-                for (int i = 0; i < cardsPerRow; i++)
-                {
+                for (int i = 0; i < cpr; i++)
                     grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-                }
 
-                // Add articles to grid
                 for (int i = 0; i < articlesToShow; i++)
                 {
                     Article a = filteredArticles[i];
-                    int row = i / cardsPerRow;
-                    int col = i % cardsPerRow;
-
                     CSingleArticleI ar = new CSingleArticleI(a, la, this, lf, lfo, true, currentIconSize);
-                    ar.HorizontalAlignment = HorizontalAlignment.Stretch;
+                    ar.HorizontalAlignment = HorizontalAlignment.Center;
                     ar.VerticalAlignment = VerticalAlignment.Top;
                     ar.MaxWidth = currentIconSize == "Petites" ? 140 : (currentIconSize == "Grandes" ? 300 : 270);
-                    ar.HorizontalAlignment = HorizontalAlignment.Center;
 
-                    Grid.SetRow(ar, row);
-                    Grid.SetColumn(ar, col);
-
+                    System.Windows.Controls.Grid.SetRow(ar, i / cpr);
+                    System.Windows.Controls.Grid.SetColumn(ar, i % cpr);
                     grid.Children.Add(ar);
                 }
 
@@ -484,9 +388,7 @@ namespace GestionComerce.Main.Inventory
             }
             else
             {
-                // Row layout - direct children
                 int articlesToShow = Math.Min(currentlyLoadedCount, filteredArticles.Count);
-
                 for (int i = 0; i < articlesToShow; i++)
                 {
                     Article a = filteredArticles[i];
@@ -500,239 +402,173 @@ namespace GestionComerce.Main.Inventory
 
         private void UpdateTotalStats()
         {
-            // Count all articles in the main list with Etat == true
-            List<Article> allActiveArticles = new List<Article>();
-            foreach (Article a in la)
-            {
-                if (a.Etat)
-                {
-                    allActiveArticles.Add(a);
-                }
-            }
+            List<Article> allActiveArticles = la.Where(a => a.Etat).ToList();
 
             int count = allActiveArticles.Count;
-            Decimal PrixATotall = 0;
-            Decimal PrixMPTotall = 0;
-            Decimal PrixVTotall = 0;
+            decimal PrixATotall = 0, PrixMPTotall = 0, PrixVTotall = 0;
             int QuantiteTotall = 0;
 
             ArticlesTotal.Text = count.ToString();
 
             foreach (Article a in allActiveArticles)
             {
-                PrixATotall += a.PrixAchat * a.Quantite;
-                PrixMPTotall += a.PrixMP * a.Quantite;
-                PrixVTotall += a.PrixVente * a.Quantite;
+                PrixATotall  += a.PrixAchat * a.Quantite;
+                PrixMPTotall += a.PrixMP    * a.Quantite;
+                PrixVTotall  += a.PrixVente * a.Quantite;
                 QuantiteTotall += a.Quantite;
             }
 
-            PrixATotal.Text = PrixATotall.ToString("0.00") + " DH";
-            PrixMPTotal.Text = PrixMPTotall.ToString("0.00") + " DH";
-            PrixVTotal.Text = PrixVTotall.ToString("0.00") + " DH";
+            PrixATotal.Text   = PrixATotall.ToString("0.00")  + " DH";
+            PrixMPTotal.Text  = PrixMPTotall.ToString("0.00") + " DH";
+            PrixVTotal.Text   = PrixVTotall.ToString("0.00")  + " DH";
             QuantiteTotal.Text = QuantiteTotall.ToString();
         }
 
-        // View More Button Click
         private void ViewMoreButton_Click(object sender, RoutedEventArgs e)
         {
             LoadMoreArticles();
         }
 
-        // Back button in header
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             main.load_main(u);
         }
 
-        // ComboBox for search criteria selection
         private void SearchCriteriaComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            // Reapply filter when criteria changes
             if (SearchTextBox != null && ArticlesContainer != null)
-            {
                 ApplySearchFilter();
-            }
         }
 
-        // TextBox for search text
         private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             ApplySearchFilter();
         }
 
-        // Search button (loupe)
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
             ApplySearchFilter();
         }
 
-        // Clear button
         private void ClearButton_Click(object sender, RoutedEventArgs e)
         {
             SearchTextBox.Clear();
-            // Filter will be applied automatically through TextChanged event
         }
 
-        // Main search filter method
+        // Search filter — uses SelectedIndex, not Content string
         private void ApplySearchFilter()
         {
             string searchText = SearchTextBox.Text.Trim();
 
-            // If search is empty, show all articles with pagination (reset pagination on search clear)
             if (string.IsNullOrEmpty(searchText))
             {
-                filteredArticles = new List<Article>();
-                foreach (Article a in la)
-                {
-                    if (a.Etat)
-                    {
-                        filteredArticles.Add(a);
-                    }
-                }
-
-                // Apply sorting to filtered results
+                filteredArticles = la.Where(a => a.Etat).ToList();
                 filteredArticles = ApplySorting(filteredArticles);
-
                 currentlyLoadedCount = 0;
                 ArticlesContainer.Children.Clear();
                 LoadMoreArticles();
                 return;
             }
 
-            // Get selected search criteria
-            var selectedItem = SearchCriteriaComboBox.SelectedItem as ComboBoxItem;
-            string criteria = selectedItem?.Content.ToString() ?? "Code";
+            // SearchCriteriaComboBox indices:
+            // 0=Code, 1=Article, 2=Supplier, 3=Family, 4=LotNumber, 5=DeliveryNote, 6=Brand
+            int criteriaIndex = SearchCriteriaComboBox.SelectedIndex;
 
-            // Filter articles based on criteria
             filteredArticles = new List<Article>();
 
             foreach (Article a in la)
             {
-                // Skip articles where Etat is false
-                if (!a.Etat)
-                    continue;
+                if (!a.Etat) continue;
 
                 bool matches = false;
 
-                switch (criteria)
+                switch (criteriaIndex)
                 {
-                    case "Code":
+                    case 0: // Code
                         matches = a.Code.ToString().IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0;
                         break;
-
-                    case "Article":
+                    case 1: // Article name
                         matches = a.ArticleName != null &&
-                                   a.ArticleName.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0;
+                                  a.ArticleName.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0;
                         break;
-
-                    case "Fournisseur":
+                    case 2: // Supplier
                         string fournisseurName = GetFournisseurName(a.FournisseurID);
                         matches = !string.IsNullOrEmpty(fournisseurName) &&
-                                   fournisseurName.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0;
+                                  fournisseurName.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0;
                         break;
-
-                    case "Famille":
+                    case 3: // Family
                         string familleName = GetFamilleName(a.FamillyID);
                         matches = !string.IsNullOrEmpty(familleName) &&
-                                   familleName.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0;
+                                  familleName.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0;
                         break;
-
-                    case "Numero de Lot":
-                    case "Numéro de Lot":
+                    case 4: // Lot number
                         matches = !string.IsNullOrEmpty(a.numeroLot) &&
-                                   a.numeroLot.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0;
+                                  a.numeroLot.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0;
                         break;
-
-                    case "Bon de Livraison":
+                    case 5: // Delivery note
                         matches = !string.IsNullOrEmpty(a.bonlivraison) &&
-                                   a.bonlivraison.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0;
+                                  a.bonlivraison.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0;
                         break;
-
-                    case "Marque":
+                    case 6: // Brand
                         matches = !string.IsNullOrEmpty(a.marque) &&
-                                   a.marque.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0;
+                                  a.marque.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0;
                         break;
                 }
 
-                if (matches)
-                {
-                    filteredArticles.Add(a);
-                }
+                if (matches) filteredArticles.Add(a);
             }
 
-            // Apply sorting to filtered results
             filteredArticles = ApplySorting(filteredArticles);
-
-            // Reset and load filtered results with pagination
             currentlyLoadedCount = 0;
             ArticlesContainer.Children.Clear();
             LoadMoreArticles();
         }
 
-        // Helper method to get Fournisseur name by ID
         private string GetFournisseurName(int fournisseurId)
         {
-            foreach (var fournisseur in lfo)
-            {
-                if (fournisseur.FournisseurID == fournisseurId)
-                {
-                    return fournisseur.Nom;
-                }
-            }
+            foreach (var f in lfo)
+                if (f.FournisseurID == fournisseurId) return f.Nom;
             return string.Empty;
         }
 
-        // Helper method to get Famille name by ID
         private string GetFamilleName(int familleId)
         {
-            foreach (var famille in lf)
-            {
-                if (famille.FamilleID == familleId)
-                {
-                    return famille.FamilleName;
-                }
-            }
+            foreach (var f in lf)
+                if (f.FamilleID == familleId) return f.FamilleName;
             return string.Empty;
         }
 
-        // Nouveau Article button
         private void NewArticleButton_Click(object sender, RoutedEventArgs e)
         {
             WNouveauStock wNouveauStock = new WNouveauStock(lf, la, lfo, this, 1, null, null);
             wNouveauStock.ShowDialog();
         }
 
-        // Fournisseur management button
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             main.load_fournisseur(u);
         }
 
-        // Manage Famillies button
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             WManageFamillies wManageFamillies = new WManageFamillies(lf, la, this);
             wManageFamillies.ShowDialog();
         }
 
-        // Add Multiple Articles button
         private void AddMultipleArticlesButton_Click(object sender, RoutedEventArgs e)
         {
             WAddMultipleArticles wAddMultipleArticles = new WAddMultipleArticles(this);
             wAddMultipleArticles.ShowDialog();
         }
+
         private void GenerateDevisButton_Click(object sender, RoutedEventArgs e)
         {
-            // Check if user has permission
             bool hasPermission = false;
             foreach (Role r in main.lr)
             {
                 if (u.RoleID == r.RoleID)
                 {
-                    if (r.ViewArticle == true)
-                    {
-                        hasPermission = true;
-                    }
+                    if (r.ViewArticle == true) hasPermission = true;
                     break;
                 }
             }
@@ -744,7 +580,6 @@ namespace GestionComerce.Main.Inventory
                 return;
             }
 
-            // Check if there are articles
             if (la == null || la.Count == 0)
             {
                 MessageBox.Show("Aucun article disponible pour générer un devis.",
@@ -752,9 +587,7 @@ namespace GestionComerce.Main.Inventory
                 return;
             }
 
-            // Open article selection window directly
             WManualArticleSelection selectionWindow = new WManualArticleSelection(la, lf, lfo);
-
             bool? selectionResult = selectionWindow.ShowDialog();
 
             if (selectionResult == true)
@@ -768,12 +601,9 @@ namespace GestionComerce.Main.Inventory
                     return;
                 }
 
-                // Open customization window
-                WDevisCustomization customizationWindow = new WDevisCustomization(
-                    selectedArticles, lf, lfo);
+                WDevisCustomization customizationWindow = new WDevisCustomization(selectedArticles, lf, lfo);
                 customizationWindow.ShowDialog();
             }
         }
-
     }
 }

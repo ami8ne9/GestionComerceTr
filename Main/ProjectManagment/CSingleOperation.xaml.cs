@@ -271,5 +271,14 @@ namespace GestionComerce.Main.ProjectManagment
             WPlus wPlus = new WPlus(this);
             wPlus.ShowDialog();
         }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Stop click from bubbling up and opening WPlus
+            e.Handled = true;
+
+            WDeleteOperationConfirmation dialog = new WDeleteOperationConfirmation(this);
+            dialog.ShowDialog();
+        }
     }
 }

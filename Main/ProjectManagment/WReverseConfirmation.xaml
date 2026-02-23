@@ -139,10 +139,10 @@
                                   FontWeight="Bold" 
                                   Foreground="#991B1B"
                                   Margin="0,0,0,4"/>
-                        <TextBlock Text="{Binding Source={x:Static p:Resources.ThisActionIsIrreversible}}" 
+                        <!--<TextBlock Text="{Binding Source={x:Static p:Resources.ThisActionIsIrreversible}}" 
                                   FontSize="13" 
                                   Foreground="#DC2626"
-                                  Opacity="0.8"/>
+                                  Opacity="0.8"/>-->
                     </StackPanel>
                 </Grid>
             </Border>

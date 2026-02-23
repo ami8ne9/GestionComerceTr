@@ -102,7 +102,7 @@ namespace GestionComerce
                 Quantite = Convert.ToInt32(reader["Quantite"]),
                 PrixAchat = Convert.ToDecimal(reader["PrixAchat"]),
                 PrixVente = Convert.ToDecimal(reader["PrixVente"]),
-                PrixMP = Convert.ToDecimal(reader["PrixMP"]),
+                PrixMP = reader["PrixMP"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["PrixMP"]),
                 FamillyID = Convert.ToInt32(reader["FamillyID"]),
                 FournisseurID = Convert.ToInt32(reader["FournisseurID"]),
                 Code = reader["Code"] == DBNull.Value ? 0 : Convert.ToInt64(reader["Code"]),

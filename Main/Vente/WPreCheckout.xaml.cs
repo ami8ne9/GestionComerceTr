@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
@@ -22,6 +22,12 @@ namespace GestionComerce.Main.Vente
             public decimal SubTotal => PrixUnitaire * Quantity;
             public decimal DiscountAmount => SubTotal * (DiscountPercent / 100);
             public decimal Total => SubTotal - DiscountAmount;
+
+            /// <summary>
+            /// True when the article had Quantite &lt;= 0 at the moment it was added to the cart.
+            /// When true, stock will NOT be deducted and the article will NOT be auto-deleted.
+            /// </summary>
+            public bool WasOutOfStock { get; set; }
         }
 
         public List<CartItem> CartItems { get; set; }
@@ -55,7 +61,14 @@ namespace GestionComerce.Main.Vente
             InitializeComponent();
 
             _parentVente = parentVente;
-            CartItems = new List<CartItem>(cartItems);
+
+            // Copy items and stamp WasOutOfStock based on current article stock
+            CartItems = cartItems.Select(item =>
+            {
+                item.WasOutOfStock = item.Article.Quantite <= 0;
+                return item;
+            }).ToList();
+
             PaymentMethodName = paymentMethod;
             PaymentMethodID = paymentMethodID;
             PaymentType = paymentType;
@@ -63,14 +76,12 @@ namespace GestionComerce.Main.Vente
             _familles = familles;
             _fournisseurs = fournisseurs;
 
-            // Set window to maximized state for better visibility
             this.WindowState = WindowState.Maximized;
             this.MinWidth = 1200;
             this.MinHeight = 700;
 
             PaymentMethodText.Text = paymentMethod;
 
-            // Set payment type label
             switch (paymentType)
             {
                 case 0:
@@ -89,7 +100,6 @@ namespace GestionComerce.Main.Vente
                     break;
             }
 
-            // Load clients and wait for completion before loading cart
             this.Loaded += async (s, e) =>
             {
                 await LoadClients();
@@ -104,7 +114,6 @@ namespace GestionComerce.Main.Vente
             {
                 Client clientHelper = new Client();
                 _allClients = await clientHelper.GetClientsAsync();
-
                 FilterAndLoadClients("");
             }
             catch (Exception ex)
@@ -121,7 +130,6 @@ namespace GestionComerce.Main.Vente
 
             if (_allClients == null) return;
 
-            // Filter clients based on search text
             var filteredClients = _allClients;
 
             if (!string.IsNullOrWhiteSpace(searchText))
@@ -135,20 +143,15 @@ namespace GestionComerce.Main.Vente
             }
 
             foreach (var client in filteredClients)
-            {
                 ClientComboBox.Items.Add($"{client.Nom} - {client.Telephone}");
-            }
 
             if (ClientComboBox.Items.Count > 0)
-            {
                 ClientComboBox.SelectedIndex = 0;
-            }
         }
 
         private void ClientSearchBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            string searchText = ClientSearchBox.Text;
-            FilterAndLoadClients(searchText);
+            FilterAndLoadClients(ClientSearchBox.Text);
         }
 
         private void LoadCartItems()
@@ -156,46 +159,67 @@ namespace GestionComerce.Main.Vente
             ArticlesContainer.Children.Clear();
 
             if (CartItems == null || CartItems.Count == 0)
-            {
                 return;
-            }
 
             foreach (var item in CartItems)
-            {
-                var itemControl = CreateCartItemControl(item);
-                ArticlesContainer.Children.Add(itemControl);
-            }
+                ArticlesContainer.Children.Add(CreateCartItemControl(item));
         }
 
         private Border CreateCartItemControl(CartItem item)
         {
             var border = new Border
             {
-                Background = Brushes.White,
-                BorderBrush = (SolidColorBrush)FindResource("BorderLight"),
-                BorderThickness = new Thickness(1, 1, 1, 1),
+                // Out-of-stock items get a warm amber tint so the user can spot them instantly
+                Background = item.WasOutOfStock
+                    ? new SolidColorBrush(Color.FromRgb(255, 251, 235))
+                    : Brushes.White,
+                BorderBrush = item.WasOutOfStock
+                    ? new SolidColorBrush(Color.FromRgb(245, 158, 11))
+                    : (SolidColorBrush)FindResource("BorderLight"),
+                BorderThickness = new Thickness(1),
                 CornerRadius = new CornerRadius(8),
-                Padding = new Thickness(16, 16, 16, 16),
+                Padding = new Thickness(16),
                 Margin = new Thickness(0, 0, 0, 12)
             };
 
-            // Main container with two rows: Info row and Controls row
             var mainGrid = new Grid();
             mainGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
-            mainGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(12) }); // Spacer
+            mainGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(12) });
             mainGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
 
-            // ===== TOP ROW: Article Information =====
+            // ── TOP ROW ──────────────────────────────────────────────────────
             var infoGrid = new Grid();
-            infoGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(2, GridUnitType.Star), MinWidth = 250 }); // Name & Details
-            infoGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star), MinWidth = 180 }); // Stock & Package Info
-            infoGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star), MinWidth = 180 }); // Codes & Additional Info
+            infoGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(2, GridUnitType.Star), MinWidth = 250 });
+            infoGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star), MinWidth = 180 });
+            infoGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star), MinWidth = 180 });
             Grid.SetRow(infoGrid, 0);
 
-            // Left column: Article Name and Basic Details
+            // Left: name + badge + details
             var leftPanel = new StackPanel { Orientation = Orientation.Vertical };
 
-            var nameText = new TextBlock
+            if (item.WasOutOfStock)
+            {
+                var badge = new Border
+                {
+                    Background = new SolidColorBrush(Color.FromRgb(254, 243, 199)),
+                    BorderBrush = new SolidColorBrush(Color.FromRgb(245, 158, 11)),
+                    BorderThickness = new Thickness(1),
+                    CornerRadius = new CornerRadius(4),
+                    Padding = new Thickness(8, 3, 8, 3),
+                    Margin = new Thickness(0, 0, 0, 6),
+                    HorizontalAlignment = HorizontalAlignment.Left
+                };
+                badge.Child = new TextBlock
+                {
+                    Text = "⚠️ Rupture de stock — stock non déduit",
+                    FontSize = 10,
+                    FontWeight = FontWeights.SemiBold,
+                    Foreground = new SolidColorBrush(Color.FromRgb(146, 64, 14))
+                };
+                leftPanel.Children.Add(badge);
+            }
+
+            leftPanel.Children.Add(new TextBlock
             {
                 Text = item.Article.ArticleName,
                 FontSize = 15,
@@ -203,122 +227,89 @@ namespace GestionComerce.Main.Vente
                 Foreground = (SolidColorBrush)FindResource("TextPrimary"),
                 TextWrapping = TextWrapping.Wrap,
                 Margin = new Thickness(0, 0, 0, 6)
-            };
-            leftPanel.Children.Add(nameText);
+            });
 
-            // Article details
             var detailsPanel = new StackPanel { Orientation = Orientation.Vertical, Margin = new Thickness(0, 4, 0, 0) };
 
             if (!string.IsNullOrWhiteSpace(item.Article.marque))
-            {
                 detailsPanel.Children.Add(CreateInfoText($"Marque: {item.Article.marque}", 11));
-            }
 
             if (!string.IsNullOrWhiteSpace(item.Article.Description))
             {
-                var descText = item.Article.Description.Length > 80
-                    ? item.Article.Description.Substring(0, 80) + "..."
-                    : item.Article.Description;
-                detailsPanel.Children.Add(CreateInfoText(descText, 11, true));
+                var desc = item.Article.Description.Length > 80
+                    ? item.Article.Description.Substring(0, 80) + "..." : item.Article.Description;
+                detailsPanel.Children.Add(CreateInfoText(desc, 11, true));
             }
 
             if (item.Article.DateExpiration.HasValue)
             {
-                var expiryDays = (item.Article.DateExpiration.Value - DateTime.Now).Days;
-                var expiryText = $"Expiration: {item.Article.DateExpiration.Value:dd/MM/yyyy}";
-                var expiryColor = expiryDays < 30 ? new SolidColorBrush(Color.FromRgb(239, 68, 68)) :
-                                 expiryDays < 90 ? new SolidColorBrush(Color.FromRgb(245, 158, 11)) :
-                                 (SolidColorBrush)FindResource("TextSecondary");
-                detailsPanel.Children.Add(CreateInfoText(expiryText, 11, false, expiryColor));
+                var days = (item.Article.DateExpiration.Value - DateTime.Now).Days;
+                var col = days < 30 ? new SolidColorBrush(Color.FromRgb(239, 68, 68))
+                        : days < 90 ? new SolidColorBrush(Color.FromRgb(245, 158, 11))
+                        : (SolidColorBrush)FindResource("TextSecondary");
+                detailsPanel.Children.Add(CreateInfoText($"Expiration: {item.Article.DateExpiration.Value:dd/MM/yyyy}", 11, false, col));
             }
 
             leftPanel.Children.Add(detailsPanel);
             Grid.SetColumn(leftPanel, 0);
 
-            // Middle column: Stock & Package Information
+            // Middle: stock & packaging
             var middlePanel = new StackPanel { Orientation = Orientation.Vertical, Margin = new Thickness(16, 0, 0, 0) };
 
-            // Stock info with visual indicator
-            var stockPanel = new StackPanel { Orientation = Orientation.Horizontal, Margin = new Thickness(0, 0, 0, 4) };
-            var stockLabel = new TextBlock
-            {
-                Text = "Stock: ",
-                FontSize = 11,
-                Foreground = (SolidColorBrush)FindResource("TextSecondary")
-            };
-            var stockValue = new TextBlock
+            var stockRow = new StackPanel { Orientation = Orientation.Horizontal, Margin = new Thickness(0, 0, 0, 4) };
+            stockRow.Children.Add(new TextBlock { Text = "Stock: ", FontSize = 11, Foreground = (SolidColorBrush)FindResource("TextSecondary") });
+            stockRow.Children.Add(new TextBlock
             {
                 Text = item.Article.GetStockDisplayString(),
                 FontSize = 11,
                 FontWeight = FontWeights.SemiBold,
-                Foreground = item.Article.IsLowStock() ? new SolidColorBrush(Color.FromRgb(239, 68, 68)) :
-                            item.Article.IsOverstock() ? new SolidColorBrush(Color.FromRgb(245, 158, 11)) :
-                            new SolidColorBrush(Color.FromRgb(34, 197, 94))
-            };
-            stockPanel.Children.Add(stockLabel);
-            stockPanel.Children.Add(stockValue);
-            middlePanel.Children.Add(stockPanel);
+                Foreground = item.Article.Quantite <= 0
+                    ? new SolidColorBrush(Color.FromRgb(239, 68, 68))
+                    : item.Article.IsLowStock()
+                        ? new SolidColorBrush(Color.FromRgb(245, 158, 11))
+                        : new SolidColorBrush(Color.FromRgb(34, 197, 94))
+            });
+            middlePanel.Children.Add(stockRow);
 
-            // Package information
             if (item.Article.PiecesPerPackage > 1)
             {
-                var packagesNeeded = (int)Math.Ceiling((double)item.Quantity / item.Article.PiecesPerPackage);
+                int packs = (int)Math.Ceiling((double)item.Quantity / item.Article.PiecesPerPackage);
                 middlePanel.Children.Add(CreateInfoText($"📦 {item.Article.PiecesPerPackage} pcs/paquet", 11));
-                middlePanel.Children.Add(CreateInfoText($"Paquets: {packagesNeeded}", 11, false, new SolidColorBrush(Color.FromRgb(59, 130, 246))));
+                middlePanel.Children.Add(CreateInfoText($"Paquets: {packs}", 11, false, new SolidColorBrush(Color.FromRgb(59, 130, 246))));
             }
 
             if (!string.IsNullOrWhiteSpace(item.Article.PackageType))
-            {
                 middlePanel.Children.Add(CreateInfoText($"Type: {item.Article.PackageType}", 11));
-            }
 
             if (!string.IsNullOrWhiteSpace(item.Article.UnitOfMeasure) && item.Article.UnitOfMeasure != "piece")
-            {
                 middlePanel.Children.Add(CreateInfoText($"Unité: {item.Article.UnitOfMeasure}", 11));
-            }
 
             if (!string.IsNullOrWhiteSpace(item.Article.StorageLocation))
-            {
                 middlePanel.Children.Add(CreateInfoText($"📍 {item.Article.StorageLocation}", 11));
-            }
 
             Grid.SetColumn(middlePanel, 1);
 
-            // Right column: Codes & Additional Info
+            // Right: codes & misc
             var rightPanel = new StackPanel { Orientation = Orientation.Vertical, Margin = new Thickness(16, 0, 0, 0) };
 
             if (item.Article.Code > 0)
-            {
                 rightPanel.Children.Add(CreateInfoText($"Code-barres: {item.Article.Code}", 11, false, new SolidColorBrush(Color.FromRgb(59, 130, 246))));
-            }
 
             if (!string.IsNullOrWhiteSpace(item.Article.SKU))
-            {
                 rightPanel.Children.Add(CreateInfoText($"SKU: {item.Article.SKU}", 11));
-            }
 
             if (!string.IsNullOrWhiteSpace(item.Article.numeroLot))
-            {
                 rightPanel.Children.Add(CreateInfoText($"Lot: {item.Article.numeroLot}", 11));
-            }
 
             if (item.Article.tva > 0)
-            {
                 rightPanel.Children.Add(CreateInfoText($"TVA: {item.Article.tva}%", 11));
-            }
 
-            // Wholesale price info
             if (item.Article.MinQuantityForGros > 0 && item.Article.PrixGros > 0)
             {
-                var isWholesale = item.Quantity >= item.Article.MinQuantityForGros;
-                if (isWholesale)
-                {
-                    rightPanel.Children.Add(CreateInfoText($"💰 Prix Gros actif!", 11, false, new SolidColorBrush(Color.FromRgb(34, 197, 94))));
-                }
-                else
-                {
-                    rightPanel.Children.Add(CreateInfoText($"Prix Gros: {item.Article.MinQuantityForGros}+ unités", 10, true));
-                }
+                bool isWholesale = item.Quantity >= item.Article.MinQuantityForGros;
+                rightPanel.Children.Add(isWholesale
+                    ? CreateInfoText("💰 Prix Gros actif!", 11, false, new SolidColorBrush(Color.FromRgb(34, 197, 94)))
+                    : CreateInfoText($"Prix Gros: {item.Article.MinQuantityForGros}+ unités", 10, true));
             }
 
             Grid.SetColumn(rightPanel, 2);
@@ -327,17 +318,16 @@ namespace GestionComerce.Main.Vente
             infoGrid.Children.Add(middlePanel);
             infoGrid.Children.Add(rightPanel);
 
-            // ===== BOTTOM ROW: Controls (Price, Qty, Discount, Total, Delete) =====
+            // ── BOTTOM ROW: Controls ─────────────────────────────────────────
             var controlsGrid = new Grid();
-            controlsGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(140) }); // Price
-            controlsGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(120) }); // Quantity
-            controlsGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(120) }); // Discount
-            controlsGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) }); // Spacer
-            controlsGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(140) }); // Total
-            controlsGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(50) }); // Delete
+            controlsGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(140) });
+            controlsGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(120) });
+            controlsGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(120) });
+            controlsGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+            controlsGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(140) });
+            controlsGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(50) });
             Grid.SetRow(controlsGrid, 2);
 
-            // Create totalText first so it can be referenced
             var totalText = new TextBlock
             {
                 Text = item.Total.ToString("F2") + " DH",
@@ -349,15 +339,15 @@ namespace GestionComerce.Main.Vente
             };
             Grid.SetColumn(totalText, 4);
 
-            // Price input
-            var pricePanel = CreateControlPanel("Prix Unit.", priceTextBox =>
+            // Price
+            var pricePanel = CreateControlPanel("Prix Unit.", priceBox =>
             {
-                priceTextBox.Text = item.PrixUnitaire.ToString("F2");
-                priceTextBox.TextChanged += (s, e) =>
+                priceBox.Text = item.PrixUnitaire.ToString("F2");
+                priceBox.TextChanged += (s, e) =>
                 {
-                    if (decimal.TryParse(priceTextBox.Text, out decimal newPrice) && newPrice >= 0)
+                    if (decimal.TryParse(priceBox.Text, out decimal np) && np >= 0)
                     {
-                        item.Article.PrixVente = newPrice;
+                        item.Article.PrixVente = np;
                         totalText.Text = item.Total.ToString("F2") + " DH";
                         UpdateSummary();
                     }
@@ -365,75 +355,66 @@ namespace GestionComerce.Main.Vente
             });
             Grid.SetColumn(pricePanel, 0);
 
-            // Quantity input
-            var qtyPanel = CreateControlPanel("Quantité", qtyTextBox =>
+            // Quantity
+            var qtyPanel = CreateControlPanel("Quantité", qtyBox =>
             {
-                qtyTextBox.Text = item.Quantity.ToString();
-                qtyTextBox.TextAlignment = TextAlignment.Center;
-                qtyTextBox.TextChanged += (s, e) =>
+                qtyBox.Text = item.Quantity.ToString();
+                qtyBox.TextAlignment = TextAlignment.Center;
+                qtyBox.TextChanged += (s, e) =>
                 {
-                    if (int.TryParse(qtyTextBox.Text, out int newQty) && newQty > 0)
+                    if (int.TryParse(qtyBox.Text, out int nq) && nq > 0)
                     {
-                        if (item.Article.IsUnlimitedStock || newQty <= item.Article.Quantite)
+                        // Out-of-stock items: allow any quantity, stock won't be touched anyway
+                        if (item.WasOutOfStock || item.Article.IsUnlimitedStock || nq <= item.Article.Quantite)
                         {
-                            item.Quantity = newQty;
+                            item.Quantity = nq;
                             totalText.Text = item.Total.ToString("F2") + " DH";
                             UpdateSummary();
                         }
                         else
                         {
-                            MessageBox.Show($"Quantité disponible: {item.Article.Quantite}", "Stock Insuffisant", MessageBoxButton.OK, MessageBoxImage.Warning);
-                            qtyTextBox.Text = item.Quantity.ToString();
+                            MessageBox.Show($"Quantité disponible: {item.Article.Quantite}",
+                                "Stock Insuffisant", MessageBoxButton.OK, MessageBoxImage.Warning);
+                            qtyBox.Text = item.Quantity.ToString();
                         }
                     }
                 };
             });
             Grid.SetColumn(qtyPanel, 1);
 
-            // Discount input
-            var discountPanel = CreateControlPanel("Remise %", discountTextBox =>
+            // Discount
+            var discountPanel = CreateControlPanel("Remise %", discountBox =>
             {
-                discountTextBox.Text = item.DiscountPercent.ToString("F2");
-                discountTextBox.TextAlignment = TextAlignment.Center;
-                discountTextBox.TextChanged += (s, e) =>
+                discountBox.Text = item.DiscountPercent.ToString("F2");
+                discountBox.TextAlignment = TextAlignment.Center;
+                discountBox.TextChanged += (s, e) =>
                 {
-                    if (string.IsNullOrWhiteSpace(discountTextBox.Text))
+                    if (string.IsNullOrWhiteSpace(discountBox.Text))
                     {
                         item.DiscountPercent = 0;
-                        discountTextBox.Text = "0";
+                        discountBox.Text = "0";
                         totalText.Text = item.Total.ToString("F2") + " DH";
                         UpdateSummary();
                         return;
                     }
 
-                    if (decimal.TryParse(discountTextBox.Text, out decimal newDiscount))
+                    if (decimal.TryParse(discountBox.Text, out decimal nd))
                     {
-                        if (newDiscount >= 0 && newDiscount <= 100)
-                        {
-                            item.DiscountPercent = newDiscount;
-                            totalText.Text = item.Total.ToString("F2") + " DH";
-                            UpdateSummary();
-                        }
-                        else if (newDiscount > 100)
-                        {
-                            item.DiscountPercent = 100;
-                            discountTextBox.Text = "100";
-                            totalText.Text = item.Total.ToString("F2") + " DH";
-                            UpdateSummary();
-                        }
+                        if (nd >= 0 && nd <= 100)
+                            item.DiscountPercent = nd;
+                        else if (nd > 100)
+                        { item.DiscountPercent = 100; discountBox.Text = "100"; }
                         else
-                        {
-                            item.DiscountPercent = 0;
-                            discountTextBox.Text = "0";
-                            totalText.Text = item.Total.ToString("F2") + " DH";
-                            UpdateSummary();
-                        }
+                        { item.DiscountPercent = 0;   discountBox.Text = "0";   }
+
+                        totalText.Text = item.Total.ToString("F2") + " DH";
+                        UpdateSummary();
                     }
                 };
             });
             Grid.SetColumn(discountPanel, 2);
 
-            // Delete button
+            // Delete
             var deleteButton = new Button
             {
                 Content = "🗑️",
@@ -449,10 +430,8 @@ namespace GestionComerce.Main.Vente
             };
             deleteButton.Click += (s, e) =>
             {
-                var result = MessageBox.Show($"Supprimer '{item.Article.ArticleName}' du panier?",
-                    "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
-
-                if (result == MessageBoxResult.Yes)
+                if (MessageBox.Show($"Supprimer '{item.Article.ArticleName}' du panier?",
+                        "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                 {
                     CartItems.Remove(item);
                     LoadCartItems();
@@ -491,14 +470,13 @@ namespace GestionComerce.Main.Vente
         {
             var panel = new StackPanel { Orientation = Orientation.Vertical, Margin = new Thickness(0, 0, 8, 0) };
 
-            var labelText = new TextBlock
+            panel.Children.Add(new TextBlock
             {
                 Text = label,
                 FontSize = 10,
                 Foreground = (SolidColorBrush)FindResource("TextSecondary"),
                 Margin = new Thickness(0, 0, 0, 4)
-            };
-            panel.Children.Add(labelText);
+            });
 
             var textBox = new TextBox
             {
@@ -514,7 +492,6 @@ namespace GestionComerce.Main.Vente
 
             configureTextBox(textBox);
             panel.Children.Add(textBox);
-
             return panel;
         }
 
@@ -528,36 +505,27 @@ namespace GestionComerce.Main.Vente
                 return;
             }
 
-            decimal subtotal = CartItems.Sum(item => item.SubTotal);
-            decimal itemDiscounts = CartItems.Sum(item => item.DiscountAmount);
-            decimal subtotalAfterItemDiscounts = subtotal - itemDiscounts;
+            decimal subtotal = CartItems.Sum(i => i.SubTotal);
+            decimal itemDiscounts = CartItems.Sum(i => i.DiscountAmount);
+            decimal afterItemDiscount = subtotal - itemDiscounts;
 
-            // Calculate additional discount (this includes client remise if populated in the field)
             decimal additionalDiscountAmount = 0;
             if (decimal.TryParse(AdditionalDiscountTextBox.Text, out decimal addDiscount) && addDiscount > 0)
             {
-                if (DiscountTypeComboBox.SelectedIndex == 0) // Percentage
-                {
-                    additionalDiscountAmount = subtotalAfterItemDiscounts * (addDiscount / 100m);
-                }
-                else // Fixed amount
-                {
-                    additionalDiscountAmount = addDiscount;
-                }
+                additionalDiscountAmount = DiscountTypeComboBox.SelectedIndex == 0
+                    ? afterItemDiscount * (addDiscount / 100m)
+                    : addDiscount;
             }
 
             decimal totalDiscount = itemDiscounts + additionalDiscountAmount;
-            decimal totalTTC = subtotal - totalDiscount;
-
-            // Ensure total doesn't go negative
-            if (totalTTC < 0) totalTTC = 0;
+            decimal totalTTC = Math.Max(0, subtotal - totalDiscount);
 
             SubtotalText.Text = subtotal.ToString("F2") + " DH";
             TotalDiscountText.Text = totalDiscount.ToString("F2") + " DH";
             TotalTTCText.Text = totalTTC.ToString("F2") + " DH";
 
             AdditionalDiscount = additionalDiscountAmount;
-            ClientDiscount = 0; // Not needed separately since it's in additional discount
+            ClientDiscount = 0;
             IsPercentageDiscount = DiscountTypeComboBox.SelectedIndex == 0;
         }
 
@@ -568,36 +536,25 @@ namespace GestionComerce.Main.Vente
                 SelectedClient = null;
                 ClientDiscount = 0;
                 ClientInfoPanel.Visibility = Visibility.Collapsed;
-
-                // Clear the additional discount when no client is selected
                 AdditionalDiscountTextBox.Text = "0";
             }
             else
             {
-                // Get the selected client name from ComboBox
-                string selectedItem = ClientComboBox.SelectedItem.ToString();
-                string clientName = selectedItem.Split('-')[0].Trim();
-
-                // Find the client in the filtered or all clients list
+                string clientName = ClientComboBox.SelectedItem.ToString().Split('-')[0].Trim();
                 Client selectedClient = _allClients.FirstOrDefault(c => c.Nom == clientName);
 
                 if (selectedClient != null)
                 {
                     SelectedClient = selectedClient;
-
-                    // Get the percentage value
-                    decimal remisePercentage = SelectedClient.Remise ?? 0;
+                    decimal remise = SelectedClient.Remise ?? 0;
 
                     ClientInfoPanel.Visibility = Visibility.Visible;
                     ClientNameText.Text = SelectedClient.Nom;
                     ClientPhoneText.Text = SelectedClient.Telephone;
-                    ClientDiscountValue.Text = remisePercentage.ToString("F2") + " %";
+                    ClientDiscountValue.Text = remise.ToString("F2") + " %";
 
-                    // Automatically populate the "Remise Supplémentaire" field with client's remise
-                    AdditionalDiscountTextBox.Text = remisePercentage.ToString("F2");
-
-                    // Make sure the discount type is set to percentage
-                    DiscountTypeComboBox.SelectedIndex = 0; // 0 = Percentage
+                    AdditionalDiscountTextBox.Text = remise.ToString("F2");
+                    DiscountTypeComboBox.SelectedIndex = 0;
                 }
             }
 
@@ -607,30 +564,18 @@ namespace GestionComerce.Main.Vente
         private void AdditionalDiscountTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (CartItems != null && CartItems.Count > 0)
-            {
                 UpdateSummary();
-            }
         }
 
         private void DiscountTypeComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            // Recalculate when discount type changes
             if (CartItems != null && CartItems.Count > 0)
-            {
                 UpdateSummary();
-            }
         }
 
         private void CreditTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (decimal.TryParse(CreditTextBox.Text, out decimal credit))
-            {
-                CreditAmount = credit;
-            }
-            else
-            {
-                CreditAmount = 0;
-            }
+            CreditAmount = decimal.TryParse(CreditTextBox.Text, out decimal c) ? c : 0;
         }
 
         private void AddArticleButton_Click(object sender, RoutedEventArgs e)
@@ -639,29 +584,36 @@ namespace GestionComerce.Main.Vente
             if (selectWindow.ShowDialog() == true && selectWindow.SelectedArticle != null)
             {
                 var selectedArticle = selectWindow.SelectedArticle;
-                var selectedQty = selectWindow.SelectedQuantity;
+                int selectedQty = selectWindow.SelectedQuantity;
+                bool wasOutOfStock = selectedArticle.Quantite <= 0;
 
                 var existingItem = CartItems.FirstOrDefault(i => i.Article.ArticleID == selectedArticle.ArticleID);
                 if (existingItem != null)
                 {
-                    if (existingItem.Quantity + selectedQty <= selectedArticle.Quantite)
-                    {
-                        existingItem.Quantity += selectedQty;
-                    }
-                    else
+                    // For in-stock items validate; for out-of-stock items allow freely
+                    if (!existingItem.WasOutOfStock && existingItem.Quantity + selectedQty > selectedArticle.Quantite)
                     {
                         MessageBox.Show($"Quantité disponible: {selectedArticle.Quantite}",
                             "Stock Insuffisant", MessageBoxButton.OK, MessageBoxImage.Warning);
                         return;
                     }
+                    existingItem.Quantity += selectedQty;
                 }
                 else
                 {
+                    if (wasOutOfStock)
+                    {
+                        if (!StockWarningHelper.ConfirmAddOutOfStock(selectedArticle.ArticleName))
+                            return; // User cancelled
+                        // User confirmed — fall through to add
+                    }
+
                     CartItems.Add(new CartItem
                     {
                         Article = selectedArticle,
                         Quantity = selectedQty,
-                        DiscountPercent = 0
+                        DiscountPercent = 0,
+                        WasOutOfStock = wasOutOfStock
                     });
                 }
 
@@ -672,21 +624,14 @@ namespace GestionComerce.Main.Vente
 
         private async void NewClientButton_Click(object sender, RoutedEventArgs e)
         {
-            // Use the ClientFormWindow instead of WAddCleint
             ClientFormWindow addClientWindow = new ClientFormWindow(_parentVente.main);
             bool? result = addClientWindow.ShowDialog();
 
-            // Only reload and select if the dialog was successful
             if (result == true)
             {
-                // Reload clients after adding
                 await LoadClients();
-
-                // Select the newly added client (it will be the last one in the list)
                 if (ClientComboBox.Items.Count > 1)
-                {
                     ClientComboBox.SelectedIndex = ClientComboBox.Items.Count - 1;
-                }
             }
         }
 
@@ -704,7 +649,6 @@ namespace GestionComerce.Main.Vente
                 return;
             }
 
-            // Validate client selection for credit operations
             if ((PaymentType == 1 || PaymentType == 2) && SelectedClient == null)
             {
                 MessageBox.Show("Veuillez sélectionner un client pour une vente à crédit ou partielle.",
@@ -712,7 +656,6 @@ namespace GestionComerce.Main.Vente
                 return;
             }
 
-            // Validate credit amount for partial payment
             if (PaymentType == 1)
             {
                 if (string.IsNullOrWhiteSpace(CreditTextBox.Text))
@@ -731,14 +674,9 @@ namespace GestionComerce.Main.Vente
                 }
             }
 
-            // For full credit, set credit amount to total
             if (PaymentType == 2)
-            {
-                decimal totalTTC = decimal.Parse(TotalTTCText.Text.Replace(" DH", ""));
-                CreditAmount = totalTTC;
-            }
+                CreditAmount = decimal.Parse(TotalTTCText.Text.Replace(" DH", ""));
 
-            // Proceed with the operation
             try
             {
                 await ProcessSale();
@@ -752,43 +690,36 @@ namespace GestionComerce.Main.Vente
 
         private async System.Threading.Tasks.Task ProcessSale()
         {
-            // Disable button to prevent double-click
             ContinueButton.IsEnabled = false;
 
             try
             {
-                List<TicketArticleData> ticketArticles = new List<TicketArticleData>();
-
-                foreach (var item in CartItems)
+                var ticketArticles = CartItems.Select(item => new TicketArticleData
                 {
-                    ticketArticles.Add(new TicketArticleData
-                    {
-                        ArticleName = item.Article.ArticleName,
-                        Quantity = item.Quantity,
-                        UnitPrice = item.PrixUnitaire,
-                        Total = item.Total,
-                        TVA = item.Article.tva
-                    });
-                }
+                    ArticleName = item.Article.ArticleName,
+                    Quantity    = item.Quantity,
+                    UnitPrice   = item.PrixUnitaire,
+                    Total       = item.Total,
+                    TVA         = item.Article.tva
+                }).ToList();
 
-                decimal subtotal = CartItems.Sum(item => item.SubTotal);
-                decimal totalDiscount = AdditionalDiscount + ClientDiscount + CartItems.Sum(item => item.DiscountAmount);
-                decimal totalTTC = subtotal - totalDiscount;
+                decimal subtotal     = CartItems.Sum(i => i.SubTotal);
+                decimal totalDiscount = AdditionalDiscount + ClientDiscount + CartItems.Sum(i => i.DiscountAmount);
+                decimal totalTTC     = subtotal - totalDiscount;
 
-                string operationTypeLabel = PaymentType == 0 ? "VENTE COMPTANT" :
-                                           PaymentType == 1 ? "VENTE PARTIELLE" : "VENTE À CRÉDIT";
+                string operationTypeLabel = PaymentType == 0 ? "VENTE COMPTANT"
+                                          : PaymentType == 1 ? "VENTE PARTIELLE"
+                                          : "VENTE À CRÉDIT";
 
                 // Show ticket preview if enabled
                 if (_parentVente.Ticket != null && _parentVente.Ticket.IsChecked == true)
                 {
-                    FactureSettings settings = await FactureSettings.LoadSettingsAsync();
-                    if (settings == null) settings = new FactureSettings();
+                    FactureSettings settings = await FactureSettings.LoadSettingsAsync() ?? new FactureSettings();
 
                     WFacturePreview factureWindow = new WFacturePreview(
                         settings, 0, DateTime.Now, SelectedClient,
                         ticketArticles, totalTTC, totalDiscount, CreditAmount,
-                        PaymentMethodName, operationTypeLabel
-                    );
+                        PaymentMethodName, operationTypeLabel);
 
                     bool? result = factureWindow.ShowDialog();
                     if (result == false || !factureWindow.ShouldPrint)
@@ -800,16 +731,12 @@ namespace GestionComerce.Main.Vente
                     }
                 }
 
-                // Create operation
                 int operationId = await CreateOperation(totalTTC, totalDiscount);
 
-                // Print ticket if confirmed
                 if (_parentVente.Ticket != null && _parentVente.Ticket.IsChecked == true)
-                {
                     await PrintTicket(operationId, ticketArticles, totalTTC, totalDiscount, operationTypeLabel);
-                }
 
-                // Clear cart
+                // Clear parent cart
                 _parentVente.SelectedArticles.Children.Clear();
                 _parentVente.TotalNet.Text = "0.00 DH";
                 _parentVente.ArticleCount.Text = "0";
@@ -817,24 +744,18 @@ namespace GestionComerce.Main.Vente
                 _parentVente.NbrA = 0;
                 _parentVente.UpdateCartEmptyState();
 
-                // Close this window first
                 DialogConfirmed = true;
                 this.Close();
 
-                // Check if we should show facture AFTER closing this window
                 bool shouldShowFacture = _parentVente.Facture != null && _parentVente.Facture.IsChecked == true;
 
                 if (shouldShowFacture)
                 {
                     try
                     {
-                        // Prepare invoice data
-                        Dictionary<string, string> factureInfo = await PrepareFactureInfo(operationId, totalTTC, totalDiscount, operationTypeLabel);
-                        List<InvoiceArticle> invoiceArticles = PrepareInvoiceArticles();
-
-                        // Open WFacturePage with NULL for CMainFa parameter
-                        WFacturePage facturePage = new WFacturePage(null, factureInfo, invoiceArticles);
-                        facturePage.ShowDialog();
+                        var factureInfo = await PrepareFactureInfo(operationId, totalTTC, totalDiscount, operationTypeLabel);
+                        var invoiceArticles = PrepareInvoiceArticles();
+                        new WFacturePage(null, factureInfo, invoiceArticles).ShowDialog();
                     }
                     catch (Exception navEx)
                     {
@@ -844,80 +765,70 @@ namespace GestionComerce.Main.Vente
                 }
                 else
                 {
-                    // Only show congrats if facture checkbox is NOT checked
-                    WCongratulations wCongratulations = new WCongratulations(
-                        "Opération réussie", "Opération a été effectuée avec succès", 1);
-                    wCongratulations.ShowDialog();
+                    new WCongratulations("Opération réussie", "Opération a été effectuée avec succès", 1).ShowDialog();
                 }
             }
             catch (Exception ex)
             {
                 ContinueButton.IsEnabled = true;
-                WCongratulations wCongratulations = new WCongratulations(
-                    "Opération échouée", $"Opération n'a pas été effectuée: {ex.Message}", 0);
-                wCongratulations.ShowDialog();
+                new WCongratulations("Opération échouée", $"Opération n'a pas été effectuée: {ex.Message}", 0).ShowDialog();
             }
         }
 
         private async System.Threading.Tasks.Task<int> CreateOperation(decimal totalTTC, decimal totalDiscount)
         {
-            int operationId = 0;
-
             Operation operation = new Operation
             {
                 PaymentMethodID = PaymentMethodID,
-                PrixOperation = totalTTC + totalDiscount, // Original price before discount
-                Remise = totalDiscount,
-                UserID = _parentVente.u.UserID,
-                ClientID = SelectedClient?.ClientID
+                PrixOperation   = totalTTC + totalDiscount,
+                Remise          = totalDiscount,
+                UserID          = _parentVente.u.UserID,
+                ClientID        = SelectedClient?.ClientID
             };
 
-            if (PaymentType == 0) // Cash
+            int operationId;
+
+            if (PaymentType == 0)
             {
                 operation.OperationType = "VenteCa";
                 operationId = await operation.InsertOperationAsync();
             }
-            else if (PaymentType == 1) // Partial
+            else if (PaymentType == 1)
             {
                 operation.OperationType = "Vente50";
-                operation.CreditValue = CreditAmount;
-
-                int creditId = await UpdateOrCreateCredit(CreditAmount);
-                operation.CreditID = creditId;
-
-                operationId = await operation.InsertOperationAsync();
+                operation.CreditValue   = CreditAmount;
+                operation.CreditID      = await UpdateOrCreateCredit(CreditAmount);
+                operationId             = await operation.InsertOperationAsync();
             }
-            else // Full Credit
+            else
             {
                 operation.OperationType = "VenteCr";
-                operation.CreditValue = CreditAmount;
-
-                int creditId = await UpdateOrCreateCredit(CreditAmount);
-                operation.CreditID = creditId;
-
-                operationId = await operation.InsertOperationAsync();
+                operation.CreditValue   = CreditAmount;
+                operation.CreditID      = await UpdateOrCreateCredit(CreditAmount);
+                operationId             = await operation.InsertOperationAsync();
             }
 
-            // Insert operation articles and update stock
             foreach (var item in CartItems)
             {
-                OperationArticle oca = new OperationArticle
+                await new OperationArticle
                 {
-                    ArticleID = item.Article.ArticleID,
+                    ArticleID   = item.Article.ArticleID,
                     OperationID = operationId,
-                    QteArticle = item.Quantity
-                };
+                    QteArticle  = item.Quantity
+                }.InsertOperationArticleAsync();
 
-                await oca.InsertOperationArticleAsync();
-
-                item.Article.Quantite -= item.Quantity;
-                await item.Article.UpdateArticleAsync();
-
-                // Update local article list
-                var localArticle = _parentVente.la.FirstOrDefault(a => a.ArticleID == item.Article.ArticleID);
-                if (localArticle != null)
+                // ── Zero-stock guard ─────────────────────────────────────────
+                // Only deduct stock for articles that actually had stock at sale time.
+                // Articles flagged WasOutOfStock are sold "on order" — their Quantite
+                // stays untouched and they are NOT subject to auto-deletion.
+                if (!item.WasOutOfStock)
                 {
-                    localArticle.Quantite = item.Article.Quantite;
+                    item.Article.Quantite -= item.Quantity;
+                    await item.Article.UpdateArticleAsync();
+
+                    var local = _parentVente.la.FirstOrDefault(a => a.ArticleID == item.Article.ArticleID);
+                    if (local != null)
+                        local.Quantite = item.Article.Quantite;
                 }
             }
 
@@ -929,71 +840,54 @@ namespace GestionComerce.Main.Vente
         private async System.Threading.Tasks.Task<int> UpdateOrCreateCredit(decimal amount)
         {
             Credit creditHelper = new Credit();
-            List<Credit> credits = await creditHelper.GetCreditsAsync();
+            var credits = await creditHelper.GetCreditsAsync();
+            var existing = credits.FirstOrDefault(c => c.ClientID == SelectedClient.ClientID);
 
-            var existingCredit = credits.FirstOrDefault(c => c.ClientID == SelectedClient.ClientID);
-
-            if (existingCredit != null)
+            if (existing != null)
             {
-                existingCredit.Total += amount;
-                await existingCredit.UpdateCreditAsync();
-                return existingCredit.CreditID;
+                existing.Total += amount;
+                await existing.UpdateCreditAsync();
+                return existing.CreditID;
             }
             else
             {
-                Credit newCredit = new Credit
-                {
-                    ClientID = SelectedClient.ClientID,
-                    Total = amount
-                };
-                return await newCredit.InsertCreditAsync();
+                return await new Credit { ClientID = SelectedClient.ClientID, Total = amount }.InsertCreditAsync();
             }
         }
 
-        private async System.Threading.Tasks.Task<Dictionary<string, string>> PrepareFactureInfo(int operationId, decimal totalTTC, decimal totalDiscount, string operationType)
+        private async System.Threading.Tasks.Task<Dictionary<string, string>> PrepareFactureInfo(
+            int operationId, decimal totalTTC, decimal totalDiscount, string operationType)
         {
-            decimal subtotal = CartItems.Sum(item => item.SubTotal);
-            decimal itemDiscounts = CartItems.Sum(item => item.DiscountAmount);
-            decimal totalHT = subtotal - itemDiscounts;
+            decimal subtotal     = CartItems.Sum(i => i.SubTotal);
+            decimal itemDiscounts = CartItems.Sum(i => i.DiscountAmount);
+            decimal totalHT      = subtotal - itemDiscounts;
 
-            // Calculate average TVA rate (weighted by item totals)
             decimal tvaRate = 0;
-            if (CartItems.Count > 0)
-            {
-                decimal totalBeforeTVA = CartItems.Sum(item => item.SubTotal);
-                decimal weightedTVA = CartItems.Sum(item => (item.SubTotal / totalBeforeTVA) * item.Article.tva);
-                tvaRate = weightedTVA;
-            }
+            decimal totalBeforeTVA = CartItems.Sum(i => i.SubTotal);
+            if (totalBeforeTVA > 0)
+                tvaRate = CartItems.Sum(i => (i.SubTotal / totalBeforeTVA) * i.Article.tva);
 
-            decimal tvaAmount = totalHT * (tvaRate / 100);
+            decimal tvaAmount    = totalHT * (tvaRate / 100);
             decimal totalWithTVA = totalHT + tvaAmount;
 
-            // Load company information from Facture
-            string companyName = "";
-            string companyICE = "";
-            string companyVAT = "";
-            string companyPhone = "";
-            string companyAddress = "";
-            string companyEtatJuridique = "";
-            string companyId = "";
-            string companySiege = "";
-            string companyLogo = "";
+            string companyName = "", companyICE = "", companyVAT = "", companyPhone = "",
+                   companyAddress = "", companyEtatJuridique = "", companyId = "",
+                   companySiege = "", companyLogo = "";
 
             try
             {
-                Superete.Facture facture = new Superete.Facture();
-                var factureData = await facture.GetFactureAsync();
+                var factureData = await new Superete.Facture().GetFactureAsync();
                 if (factureData != null)
                 {
-                    companyName = factureData.Name ?? "";
-                    companyICE = factureData.ICE ?? "";
-                    companyVAT = factureData.VAT ?? "";
-                    companyPhone = factureData.Telephone ?? "";
-                    companyAddress = factureData.Adresse ?? "";
-                    companyEtatJuridique = factureData.EtatJuridic ?? "";
-                    companyId = factureData.CompanyId ?? "";
-                    companySiege = factureData.SiegeEntreprise ?? "";
-                    companyLogo = factureData.LogoPath ?? "";
+                    companyName           = factureData.Name            ?? "";
+                    companyICE            = factureData.ICE             ?? "";
+                    companyVAT            = factureData.VAT             ?? "";
+                    companyPhone          = factureData.Telephone       ?? "";
+                    companyAddress        = factureData.Adresse         ?? "";
+                    companyEtatJuridique  = factureData.EtatJuridic     ?? "";
+                    companyId             = factureData.CompanyId       ?? "";
+                    companySiege          = factureData.SiegeEntreprise ?? "";
+                    companyLogo           = factureData.LogoPath        ?? "";
                 }
             }
             catch (Exception ex)
@@ -1002,176 +896,114 @@ namespace GestionComerce.Main.Vente
                     "Avertissement", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
 
-            var factureInfo = new Dictionary<string, string>
+            return new Dictionary<string, string>
             {
-                // Invoice info
-                ["NFacture"] = $"INV-{operationId}",
-                ["Date"] = DateTime.Now.ToString("dd/MM/yyyy"),
-                ["Type"] = "Facture",
-                ["IndexDeFacture"] = operationId.ToString(),
+                ["NFacture"]           = $"INV-{operationId}",
+                ["Date"]              = DateTime.Now.ToString("dd/MM/yyyy"),
+                ["Type"]              = "Facture",
+                ["IndexDeFacture"]    = operationId.ToString(),
 
-                // Client info
-                ["NomC"] = SelectedClient?.Nom ?? "Client Anonyme",
-                ["ICEC"] = SelectedClient?.ICE ?? "",
-                ["VATC"] = "", // Add if client has VAT field
-                ["TelephoneC"] = SelectedClient?.Telephone ?? "",
-                ["AdressC"] = SelectedClient?.Adresse ?? "",
-                ["EtatJuridiqueC"] = SelectedClient?.EtatJuridique ?? "",
-                ["IdSocieteC"] = SelectedClient?.Code ?? "",
-                ["SiegeEntrepriseC"] = SelectedClient?.SiegeEntreprise ?? "",
+                ["NomC"]             = SelectedClient?.Nom              ?? "Client Anonyme",
+                ["ICEC"]             = SelectedClient?.ICE              ?? "",
+                ["VATC"]             = "",
+                ["TelephoneC"]       = SelectedClient?.Telephone        ?? "",
+                ["AdressC"]          = SelectedClient?.Adresse          ?? "",
+                ["EtatJuridiqueC"]   = SelectedClient?.EtatJuridique    ?? "",
+                ["IdSocieteC"]       = SelectedClient?.Code             ?? "",
+                ["SiegeEntrepriseC"] = SelectedClient?.SiegeEntreprise  ?? "",
 
-                // User/Company info (from Facture table)
-                ["NomU"] = companyName,
-                ["ICEU"] = companyICE,
-                ["VATU"] = companyVAT,
-                ["TelephoneU"] = companyPhone,
-                ["AdressU"] = companyAddress,
-                ["EtatJuridiqueU"] = companyEtatJuridique,
-                ["IdSocieteU"] = companyId,
+                ["NomU"]             = companyName,
+                ["ICEU"]             = companyICE,
+                ["VATU"]             = companyVAT,
+                ["TelephoneU"]       = companyPhone,
+                ["AdressU"]          = companyAddress,
+                ["EtatJuridiqueU"]   = companyEtatJuridique,
+                ["IdSocieteU"]       = companyId,
                 ["SiegeEntrepriseU"] = companySiege,
 
-                // Payment info
-                ["PaymentMethod"] = PaymentMethodName,
-                ["GivenBy"] = _parentVente.u?.UserName ?? "",
-                ["ReceivedBy"] = SelectedClient?.Nom ?? "Client",
-                ["Device"] = "DH",
+                ["PaymentMethod"]    = PaymentMethodName,
+                ["GivenBy"]         = _parentVente.u?.UserName ?? "",
+                ["ReceivedBy"]       = SelectedClient?.Nom ?? "Client",
+                ["Device"]           = "DH",
 
-                // Financial info
-                ["MontantTotal"] = totalHT.ToString("F2"),
-                ["TVA"] = tvaRate.ToString("F2"),
-                ["MontantTVA"] = tvaAmount.ToString("F2"),
-                ["MontantApresTVA"] = totalWithTVA.ToString("F2"),
-                ["Remise"] = totalDiscount.ToString("F2"),
+                ["MontantTotal"]     = totalHT.ToString("F2"),
+                ["TVA"]              = tvaRate.ToString("F2"),
+                ["MontantTVA"]       = tvaAmount.ToString("F2"),
+                ["MontantApresTVA"]  = totalWithTVA.ToString("F2"),
+                ["Remise"]           = totalDiscount.ToString("F2"),
                 ["MontantApresRemise"] = totalTTC.ToString("F2"),
 
-                // Additional info
-                ["Object"] = operationType,
-                ["Description"] = GetOperationDescription(),
-                ["AmountInLetters"] = ConvertNumberToWords(totalTTC),
-                ["Reversed"] = "Normal",
-                ["EtatFature"] = "1",
-                ["Logo"] = companyLogo,
+                ["Object"]           = operationType,
+                ["Description"]      = GetOperationDescription(),
+                ["AmountInLetters"]  = ConvertNumberToWords(totalTTC),
+                ["Reversed"]         = "Normal",
+                ["EtatFature"]       = "1",
+                ["Logo"]             = companyLogo,
 
-                // Credit info (if applicable)
                 ["CreditClientName"] = (PaymentType == 1 || PaymentType == 2) ? (SelectedClient?.Nom ?? "") : "",
-                ["CreditMontant"] = (PaymentType == 1 || PaymentType == 2) ? CreditAmount.ToString("F2") : "0.00"
+                ["CreditMontant"]    = (PaymentType == 1 || PaymentType == 2) ? CreditAmount.ToString("F2") : "0.00"
             };
-
-            return factureInfo;
         }
 
-        private List<InvoiceArticle> PrepareInvoiceArticles()
-        {
-            List<InvoiceArticle> invoiceArticles = new List<InvoiceArticle>();
-
-            foreach (var item in CartItems)
+        private List<InvoiceArticle> PrepareInvoiceArticles() =>
+            CartItems.Select(item => new InvoiceArticle
             {
-                invoiceArticles.Add(new InvoiceArticle
-                {
-                    OperationID = 0, // Will be set after operation is created
-                    ArticleID = item.Article.ArticleID,
-                    ArticleName = item.Article.ArticleName,
-                    Prix = item.Article.PrixVente,
-                    Quantite = item.Quantity,
-                    TVA = item.Article.tva,
-                    Reversed = false,
-                    InitialQuantity = item.Quantity,
-                    ExpeditionTotal = 0
-                });
-            }
-
-            return invoiceArticles;
-        }
+                OperationID     = 0,
+                ArticleID       = item.Article.ArticleID,
+                ArticleName     = item.Article.ArticleName,
+                Prix            = item.Article.PrixVente,
+                Quantite        = item.Quantity,
+                TVA             = item.Article.tva,
+                Reversed        = false,
+                InitialQuantity = item.Quantity,
+                ExpeditionTotal = 0
+            }).ToList();
 
         private string GetOperationDescription()
         {
             switch (PaymentType)
             {
-                case 0:
-                    return "Vente au comptant - Paiement intégral reçu";
-                case 1:
-                    return $"Vente partielle - Crédit de {CreditAmount:F2} DH";
-                case 2:
-                    return $"Vente à crédit - Montant total à crédit: {CreditAmount:F2} DH";
-                default:
-                    return "Vente";
+                case 0:  return "Vente au comptant - Paiement intégral reçu";
+                case 1:  return $"Vente partielle - Crédit de {CreditAmount:F2} DH";
+                case 2:  return $"Vente à crédit - Montant total à crédit: {CreditAmount:F2} DH";
+                default: return "Vente";
             }
         }
 
         private string ConvertNumberToWords(decimal amount)
         {
-            // Simple French number to words conversion
-            // You can implement a more sophisticated version
-            int integerPart = (int)amount;
-            int decimalPart = (int)((amount - integerPart) * 100);
+            int intPart = (int)amount;
+            int decPart = (int)((amount - intPart) * 100);
 
             string[] units = { "", "un", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf" };
             string[] teens = { "dix", "onze", "douze", "treize", "quatorze", "quinze", "seize", "dix-sept", "dix-huit", "dix-neuf" };
-            string[] tens = { "", "", "vingt", "trente", "quarante", "cinquante", "soixante", "soixante-dix", "quatre-vingt", "quatre-vingt-dix" };
+            string[] tens  = { "", "", "vingt", "trente", "quarante", "cinquante", "soixante", "soixante-dix", "quatre-vingt", "quatre-vingt-dix" };
 
-            string result = "";
+            string result;
 
-            if (integerPart == 0)
+            if (intPart == 0)         result = "zéro";
+            else if (intPart < 10)    result = units[intPart];
+            else if (intPart < 20)    result = teens[intPart - 10];
+            else if (intPart < 100)
             {
-                result = "zéro";
+                result = tens[intPart / 10];
+                if (intPart % 10 > 0) result += " " + units[intPart % 10];
             }
-            else if (integerPart < 10)
+            else if (intPart < 1000)
             {
-                result = units[integerPart];
-            }
-            else if (integerPart < 20)
-            {
-                result = teens[integerPart - 10];
-            }
-            else if (integerPart < 100)
-            {
-                int tensPart = integerPart / 10;
-                int unitsPart = integerPart % 10;
-                result = tens[tensPart];
-                if (unitsPart > 0)
+                int h = intPart / 100, r = intPart % 100;
+                result = h == 1 ? "cent" : units[h] + " cent";
+                if (r > 0)
                 {
-                    result += " " + units[unitsPart];
+                    if      (r < 10) result += " " + units[r];
+                    else if (r < 20) result += " " + teens[r - 10];
+                    else { result += " " + tens[r / 10]; if (r % 10 > 0) result += " " + units[r % 10]; }
                 }
             }
-            else if (integerPart < 1000)
-            {
-                int hundreds = integerPart / 100;
-                int remainder = integerPart % 100;
-
-                if (hundreds == 1)
-                    result = "cent";
-                else
-                    result = units[hundreds] + " cent";
-
-                if (remainder > 0)
-                {
-                    if (remainder < 10)
-                        result += " " + units[remainder];
-                    else if (remainder < 20)
-                        result += " " + teens[remainder - 10];
-                    else
-                    {
-                        int t = remainder / 10;
-                        int u = remainder % 10;
-                        result += " " + tens[t];
-                        if (u > 0)
-                            result += " " + units[u];
-                    }
-                }
-            }
-            else
-            {
-                // For numbers >= 1000, simplify
-                result = integerPart.ToString();
-            }
+            else result = intPart.ToString();
 
             result += " dirhams";
-
-            if (decimalPart > 0)
-            {
-                result += " et " + decimalPart + " centimes";
-            }
-
+            if (decPart > 0) result += " et " + decPart + " centimes";
             return result;
         }
 
@@ -1181,16 +1013,12 @@ namespace GestionComerce.Main.Vente
         {
             try
             {
-                FactureSettings settings = await FactureSettings.LoadSettingsAsync();
-                if (settings == null) settings = new FactureSettings();
+                FactureSettings settings = await FactureSettings.LoadSettingsAsync() ?? new FactureSettings();
 
-                WFacturePreview factureWindow = new WFacturePreview(
+                new WFacturePreview(
                     settings, operationId, DateTime.Now, SelectedClient,
                     articles, total, discount, CreditAmount,
-                    PaymentMethodName, operationType
-                );
-
-                factureWindow.PrintFacture();
+                    PaymentMethodName, operationType).PrintFacture();
             }
             catch (Exception ex)
             {

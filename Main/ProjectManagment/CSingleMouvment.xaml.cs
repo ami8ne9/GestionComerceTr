@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace GestionComerce.Main.ProjectManagment
 {
-    /// <summary>
-    /// Interaction logic for CSingleMouvment.xaml
-    /// </summary>
     public partial class CSingleMouvment : UserControl
     {
         public CSingleMouvment(CMainP main, OperationArticle opa)
@@ -26,10 +23,13 @@ namespace GestionComerce.Main.ProjectManagment
             this.main = main;
             this.opa = opa;
 
+            // Allow toggling — show "Unreverse" if already reversed
             if (opa.Reversed == true)
             {
-                ReverseButton.IsEnabled = false;
+                ReverseButton.Content = "Unreverse";
+                ReverseButton.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#4d4d4d"));
             }
+
             foreach (Article a in main.main.laa)
             {
                 if (a.ArticleID == opa.ArticleID)
@@ -50,11 +50,7 @@ namespace GestionComerce.Main.ProjectManagment
                     {
                         foreach (Fournisseur f in main.main.lfo)
                         {
-                            if (o.FournisseurID == f.FournisseurID)
-                            {
-                                Fournisseur.Text = f.Nom;
-                                break;
-                            }
+                            if (o.FournisseurID == f.FournisseurID) { Fournisseur.Text = f.Nom; break; }
                         }
                         IndicatorBorder.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#ff7614"));
                         IndicatorIcon.Text = "🛒";
@@ -66,17 +62,10 @@ namespace GestionComerce.Main.ProjectManagment
                         {
                             foreach (Client c in main.main.lc)
                             {
-                                if (o.ClientID == c.ClientID)
-                                {
-                                    Fournisseur.Text = c.Nom;
-                                    break;
-                                }
+                                if (o.ClientID == c.ClientID) { Fournisseur.Text = c.Nom; break; }
                             }
                         }
-                        else
-                        {
-                            Fournisseur.Text = "No Client";
-                        }
+                        else { Fournisseur.Text = "No Client"; }
                         IndicatorBorder.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#10B981"));
                         IndicatorIcon.Text = "🏷️";
                         Quantity.Text = "- " + opa.QteArticle.ToString();
@@ -85,11 +74,7 @@ namespace GestionComerce.Main.ProjectManagment
                     {
                         foreach (User u in main.main.lu)
                         {
-                            if (o.UserID == u.UserID)
-                            {
-                                Fournisseur.Text = u.UserName;
-                                break;
-                            }
+                            if (o.UserID == u.UserID) { Fournisseur.Text = u.UserName; break; }
                         }
                         IndicatorBorder.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#2d42fc"));
                         IndicatorIcon.Text = "✏️";
@@ -100,11 +85,7 @@ namespace GestionComerce.Main.ProjectManagment
                     {
                         foreach (User u in main.main.lu)
                         {
-                            if (o.UserID == u.UserID)
-                            {
-                                Fournisseur.Text = u.UserName;
-                                break;
-                            }
+                            if (o.UserID == u.UserID) { Fournisseur.Text = u.UserName; break; }
                         }
                         IndicatorBorder.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#828181"));
                         IndicatorIcon.Text = "🗑️";
@@ -116,17 +97,19 @@ namespace GestionComerce.Main.ProjectManagment
             }
         }
 
-        // New constructor for CMainR
         public CSingleMouvment(CMainR mainR, OperationArticle opa)
         {
             InitializeComponent();
             this.mainR = mainR;
             this.opa = opa;
 
+            // Allow toggling — show "Unreverse" if already reversed
             if (opa.Reversed == true)
             {
-                ReverseButton.IsEnabled = false;
+                ReverseButton.Content = "Unreverse";
+                ReverseButton.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#4d4d4d"));
             }
+
             foreach (Article a in mainR.main.laa)
             {
                 if (a.ArticleID == opa.ArticleID)
@@ -147,11 +130,7 @@ namespace GestionComerce.Main.ProjectManagment
                     {
                         foreach (Fournisseur f in mainR.main.lfo)
                         {
-                            if (o.FournisseurID == f.FournisseurID)
-                            {
-                                Fournisseur.Text = f.Nom;
-                                break;
-                            }
+                            if (o.FournisseurID == f.FournisseurID) { Fournisseur.Text = f.Nom; break; }
                         }
                         IndicatorBorder.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#ff7614"));
                         IndicatorIcon.Text = "🛒";
@@ -163,17 +142,10 @@ namespace GestionComerce.Main.ProjectManagment
                         {
                             foreach (Client c in mainR.main.lc)
                             {
-                                if (o.ClientID == c.ClientID)
-                                {
-                                    Fournisseur.Text = c.Nom;
-                                    break;
-                                }
+                                if (o.ClientID == c.ClientID) { Fournisseur.Text = c.Nom; break; }
                             }
                         }
-                        else
-                        {
-                            Fournisseur.Text = "No Client";
-                        }
+                        else { Fournisseur.Text = "No Client"; }
                         IndicatorBorder.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#10B981"));
                         IndicatorIcon.Text = "🏷️";
                         Quantity.Text = "- " + opa.QteArticle.ToString();
@@ -182,11 +154,7 @@ namespace GestionComerce.Main.ProjectManagment
                     {
                         foreach (User u in mainR.main.lu)
                         {
-                            if (o.UserID == u.UserID)
-                            {
-                                Fournisseur.Text = u.UserName;
-                                break;
-                            }
+                            if (o.UserID == u.UserID) { Fournisseur.Text = u.UserName; break; }
                         }
                         IndicatorBorder.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#2d42fc"));
                         IndicatorIcon.Text = "✏️";
@@ -197,11 +165,7 @@ namespace GestionComerce.Main.ProjectManagment
                     {
                         foreach (User u in mainR.main.lu)
                         {
-                            if (o.UserID == u.UserID)
-                            {
-                                Fournisseur.Text = u.UserName;
-                                break;
-                            }
+                            if (o.UserID == u.UserID) { Fournisseur.Text = u.UserName; break; }
                         }
                         IndicatorBorder.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#828181"));
                         IndicatorIcon.Text = "🗑️";

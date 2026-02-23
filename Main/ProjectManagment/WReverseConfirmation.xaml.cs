@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,18 +14,18 @@ using System.Windows.Shapes;
 
 namespace GestionComerce.Main.ProjectManagment
 {
-    /// <summary>
-    /// Interaction logic for WReverseConfirmation.xaml
-    /// </summary>
     public partial class WReverseConfirmation : Window
     {
         public WReverseConfirmation(WPlus plus, WArticlesReverse arts)
         {
             InitializeComponent();
-            this.plus = plus; this.arts = arts;
-            
+            this.plus = plus;
+            this.arts = arts;
         }
-        WPlus plus; WArticlesReverse arts; int countRev; decimal RA; decimal RAA;
+
+        WPlus plus;
+        WArticlesReverse arts;
+
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -35,266 +35,197 @@ namespace GestionComerce.Main.ProjectManagment
         {
             try
             {
-                List<OperationArticle> oas = new List<OperationArticle>();
-                countRev = 0;
+                // ── Article-level operations (V and A types) ──────────────────
                 if (arts != null)
                 {
+                    // Split changed articles into newly-reversed and newly-unreversed
+                    var newlyReversed   = new List<OperationArticle>();
+                    var newlyUnreversed = new List<OperationArticle>();
+
+                    int countRev = 0;
+
                     foreach (CSingleArticleReverse sar in arts.ArticlesContainer.Children)
                     {
-                        if (sar.oa.Reversed == true)
-                        {
-                            countRev++;
+                        if (sar.oa.Reversed) countRev++;
 
-
-                        }
                         if (sar.inittialStat != sar.oa.Reversed)
+                        {
+                            if (sar.oa.Reversed)
+                                newlyReversed.Add(sar.oa);
+                            else
+                                newlyUnreversed.Add(sar.oa);
+                        }
+                    }
+
+                    // Determine operation-level reversed status:
+                    // ALL articles reversed → op reversed | ANY unreversed → op unreversed
+                    bool allReversed = (countRev == arts.ArticlesContainer.Children.Count);
+                    plus.so.op.Reversed = allReversed;
+
+                    // ── Stock adjustments ────────────────────────────────────
+                    if (plus.so.op.OperationType.StartsWith("V"))
+                    {
+                        // Newly reversed Vente → add qty back to stock
+                        foreach (OperationArticle oa in newlyReversed)
                         {
                             foreach (Article a in plus.so.main.main.laa)
                             {
-                                if (a.ArticleID == sar.oa.ArticleID)
+                                if (a.ArticleID == oa.ArticleID)
                                 {
-                                    if (plus.so.op.OperationType.StartsWith("V"))
-                                    {
-                                        RA += sar.oa.QteArticle * a.PrixVente;
-                                    }
-                                    else if (plus.so.op.OperationType.StartsWith("A"))
-                                    {
-                                        RA += sar.oa.QteArticle * a.PrixAchat;
-                                    }
-
-                                }
-                            }
-                            sar.oa.UpdateOperationArticleAsync();
-                            oas.Add(sar.oa);
-                        }
-                        else
-                        {
-
-                            if (sar.oa.Reversed == true)
-                            {
-                                foreach (Article a in plus.so.main.main.laa)
-                                {
-                                    if (a.ArticleID == sar.oa.ArticleID)
-                                    {
-                                        if (plus.so.op.OperationType.StartsWith("V"))
-                                        {
-                                            RAA += sar.oa.QteArticle * a.PrixVente;
-                                        }
-                                        else if (plus.so.op.OperationType.StartsWith("A"))
-                                        {
-                                            RAA += sar.oa.QteArticle * a.PrixAchat;
-                                        }
-
-                                    }
-                                }
-                            }
-                        }
-
-                    }
-
-                    if (countRev == arts.ArticlesContainer.Children.Count) plus.so.op.Reversed = true;
-                }
-                if (plus.so.op.OperationType.StartsWith("V"))
-                {
-                    foreach (OperationArticle cs in oas)
-                    {
-                        foreach (Article a in plus.so.main.main.laa)
-                        {
-                            if (a.ArticleID == cs.ArticleID)
-                            {
-                                a.Quantite += cs.QteArticle;
-                                a.UpdateArticleAsync();
-                                break;
-                            }
-                        }
-
-                    }
-                    if (plus.so.op.OperationType.EndsWith("50"))
-                    {
-                        foreach (Client c in plus.so.main.main.lc)
-                        {
-                            if (c.ClientID == plus.so.op.ClientID)
-                            {
-                                foreach (Credit cr in plus.so.main.main.credits)
-                                {
-
-                                    if (cr.ClientID == plus.so.op.ClientID)
-                                    {
-                                        plus.so.op.CreditValue -= RAA;
-                                        if (plus.so.op.CreditValue < 0)
-                                        {
-                                            plus.so.op.CreditValue = 0;
-                                            break;
-                                        }
-                                        if (plus.so.op.CreditValue < RA) cr.Total -= plus.so.op.CreditValue;
-                                        else cr.Total -= RA;
-                                        cr.UpdateCreditAsync();
-                                        break;
-                                    }
-
-                                }
-
-                                break;
-
-                            }
-                        }
-                    }
-                    else if (plus.so.op.OperationType.EndsWith("Cr"))
-                    {
-                        foreach (Client c in plus.so.main.main.lc)
-                        {
-                            if (c.ClientID == plus.so.op.ClientID)
-                            {
-                                foreach (Credit cr in plus.so.main.main.credits)
-                                {
-
-                                    if (cr.ClientID == plus.so.op.ClientID)
-                                    {
-                                        if (RA < plus.so.op.CreditValue - RAA)
-                                        {
-                                            cr.Total -= RA;
-                                        }
-                                        else
-                                        {
-                                            if (plus.so.op.CreditValue - RAA > 0)
-                                            {
-                                                cr.Total -= plus.so.op.CreditValue - RAA;
-                                            }
-
-                                        }
-
-                                        cr.UpdateCreditAsync();
-                                        break;
-                                    }
-
-                                }
-                                break;
-                            }
-                        }
-                    }
-
-                }
-                else if (plus.so.op.OperationType.StartsWith("A"))
-                {
-                    foreach (OperationArticle cs in oas)
-                    {
-                        foreach (Article a in plus.so.main.main.laa)
-                        {
-                            if (a.ArticleID == cs.ArticleID)
-                            {
-                                a.Quantite -= cs.QteArticle;
-
-                                if (a.Quantite == 0)
-                                {
-                                    a.Etat = false;
-                                    a.DeleteArticleAsync();
-                                }
-                                else
-                                {
+                                    a.Quantite += oa.QteArticle;
                                     a.UpdateArticleAsync();
+                                    break;
                                 }
-                                break;
                             }
                         }
-                    }
-
-                    if (plus.so.op.OperationType.EndsWith("50"))
-                    {
-                        foreach (Fournisseur c in plus.so.main.main.lfo)
+                        // Newly unreversed Vente → remove qty from stock again
+                        foreach (OperationArticle oa in newlyUnreversed)
                         {
-                            if (c.FournisseurID == plus.so.op.FournisseurID)
+                            foreach (Article a in plus.so.main.main.laa)
                             {
-                                foreach (Credit cr in plus.so.main.main.credits)
+                                if (a.ArticleID == oa.ArticleID)
                                 {
+                                    a.Quantite -= oa.QteArticle;
+                                    a.UpdateArticleAsync();
+                                    break;
+                                }
+                            }
+                        }
 
-                                    if (cr.FournisseurID == plus.so.op.FournisseurID)
+                        // ── Credit adjustments for Vente ────────────────────
+                        decimal raReversed   = GetTotalValue(newlyReversed,   plus.so.op, plus.so.main.main.laa, "V");
+                        decimal raUnreversed = GetTotalValue(newlyUnreversed, plus.so.op, plus.so.main.main.laa, "V");
+
+                        if (plus.so.op.OperationType.EndsWith("50") || plus.so.op.OperationType.EndsWith("Cr"))
+                        {
+                            foreach (Client c in plus.so.main.main.lc)
+                            {
+                                if (c.ClientID == plus.so.op.ClientID)
+                                {
+                                    foreach (Credit cr in plus.so.main.main.credits)
                                     {
-                                        plus.so.op.CreditValue -= RAA;
-                                        if (plus.so.op.CreditValue < 0)
+                                        if (cr.ClientID == plus.so.op.ClientID)
                                         {
-                                            plus.so.op.CreditValue = 0;
+                                            // Reversing articles → reduce credit debt
+                                            if (raReversed > 0) cr.Total -= raReversed;
+                                            // Unreversing articles → restore credit debt
+                                            if (raUnreversed > 0) cr.Total += raUnreversed;
+                                            if (cr.Total < 0) cr.Total = 0;
+                                            cr.UpdateCreditAsync();
                                             break;
                                         }
-                                        if (plus.so.op.CreditValue < RA) cr.Total -= plus.so.op.CreditValue;
-                                        else cr.Total -= RA;
-                                        cr.UpdateCreditAsync();
-                                        break;
                                     }
-
+                                    break;
                                 }
-
-                                break;
-
                             }
                         }
                     }
-                    else if (plus.so.op.OperationType.EndsWith("Cr"))
+                    else if (plus.so.op.OperationType.StartsWith("A"))
                     {
-                        foreach (Fournisseur c in plus.so.main.main.lfo)
+                        // Newly reversed Achat → remove qty from stock
+                        foreach (OperationArticle oa in newlyReversed)
                         {
-                            if (c.FournisseurID == plus.so.op.FournisseurID)
+                            foreach (Article a in plus.so.main.main.laa)
                             {
-                                foreach (Credit cr in plus.so.main.main.credits)
+                                if (a.ArticleID == oa.ArticleID)
                                 {
-
-                                    if (cr.FournisseurID == plus.so.op.FournisseurID)
+                                    a.Quantite -= oa.QteArticle;
+                                    if (a.Quantite <= 0)
                                     {
-                                        if (RA < plus.so.op.CreditValue - RAA)
-                                        {
-                                            cr.Total -= RA;
-                                        }
-                                        else
-                                        {
-                                            if (plus.so.op.CreditValue - RAA > 0)
-                                            {
-                                                cr.Total -= plus.so.op.CreditValue - RAA;
-                                            }
-
-                                        }
-
-                                        cr.UpdateCreditAsync();
-                                        break;
-
+                                        a.Quantite = 0;
+                                        a.Etat = false;
+                                        a.DeleteArticleAsync();
                                     }
-
+                                    else
+                                    {
+                                        a.UpdateArticleAsync();
+                                    }
+                                    break;
                                 }
-                                break;
+                            }
+                        }
+                        // Newly unreversed Achat → add qty back to stock
+                        foreach (OperationArticle oa in newlyUnreversed)
+                        {
+                            foreach (Article a in plus.so.main.main.laa)
+                            {
+                                if (a.ArticleID == oa.ArticleID)
+                                {
+                                    a.Quantite += oa.QteArticle;
+                                    if (!a.Etat) a.Etat = true;
+                                    a.UpdateArticleAsync();
+                                    break;
+                                }
+                            }
+                        }
+
+                        // ── Credit adjustments for Achat ────────────────────
+                        decimal raReversed   = GetTotalValue(newlyReversed,   plus.so.op, plus.so.main.main.laa, "A");
+                        decimal raUnreversed = GetTotalValue(newlyUnreversed, plus.so.op, plus.so.main.main.laa, "A");
+
+                        if (plus.so.op.OperationType.EndsWith("50") || plus.so.op.OperationType.EndsWith("Cr"))
+                        {
+                            foreach (Fournisseur f in plus.so.main.main.lfo)
+                            {
+                                if (f.FournisseurID == plus.so.op.FournisseurID)
+                                {
+                                    foreach (Credit cr in plus.so.main.main.credits)
+                                    {
+                                        if (cr.FournisseurID == plus.so.op.FournisseurID)
+                                        {
+                                            if (raReversed   > 0) cr.Total -= raReversed;
+                                            if (raUnreversed > 0) cr.Total += raUnreversed;
+                                            if (cr.Total < 0) cr.Total = 0;
+                                            cr.UpdateCreditAsync();
+                                            break;
+                                        }
+                                    }
+                                    break;
+                                }
                             }
                         }
                     }
                 }
-                //change this
+
+                // ── Non-article operations (M, D, S, P) ──────────────────────
                 else if (plus.so.op.OperationType.StartsWith("M"))
                 {
                     foreach (OperationArticle cs in plus.so.main.main.loa)
                     {
-                        foreach (Article a in plus.so.main.main.laa)
+                        if (plus.so.op.OperationID == cs.OperationID)
                         {
-                            if (a.ArticleID == cs.ArticleID && plus.so.op.OperationID == cs.OperationID)
+                            foreach (Article a in plus.so.main.main.laa)
                             {
-                                a.Quantite = cs.QteArticle;
-                                plus.so.op.Reversed = true;
-                                cs.Reversed = true;
-                                a.UpdateArticleAsync();
-                                break;
+                                if (a.ArticleID == cs.ArticleID)
+                                {
+                                    a.Quantite = cs.QteArticle;
+                                    plus.so.op.Reversed = true;
+                                    cs.Reversed = true;
+                                    cs.UpdateOperationArticleAsync();
+                                    a.UpdateArticleAsync();
+                                    break;
+                                }
                             }
                         }
                     }
                 }
                 else if (plus.so.op.OperationType.StartsWith("D"))
-
                 {
                     foreach (OperationArticle cs in plus.so.main.main.loa)
                     {
-                        foreach (Article a in plus.so.main.main.laa)
+                        if (plus.so.op.OperationID == cs.OperationID)
                         {
-                            if (a.ArticleID == cs.ArticleID && plus.so.op.OperationID == cs.OperationID)
+                            foreach (Article a in plus.so.main.main.laa)
                             {
-                                a.Etat = true;
-                                plus.so.op.Reversed = true;
-                                cs.Reversed = true;
-                                a.BringBackArticleAsync();
-                                break;
+                                if (a.ArticleID == cs.ArticleID)
+                                {
+                                    a.Etat = true;
+                                    plus.so.op.Reversed = true;
+                                    cs.Reversed = true;
+                                    cs.UpdateOperationArticleAsync();
+                                    a.BringBackArticleAsync();
+                                    break;
+                                }
                             }
                         }
                     }
@@ -308,7 +239,6 @@ namespace GestionComerce.Main.ProjectManagment
                             cr.Paye += plus.so.op.CreditValue;
                             plus.so.op.Reversed = true;
                             cr.UpdateCreditAsync();
-
                         }
                     }
                 }
@@ -321,28 +251,43 @@ namespace GestionComerce.Main.ProjectManagment
                             cr.Paye += plus.so.op.CreditValue;
                             plus.so.op.Reversed = true;
                             cr.UpdateCreditAsync();
-
                         }
                     }
                 }
+
                 plus.so.op.UpdateOperationAsync();
                 plus.so.main.LoadOperations(plus.so.main.main.lo);
                 plus.so.main.LoadMouvments(plus.so.main.main.loa);
+                plus.so.main.LoadStats();
                 plus.so.main.LoadStatistics();
-                //plus.Close();
-                //arts?.Close();
-                //this.Close();
-
                 plus.LoadArticles();
+
                 WCongratulations wCongratulations = new WCongratulations("Reverse réussie", "Reverse a ete effectue avec succes", 1);
                 wCongratulations.ShowDialog();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-
-                WCongratulations wCongratulations = new WCongratulations("Reverse échoué", "Reverse n'a pas ete effectue ", 0);
+                WCongratulations wCongratulations = new WCongratulations("Reverse échoué", ex.Message, 0);
                 wCongratulations.ShowDialog();
             }
+        }
+
+        // Helper: sum price of articles based on operation type
+        private decimal GetTotalValue(List<OperationArticle> oas, Operation op, List<Article> laa, string opType)
+        {
+            decimal total = 0;
+            foreach (OperationArticle oa in oas)
+            {
+                foreach (Article a in laa)
+                {
+                    if (a.ArticleID == oa.ArticleID)
+                    {
+                        total += oa.QteArticle * (opType == "V" ? a.PrixVente : a.PrixAchat);
+                        break;
+                    }
+                }
+            }
+            return total;
         }
     }
 }

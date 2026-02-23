@@ -13,7 +13,6 @@
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-	  
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -92,7 +91,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
-	<Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Drawing.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Drawing.Common.10.0.3\lib\net462\System.Drawing.Common.dll</HintPath>
     </Reference>
@@ -379,12 +378,16 @@
       <DependentUpon>LivreurManagementWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Main\IOperationHost.cs" />
+    <Compile Include="Main\ProjectManagment\WDeleteOperationConfirmation.xaml.cs">
+      <DependentUpon>WDeleteOperationConfirmation.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Main\Settings\CAproposDeNous.xaml.cs">
       <DependentUpon>CAproposDeNous.xaml</DependentUpon>
     </Compile>
     <Compile Include="Main\Settings\ParametresGenerauxControl.xaml.cs">
       <DependentUpon>ParametresGenerauxControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Main\Vente\StockWarningHelper.cs" />
     <Compile Include="Main\Vente\WFacturePreview.xaml.cs">
       <DependentUpon>WFacturePreview.xaml</DependentUpon>
     </Compile>
@@ -810,6 +813,10 @@
     <Page Include="Main\Delivery\LivreurManagementWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Main\ProjectManagment\WDeleteOperationConfirmation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Main\Settings\CAproposDeNous.xaml">
       <SubType>Designer</SubType>

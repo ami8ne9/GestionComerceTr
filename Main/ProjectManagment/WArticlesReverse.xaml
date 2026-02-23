@@ -135,6 +135,26 @@
                     Padding="24,16"
                     CornerRadius="0,0,12,12">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button x:Name="ToggleAllButton"
+                           Content="Reverse All"
+                           Click="ToggleAllButton_Click"
+                           Margin="0,0,12,0"
+                           Padding="24,12"
+                           FontSize="14"
+                           FontWeight="SemiBold"
+                           Foreground="White"
+                           BorderThickness="0"
+                           Cursor="Hand"
+                           MinWidth="120"
+                           Background="#8B5CF6">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" CornerRadius="6" Padding="{TemplateBinding Padding}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
                     <Button Content="{Binding Source={x:Static p:Resources.Confirm}}" 
                            Style="{StaticResource ActionButtonStyle}" 
                            Click="ConfirmerButton_Click" 

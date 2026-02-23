@@ -270,14 +270,12 @@ namespace GestionComerce.Main.Vente
 
         private void ArticleClicked(object sender, MouseButtonEventArgs e)
         {
+            // ── Zero-stock: show confirm/cancel dialog (with session "don't remind me") ──
             if (a.Quantite <= 0)
             {
-                MessageBox.Show(
-                    $"L'article '{a.ArticleName}' n'a plus de stock disponible.\n\nQuantité en stock : 0",
-                    "Stock Insuffisant",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Warning);
-                return;
+                if (!StockWarningHelper.ConfirmAddOutOfStock(a.ArticleName))
+                    return; // User cancelled
+                // User confirmed — fall through to add to cart
             }
 
             foreach (UIElement element in mainv.SelectedArticles.Children)
@@ -286,7 +284,8 @@ namespace GestionComerce.Main.Vente
                 {
                     if (item.a.ArticleID == a.ArticleID)
                     {
-                        if (a.Quantite <= Convert.ToInt32(item.Quantite.Text))
+                        // For in-stock articles only, guard against exceeding available stock
+                        if (a.Quantite > 0 && a.Quantite <= Convert.ToInt32(item.Quantite.Text))
                         {
                             MessageBox.Show("La quantité dans le panier est la même que celle que vous avez en stock");
                             return;
