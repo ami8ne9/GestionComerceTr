@@ -5,23 +5,29 @@ using System.Windows.Media;
 namespace GestionComerce.Main.Vente
 {
     /// <summary>
-    /// Shared helper that shows the zero-stock confirmation dialog.
+    /// Shared helper that shows stock-warning confirmation dialogs.
     /// The "don't remind me" flag is session-only (resets when the app restarts).
     /// </summary>
-    public static class StockWarningHelper
+    public static partial class StockWarningHelper   // ← partial added so CSingleArticle1 can read the flag
     {
-        // Session-only flag — resets to false every time the app starts
-        private static bool _dontRemindThisSession = false;
+        // ── Shared session flag ────────────────────────────────────────────────
+        // Becomes true when the user ticks "Ne plus me rappeler pour aucun article"
+        // in ANY stock warning dialog (zero-stock or over-stock).
+        public static bool IsGloballySuppressed { get; private set; } = false;
 
+        /// <summary>Called by any dialog when the user ticks the global checkbox.</summary>
+        public static void SetGloballySuppressed() => IsGloballySuppressed = true;
+
+        // ── Zero-stock dialog ──────────────────────────────────────────────────
         /// <summary>
         /// Shows the zero-stock warning dialog if needed.
-        /// Returns true  → user confirmed (or chose not to be reminded again).
+        /// Returns true  → user confirmed (or warnings are suppressed).
         /// Returns false → user cancelled.
         /// </summary>
         public static bool ConfirmAddOutOfStock(string articleName)
         {
-            // If user already ticked "don't remind me" this session, silently allow
-            if (_dontRemindThisSession)
+            // If user already suppressed warnings this session, silently allow
+            if (IsGloballySuppressed)
                 return true;
 
             // Build custom dialog
@@ -41,7 +47,7 @@ namespace GestionComerce.Main.Vente
             root.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
             root.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
 
-            // ── Message area ────────────────────────────────────────────────
+            // ── Message area ─────────────────────────────────────────────────
             var messagePanel = new StackPanel
             {
                 Orientation = Orientation.Horizontal,
@@ -49,7 +55,6 @@ namespace GestionComerce.Main.Vente
                 VerticalAlignment = VerticalAlignment.Top
             };
 
-            // Warning icon
             var icon = new TextBlock
             {
                 Text = "⚠️",
@@ -59,9 +64,7 @@ namespace GestionComerce.Main.Vente
             };
             messagePanel.Children.Add(icon);
 
-            // Text block
             var textPanel = new StackPanel { Orientation = Orientation.Vertical };
-
             textPanel.Children.Add(new TextBlock
             {
                 Text = $"L'article \"{articleName}\" est en rupture de stock.",
@@ -71,7 +74,6 @@ namespace GestionComerce.Main.Vente
                 TextWrapping = TextWrapping.Wrap,
                 Margin = new Thickness(0, 0, 0, 8)
             });
-
             textPanel.Children.Add(new TextBlock
             {
                 Text = "Si vous continuez :\n  • Sa quantité en stock ne sera PAS réduite.\n  • Il ne sera PAS supprimé automatiquement.",
@@ -80,15 +82,14 @@ namespace GestionComerce.Main.Vente
                 TextWrapping = TextWrapping.Wrap,
                 LineHeight = 20
             });
-
             messagePanel.Children.Add(textPanel);
             Grid.SetRow(messagePanel, 0);
             root.Children.Add(messagePanel);
 
-            // ── Checkbox row ─────────────────────────────────────────────────
+            // ── Checkbox row ──────────────────────────────────────────────────
             var checkBox = new CheckBox
             {
-                Content = "Ne plus me rappeler cet avertissement (session en cours)",
+                Content = "Ne plus me rappeler pour aucun article (session en cours)",
                 FontSize = 11,
                 Foreground = new SolidColorBrush(Color.FromRgb(75, 85, 99)),
                 Margin = new Thickness(20, 0, 20, 12),
@@ -97,7 +98,7 @@ namespace GestionComerce.Main.Vente
             Grid.SetRow(checkBox, 1);
             root.Children.Add(checkBox);
 
-            // ── Button row ───────────────────────────────────────────────────
+            // ── Button row ────────────────────────────────────────────────────
             var buttonPanel = new StackPanel
             {
                 Orientation = Orientation.Horizontal,
@@ -119,11 +120,7 @@ namespace GestionComerce.Main.Vente
                 BorderThickness = new Thickness(1),
                 Cursor = System.Windows.Input.Cursors.Hand
             };
-            cancelButton.Click += (s, e) =>
-            {
-                confirmed = false;
-                dialog.Close();
-            };
+            cancelButton.Click += (s, e) => { confirmed = false; dialog.Close(); };
 
             var confirmButton = new Button
             {
@@ -141,7 +138,7 @@ namespace GestionComerce.Main.Vente
             {
                 confirmed = true;
                 if (checkBox.IsChecked == true)
-                    _dontRemindThisSession = true;
+                    SetGloballySuppressed();   // ← shared flag, covers all dialogs
                 dialog.Close();
             };
 
@@ -152,7 +149,6 @@ namespace GestionComerce.Main.Vente
 
             dialog.Content = root;
             dialog.ShowDialog();
-
             return confirmed;
         }
     }

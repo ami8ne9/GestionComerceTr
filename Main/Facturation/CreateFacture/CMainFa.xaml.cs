@@ -1210,6 +1210,84 @@ namespace GestionComerce.Main.Facturation.CreateFacture
             }
         }
 
+        // ──────────────────────────────────────────────────────────────────────
+        // FRENCH TRANSLATION HELPERS
+        // These translate combobox-selected values to French for WFacturePage.
+        // The comboboxes themselves stay in the app language (EN/AR); only the
+        // data passed to the invoice preview is forced to French.
+        // ──────────────────────────────────────────────────────────────────────
+
+        /// <summary>
+        /// Returns the French invoice-type label based on the combobox index,
+        /// which is language-independent (EN or AR items, same order).
+        /// Indices match cmbInvoiceType in CMainFa.xaml:
+        ///   0 Invoice | 1 Quote | 2 ProForma | 3 Shipment | 4 Credit | 5 PurchaseOrder | 6 DeliveryNote
+        /// </summary>
+        private static string GetFrenchInvoiceType(int index)
+        {
+            switch (index)
+            {
+                case 0: return "Facture";
+                case 1: return "Devis";
+                case 2: return "Pro Forma";
+                case 3: return "Expédition";
+                case 4: return "Avoir";
+                case 5: return "Bon de Commande";
+                case 6: return "Bon de Livraison";
+                default: return "Facture";
+            }
+        }
+
+        /// <summary>
+        /// Returns the French invoice-status label based on the EtatFacture combobox index.
+        ///   0 Normal | 1 Cancelled
+        /// </summary>
+        private static string GetFrenchInvoiceStatus(int index)
+        {
+            switch (index)
+            {
+                case 0: return "Normal";
+                case 1: return "Annulé";
+                default: return "Normal";
+            }
+        }
+
+        /// <summary>
+        /// Translates a payment-method name (stored in DB, possibly in EN/AR) to French.
+        /// Falls back to the original value if no mapping is found, so custom DB names
+        /// that are already in French are returned as-is.
+        /// </summary>
+        private static string TranslatePaymentMethodToFrench(string value)
+        {
+            if (string.IsNullOrWhiteSpace(value)) return value;
+
+            var map = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
+            {
+                // English → French
+                { "Cash",               "Espèces" },
+                { "Check",              "Chèque" },
+                { "Cheque",             "Chèque" },
+                { "Bank Transfer",      "Virement Bancaire" },
+                { "Wire Transfer",      "Virement Bancaire" },
+                { "Transfer",           "Virement" },
+                { "Credit Card",        "Carte Bancaire" },
+                { "Debit Card",         "Carte Bancaire" },
+                { "Bank Card",          "Carte Bancaire" },
+                { "Mobile Payment",     "Paiement Mobile" },
+                { "Online Payment",     "Paiement en Ligne" },
+
+                // Arabic → French
+                { "نقدا",               "Espèces" },
+                { "نقد",                "Espèces" },
+                { "شيك",                "Chèque" },
+                { "تحويل بنكي",         "Virement Bancaire" },
+                { "بطاقة بنكية",        "Carte Bancaire" },
+                { "دفع عبر الهاتف",    "Paiement Mobile" },
+            };
+
+            return map.TryGetValue(value.Trim(), out string french) ? french : value;
+        }
+
         private void btnPreview_Click(object sender, RoutedEventArgs e)
         {
             if (OperationContainer.Children.Count == 0)
@@ -1234,8 +1312,16 @@ namespace GestionComerce.Main.Facturation.CreateFacture
     (dpInvoiceDate?.SelectedDate?.Date ?? DateTime.Now.Date)
     .ToString("dd/MM/yy", CultureInfo.InvariantCulture);
 
-                string paymentMethod = (cmbPaymentMethod?.SelectedItem as ComboBoxItem)?.Content?.ToString() ?? "";
-                string chequeReference = (paymentMethod.ToLower() == "cheque" && txtChequeReference != null)
+                // --- Combobox values translated to French for the invoice preview ---
+                // We use the selected INDEX (language-independent) for fixed-item comboboxes,
+                // so the facture always shows French regardless of app language (EN or AR).
+                string frenchInvoiceType   = GetFrenchInvoiceType(cmbInvoiceType?.SelectedIndex ?? 0);
+                string frenchInvoiceStatus = GetFrenchInvoiceStatus(EtatFacture?.SelectedIndex ?? 0);
+
+                string rawPaymentMethod = (cmbPaymentMethod?.SelectedItem as ComboBoxItem)?.Content?.ToString() ?? "";
+                string paymentMethod = TranslatePaymentMethodToFrench(rawPaymentMethod);
+
+                string chequeReference = (rawPaymentMethod.ToLower() == "cheque" && txtChequeReference != null)
                     ? txtChequeReference.Text : "";
 
                 // Calculate total from articles
@@ -1250,6 +1336,8 @@ namespace GestionComerce.Main.Facturation.CreateFacture
                 string creditMontant = "";
                 string creditRest = "";
 
+                // Keep the app-language invoiceType for internal logic (Credit/Cheque checks etc.)
+                // but use frenchInvoiceType when storing in FactureInfo for display.
                 string invoiceType = cmbInvoiceType?.Text ?? "";
 
                 if (invoiceType.ToLower() == "credit" && SelectedOperations.Count > 0)
@@ -1282,7 +1370,7 @@ namespace GestionComerce.Main.Facturation.CreateFacture
         {
             { "NFacture", txtInvoiceNumber?.Text ?? "" },
             { "Date", dateValue },
-            { "Type", cmbInvoiceType?.Text ?? "" },
+            { "Type", frenchInvoiceType },
             { "NomU", txtUserName?.Text ?? "" },
             { "ICEU", txtUserICE?.Text ?? "" },
             { "VATU", txtUserVAT?.Text ?? "" },
@@ -1299,7 +1387,7 @@ namespace GestionComerce.Main.Facturation.CreateFacture
             { "IdSocieteC", txtClientIdSociete?.Text ?? "" },
             { "SiegeEntrepriseC", cmbClientSiegeEntreprise?.Text ?? "" },
             { "AdressC", txtClientAddress?.Text ?? "" },
-            { "EtatFature", EtatFacture?.Text ?? "" },
+            { "EtatFature", frenchInvoiceStatus },
             { "Device", txtCurrency?.Text ?? "" },
             { "TVA", txtTVARate?.Text ?? "" },
             { "MontantTotal", txtTotalAmount?.Text ?? "" },
@@ -1309,7 +1397,7 @@ namespace GestionComerce.Main.Facturation.CreateFacture
             { "IndexDeFacture", IndexFacture?.Text ?? "" },
             { "Description", txtDescription?.Text ?? "" },
             { "Logo", txtLogoPath?.Text ?? "" },
-            { "Reversed", EtatFacture?.Text ?? "" },
+            { "Reversed", frenchInvoiceStatus },
             { "Remise", Remise?.Text ?? "" },
             { "Object", txtObject?.Text ?? "" },
             { "PaymentMethod", paymentMethod },

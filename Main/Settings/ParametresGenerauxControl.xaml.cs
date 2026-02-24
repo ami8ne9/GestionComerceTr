@@ -10,6 +10,12 @@ namespace Superete.Main.Settings
 {
     public partial class ParametresGenerauxControl : UserControl
     {
+        /// <summary>
+        /// Fired after a successful save so the host page can reload this
+        /// control and pick up the new language strings immediately.
+        /// </summary>
+        public event Action LanguageSaved;
+
         private string _connectionString;
         private int _currentUserId;
         private ParametresGeneraux _parametresActuels;
@@ -239,7 +245,9 @@ namespace Superete.Main.Settings
                     MessageBox.Show("Paramètres enregistrés avec succès !",
                         "Succès", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                    ChargerParametres();
+                    // ── Notify the host page to reload this control so the
+                    //    new language strings (x:Static) take effect instantly ──
+                    LanguageSaved?.Invoke();
                 }
                 else
                 {

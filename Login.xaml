@@ -153,6 +153,40 @@
             </Setter>
         </Style>
 
+        <!-- Shared style for plain text inputs -->
+        <Style x:Key="ModernTextBoxStyle" TargetType="TextBox">
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Padding" Value="16,14"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="#E5E7EB"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="#111827"/>
+            <Setter Property="CaretBrush" Value="#2563EB"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="10">
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                          Margin="{TemplateBinding Padding}"
+                                          VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="BorderBrush" Value="#2563EB"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderBrush" Value="#93C5FD"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
         <DropShadowEffect x:Key="CardShadow" Color="#000000" Opacity="0.12"
                           BlurRadius="30" ShadowDepth="0" Direction="270"/>
         <DropShadowEffect x:Key="SubtleShadow" Color="#000000" Opacity="0.06"
@@ -168,7 +202,7 @@
             </LinearGradientBrush>
         </Grid.Background>
 
-        <Border Width="1200" Height="720" Background="White" CornerRadius="24"
+        <Border Width="1200" Height="765" Background="White" CornerRadius="24"
                 Effect="{StaticResource CardShadow}" VerticalAlignment="Center" HorizontalAlignment="Center">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -180,7 +214,9 @@
                 <Grid Grid.Column="0">
                     <Border Background="#F9FAFB" CornerRadius="24,0,0,24" Opacity="0.5"/>
                     <StackPanel Margin="60,50" VerticalAlignment="Center">
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,50">
+
+                        <!-- Logo / company header -->
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,30">
                             <Border Width="70" Height="70" CornerRadius="18">
                                 <Border.Background>
                                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
@@ -206,13 +242,43 @@
 
                         <TextBlock Text="{x:Static res:Resources.About_Tagline}"
                                    FontFamily="Segoe UI" FontSize="36" FontWeight="Light"
-                                   Foreground="#111827" Margin="0,0,0,12"/>
+                                   Foreground="#111827" Margin="0,0,0,6"/>
 
                         <TextBlock Text="{x:Static res:Resources.General_Description}"
                                    FontFamily="Segoe UI" FontSize="15" Foreground="#6B7280"
                                    TextWrapping="Wrap" MaxWidth="400"
-                                   HorizontalAlignment="Left" Margin="0,0,0,50"/>
+                                   HorizontalAlignment="Left" Margin="0,0,0,20"/>
 
+                        <!-- ── 3 NEW INPUTS ── -->
+                        <StackPanel Width="380" HorizontalAlignment="Left" Margin="0,0,0,20">
+
+                            <!-- Username -->
+                            <TextBlock Text="Username"
+                                       FontFamily="Segoe UI" FontSize="14" FontWeight="SemiBold"
+                                       Foreground="#374151" Margin="0,0,0,8"/>
+                            <TextBox x:Name="UsernameInput"
+                                     Style="{StaticResource ModernTextBoxStyle}"
+                                     MaxLength="64"/>
+
+                            <!-- Password -->
+                            <TextBlock Text="Password"
+                                       FontFamily="Segoe UI" FontSize="14" FontWeight="SemiBold"
+                                       Foreground="#374151" Margin="0,16,0,8"/>
+                            <PasswordBox x:Name="UserPasswordInput"
+                                         Style="{StaticResource ModernPasswordBoxStyle}"/>
+
+                            <!-- App Username -->
+                            <TextBlock Text="App Username"
+                                       FontFamily="Segoe UI" FontSize="14" FontWeight="SemiBold"
+                                       Foreground="#374151" Margin="0,16,0,8"/>
+                            <TextBox x:Name="AppUsernameInput"
+                                     Style="{StaticResource ModernTextBoxStyle}"
+                                     MaxLength="64"/>
+
+                        </StackPanel>
+                        <!-- ── END 3 NEW INPUTS ── -->
+
+                        <!-- ── ORIGINAL PIN — completely untouched ── -->
                         <StackPanel>
                             <TextBlock Text="{x:Static res:Resources.AddUser_Password}"
                                        FontFamily="Segoe UI" FontSize="14" FontWeight="SemiBold"
@@ -230,6 +296,8 @@
                                            FontFamily="Segoe UI" FontSize="12" Foreground="#6B7280"/>
                             </StackPanel>
                         </StackPanel>
+                        <!-- ── END ORIGINAL PIN ── -->
+
                     </StackPanel>
                 </Grid>
 

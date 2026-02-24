@@ -180,9 +180,9 @@
                     <Button x:Name="Roles" Style="{StaticResource ActionButtonStyle}" 
                             Content="{x:Static res:Resources.RoleWindow_Title}"
                             Click="RolesButton_Click"/>
-                    <Button x:Name="ExportBtn" Style="{StaticResource SecondaryActionButtonStyle}" 
+                    <!--<Button x:Name="ExportBtn" Style="{StaticResource SecondaryActionButtonStyle}" 
                             Tag="&#xE74E;" Content="{x:Static res:Resources.SaveAsPDF}"
-                            Click="ActionButton_Click"/>
+                            Click="ActionButton_Click"/>-->
                 </StackPanel>
             </Grid>
         </Border>

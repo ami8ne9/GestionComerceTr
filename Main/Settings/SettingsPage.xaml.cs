@@ -189,6 +189,11 @@ namespace GestionComerce.Main.Settings
             Superete.Main.Settings.ParametresGenerauxControl parametresControl =
                 new Superete.Main.Settings.ParametresGenerauxControl(u.UserID, connectionString);
 
+            // ── Reload the ENTIRE SettingsPage when the user saves a new
+            //    language, so the sidebar x:Static strings update too ─────────
+            parametresControl.LanguageSaved += () => main.load_settings(u);
+            // ────────────────────────────────────────────────────────────────
+
             parametresControl.HorizontalAlignment = HorizontalAlignment.Stretch;
             parametresControl.VerticalAlignment = VerticalAlignment.Stretch;
             parametresControl.Margin = new Thickness(0);

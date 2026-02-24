@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows;
@@ -13,7 +13,14 @@ namespace GestionComerce.Main.Vente
         CMainV mainv;
         public Article a;
         List<Famille> lf;
-        List<Fournisseur> lfo; private string iconSize;
+        List<Fournisseur> lfo;
+        private string iconSize;
+
+        // ── Session-level per-article suppression ──────────────────────────────
+        // Once the user clicks OK on a stock warning for a specific article
+        // (zero-stock OR over-stock), that article's warning is suppressed for
+        // the rest of the session — no checkbox required.
+        private static readonly HashSet<int> _sessionSuppressedArticles = new HashSet<int>();
 
         public CSingleArticle1(Article a, CMainV mainv, List<Famille> lf, List<Fournisseur> lfo, int s, string iconSize = "Moyennes")
         {
@@ -115,6 +122,161 @@ namespace GestionComerce.Main.Vente
             }
         }
 
+        // ── Stock warning helpers ───────────────────────────────────────────────
+
+        /// <summary>
+        /// Shows a stock warning dialog for the given article and reason.
+        /// Returns true if the user confirms (and suppresses future warnings for
+        /// this article in the current session).
+        /// Returns true immediately if the article was already suppressed.
+        /// </summary>
+        private static bool ConfirmStockWarning(int articleId, string articleName, string message)
+        {
+            // Already confirmed once this session — skip the dialog
+            if (_sessionSuppressedArticles.Contains(articleId))
+                return true;
+
+            // Check the global "ne plus me rappeler" flag from StockWarningHelper
+            // (covers the "never show again for any article" checkbox)
+            if (StockWarningHelper.IsGloballySuppressed)
+                return true;
+
+            // Build the warning window
+            var dlg = new Window
+            {
+                Title = "Avertissement de stock",
+                Width = 380,
+                Height = 240,
+                WindowStartupLocation = WindowStartupLocation.CenterScreen,
+                ResizeMode = ResizeMode.NoResize,
+                WindowStyle = WindowStyle.ToolWindow
+            };
+
+            var root = new StackPanel { Margin = new Thickness(20) };
+
+            root.Children.Add(new TextBlock
+            {
+                Text = $"⚠  {articleName}",
+                FontWeight = FontWeights.Bold,
+                FontSize = 14,
+                Margin = new Thickness(0, 0, 0, 8)
+            });
+
+            root.Children.Add(new TextBlock
+            {
+                Text = message,
+                TextWrapping = TextWrapping.Wrap,
+                Margin = new Thickness(0, 0, 0, 12)
+            });
+
+            var chk = new CheckBox
+            {
+                Content = "Ne plus me rappeler pour aucun article",
+                Margin = new Thickness(0, 0, 0, 12)
+            };
+            root.Children.Add(chk);
+
+            var btnRow = new StackPanel
+            {
+                Orientation = Orientation.Horizontal,
+                HorizontalAlignment = HorizontalAlignment.Right
+            };
+
+            bool confirmed = false;
+
+            var btnOk = new Button
+            {
+                Content = "OK",
+                Width = 80,
+                Height = 30,
+                Margin = new Thickness(0, 0, 8, 0),
+                IsDefault = true
+            };
+            btnOk.Click += (s, e) => { confirmed = true; dlg.Close(); };
+
+            var btnCancel = new Button
+            {
+                Content = "Annuler",
+                Width = 80,
+                Height = 30,
+                IsCancel = true
+            };
+            btnCancel.Click += (s, e) => { confirmed = false; dlg.Close(); };
+
+            btnRow.Children.Add(btnOk);
+            btnRow.Children.Add(btnCancel);
+            root.Children.Add(btnRow);
+
+            dlg.Content = root;
+            dlg.ShowDialog();
+
+            if (confirmed)
+            {
+                // Suppress globally if checkbox was ticked
+                if (chk.IsChecked == true)
+                    StockWarningHelper.SetGloballySuppressed();
+
+                // Always suppress this specific article for the rest of the session
+                _sessionSuppressedArticles.Add(articleId);
+            }
+
+            return confirmed;
+        }
+
+        // ── Article click handler ──────────────────────────────────────────────
+
+        private void ArticleClicked(object sender, MouseButtonEventArgs e)
+        {
+            // ── Case 1 : Zero stock ────────────────────────────────────────────
+            if (a.Quantite <= 0)
+            {
+                bool proceed = ConfirmStockWarning(
+                    a.ArticleID,
+                    a.ArticleName,
+                    "Cet article est en rupture de stock. Voulez-vous quand même l'ajouter au panier ?");
+
+                if (!proceed)
+                    return;
+            }
+
+            foreach (UIElement element in mainv.SelectedArticles.Children)
+            {
+                if (element is CSingleArticle2 item && item.a.ArticleID == a.ArticleID)
+                {
+                    // ── Case 2 : Cart quantity has reached available stock ──────
+                    if (a.Quantite > 0 && a.Quantite <= Convert.ToInt32(item.Quantite.Text))
+                    {
+                        bool proceed = ConfirmStockWarning(
+                            a.ArticleID,
+                            a.ArticleName,
+                            $"La quantité dans le panier ({item.Quantite.Text}) a atteint le stock disponible ({a.Quantite}). Voulez-vous quand même continuer ?");
+
+                        if (!proceed)
+                            return;
+                    }
+
+                    item.Quantite.Text = (Convert.ToInt32(item.Quantite.Text) + 1).ToString();
+                    item.qte++;
+                    mainv.TotalNett += a.PrixVente;
+                    mainv.TotalNet.Text = mainv.TotalNett.ToString("F2") + " DH";
+                    mainv.NbrA += 1;
+                    mainv.ArticleCount.Text = mainv.NbrA.ToString();
+                    return;
+                }
+            }
+
+            mainv.TotalNett += a.PrixVente;
+            mainv.TotalNet.Text = mainv.TotalNett.ToString("F2") + " DH";
+            mainv.NbrA += 1;
+            mainv.ArticleCount.Text = mainv.NbrA.ToString();
+            CSingleArticle2 sa = new CSingleArticle2(a, 1, mainv);
+            mainv.SelectedArticles.Children.Add(sa);
+            mainv.UpdateCartEmptyState();
+            mainv.SelectedArticle.Child = new CSingleArticle1(a, mainv, lf, lfo, 1);
+        }
+
+        // ── Layout helpers (unchanged) ─────────────────────────────────────────
+
         private void ApplyRowLayout()
         {
             this.Width = double.NaN;
@@ -127,66 +289,42 @@ namespace GestionComerce.Main.Vente
 
         private void ApplyCardLayout()
         {
-            // Définir les dimensions selon la taille
             int cardHeight = 0;
             int imageHeight = 0;
-            int cardWidth = 0;
 
             switch (iconSize)
             {
                 case "Grandes":
                     cardHeight = 320;
                     imageHeight = 160;
-                    cardWidth = 300; // Set width for large icons
                     break;
                 case "Moyennes":
                     cardHeight = 310;
                     imageHeight = 140;
-                    cardWidth = 0; // Let grid handle it
                     break;
                 case "Petites":
                     cardHeight = 180;
                     imageHeight = 100;
-                    cardWidth = 0; // Let grid handle it
                     break;
                 default:
                     cardHeight = 340;
                     imageHeight = 140;
-                    cardWidth = 0;
                     break;
             }
 
-            // Set width only for Grandes, otherwise let Grid handle it
-            // Set width for Grandes, otherwise let Grid handle it
-            if (iconSize == "Grandes")
-            {
-                this.Width = 590; // Fixed width for large icons
-                this.HorizontalAlignment = HorizontalAlignment.Center;
-            }
-            else
-            {
-                this.Width = double.NaN; // Auto width for Moyennes and Petites
-                this.HorizontalAlignment = HorizontalAlignment.Stretch;
-            }
-            this.Height = cardHeight;
-
-            // Don't set Width - let Grid handle it with Star sizing
+            this.Width = double.NaN;
             this.Height = cardHeight;
             this.HorizontalAlignment = HorizontalAlignment.Stretch;
 
-            // Mettre à jour la hauteur de la section image dans le Grid
             if (CardLayout != null && CardLayout.Child is Grid cardGrid)
             {
                 if (cardGrid.RowDefinitions.Count > 0)
-                {
                     cardGrid.RowDefinitions[0].Height = new GridLength(imageHeight);
-                }
             }
 
             RowLayout.Visibility = Visibility.Collapsed;
             CardLayout.Visibility = Visibility.Visible;
 
-            // Hide/show elements based on size
             UpdateCardVisibility();
         }
 
@@ -197,50 +335,32 @@ namespace GestionComerce.Main.Vente
                 var infoPanel = cardGrid.Children[1] as StackPanel;
                 if (infoPanel != null)
                 {
-                    // For small icons, show only image, name, and prices
                     if (iconSize == "Petites")
                     {
-                        // Hide detailed information panels
                         foreach (UIElement child in infoPanel.Children)
                         {
                             if (child is StackPanel panel)
                             {
-                                // Check the name of the panel
-                                if (panel.Name == "FournisseurPanel" || panel.Name == "StockPanel")
-                                {
-                                    panel.Visibility = Visibility.Collapsed;
-                                }
-                                else
-                                {
-                                    panel.Visibility = Visibility.Visible;
-                                }
+                                panel.Visibility = (panel.Name == "FournisseurPanel" || panel.Name == "StockPanel")
+                                    ? Visibility.Collapsed
+                                    : Visibility.Visible;
                             }
                             else if (child is Grid grid)
                             {
-                                // Hide famille/code grid for small icons
-                                if (grid.Name == "FamilleCodeGrid")
-                                {
-                                    grid.Visibility = Visibility.Collapsed;
-                                }
-                                else if (grid.Name == "PricesGrid")
-                                {
-                                    grid.Visibility = Visibility.Visible;
-                                }
+                                grid.Visibility = grid.Name == "FamilleCodeGrid"
+                                    ? Visibility.Collapsed
+                                    : Visibility.Visible;
                             }
-                            else if (child is TextBlock)
+                            else
                             {
-                                // Keep article name visible
                                 child.Visibility = Visibility.Visible;
                             }
                         }
                     }
                     else
                     {
-                        // Show all information for medium and large icons
                         foreach (UIElement child in infoPanel.Children)
-                        {
                             child.Visibility = Visibility.Visible;
-                        }
                     }
                 }
             }
@@ -266,49 +386,6 @@ namespace GestionComerce.Main.Vente
             {
                 // Image loading failed, leave empty
             }
-        }
-
-        private void ArticleClicked(object sender, MouseButtonEventArgs e)
-        {
-            // ── Zero-stock: show confirm/cancel dialog (with session "don't remind me") ──
-            if (a.Quantite <= 0)
-            {
-                if (!StockWarningHelper.ConfirmAddOutOfStock(a.ArticleName))
-                    return; // User cancelled
-                // User confirmed — fall through to add to cart
-            }
-
-            foreach (UIElement element in mainv.SelectedArticles.Children)
-            {
-                if (element is CSingleArticle2 item)
-                {
-                    if (item.a.ArticleID == a.ArticleID)
-                    {
-                        // For in-stock articles only, guard against exceeding available stock
-                        if (a.Quantite > 0 && a.Quantite <= Convert.ToInt32(item.Quantite.Text))
-                        {
-                            MessageBox.Show("La quantité dans le panier est la même que celle que vous avez en stock");
-                            return;
-                        }
-                        item.Quantite.Text = (Convert.ToInt32(item.Quantite.Text) + 1).ToString();
-                        item.qte++;
-                        mainv.TotalNett += a.PrixVente;
-                        mainv.TotalNet.Text = mainv.TotalNett.ToString("F2") + " DH";
-                        mainv.NbrA += 1;
-                        mainv.ArticleCount.Text = mainv.NbrA.ToString();
-                        return;
-                    }
-                }
-            }
-
-            mainv.TotalNett += a.PrixVente;
-            mainv.TotalNet.Text = mainv.TotalNett.ToString("F2") + " DH";
-            mainv.NbrA += 1;
-            mainv.ArticleCount.Text = mainv.NbrA.ToString();
-            CSingleArticle2 sa = new CSingleArticle2(a, 1, mainv);
-            mainv.SelectedArticles.Children.Add(sa);
-            mainv.UpdateCartEmptyState();
-            mainv.SelectedArticle.Child = new CSingleArticle1(a, mainv, lf, lfo, 1);
         }
     }
 }
