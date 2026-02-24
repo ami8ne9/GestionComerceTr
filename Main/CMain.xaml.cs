@@ -27,6 +27,15 @@ namespace GestionComerce.Main
             this.u = u;
             Name.Text = u.UserName;
 
+            // Keep the button icon in sync whenever the window state changes externally
+            this.Loaded += (s, e) =>
+            {
+                var win = Window.GetWindow(this);
+                if (win != null)
+                    win.StateChanged += (ws, we) => UpdateWinStateIcon();
+                UpdateWinStateIcon();
+            };
+
             foreach (Role r in main.lr)
             {
                 if (r.RoleID == u.RoleID)
@@ -138,6 +147,58 @@ namespace GestionComerce.Main
             Exit exit = new Exit(this, 1);
             exit.ShowDialog();
         }
+
+        // ── Header drag (works because WindowStyle="None") ───────────────────
+        private void Header_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            var win = Window.GetWindow(this);
+            if (win != null && win.WindowState == WindowState.Normal)
+                win.DragMove();
+        }
+
+        // ── Windowed ↔ Full-Screen toggle ────────────────────────────────────
+        private void WinStateBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var win = Window.GetWindow(this);
+            if (win == null) return;
+
+            if (win.WindowState == WindowState.Maximized)
+            {
+                // Go to windowed: 90% of working area, centered
+                var area = SystemParameters.WorkArea;
+                win.WindowState = WindowState.Normal;
+                win.Width  = area.Width  * 0.90;
+                win.Height = area.Height * 0.90;
+                win.Left   = area.Left + (area.Width  - win.Width)  / 2;
+                win.Top    = area.Top  + (area.Height - win.Height) / 2;
+            }
+            else
+            {
+                win.WindowState = WindowState.Maximized;
+            }
+        }
+
+        private void UpdateWinStateIcon()
+        {
+            var win = Window.GetWindow(this);
+            if (win == null) return;
+
+            var icon  = WinStateBtn.Template?.FindName("WinStateIcon",  WinStateBtn) as System.Windows.Controls.TextBlock;
+            var label = WinStateBtn.Template?.FindName("WinStateLabel", WinStateBtn) as System.Windows.Controls.TextBlock;
+            if (icon == null || label == null) return;
+
+            if (win.WindowState == WindowState.Maximized)
+            {
+                icon.Text  = "\uE923"; // BackToWindow
+                label.Text = "Fenêtré";
+            }
+            else
+            {
+                icon.Text  = "\uE922"; // Maximize
+                label.Text = "Plein écran";
+            }
+        }
+        // ─────────────────────────────────────────────────────────────────────
 
         private void FacturationBtn_Click(object sender, RoutedEventArgs e)
         {

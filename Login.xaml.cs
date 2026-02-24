@@ -42,11 +42,17 @@ namespace GestionComerce
             BtnClear.Click += BtnClear_Click;
             BtnDelete.Click += BtnDelete_Click;
 
-            // Add KeyDown event handler for Enter key
             PasswordInput.KeyDown += PasswordInput_KeyDown_Enter;
 
-            // Set focus to password input when control loads
-            this.Loaded += (s, e) => PasswordInput.Focus();
+            this.Loaded += (s, e) =>
+            {
+                PasswordInput.Focus();
+                // Sync icon with current window state and keep it in sync
+                var win = Window.GetWindow(this);
+                if (win != null)
+                    win.StateChanged += (ws, we) => UpdateWinStateIcon();
+                UpdateWinStateIcon();
+            };
         }
 
         MainWindow main;
@@ -125,6 +131,57 @@ namespace GestionComerce
             PasswordInput.Password = string.Empty;
             MessageBox.Show("Wrong Code");
         }
+
+        // ── Card drag (WindowStyle="None" removes OS title bar) ──────────────
+        private void Card_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            var win = Window.GetWindow(this);
+            if (win != null && win.WindowState == WindowState.Normal)
+                win.DragMove();
+        }
+
+        // ── Windowed ↔ Full-Screen toggle ────────────────────────────────────
+        private void WinStateBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var win = Window.GetWindow(this);
+            if (win == null) return;
+
+            if (win.WindowState == WindowState.Maximized)
+            {
+                var area = SystemParameters.WorkArea;
+                win.WindowState = WindowState.Normal;
+                win.Width  = area.Width  * 0.90;
+                win.Height = area.Height * 0.90;
+                win.Left   = area.Left + (area.Width  - win.Width)  / 2;
+                win.Top    = area.Top  + (area.Height - win.Height) / 2;
+            }
+            else
+            {
+                win.WindowState = WindowState.Maximized;
+            }
+        }
+
+        private void UpdateWinStateIcon()
+        {
+            var win = Window.GetWindow(this);
+            if (win == null) return;
+
+            var icon  = WinStateBtn.Template?.FindName("WinStateIcon",  WinStateBtn) as TextBlock;
+            var label = WinStateBtn.Template?.FindName("WinStateLabel", WinStateBtn) as TextBlock;
+            if (icon == null || label == null) return;
+
+            if (win.WindowState == WindowState.Maximized)
+            {
+                icon.Text  = "\uE923"; // BackToWindow
+                label.Text = "Fenêtré";
+            }
+            else
+            {
+                icon.Text  = "\uE922"; // Maximize
+                label.Text = "Plein écran";
+            }
+        }
+        // ─────────────────────────────────────────────────────────────────────
 
         private void BtnShutdown_Click(object sender, RoutedEventArgs e)
         {

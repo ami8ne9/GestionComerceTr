@@ -193,7 +193,7 @@
                           BlurRadius="12" ShadowDepth="2" Direction="270"/>
     </UserControl.Resources>
 
-    <Grid>
+    <Grid MouseLeftButtonDown="Card_MouseLeftButtonDown">
         <Grid.Background>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                 <GradientStop Color="#EFF6FF" Offset="0"/>
@@ -380,5 +380,58 @@
                 </Border>
             </Grid>
         </Border>
+        <!-- Windowed / Full-Screen toggle — floats top-right over the whole page -->
+        <Button x:Name="WinStateBtn" Height="48" HorizontalAlignment="Right" VerticalAlignment="Top"
+                Margin="0,28,28,0" Cursor="Hand" Click="WinStateBtn_Click" BorderThickness="0">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="btnBorder" CornerRadius="24" Padding="22,0">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                <GradientStop Color="#3B82F6" Offset="0"/>
+                                <GradientStop Color="#2563EB" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Border.Effect>
+                            <DropShadowEffect Color="#2563EB" BlurRadius="18" ShadowDepth="0" Opacity="0.40"/>
+                        </Border.Effect>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            <TextBlock x:Name="WinStateIcon"
+                                       Text="&#xE923;"
+                                       FontFamily="Segoe MDL2 Assets"
+                                       FontSize="17" Foreground="White"
+                                       VerticalAlignment="Center" Margin="0,0,10,0"/>
+                            <TextBlock x:Name="WinStateLabel"
+                                       Text="Fenêtré"
+                                       FontFamily="Segoe UI" FontSize="14" FontWeight="SemiBold"
+                                       Foreground="White" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="btnBorder" Property="Background">
+                                <Setter.Value>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                        <GradientStop Color="#60A5FA" Offset="0"/>
+                                        <GradientStop Color="#3B82F6" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="btnBorder" Property="Background">
+                                <Setter.Value>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                        <GradientStop Color="#1D4ED8" Offset="0"/>
+                                        <GradientStop Color="#1E40AF" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
     </Grid>
 </UserControl>

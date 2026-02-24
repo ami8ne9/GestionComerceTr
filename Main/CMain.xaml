@@ -134,8 +134,9 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <!-- Header -->
-        <Border Grid.Row="0" Padding="56,32" BorderThickness="0,0,0,1" BorderBrush="#E2E8F0">
+        <!-- Header — draggable when windowed -->
+        <Border Grid.Row="0" Padding="56,32" BorderThickness="0,0,0,1" BorderBrush="#E2E8F0"
+                MouseLeftButtonDown="Header_MouseLeftButtonDown">
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#FFFFFF" Offset="0"/>
@@ -160,6 +161,67 @@
                 </StackPanel>
 
                 <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+
+                    <!-- Windowed / Full-Screen toggle pill -->
+                    <Button x:Name="WinStateBtn" Height="48" Margin="0,0,14,0"
+                            Cursor="Hand" Click="WinStateBtn_Click" BorderThickness="0">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border x:Name="btnBorder" CornerRadius="24" Padding="22,0">
+                                    <Border.Background>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                            <GradientStop Color="#3B82F6" Offset="0"/>
+                                            <GradientStop Color="#2563EB" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <Border.Effect>
+                                        <DropShadowEffect Color="#2563EB" BlurRadius="18"
+                                                          ShadowDepth="0" Opacity="0.40"/>
+                                    </Border.Effect>
+                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                        <!-- Icon drawn with Segoe MDL2 Assets — E922=Maximize, E923=BackToWindow -->
+                                        <TextBlock x:Name="WinStateIcon"
+                                                   Text="&#xE922;"
+                                                   FontFamily="Segoe MDL2 Assets"
+                                                   FontSize="17"
+                                                   Foreground="White"
+                                                   VerticalAlignment="Center"
+                                                   Margin="0,0,10,0"/>
+                                        <TextBlock x:Name="WinStateLabel"
+                                                   Text="Plein écran"
+                                                   FontFamily="Segoe UI"
+                                                   FontSize="14"
+                                                   FontWeight="SemiBold"
+                                                   Foreground="White"
+                                                   VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="btnBorder" Property="Background">
+                                            <Setter.Value>
+                                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                                    <GradientStop Color="#60A5FA" Offset="0"/>
+                                                    <GradientStop Color="#3B82F6" Offset="1"/>
+                                                </LinearGradientBrush>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                    <Trigger Property="IsPressed" Value="True">
+                                        <Setter TargetName="btnBorder" Property="Background">
+                                            <Setter.Value>
+                                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                                    <GradientStop Color="#1D4ED8" Offset="0"/>
+                                                    <GradientStop Color="#1E40AF" Offset="1"/>
+                                                </LinearGradientBrush>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
                     <Border Background="#F1F5F9" CornerRadius="24" Padding="20,10" Margin="0,0,16,0">
                         <Border.Effect>
                             <DropShadowEffect Color="#0F172A" BlurRadius="10" ShadowDepth="0" Opacity="0.05"/>
@@ -203,8 +265,14 @@
         </Border>
 
         <!-- Main Content -->
-        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
-            <Grid Margin="56,15,56,20" VerticalAlignment="Center">
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <ScrollViewer.Resources>
+                <!-- Prevent the ScrollViewer from constraining content width -->
+                <Style TargetType="ScrollContentPresenter">
+                    <Setter Property="CanContentScroll" Value="True"/>
+                </Style>
+            </ScrollViewer.Resources>
+            <Grid Margin="56,15,56,20" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
